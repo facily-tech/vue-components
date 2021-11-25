@@ -1,10 +1,11 @@
-import HelloWorld from './components/HelloWorld.vue';
+import { FyCancelButton } from './components/Button';
+
 
 // Declare install function executed by Vue.use()
 export function install(Vue) {
   if (install.installed) return;
   install.installed = true;
-  Vue.component('HelloWorld', HelloWorld);
+  Vue.component('FyCancelButton', FyCancelButton);
 }
 
 // Create module definition for Vue.use()
@@ -25,5 +26,5 @@ if (GlobalVue) {
 
 // To allow use as module (npm/webpack/etc.) export component
 export {
-  HelloWorld,
+  FyCancelButton,
 };

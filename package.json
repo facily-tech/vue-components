@@ -2,9 +2,15 @@
   "name": "@facily/vue-componentes",
   "version": "0.1.0",
   "private": true,
+  "main": "./dist/vueComponents.common.js",
+  "module": "/dist/vueComponents.umd.js",
+  "repository": {
+    "url": "git://github.com/facily-tech/vue-components.git"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build:npm": "vue-cli-service build --target lib --name vueComponents src/index.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -23,15 +29,13 @@
     "eslint-plugin-vue": "^7.0.0"
   },
   "description": "## Project setup ``` npm install ```",
-  "main": ".eslintrc.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/facily-tech/vue-components.git"
-  },
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/facily-tech/vue-components/issues"
   },
+  "files": [
+    "dist/*"
+  ],
   "homepage": "https://github.com/facily-tech/vue-components#readme"
 }
