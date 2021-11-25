@@ -1,5 +1,5 @@
 {
-  "name": "@facily/vue-componentes",
+  "name": "@facily-tech/vue-componentes",
   "version": "0.1.0",
   "main": "./dist/vueComponents.common.js",
   "module": "/dist/vueComponents.umd.js",
