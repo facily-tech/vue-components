@@ -1,7 +1,6 @@
 {
   "name": "@facily/vue-componentes",
   "version": "0.1.0",
-  "private": true,
   "main": "./dist/vueComponents.common.js",
   "module": "/dist/vueComponents.umd.js",
   "repository": {
@@ -15,6 +14,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "user": "^0.0.0",
     "vue": "^3.0.0"
   },
   "devDependencies": {

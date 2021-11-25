@@ -1,6 +1,5 @@
 import { FyCancelButton } from './components/Button';
 
-
 // Declare install function executed by Vue.use()
 export function install(Vue) {
   if (install.installed) return;
