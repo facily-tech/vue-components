@@ -1,1 +1,1 @@
-export { default as FyCancelButton } from './delete';
+export { default as FyCancelButton } from './Delete.vue';
