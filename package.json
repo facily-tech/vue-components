@@ -1,6 +1,6 @@
 {
   "name": "@facily-tech/vue-components",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "main": "./dist/vueComponents.common.js",
   "module": "/dist/vueComponents.umd.js",
   "repository": {

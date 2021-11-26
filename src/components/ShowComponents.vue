@@ -32,7 +32,11 @@ import { FyButtonInfo, FyButtonWarning, FyButtonDelete } from './Buttons';
 export default Vue.extend({
   name: 'ShowComponents',
 
-  components: { FyButtonInfo, FyButtonWarning, FyButtonDelete },
+  components: {
+    FyButtonInfo,
+    FyButtonWarning,
+    FyButtonDelete,
+  },
 
   data: () => ({
     whatsNext: [

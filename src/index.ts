@@ -1,3 +1,3 @@
-import { FyButtonInfo, FyButtonWarning, FyButtonDelete } from './components/Buttons';
+import { FyButtonInfo, FyButtonWarning, FyButtonCancel } from './components/Buttons';
 
-export { FyButtonInfo, FyButtonWarning, FyButtonDelete };
+export { FyButtonInfo, FyButtonWarning, FyButtonCancel };
