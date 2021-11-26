@@ -1,10 +1,10 @@
-import { FyCancelButton } from './components/Button';
+import { FyButtonDelete } from './components/Buttons';
 
 // Declare install function executed by Vue.use()
 export function install(Vue) {
   if (install.installed) return;
   install.installed = true;
-  Vue.component('FyCancelButton', FyCancelButton);
+  Vue.component('FyButtonDelete', FyButtonDelete);
 }
 
 // Create module definition for Vue.use()
@@ -24,6 +24,4 @@ if (GlobalVue) {
 }
 
 // To allow use as module (npm/webpack/etc.) export component
-export {
-  FyCancelButton,
-};
+export { FyButtonDelete };

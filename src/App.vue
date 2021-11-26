@@ -1,15 +1,15 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <img alt="Facily logo" src="./assets/facily-logo-site.png" />
+  <fy-button-delete>cancelar</fy-button-delete>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import { FyButtonDelete } from './components/Buttons';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
+    FyButtonDelete,
   },
 };
 </script>

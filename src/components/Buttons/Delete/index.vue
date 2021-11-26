@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-btn>
+    <v-btn color="error">
       <slot />
     </v-btn>
   </div>
@@ -12,5 +12,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
