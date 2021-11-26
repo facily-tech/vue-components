@@ -9,12 +9,12 @@ import { VBtn } from 'vuetify/lib';
 
 export default {
   extends: VBtn,
-  name: 'FyButtonDelete',
+  name: 'FyButtonInfo',
   props: {
     ...VBtn.props,
     color: {
       type: String,
-      default: 'error',
+      default: 'warning',
     },
   },
 };

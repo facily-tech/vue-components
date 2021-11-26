@@ -1,26 +1,24 @@
 <template>
-  <img alt="Facily logo" src="./assets/facily-logo-site.png" />
-  <fy-button-delete>cancelar</fy-button-delete>
+  <v-app>
+    <v-main>
+      <ShowComponents />
+    </v-main>
+  </v-app>
 </template>
 
-<script>
-import { FyButtonDelete } from './components/Buttons';
+<script lang="ts">
+import Vue from 'vue';
+import ShowComponents from './components/ShowComponents.vue';
 
-export default {
+export default Vue.extend({
   name: 'App',
-  components: {
-    FyButtonDelete,
-  },
-};
-</script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+  components: {
+    ShowComponents,
+  },
+
+  data: () => ({
+    //
+  }),
+});
+</script>
