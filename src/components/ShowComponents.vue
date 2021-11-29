@@ -19,6 +19,11 @@
 
           <fy-button-delete>Deletar</fy-button-delete>
         </v-row>
+        <v-row>
+          <FyInputCpf
+            label="Nome"
+          />
+        </v-row>
       </v-col>
     </v-row>
   </v-container>
@@ -28,6 +33,7 @@
 import Vue from 'vue';
 
 import { FyButtonInfo, FyButtonWarning, FyButtonDelete } from './Buttons';
+import { FyInputCpf } from './Inputs';
 
 export default Vue.extend({
   name: 'ShowComponents',
@@ -36,6 +42,7 @@ export default Vue.extend({
     FyButtonInfo,
     FyButtonWarning,
     FyButtonDelete,
+    FyInputCpf,
   },
 
   data: () => ({
