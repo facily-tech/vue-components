@@ -20,9 +20,9 @@
           <fy-button-delete>Deletar</fy-button-delete>
         </v-row>
         <v-row>
-          <FyInputCpf
-            label="Nome"
-          />
+        </v-row>
+        <v-row>
+          <FyInputCpf @input="getCpf"/>
         </v-row>
       </v-col>
     </v-row>
@@ -61,5 +61,10 @@ export default Vue.extend({
       },
     ],
   }),
+  methods: {
+    getCpf(value) {
+      console.log(value);
+    },
+  },
 });
 </script>
