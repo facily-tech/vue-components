@@ -17,7 +17,7 @@
 
           <fy-button-warning class="mx-3">warning</fy-button-warning>
 
-          <fy-button-delete>Deletar</fy-button-delete>
+          <fy-button-delete>Delete</fy-button-delete>
         </v-row>
       </v-col>
     </v-row>
