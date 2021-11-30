@@ -8,11 +8,11 @@
 import { VBtn } from 'vuetify/lib';
 
 export default {
-	extends: VBtn,
-	name: 'FyButtonCancel',
-	props: {
-		...VBtn.props,
-	},
+  extends: VBtn,
+  name: 'FyButtonCancel',
+  props: {
+    ...VBtn.props,
+  },
 };
 </script>
 

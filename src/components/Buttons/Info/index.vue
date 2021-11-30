@@ -8,15 +8,15 @@
 import { VBtn } from 'vuetify/lib';
 
 export default {
-	extends: VBtn,
-	name: 'FyButtonInfo',
-	props: {
-		...VBtn.props,
-		color: {
-			type: String,
-			default: 'info',
-		},
-	},
+  extends: VBtn,
+  name: 'FyButtonInfo',
+  props: {
+    ...VBtn.props,
+    color: {
+      type: String,
+      default: 'info',
+    },
+  },
 };
 </script>
 

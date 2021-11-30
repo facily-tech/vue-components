@@ -11,11 +11,10 @@ import Vue from 'vue';
 import ShowComponents from './components/ShowComponents.vue';
 
 export default Vue.extend({
-	name: 'App',
+  name: 'App',
 
-	components: {
-		ShowComponents,
-	},
-
+  components: {
+    ShowComponents
+  }
 });
 </script>
