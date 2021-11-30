@@ -10,28 +10,27 @@
   </v-dialog>
 </template>
 
-<script>
-
+<script lang="ts">
 export default {
-	name: 'FyDialog',
+  name: 'FyDialog',
 
-	props: {
-		config: {
-			type: Object,
-			default: () => {
-				const item = {
-					fullscreen: false,
-					hideOverlay: false,
-					scrollable: false,
-				};
-				return item;
-			},
-		},
+  props: {
+    config: {
+      type: Object,
+      default: () => {
+        const item = {
+          fullscreen: false,
+          hideOverlay: false,
+          scrollable: false
+        };
+        return item;
+      }
+    },
 
-		dialog: {
-			type: Boolean,
-			default: false,
-		},
-	},
+    dialog: {
+      type: Boolean,
+      default: false
+    }
+  }
 };
 </script>
