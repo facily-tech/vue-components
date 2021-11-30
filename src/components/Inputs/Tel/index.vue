@@ -16,10 +16,11 @@ export default {
   name: 'FyInputTel',
   props: {
     ...VTextField.props,
+    value: String,
   },
   data() {
     return {
-      tel: '',
+      tel: this.value ? this.value : '',
     };
   },
   watch: {

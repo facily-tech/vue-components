@@ -23,19 +23,22 @@
           <h2 class="headline font-weight-bold mb-3">Inputs</h2>
         </v-row>
         <v-row>
-          <FyInputDefault solo label="Nome" />
+          <FyInputDefault label="Nome" v-model="name" @input="getName"/> - {{name}}
         </v-row>
         <v-row>
-          <FyInputCpf label="CPF" @input="getCpf" />
+          <FyInputCpf label="CPF" v-model="cpf" @input="getCpf" /> {{cpf}}
         </v-row>
         <v-row>
-          <FyInputCnpj label="CNPJ" />
+          <FyInputCnpj label="CNPJ" v-model="cnpj" @input="getCnpj" /> - {{cnpj}}
         </v-row>
         <v-row>
-          <FyInputTel label="Telefone" />
+          <FyInputTel label="Telefone" v-model="tel" @input="getTel" /> - {{tel}}
         </v-row>
         <v-row>
-          <FyInputCep label="Cep" />
+          <FyInputCep label="Cep"  v-model="cep" @input="getCep" /> - {{cep}}
+        </v-row>
+        <v-row>
+          <FyInputDate label="Data" v-model="data" @input="getData" /> - {{data}}
         </v-row>
       </v-col>
     </v-row>
@@ -47,7 +50,7 @@ import Vue from 'vue';
 
 import { FyButtonInfo, FyButtonWarning, FyButtonDelete } from './Buttons';
 import {
-  FyInputCpf, FyInputCnpj, FyInputTel, FyInputCep, FyInputDefault,
+  FyInputCpf, FyInputCnpj, FyInputTel, FyInputCep, FyInputDefault, FyInputDate,
 }
   from './Inputs';
 
@@ -63,6 +66,7 @@ export default Vue.extend({
     FyInputTel,
     FyInputCep,
     FyInputDefault,
+    FyInputDate,
   },
 
   data: () => ({
@@ -80,10 +84,31 @@ export default Vue.extend({
         href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions',
       },
     ],
+    name: 'Fred',
+    cep: '05050-112',
+    tel: '11955002211',
+    cpf: '294.573.708-64',
+    cnpj: '22.045.555/0001-65',
+    data: new Date(),
   }),
   methods: {
+    getName(value) {
+      this.name = value;
+    },
+    getCep(value) {
+      this.cep = value;
+    },
+    getTel(value) {
+      this.tel = value;
+    },
     getCpf(value) {
-      console.log(value);
+      this.cpf = value;
+    },
+    getCnpj(value) {
+      this.cnpj = value;
+    },
+    getData(value) {
+      this.data = value;
     },
   },
 });

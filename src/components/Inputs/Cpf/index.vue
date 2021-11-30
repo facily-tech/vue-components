@@ -17,10 +17,11 @@ export default {
   name: 'FyInputCpf',
   props: {
     ...VTextField.props,
+    value: String,
   },
   data() {
     return {
-      cpf: '',
+      cpf: this.value ? this.value : '',
       cpfRules: [
         (value) => value.length === 14 || 'O campo Cpf deve conter 11 números',
       ],

@@ -15,10 +15,11 @@ export default {
   name: 'FyInputDefault',
   props: {
     ...VTextField.props,
+    value: String,
   },
   data() {
     return {
-      text: '',
+      text: this.value ? this.value : '',
     };
   },
   watch: {

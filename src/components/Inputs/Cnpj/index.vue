@@ -17,10 +17,11 @@ export default {
   name: 'FyInputCnpj',
   props: {
     ...VTextField.props,
+    value: String,
   },
   data() {
     return {
-      cnpj: '',
+      cnpj: this.value ? this.value : '',
       cnpjRules: [
         (value) => value.length === 18 || 'O campo Cnpj deve conter 14 números',
       ],

@@ -17,10 +17,11 @@ export default {
   name: 'FyInputCep',
   props: {
     ...VTextField.props,
+    value: String,
   },
   data() {
     return {
-      cep: '',
+      cep: this.value ? this.value : '',
       cepRules: [
         (value) => value.length === 9 || 'O campo Cep deve conter 8 números',
       ],
