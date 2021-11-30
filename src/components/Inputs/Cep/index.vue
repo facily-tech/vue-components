@@ -1,9 +1,9 @@
 <template>
   <div>
     <v-text-field
-      v-model="cpf"
-      v-mask="'###.###.###-##'"
-      :rules="cpfRules"
+      v-model="cep"
+      v-mask="'#####-###'"
+      :rules="cepRules"
       v-bind.sync="$props"
     />
   </div>
@@ -14,21 +14,21 @@ import { VTextField } from 'vuetify/lib';
 
 export default {
   extends: VTextField,
-  name: 'FyInputCpf',
+  name: 'FyInputCep',
   props: {
     ...VTextField.props,
   },
   data() {
     return {
-      cpf: '',
-      cpfRules: [
-        (value) => value.length === 14 || 'O campo Cpf deve conter 11 números',
+      cep: '',
+      cepRules: [
+        (value) => value.length === 9 || 'O campo Cep deve conter 8 números',
       ],
     };
   },
   watch: {
-    cpf() {
-      this.$emit('input', this.cpf);
+    cep() {
+      this.$emit('input', this.cep);
     },
   },
 };

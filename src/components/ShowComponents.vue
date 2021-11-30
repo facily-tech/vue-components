@@ -20,9 +20,22 @@
           <fy-button-delete>Deletar</fy-button-delete>
         </v-row>
         <v-row>
+          <h2 class="headline font-weight-bold mb-3">Inputs</h2>
         </v-row>
         <v-row>
-          <FyInputCpf @input="getCpf"/>
+          <FyInputDefault solo label="Nome" />
+        </v-row>
+        <v-row>
+          <FyInputCpf label="CPF" @input="getCpf" />
+        </v-row>
+        <v-row>
+          <FyInputCnpj label="CNPJ" />
+        </v-row>
+        <v-row>
+          <FyInputTel label="Telefone" />
+        </v-row>
+        <v-row>
+          <FyInputCep label="Cep" />
         </v-row>
       </v-col>
     </v-row>
@@ -33,7 +46,10 @@
 import Vue from 'vue';
 
 import { FyButtonInfo, FyButtonWarning, FyButtonDelete } from './Buttons';
-import { FyInputCpf } from './Inputs';
+import {
+  FyInputCpf, FyInputCnpj, FyInputTel, FyInputCep, FyInputDefault,
+}
+  from './Inputs';
 
 export default Vue.extend({
   name: 'ShowComponents',
@@ -43,6 +59,10 @@ export default Vue.extend({
     FyButtonWarning,
     FyButtonDelete,
     FyInputCpf,
+    FyInputCnpj,
+    FyInputTel,
+    FyInputCep,
+    FyInputDefault,
   },
 
   data: () => ({
