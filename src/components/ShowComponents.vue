@@ -23,29 +23,32 @@
           <h2 class="headline font-weight-bold mb-3">Inputs</h2>
         </v-row>
         <v-row>
-          <FyInputDefault label="Nome" v-model="name" @input="getName"/> - {{name}}
+          <FyInputDefault label="Nome" v-model="name" @input="getName"/> => {{name}}
         </v-row>
         <v-row>
-          <FyInputCpf label="CPF" v-model="cpf" @input="getCpf" /> {{cpf}}
+          <FyInputCpf label="CPF" v-model="cpf" @input="getCpf" /> => {{cpf}}
         </v-row>
         <v-row>
-          <FyInputCnpj label="CNPJ" v-model="cnpj" @input="getCnpj" /> - {{cnpj}}
+          <FyInputCnpj label="CNPJ" v-model="cnpj" @input="getCnpj" /> => {{cnpj}}
         </v-row>
         <v-row>
-          <FyInputTel label="Telefone" v-model="tel" @input="getTel" /> - {{tel}}
+          <FyInputTel label="Telefone" v-model="tel" @input="getTel" /> => {{tel}}
         </v-row>
         <v-row>
-          <FyInputCep label="Cep"  v-model="cep" @input="getCep" /> - {{cep}}
+          <FyInputCep label="Cep"  v-model="cep" @input="getCep" /> => {{cep}}
         </v-row>
         <v-row>
-          <FyInputDate label="Data" v-model="data" @input="getDate" /> - {{data}}
+          <FyInputDate label="Data" v-model="data" @input="getDate" /> => {{data}}
         </v-row>
         <v-row>
-          <FyInputTime label="Time" v-model="time" @input="getTime" /> - {{time}}
+          <FyInputTime label="Time" v-model="time" @input="getTime" /> => {{time}}
         </v-row>
          <v-row>
           <FyInputDateTime label="Data Hora" v-model="dateTime" @input="getDateTime" />
-          - {{dateTime}}
+          => {{dateTime}}
+        </v-row>
+        <v-row>
+          <FyInputCurrency  label="Moeda" v-model="currency" @input="getCurrency" /> => {{currency}}
         </v-row>
       </v-col>
     </v-row>
@@ -65,6 +68,7 @@ import {
   FyInputDate,
   FyInputTime,
   FyInputDateTime,
+  FyInputCurrency,
 }
   from './Inputs';
 
@@ -83,6 +87,7 @@ export default Vue.extend({
     FyInputDate,
     FyInputTime,
     FyInputDateTime,
+    FyInputCurrency,
   },
 
   data: () => ({
@@ -108,6 +113,7 @@ export default Vue.extend({
     data: new Date().toISOString(),
     time: '16:54',
     dateTime: new Date().toISOString(),
+    currency: '105.20',
   }),
   methods: {
     getName(value) {
@@ -133,6 +139,9 @@ export default Vue.extend({
     },
     getDateTime(value) {
       this.dateTime = value;
+    },
+    getCurrency(value) {
+      this.currency = value;
     },
   },
 });
