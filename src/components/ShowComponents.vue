@@ -38,7 +38,14 @@
           <FyInputCep label="Cep"  v-model="cep" @input="getCep" /> - {{cep}}
         </v-row>
         <v-row>
-          <FyInputDate label="Data" v-model="data" @input="getData" /> - {{data}}
+          <FyInputDate label="Data" v-model="data" @input="getDate" /> - {{data}}
+        </v-row>
+        <v-row>
+          <FyInputTime label="Time" v-model="time" @input="getTime" /> - {{time}}
+        </v-row>
+         <v-row>
+          <FyInputDateTime label="Data Hora" v-model="dateTime" @input="getDateTime" />
+          - {{dateTime}}
         </v-row>
       </v-col>
     </v-row>
@@ -47,10 +54,17 @@
 
 <script lang="ts">
 import Vue from 'vue';
-
 import { FyButtonInfo, FyButtonWarning, FyButtonDelete } from './Buttons';
+
 import {
-  FyInputCpf, FyInputCnpj, FyInputTel, FyInputCep, FyInputDefault, FyInputDate,
+  FyInputCpf,
+  FyInputCnpj,
+  FyInputTel,
+  FyInputCep,
+  FyInputDefault,
+  FyInputDate,
+  FyInputTime,
+  FyInputDateTime,
 }
   from './Inputs';
 
@@ -67,6 +81,8 @@ export default Vue.extend({
     FyInputCep,
     FyInputDefault,
     FyInputDate,
+    FyInputTime,
+    FyInputDateTime,
   },
 
   data: () => ({
@@ -89,7 +105,9 @@ export default Vue.extend({
     tel: '11955002211',
     cpf: '294.573.708-64',
     cnpj: '22.045.555/0001-65',
-    data: new Date(),
+    data: new Date().toISOString(),
+    time: '16:54',
+    dateTime: new Date().toISOString(),
   }),
   methods: {
     getName(value) {
@@ -107,8 +125,14 @@ export default Vue.extend({
     getCnpj(value) {
       this.cnpj = value;
     },
-    getData(value) {
+    getDate(value) {
       this.data = value;
+    },
+    getTime(value) {
+      this.time = value;
+    },
+    getDateTime(value) {
+      this.dateTime = value;
     },
   },
 });

@@ -2,7 +2,7 @@
   <div>
     <v-text-field
       v-model="date"
-      v-mask="'##/##/####'"
+      v-mask="'##/##/#### ##:##'"
       v-bind.sync="$props"
     />
   </div>
@@ -13,7 +13,7 @@ import { VTextField } from 'vuetify/lib';
 
 export default {
   extends: VTextField,
-  name: 'FyInputDate',
+  name: 'FyInputDateTime',
   props: {
     ...VTextField.props,
     value: String,
@@ -31,13 +31,15 @@ export default {
   },
   methods: {
     getStringToDate(str) {
-      const date = moment(str, 'DD/MM/YYYY');
-      return date.format();
+      if (!str) return '';
+      const dateTime = moment(str, 'DD/MM/YYYY HH:mm');
+      dateTime.format();
+      return dateTime;
     },
     getDateToString(date) {
       if (!date) return '';
       const nDate = moment(date);
-      return nDate.format('DD/MM/YYYY');
+      return nDate.format('DD/MM/YYYY HH:mm');
     },
   },
 };
