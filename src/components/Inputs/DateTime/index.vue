@@ -33,8 +33,7 @@ export default {
     getStringToDate(str) {
       if (!str) return '';
       const dateTime = moment(str, 'DD/MM/YYYY HH:mm');
-      dateTime.format();
-      return dateTime;
+      return dateTime.format();
     },
     getDateToString(date) {
       if (!date) return '';
