@@ -23,16 +23,16 @@ npm run lint
 
 ### Commits and Changelog
 
-# Install Commitzen globally if not already installed 
+#### Install Commitzen globally if not already installed 
 ```
 npm install --global commitizen
 ```
 
-# Commit with Commitizen
+#### Commit with Commitizen
 ```
-git cz
+git cz #or npm run commit
 ```
-# Generating a new CHANGELOG.md
+#### Generating a new CHANGELOG.md
 ```
 npm run release
 ```

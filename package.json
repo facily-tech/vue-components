@@ -11,7 +11,9 @@
     "build": "vue-cli-service build",
     "build:npm": "vue-cli-service build --target lib --name vueComponents src/index.ts",
     "lint": "vue-cli-service lint",
-    "release": "standard-version"
+    "release": "standard-version",
+    "prepare": "husky install",
+    "commit": "git-cz"
   },
   "dependencies": {
     "babel-eslint": "^10.1.0",
@@ -52,11 +54,6 @@
   "files": [
     "dist/*"
   ],
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
