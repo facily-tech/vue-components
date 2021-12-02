@@ -38,6 +38,19 @@
           </fy-user-label>
         </v-row>
       </v-col>
+
+      <v-col class="mb-5" cols="12">
+        <h2 class="headline font-weight-bold mb-6">Info Card</h2>
+
+        <v-row justify="center">
+          <fy-info-card
+            title="Enhance your Campaign for better outreach"
+            caption="Upgrade Account"
+            img="facily-logo-site.png"
+          >
+          </fy-info-card>
+        </v-row>
+      </v-col>
     </v-row>
   </v-container>
 </template>
@@ -47,6 +60,7 @@ import Vue from 'vue';
 
 import { FyButtonInfo, FyButtonWarning, FyButtonDelete } from './Buttons';
 import { FyUserLabel } from './UserLabel';
+import { FyInfoCard } from './InfoCard';
 
 export default Vue.extend({
   name: 'ShowComponents',
@@ -56,6 +70,7 @@ export default Vue.extend({
     FyButtonWarning,
     FyButtonDelete,
     FyUserLabel,
+    FyInfoCard,
   },
 
   data() {
