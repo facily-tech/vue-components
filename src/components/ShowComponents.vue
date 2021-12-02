@@ -19,6 +19,14 @@
 
           <fy-button-delete>Deletar</fy-button-delete>
         </v-row>
+        <v-row>
+          <FyNoticationBar
+            numUnread="2"
+            :list="listNotification"
+            @clickItem="clickNotif"
+            @clickSeeAll="clickAllNotif"
+          />
+        </v-row>
       </v-col>
     </v-row>
   </v-container>
@@ -28,6 +36,7 @@
 import Vue from 'vue';
 
 import { FyButtonInfo, FyButtonWarning, FyButtonDelete } from './Buttons';
+import { FyNoticationBar } from './NotificationBar';
 
 export default Vue.extend({
   name: 'ShowComponents',
@@ -36,6 +45,7 @@ export default Vue.extend({
     FyButtonInfo,
     FyButtonWarning,
     FyButtonDelete,
+    FyNoticationBar,
   },
 
   data: () => ({
@@ -53,6 +63,37 @@ export default Vue.extend({
         href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions',
       },
     ],
+    listNotification: [
+      {
+        text: 'Real-Time Yes Bla vcf ccas',
+        time: '2 minutos atrás',
+        icon: 'mdi-clock',
+        iconBg: 'blue',
+        isRead: false,
+      },
+      {
+        text: 'Audience',
+        time: '35 minutos atrás',
+        icon: 'mdi-account',
+        iconBg: 'amber',
+        isRead: false,
+      },
+      {
+        text: 'Conversions',
+        time: '5 dias atrás',
+        icon: 'mdi-flag',
+        iconBg: 'red',
+        isRead: true,
+      },
+    ],
   }),
+  methods: {
+    clickNotif(item) {
+      console.log(item);
+    },
+    clickAllNotif() {
+      console.log('click in All Notification');
+    },
+  },
 });
 </script>
