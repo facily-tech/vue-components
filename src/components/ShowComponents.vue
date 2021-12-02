@@ -2,6 +2,15 @@
   <v-app>
     <FyDrawer :items="items" :brand="brand" :title="'Facily'" />
 
+    <FyToolbar :items="toolbar">
+      <template v-slot:btn>
+        <v-btn color="primary">
+          <v-icon size="20" class="mr-2"> mdi-plus </v-icon>
+          Teste
+        </v-btn>
+      </template>
+    </FyToolbar>
+
     <v-main class="layout-wrapper">
       <!-- Provides the application the proper gutter -->
       <v-container>
@@ -85,6 +94,7 @@ import { FyButtonInfo, FyButtonWarning, FyButtonDelete } from './Buttons';
 import { FyDialog, FyDialogDelete } from './Dialogs';
 import { FyDrawer } from './Drawer';
 import { FySnackbar } from './Snackbar';
+import { FyToolbar } from './Toolbar';
 import brand from '../assets/icon-logo-white.png';
 
 export default Vue.extend({
@@ -98,10 +108,15 @@ export default Vue.extend({
     FyDialogDelete,
     FyDrawer,
     FySnackbar,
+    FyToolbar,
   },
 
   data: () => ({
     brand,
+		toolbar: {
+			title: 'Design System',
+			icon: 'mdi-credit-card-search-outline',
+		},
     whatsNext: [
       {
         text: 'Explore components',
@@ -146,10 +161,10 @@ export default Vue.extend({
     },
   }),
 
-	methods: {
-		onSnackbarClose() {
-			this.snackbar.model = false;
-		},
-	},
+  methods: {
+    onSnackbarClose() {
+      this.snackbar.model = false;
+    },
+  },
 });
 </script>

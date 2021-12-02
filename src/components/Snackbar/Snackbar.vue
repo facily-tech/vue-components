@@ -26,17 +26,17 @@ export default {
       require: true,
       type: Object,
       default: () => {
-				const obj = {};
-				return obj;
-			},
+        const obj = {};
+        return obj;
+      },
     },
   },
 
-	methods: {
-		snackbarClose() {
-			this.$emit('snackbar-close');
-		},
-	},
+  methods: {
+    snackbarClose() {
+      this.$emit('snackbar-close');
+    },
+  },
 };
 </script>
 
