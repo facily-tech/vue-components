@@ -1,5 +1,5 @@
 <template>
-  <v-btn v-bind.sync="$props">
+  <v-btn v-bind.sync="$props" v-on="$listeners">
     <slot />
   </v-btn>
 </template>
