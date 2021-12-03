@@ -23,37 +23,44 @@
           <h2 class="headline font-weight-bold mb-3">Inputs</h2>
         </v-row>
         <v-row>
-          <FyInputDefault label="Nome" v-model="name" @input="getName"/> => {{name}}
+          <FyInputDefault label="Nome" v-model="name" @input="getName" /> => {{ name }}
         </v-row>
         <v-row>
-          <FyInputCpf label="CPF" v-model="cpf" @input="getCpf" /> => {{cpf}}
+          <FyInputCpf label="CPF" v-model="cpf" @input="getCpf" />
+          => {{ cpf }}
         </v-row>
         <v-row>
-          <FyInputCnpj label="CNPJ" v-model="cnpj" @input="getCnpj" /> => {{cnpj}}
+          <FyInputCnpj label="CNPJ" v-model="cnpj" @input="getCnpj" />
+          => {{ cnpj }}
         </v-row>
         <v-row>
-          <FyInputTel label="Telefone" v-model="tel" @input="getTel" /> => {{tel}}
+          <FyInputTel label="Telefone" v-model="tel" @input="getTel" />
+          => {{ tel }}
         </v-row>
         <v-row>
-          <FyInputCep label="Cep"  v-model="cep" @input="getCep" /> => {{cep}}
+          <FyInputCep label="Cep" v-model="cep" @input="getCep" />
+          => {{ cep }}
         </v-row>
         <v-row>
-          <FyInputDate label="Data" v-model="data" @input="getDate" /> => {{data}}
+          <FyInputDate label="Data" v-model="data" @input="getDate" />
+          => {{ data }}
         </v-row>
         <v-row>
-          <FyInputTime label="Time" v-model="time" @input="getTime" /> => {{time}}
+          <FyInputTime label="Time" v-model="time" @input="getTime" />
+          => {{ time }}
         </v-row>
-         <v-row>
+        <v-row>
           <FyInputDateTime label="Data Hora" v-model="dateTime" @input="getDateTime" />
-          => {{dateTime}}
+          => {{ dateTime }}
         </v-row>
         <v-row>
-          <FyInputCurrency  label="Moeda" v-model="currency" @input="getCurrency" /> => {{currency}}
+          <FyInputCurrency label="Moeda" v-model="currency" @input="getCurrency" />
+          => {{ currency }}
         </v-row>
       </v-col>
     </v-row>
 
-<v-row>
+    <v-row>
       <v-col class="mb-5" cols="12">
         <div class="d-flex justify-center">
           <h2 class="headline font-weight-bold mb-3">Dialog</h2>
@@ -106,8 +113,7 @@ import {
   FyInputTime,
   FyInputDateTime,
   FyInputCurrency,
-}
-  from './Inputs';
+} from './Inputs';
 
 export default Vue.extend({
   name: 'ShowComponents',
@@ -126,23 +132,23 @@ export default Vue.extend({
     FyInputDateTime,
     FyInputCurrency,
     FyDialog,
-    FyDialogDelete
+    FyDialogDelete,
   },
 
   data: () => ({
     whatsNext: [
       {
         text: 'Explore components',
-        href: 'https://vuetifyjs.com/components/api-explorer'
+        href: 'https://vuetifyjs.com/components/api-explorer',
       },
       {
         text: 'Select a layout',
-        href: 'https://vuetifyjs.com/getting-started/pre-made-layouts'
+        href: 'https://vuetifyjs.com/getting-started/pre-made-layouts',
       },
       {
         text: 'Frequently Asked Questions',
-        href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions'
-      }
+        href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions',
+      },
     ],
     name: 'Fred',
     cep: '05050-112',
@@ -157,8 +163,8 @@ export default Vue.extend({
     dialog: false,
     item: {
       description: 'Produto',
-      id: 1
-    }
+      id: 1,
+    },
   }),
   methods: {
     getName(value) {
