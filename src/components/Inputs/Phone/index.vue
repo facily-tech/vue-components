@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-text-field
-      v-model="tel"
+      v-model="phone"
       v-mask="'(##)#####-####'"
       v-bind.sync="$props"
     />
@@ -13,19 +13,19 @@ import { VTextField } from 'vuetify/lib';
 
 export default {
   extends: VTextField,
-  name: 'FyInputTel',
+  name: 'FyInputPhone',
   props: {
     ...VTextField.props,
     value: String,
   },
   data() {
     return {
-      tel: this.value ? this.value : '',
+      phone: this.value ? this.value : '',
     };
   },
   watch: {
-    cnpj() {
-      this.$emit('input', this.tel);
+    phone() {
+      this.$emit('input', this.phone);
     },
   },
 };

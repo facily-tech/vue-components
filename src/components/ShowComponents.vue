@@ -23,42 +23,53 @@
           <h2 class="headline font-weight-bold mb-3">Inputs</h2>
         </v-row>
         <v-row>
-          <FyInputDefault label="Nome" v-model="name" @input="getName" /> => {{ name }}
+          <fy-input-default
+            label="Nome"
+            v-model="name"
+            @input="getName"
+          ></fy-input-default> => {{ name }}
         </v-row>
         <v-row>
-          <FyInputCpf label="CPF" v-model="cpf" @input="getCpf" />
+          <fy-input-cpf label="CPF" v-model="cpf" @input="getCpf"></fy-input-cpf>
           => {{ cpf }}
         </v-row>
         <v-row>
-          <FyInputCnpj label="CNPJ" v-model="cnpj" @input="getCnpj" />
+          <fy-input-cnpj label="CNPJ" v-model="cnpj" @input="getCnpj"></fy-input-cnpj>
           => {{ cnpj }}
         </v-row>
         <v-row>
-          <FyInputTel label="Telefone" v-model="tel" @input="getTel" />
-          => {{ tel }}
+          <fy-input-phone label="Telefone" v-model="phone" @input="getPhone"></fy-input-phone>
+          => {{ phone }}
         </v-row>
         <v-row>
-          <FyInputCep label="Cep" v-model="cep" @input="getCep" />
+          <fy-input-cep label="Cep" v-model="cep" @input="getCep"></fy-input-cep>
           => {{ cep }}
         </v-row>
         <v-row>
-          <FyInputDate label="Data" v-model="data" @input="getDate" />
+          <fy-input-date label="Data" v-model="data" @input="getDate"></fy-input-date>
           => {{ data }}
         </v-row>
         <v-row>
-          <FyInputTime label="Time" v-model="time" @input="getTime" />
+          <fy-input-time label="Time" v-model="time" @input="getTime"></fy-input-time>
           => {{ time }}
         </v-row>
         <v-row>
-          <FyInputDateTime label="Data Hora" v-model="dateTime" @input="getDateTime" />
+          <fy-input-date-time
+            label="Data Hora"
+            v-model="dateTime"
+            @input="getDateTime"
+          ></fy-input-date-time>
           => {{ dateTime }}
         </v-row>
         <v-row>
-          <FyInputCurrency label="Moeda" v-model="currency" @input="getCurrency" />
+          <fy-input-currency
+            label="Moeda"
+            v-model="currency"
+            @input="getCurrency"
+          ></fy-input-currency>
           => {{ currency }}
         </v-row>
       </v-col>
-
       <v-col class="mb-5" cols="12">
         <h2 class="headline font-weight-bold mb-6">User Label</h2>
 
@@ -125,7 +136,7 @@ import { FyDialog, FyDialogDelete } from './Dialogs';
 import {
   FyInputCpf,
   FyInputCnpj,
-  FyInputTel,
+  FyInputPhone,
   FyInputCep,
   FyInputDefault,
   FyInputDate,
@@ -143,7 +154,7 @@ export default Vue.extend({
     FyButtonDelete,
     FyInputCpf,
     FyInputCnpj,
-    FyInputTel,
+    FyInputPhone,
     FyInputCep,
     FyInputDefault,
     FyInputDate,
@@ -172,7 +183,7 @@ export default Vue.extend({
     ],
     name: 'Fred',
     cep: '05050-112',
-    tel: '11955002211',
+    phone: '11955002211',
     cpf: '294.573.708-64',
     cnpj: '22.045.555/0001-65',
     data: new Date().toISOString(),
@@ -193,8 +204,8 @@ export default Vue.extend({
     getCep(value) {
       this.cep = value;
     },
-    getTel(value) {
-      this.tel = value;
+    getPhone(value) {
+      this.phone = value;
     },
     getCpf(value) {
       this.cpf = value;
