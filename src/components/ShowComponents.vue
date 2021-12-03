@@ -31,6 +31,24 @@
           />
         </v-row>
       </v-col>
+
+      <v-col class="mb-5" cols="12">
+        <h2 class="headline font-weight-bold mb-6">User Label</h2>
+
+        <v-row justify="center">
+          <fy-user-label color="primary" label="Texto" caption="Texto">
+            <span class="white--text">FA</span>
+          </fy-user-label>
+
+          <fy-user-label class="mx-10" color="green" label="Ícone" caption="Ícone">
+            <v-icon dark>mdi-account-circle</v-icon>
+          </fy-user-label>
+
+          <fy-user-label color="red" label="Imagem" caption="Imagem">
+            <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John">
+          </fy-user-label>
+        </v-row>
+      </v-col>
     </v-row>
 
     <v-row>
@@ -76,6 +94,7 @@ import Vue from 'vue';
 
 import { FyButtonInfo, FyButtonWarning, FyButtonDelete } from './Buttons';
 import { FyNoticationBar } from './NotificationBar';
+import { FyUserLabel } from './UserLabel';
 import { FyDialog, FyDialogDelete } from './Dialogs';
 
 export default Vue.extend({
@@ -86,6 +105,7 @@ export default Vue.extend({
     FyButtonWarning,
     FyButtonDelete,
     FyNoticationBar,
+    FyUserLabel,
     FyDialog,
     FyDialogDelete,
   },

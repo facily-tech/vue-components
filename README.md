@@ -20,5 +20,23 @@ npm run build
 npm run lint
 ```
 
+
+### Commits and Changelog
+
+#### Install Commitzen globally if not already installed 
+```
+npm install --global commitizen
+```
+
+#### Commit with Commitizen
+```
+git cz #or npm run commit
+```
+#### Generating a new CHANGELOG.md
+```
+npm run release
+```
+
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
