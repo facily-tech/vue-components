@@ -19,8 +19,57 @@
 
           <fy-button-delete>Delete</fy-button-delete>
         </v-row>
+        <v-row>
+          <h2 class="headline font-weight-bold mb-3">Inputs</h2>
+        </v-row>
+        <v-row>
+          <fy-input-default
+            label="Nome"
+            v-model="name"
+            @input="getName"
+          ></fy-input-default> => {{ name }}
+        </v-row>
+        <v-row>
+          <fy-input-cpf label="CPF" v-model="cpf" @input="getCpf"></fy-input-cpf>
+          => {{ cpf }}
+        </v-row>
+        <v-row>
+          <fy-input-cnpj label="CNPJ" v-model="cnpj" @input="getCnpj"></fy-input-cnpj>
+          => {{ cnpj }}
+        </v-row>
+        <v-row>
+          <fy-input-phone label="Telefone" v-model="phone" @input="getPhone"></fy-input-phone>
+          => {{ phone }}
+        </v-row>
+        <v-row>
+          <fy-input-cep label="Cep" v-model="cep" @input="getCep"></fy-input-cep>
+          => {{ cep }}
+        </v-row>
+        <v-row>
+          <fy-input-date label="Data" v-model="data" @input="getDate"></fy-input-date>
+          => {{ data }}
+        </v-row>
+        <v-row>
+          <fy-input-time label="Time" v-model="time" @input="getTime"></fy-input-time>
+          => {{ time }}
+        </v-row>
+        <v-row>
+          <fy-input-date-time
+            label="Data Hora"
+            v-model="dateTime"
+            @input="getDateTime"
+          ></fy-input-date-time>
+          => {{ dateTime }}
+        </v-row>
+        <v-row>
+          <fy-input-currency
+            label="Moeda"
+            v-model="currency"
+            @input="getCurrency"
+          ></fy-input-currency>
+          => {{ currency }}
+        </v-row>
       </v-col>
-
       <v-col class="mb-5" cols="12">
         <h2 class="headline font-weight-bold mb-6">User Label</h2>
 
@@ -80,10 +129,21 @@
 
 <script lang="ts">
 import Vue from 'vue';
-
 import { FyButtonInfo, FyButtonWarning, FyButtonDelete } from './Buttons';
 import { FyUserLabel } from './UserLabel';
 import { FyDialog, FyDialogDelete } from './Dialogs';
+
+import {
+  FyInputCpf,
+  FyInputCnpj,
+  FyInputPhone,
+  FyInputCep,
+  FyInputDefault,
+  FyInputDate,
+  FyInputTime,
+  FyInputDateTime,
+  FyInputCurrency,
+} from './Inputs';
 
 export default Vue.extend({
   name: 'ShowComponents',
@@ -92,32 +152,79 @@ export default Vue.extend({
     FyButtonInfo,
     FyButtonWarning,
     FyButtonDelete,
+    FyInputCpf,
+    FyInputCnpj,
+    FyInputPhone,
+    FyInputCep,
+    FyInputDefault,
+    FyInputDate,
+    FyInputTime,
+    FyInputDateTime,
+    FyInputCurrency,
     FyUserLabel,
     FyDialog,
-    FyDialogDelete
+    FyDialogDelete,
   },
 
   data: () => ({
     whatsNext: [
       {
         text: 'Explore components',
-        href: 'https://vuetifyjs.com/components/api-explorer'
+        href: 'https://vuetifyjs.com/components/api-explorer',
       },
       {
         text: 'Select a layout',
-        href: 'https://vuetifyjs.com/getting-started/pre-made-layouts'
+        href: 'https://vuetifyjs.com/getting-started/pre-made-layouts',
       },
       {
         text: 'Frequently Asked Questions',
-        href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions'
-      }
+        href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions',
+      },
     ],
+    name: 'Fred',
+    cep: '05050-112',
+    phone: '11955002211',
+    cpf: '294.573.708-64',
+    cnpj: '22.045.555/0001-65',
+    data: new Date().toISOString(),
+    time: '16:54',
+    dateTime: new Date().toISOString(),
+    currency: '105.20',
     deleteModel: false,
     dialog: false,
     item: {
       description: 'Produto',
-      id: 1
-    }
-  })
+      id: 1,
+    },
+  }),
+  methods: {
+    getName(value) {
+      this.name = value;
+    },
+    getCep(value) {
+      this.cep = value;
+    },
+    getPhone(value) {
+      this.phone = value;
+    },
+    getCpf(value) {
+      this.cpf = value;
+    },
+    getCnpj(value) {
+      this.cnpj = value;
+    },
+    getDate(value) {
+      this.data = value;
+    },
+    getTime(value) {
+      this.time = value;
+    },
+    getDateTime(value) {
+      this.dateTime = value;
+    },
+    getCurrency(value) {
+      this.currency = value;
+    },
+  },
 });
 </script>
