@@ -17,7 +17,7 @@
 
           <fy-button-warning class="mx-3">warning</fy-button-warning>
 
-          <fy-button-delete>Deletar</fy-button-delete>
+          <fy-button-delete>Delete</fy-button-delete>
         </v-row>
       </v-col>
 
@@ -52,6 +52,42 @@
         </v-row>
       </v-col>
     </v-row>
+
+    <v-row>
+      <v-col class="mb-5" cols="12">
+        <div class="d-flex justify-center">
+          <h2 class="headline font-weight-bold mb-3">Dialog</h2>
+        </div>
+
+        <div class="d-flex justify-center">
+          <v-btn color="primary" class="mr-5" @click="dialog = true"> Dialog Template </v-btn>
+
+          <v-btn color="primary" @click="deleteModel = true"> Dialog Delete </v-btn>
+
+          <FyDialog :dialog="dialog">
+            <template v-slot:content>
+              <v-card tile>
+                <v-toolbar flat light color="primary">
+                  <v-toolbar-title style="color: white"> Title </v-toolbar-title>
+                  <v-spacer></v-spacer>
+                  <v-btn icon @click="dialog = false">
+                    <v-icon color="#ffffff"> mdi-close </v-icon>
+                  </v-btn>
+                </v-toolbar>
+                <v-card-text class="pa-10"> </v-card-text>
+              </v-card>
+            </template>
+          </FyDialog>
+
+          <FyDialogDelete
+            :deleteModel="deleteModel"
+            :item="item"
+            @close-dialog="deleteModel = false"
+            @confirm-dialog="deleteModel = false"
+          ></FyDialogDelete>
+        </div>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
@@ -61,6 +97,7 @@ import Vue from 'vue';
 import { FyButtonInfo, FyButtonWarning, FyButtonDelete } from './Buttons';
 import { FyUserLabel } from './UserLabel';
 import { FyInfoCard } from './InfoCard';
+import { FyDialog, FyDialogDelete } from './Dialogs';
 
 export default Vue.extend({
   name: 'ShowComponents',
@@ -71,25 +108,31 @@ export default Vue.extend({
     FyButtonDelete,
     FyUserLabel,
     FyInfoCard,
+    FyDialog,
+    FyDialogDelete,
   },
 
-  data() {
-    return {
-      whatsNext: [
-        {
-          text: 'Explore components',
-          href: 'https://vuetifyjs.com/components/api-explorer',
-        },
-        {
-          text: 'Select a layout',
-          href: 'https://vuetifyjs.com/getting-started/pre-made-layouts',
-        },
-        {
-          text: 'Frequently Asked Questions',
-          href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions',
-        },
-      ],
-    };
-  },
+  data: () => ({
+    whatsNext: [
+      {
+        text: 'Explore components',
+        href: 'https://vuetifyjs.com/components/api-explorer'
+      },
+      {
+        text: 'Select a layout',
+        href: 'https://vuetifyjs.com/getting-started/pre-made-layouts'
+      },
+      {
+        text: 'Frequently Asked Questions',
+        href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions'
+      }
+    ],
+    deleteModel: false,
+    dialog: false,
+    item: {
+      description: 'Produto',
+      id: 1
+    }
+  })
 });
 </script>
