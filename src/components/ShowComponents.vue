@@ -53,7 +53,7 @@
       </v-col>
     </v-row>
 
-    <v-row>
+<v-row>
       <v-col class="mb-5" cols="12">
         <div class="d-flex justify-center">
           <h2 class="headline font-weight-bold mb-3">Dialog</h2>
@@ -116,7 +116,6 @@ export default Vue.extend({
     FyButtonInfo,
     FyButtonWarning,
     FyButtonDelete,
-<<<<<<< HEAD
     FyInputCpf,
     FyInputCnpj,
     FyInputTel,
@@ -126,10 +125,8 @@ export default Vue.extend({
     FyInputTime,
     FyInputDateTime,
     FyInputCurrency,
-=======
     FyDialog,
     FyDialogDelete
->>>>>>> df898540a5e3c16439b652d6efd9a8989703c5f5
   },
 
   data: () => ({
@@ -147,7 +144,6 @@ export default Vue.extend({
         href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions'
       }
     ],
-<<<<<<< HEAD
     name: 'Fred',
     cep: '05050-112',
     tel: '11955002211',
@@ -157,6 +153,12 @@ export default Vue.extend({
     time: '16:54',
     dateTime: new Date().toISOString(),
     currency: '105.20',
+    deleteModel: false,
+    dialog: false,
+    item: {
+      description: 'Produto',
+      id: 1
+    }
   }),
   methods: {
     getName(value) {
@@ -187,14 +189,5 @@ export default Vue.extend({
       this.currency = value;
     },
   },
-=======
-    deleteModel: false,
-    dialog: false,
-    item: {
-      description: 'Produto',
-      id: 1
-    }
-  })
->>>>>>> df898540a5e3c16439b652d6efd9a8989703c5f5
 });
 </script>
