@@ -5,8 +5,8 @@
     </v-avatar>
 
     <div class="flex-column justify-space-between ml-5">
-      <div class="font-weight-bold">{{label}}</div>
-      <div class="grey--text text--lighten-1">{{caption}}</div>
+      <div class="font-weight-bold">{{ label }}</div>
+      <div class="grey--text text--lighten-1">{{ caption }}</div>
     </div>
   </div>
 </template>

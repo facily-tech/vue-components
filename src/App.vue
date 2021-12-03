@@ -14,11 +14,7 @@ export default Vue.extend({
   name: 'App',
 
   components: {
-    ShowComponents,
-  },
-
-  data: () => ({
-    //
-  }),
+    ShowComponents
+  }
 });
 </script>
