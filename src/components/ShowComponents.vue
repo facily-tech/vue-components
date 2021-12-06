@@ -82,6 +82,17 @@
             <FySnackbar :snackbar="snackbar" @snackbar-close="onSnackbarClose()" />
           </v-col>
         </v-row>
+        <v-row class="mb-5" cols="12">
+          <h2 class="headline font-weight-bold mb-3">Notificação</h2>
+        </v-row>
+        <v-row>
+          <FyNoticationBar
+            numUnread="2"
+            :list="listNotification"
+            @clickItem="clickNotif"
+            @clickSeeAll="clickAllNotif"
+          />
+        </v-row>
         <v-row>
           <h2 class="headline font-weight-bold mb-3">Inputs</h2>
         </v-row>
@@ -206,6 +217,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import { FyButtonInfo, FyButtonWarning, FyButtonDelete } from './Buttons';
+import { FyNoticationBar } from './NotificationBar';
 import { FyUserLabel } from './UserLabel';
 import { FyInfoCard } from './InfoCard';
 import { FyDialog, FyDialogDelete } from './Dialogs';
@@ -233,6 +245,7 @@ export default Vue.extend({
     FyButtonInfo,
     FyButtonWarning,
     FyButtonDelete,
+    FyNoticationBar,
     FyUserLabel,
     FyInfoCard,
     FyInputCpf,
@@ -309,9 +322,31 @@ export default Vue.extend({
         text: 'teste',
         type: null,
       },
-    }
+      listNotification: [
+        {
+          text: 'Real-Time Yes Bla vcf ccas',
+          time: '2 minutos atrás',
+          icon: 'mdi-clock',
+          iconBg: 'blue',
+          isRead: false,
+        },
+        {
+          text: 'Audience',
+          time: '35 minutos atrás',
+          icon: 'mdi-account',
+          iconBg: 'amber',
+          isRead: false,
+        },
+        {
+          text: 'Conversions',
+          time: '5 dias atrás',
+          icon: 'mdi-flag',
+          iconBg: 'red',
+          isRead: true,
+        },
+      ],
+    };
   },
-
   methods: {
 		onSnackbarClose() {
       this.snackbar.model = false;
@@ -342,6 +377,12 @@ export default Vue.extend({
     },
     getCurrency(value) {
       this.currency = value;
+    },
+    clickNotif(item) {
+      console.log(item);
+    },
+    clickAllNotif() {
+      console.log('click in All Notification');
     },
   },
 });
