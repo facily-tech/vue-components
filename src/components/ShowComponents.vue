@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <FyDrawer :items="items" :brand="brand" :title="'Facily'" />
+    <FyDrawer :items="items" :brand="require('../assets/icon-logo-white.png')" :title="'Facily'" />
 
     <FyToolbar :items="toolbar">
       <template v-slot:btn>
@@ -133,7 +133,7 @@
           => {{ currency }}
         </v-row>
 				<v-col class="mb-5" cols="12">
-					<h2 class="headline font-weight-bold mb-6">User Label</h2>
+					<h2 class="headline font-weight-bold mb-6 text-center">User Label</h2>
 
 					<v-row justify="center">
 						<fy-user-label color="primary" label="Texto" caption="Texto">
@@ -144,11 +144,24 @@
 							<v-icon dark>mdi-account-circle</v-icon>
 						</fy-user-label>
 
-						<fy-user-label color="red" label="Imagem" caption="Imagem">
-							<img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John">
-						</fy-user-label>
-					</v-row>
-				</v-col>
+          <fy-user-label color="red" label="Imagem" caption="Imagem">
+            <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John">
+          </fy-user-label>
+        </v-row>
+      </v-col>
+
+      <v-col class="mb-5" cols="12">
+        <h2 class="headline font-weight-bold mb-6 text-center">Info Card</h2>
+
+        <v-row justify="center">
+          <fy-info-card
+            title="Enhance your Campaign for better outreach"
+            caption="Upgrade Account"
+            img="facily-logo-site.png"
+          >
+          </fy-info-card>
+        </v-row>
+      </v-col>
 
 			<v-row>
 				<v-col class="mb-5" cols="12">
@@ -194,11 +207,12 @@
 import Vue from 'vue';
 import { FyButtonInfo, FyButtonWarning, FyButtonDelete } from './Buttons';
 import { FyUserLabel } from './UserLabel';
+import { FyInfoCard } from './InfoCard';
 import { FyDialog, FyDialogDelete } from './Dialogs';
 import { FyDrawer } from './Drawer';
 import { FySnackbar } from './Snackbar';
 import { FyToolbar } from './Toolbar';
-import brand from '../assets/icon-logo-white.png';
+// import brand from '../assets/icon-logo-white.png';
 
 import {
   FyInputCpf,
@@ -219,6 +233,8 @@ export default Vue.extend({
     FyButtonInfo,
     FyButtonWarning,
     FyButtonDelete,
+    FyUserLabel,
+    FyInfoCard,
     FyInputCpf,
     FyInputCnpj,
     FyInputPhone,
@@ -228,7 +244,6 @@ export default Vue.extend({
     FyInputTime,
     FyInputDateTime,
     FyInputCurrency,
-    FyUserLabel,
     FyDialog,
     FyDialogDelete,
     FyDrawer,
@@ -236,64 +251,66 @@ export default Vue.extend({
     FyToolbar,
   },
 
-  data: () => ({
-    brand,
-		toolbar: {
-			title: 'Design System',
-			icon: 'mdi-credit-card-search-outline',
-		},
-    whatsNext: [
-      {
-        text: 'Explore components',
-        href: 'https://vuetifyjs.com/components/api-explorer',
-      },
-      {
-        text: 'Select a layout',
-        href: 'https://vuetifyjs.com/getting-started/pre-made-layouts',
-      },
-      {
-        text: 'Frequently Asked Questions',
-        href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions',
-      },
-    ],
-    name: 'Fred',
-    cep: '05050-112',
-    phone: '11955002211',
-    cpf: '294.573.708-64',
-    cnpj: '22.045.555/0001-65',
-    data: new Date().toISOString(),
-    time: '16:54',
-    dateTime: new Date().toISOString(),
-    currency: '105.20',
-    deleteModel: false,
-    dialog: false,
-    item: {
-      description: 'Produto',
-      id: 1,
-    },
-    items: [
-      {
-        title: 'Teste',
+  data() {
+    return {
+      // brand,
+      toolbar: {
+        title: 'Design System',
         icon: 'mdi-credit-card-search-outline',
-        enable: true,
-        id: 'Teste',
-        subItems: [{ link: '/', title: 'teste' }],
       },
-      {
-        title: 'Sair',
-        icon: 'mdi-exit-to-app',
-        enable: true,
+      whatsNext: [
+        {
+          text: 'Explore components',
+          href: 'https://vuetifyjs.com/components/api-explorer',
+        },
+        {
+          text: 'Select a layout',
+          href: 'https://vuetifyjs.com/getting-started/pre-made-layouts',
+        },
+        {
+          text: 'Frequently Asked Questions',
+          href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions',
+        },
+      ],
+      name: 'Fred',
+      cep: '05050-112',
+      phone: '11955002211',
+      cpf: '294.573.708-64',
+      cnpj: '22.045.555/0001-65',
+      data: new Date().toISOString(),
+      time: '16:54',
+      dateTime: new Date().toISOString(),
+      currency: '105.20',
+      deleteModel: false,
+      dialog: false,
+      item: {
+        description: 'Produto',
+        id: 1,
       },
-    ],
-    snackbar: {
-      model: true,
-      timeout: 5000,
-      bgColor: '#2196f3',
-      fontColor: '#ffffff',
-      text: 'teste',
-      type: null,
-    },
-  }),
+      items: [
+        {
+          title: 'Teste',
+          icon: 'mdi-credit-card-search-outline',
+          enable: true,
+          id: 'Teste',
+          subItems: [{ link: '/', title: 'teste' }],
+        },
+        {
+          title: 'Sair',
+          icon: 'mdi-exit-to-app',
+          enable: true,
+        },
+      ],
+      snackbar: {
+        model: true,
+        timeout: 5000,
+        bgColor: '#2196f3',
+        fontColor: '#ffffff',
+        text: 'teste',
+        type: null,
+      },
+    }
+  },
 
   methods: {
 		onSnackbarClose() {
