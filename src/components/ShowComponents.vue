@@ -1,23 +1,86 @@
 <template>
-  <v-container>
-    <v-row class="text-center">
-      <v-col cols="12">
-        <v-img :src="require('../assets/facily-logo-site.png')" class="my-3" contain height="150" />
-      </v-col>
+  <v-app>
+    <FyDrawer :items="items" :brand="require('../assets/icon-logo-white.png')" :title="'Facily'" />
 
-      <v-col class="mb-4">
-        <h2 class="display-1 font-weight-bold mb-3">Welcome to Facily components gallery</h2>
-      </v-col>
+    <FyToolbar :items="toolbar">
+      <template v-slot:btn>
+        <v-btn color="primary">
+          <v-icon size="20" class="mr-2"> mdi-plus </v-icon>
+          Teste
+        </v-btn>
+      </template>
+    </FyToolbar>
 
-      <v-col class="mb-5" cols="12">
-        <h2 class="headline font-weight-bold mb-3">Buttons</h2>
+    <v-main class="layout-wrapper">
+      <!-- Provides the application the proper gutter -->
+      <v-container>
+        <v-row class="text-center">
+          <v-col cols="12">
+            <v-img
+              :src="require('../assets/facily-logo-site.png')"
+              class="my-3"
+              contain
+              height="150"
+            />
+          </v-col>
 
-        <v-row justify="center">
-          <fy-button-info>info</fy-button-info>
+          <v-col class="mb-4">
+            <h2 class="display-1 font-weight-bold mb-3">Welcome to Facily components gallery</h2>
+          </v-col>
 
-          <fy-button-warning class="mx-3">warning</fy-button-warning>
+          <v-col class="mb-5" cols="12">
+            <h2 class="headline font-weight-bold mb-3">Buttons</h2>
 
-          <fy-button-delete>Delete</fy-button-delete>
+            <v-row justify="center">
+              <fy-button-info>info</fy-button-info>
+
+              <fy-button-warning class="mx-3">warning</fy-button-warning>
+
+              <fy-button-delete>Delete</fy-button-delete>
+            </v-row>
+          </v-col>
+        </v-row>
+
+        <v-row>
+          <v-col class="mb-5" cols="12">
+            <div class="d-flex justify-center">
+              <h2 class="headline font-weight-bold mb-3">Dialog</h2>
+            </div>
+
+            <div class="d-flex justify-center">
+              <v-btn color="info" class="mr-5" @click="dialog = true"> Dialog Template </v-btn>
+
+              <v-btn color="info" @click="deleteModel = true"> Dialog Delete </v-btn>
+
+              <FyDialog :dialog="dialog">
+                <template v-slot:content>
+                  <v-card tile>
+                    <v-toolbar flat light color="primary">
+                      <v-toolbar-title style="color: white"> Title </v-toolbar-title>
+                      <v-spacer></v-spacer>
+                      <v-btn icon @click="dialog = false">
+                        <v-icon color="#ffffff"> mdi-close </v-icon>
+                      </v-btn>
+                    </v-toolbar>
+                    <v-card-text class="pa-10"> </v-card-text>
+                  </v-card>
+                </template>
+              </FyDialog>
+
+              <FyDialogDelete
+                :deleteModel="deleteModel"
+                :item="item"
+                @close-dialog="deleteModel = false"
+                @confirm-dialog="deleteModel = false"
+              ></FyDialogDelete>
+            </div>
+          </v-col>
+        </v-row>
+
+        <v-row>
+          <v-col>
+            <FySnackbar :snackbar="snackbar" @snackbar-close="onSnackbarClose()" />
+          </v-col>
         </v-row>
         <v-row>
           <h2 class="headline font-weight-bold mb-3">Inputs</h2>
@@ -69,18 +132,17 @@
           ></fy-input-currency>
           => {{ currency }}
         </v-row>
-      </v-col>
-      <v-col class="mb-5" cols="12">
-        <h2 class="headline font-weight-bold mb-6">User Label</h2>
+				<v-col class="mb-5" cols="12">
+					<h2 class="headline font-weight-bold mb-6 text-center">User Label</h2>
 
-        <v-row justify="center">
-          <fy-user-label color="primary" label="Texto" caption="Texto">
-            <span class="white--text">FA</span>
-          </fy-user-label>
+					<v-row justify="center">
+						<fy-user-label color="primary" label="Texto" caption="Texto">
+							<span class="white--text">FA</span>
+						</fy-user-label>
 
-          <fy-user-label class="mx-10" color="green" label="Ícone" caption="Ícone">
-            <v-icon dark>mdi-account-circle</v-icon>
-          </fy-user-label>
+						<fy-user-label class="mx-10" color="green" label="Ícone" caption="Ícone">
+							<v-icon dark>mdi-account-circle</v-icon>
+						</fy-user-label>
 
           <fy-user-label color="red" label="Imagem" caption="Imagem">
             <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John">
@@ -89,7 +151,7 @@
       </v-col>
 
       <v-col class="mb-5" cols="12">
-        <h2 class="headline font-weight-bold mb-6">Info Card</h2>
+        <h2 class="headline font-weight-bold mb-6 text-center">Info Card</h2>
 
         <v-row justify="center">
           <fy-info-card
@@ -100,44 +162,45 @@
           </fy-info-card>
         </v-row>
       </v-col>
-    </v-row>
 
-    <v-row>
-      <v-col class="mb-5" cols="12">
-        <div class="d-flex justify-center">
-          <h2 class="headline font-weight-bold mb-3">Dialog</h2>
-        </div>
+			<v-row>
+				<v-col class="mb-5" cols="12">
+					<div class="d-flex justify-center">
+						<h2 class="headline font-weight-bold mb-3">Dialog</h2>
+					</div>
 
-        <div class="d-flex justify-center">
-          <v-btn color="primary" class="mr-5" @click="dialog = true"> Dialog Template </v-btn>
+					<div class="d-flex justify-center">
+						<v-btn color="primary" class="mr-5" @click="dialog = true"> Dialog Template </v-btn>
 
-          <v-btn color="primary" @click="deleteModel = true"> Dialog Delete </v-btn>
+						<v-btn color="primary" @click="deleteModel = true"> Dialog Delete </v-btn>
 
-          <FyDialog :dialog="dialog">
-            <template v-slot:content>
-              <v-card tile>
-                <v-toolbar flat light color="primary">
-                  <v-toolbar-title style="color: white"> Title </v-toolbar-title>
-                  <v-spacer></v-spacer>
-                  <v-btn icon @click="dialog = false">
-                    <v-icon color="#ffffff"> mdi-close </v-icon>
-                  </v-btn>
-                </v-toolbar>
-                <v-card-text class="pa-10"> </v-card-text>
-              </v-card>
-            </template>
-          </FyDialog>
+						<FyDialog :dialog="dialog">
+							<template v-slot:content>
+								<v-card tile>
+									<v-toolbar flat light color="primary">
+										<v-toolbar-title style="color: white"> Title </v-toolbar-title>
+										<v-spacer></v-spacer>
+										<v-btn icon @click="dialog = false">
+											<v-icon color="#ffffff"> mdi-close </v-icon>
+										</v-btn>
+									</v-toolbar>
+									<v-card-text class="pa-10"> </v-card-text>
+								</v-card>
+							</template>
+						</FyDialog>
 
-          <FyDialogDelete
-            :deleteModel="deleteModel"
-            :item="item"
-            @close-dialog="deleteModel = false"
-            @confirm-dialog="deleteModel = false"
-          ></FyDialogDelete>
-        </div>
-      </v-col>
-    </v-row>
-  </v-container>
+						<FyDialogDelete
+							:deleteModel="deleteModel"
+							:item="item"
+							@close-dialog="deleteModel = false"
+							@confirm-dialog="deleteModel = false"
+						></FyDialogDelete>
+					</div>
+				</v-col>
+			</v-row>
+		</v-container>
+	</v-main>
+	</v-app>
 </template>
 
 <script lang="ts">
@@ -146,6 +209,10 @@ import { FyButtonInfo, FyButtonWarning, FyButtonDelete } from './Buttons';
 import { FyUserLabel } from './UserLabel';
 import { FyInfoCard } from './InfoCard';
 import { FyDialog, FyDialogDelete } from './Dialogs';
+import { FyDrawer } from './Drawer';
+import { FySnackbar } from './Snackbar';
+import { FyToolbar } from './Toolbar';
+// import brand from '../assets/icon-logo-white.png';
 
 import {
   FyInputCpf,
@@ -179,10 +246,18 @@ export default Vue.extend({
     FyInputCurrency,
     FyDialog,
     FyDialogDelete,
+    FyDrawer,
+    FySnackbar,
+    FyToolbar,
   },
 
   data() {
     return {
+      // brand,
+      toolbar: {
+        title: 'Design System',
+        icon: 'mdi-credit-card-search-outline',
+      },
       whatsNext: [
         {
           text: 'Explore components',
@@ -212,10 +287,35 @@ export default Vue.extend({
         description: 'Produto',
         id: 1,
       },
+      items: [
+        {
+          title: 'Teste',
+          icon: 'mdi-credit-card-search-outline',
+          enable: true,
+          id: 'Teste',
+          subItems: [{ link: '/', title: 'teste' }],
+        },
+        {
+          title: 'Sair',
+          icon: 'mdi-exit-to-app',
+          enable: true,
+        },
+      ],
+      snackbar: {
+        model: true,
+        timeout: 5000,
+        bgColor: '#2196f3',
+        fontColor: '#ffffff',
+        text: 'teste',
+        type: null,
+      },
     }
   },
 
   methods: {
+		onSnackbarClose() {
+      this.snackbar.model = false;
+		},
     getName(value) {
       this.name = value;
     },

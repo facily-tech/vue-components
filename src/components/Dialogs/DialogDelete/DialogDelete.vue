@@ -58,12 +58,12 @@ export default {
 
   data() {
     return {
-      loading: false
+      loading: false,
     };
   },
 
   components: {
-    FyDialog
+    FyDialog,
   },
 
   props: {
@@ -72,19 +72,19 @@ export default {
       default: () => {
         console.log('');
       },
-      require: true
+      require: true,
     },
 
     deleteModel: {
       type: Boolean,
       default: false,
-      require: true
+      require: true,
     },
 
     title: {
       type: String,
-      default: 'Excluir'
-    }
+      default: 'Excluir',
+    },
   },
 
   methods: {
@@ -95,8 +95,8 @@ export default {
     async submit() {
       this.$emit('close-dialog');
       this.$emit('confirm-dialog');
-    }
-  }
+    },
+  },
 };
 </script>
 
