@@ -17,7 +17,7 @@
 
           <fy-button-warning class="mx-3">warning</fy-button-warning>
 
-          <fy-button-delete>Delete</fy-button-delete>
+          <fy-button-cancel>Delete</fy-button-cancel>
         </v-row>
       </v-col>
 
@@ -34,7 +34,7 @@
           </fy-user-label>
 
           <fy-user-label color="red" label="Imagem" caption="Imagem">
-            <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John">
+            <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John" />
           </fy-user-label>
         </v-row>
       </v-col>
@@ -51,7 +51,7 @@
 
           <v-btn color="primary" @click="deleteModel = true"> Dialog Delete </v-btn>
 
-          <FyDialog :dialog="dialog">
+          <fy-dialog :dialog="dialog">
             <template v-slot:content>
               <v-card tile>
                 <v-toolbar flat light color="primary">
@@ -64,14 +64,26 @@
                 <v-card-text class="pa-10"> </v-card-text>
               </v-card>
             </template>
-          </FyDialog>
+          </fy-dialog>
 
-          <FyDialogDelete
+          <fy-dialog-delete
             :deleteModel="deleteModel"
             :item="item"
             @close-dialog="deleteModel = false"
             @confirm-dialog="deleteModel = false"
-          ></FyDialogDelete>
+          ></fy-dialog-delete>
+        </div>
+      </v-col>
+    </v-row>
+
+    <v-row>
+      <v-col class="mb-5" cols="12">
+        <div class="d-flex justify-center">
+          <h2 class="headline font-weight-bold mb-3">Chats</h2>
+
+          <v-col class="mb-5" cols="12">
+            <fy-gauge-chart :percent="10"></fy-gauge-chart>
+          </v-col>
         </div>
       </v-col>
     </v-row>
@@ -81,9 +93,15 @@
 <script lang="ts">
 import Vue from 'vue';
 
-import { FyButtonInfo, FyButtonWarning, FyButtonDelete } from './Buttons';
-import { FyUserLabel } from './UserLabel';
-import { FyDialog, FyDialogDelete } from './Dialogs';
+import {
+  FyButtonInfo,
+  FyButtonWarning,
+  FyButtonCancel,
+  FyUserLabel,
+  FyDialog,
+  FyDialogDelete,
+  FyGaugeChart,
+} from './index';
 
 export default Vue.extend({
   name: 'ShowComponents',
@@ -91,33 +109,34 @@ export default Vue.extend({
   components: {
     FyButtonInfo,
     FyButtonWarning,
-    FyButtonDelete,
+    FyButtonCancel,
     FyUserLabel,
     FyDialog,
-    FyDialogDelete
+    FyDialogDelete,
+    FyGaugeChart,
   },
 
   data: () => ({
     whatsNext: [
       {
         text: 'Explore components',
-        href: 'https://vuetifyjs.com/components/api-explorer'
+        href: 'https://vuetifyjs.com/components/api-explorer',
       },
       {
         text: 'Select a layout',
-        href: 'https://vuetifyjs.com/getting-started/pre-made-layouts'
+        href: 'https://vuetifyjs.com/getting-started/pre-made-layouts',
       },
       {
         text: 'Frequently Asked Questions',
-        href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions'
-      }
+        href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions',
+      },
     ],
     deleteModel: false,
     dialog: false,
     item: {
       description: 'Produto',
-      id: 1
-    }
-  })
+      id: 1,
+    },
+  }),
 });
 </script>
