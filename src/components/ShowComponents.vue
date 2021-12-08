@@ -290,7 +290,7 @@
         <v-row>
           <v-col class="mb-5" cols="12">
             <div class="d-flex justify-center">
-              <h2 class="headline font-weight-bold mb-3">Dialog</h2>
+              <h2 class="headline font-weight-bold mb-3">Charts</h2>
             </div>
             <div class="d-flex justify-center">
               <fy-gauge-chart :percent="33" />
