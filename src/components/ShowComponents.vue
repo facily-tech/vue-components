@@ -185,7 +185,7 @@
         </v-row>
         <v-row>
           <v-col class="mb-5" cols="12">
-            <FyFilterData
+            <fy-filter-data
               :validForm="true"
               :allTags="allTags"
               @clear-tags="onClearTags()"
@@ -236,7 +236,7 @@
                   </v-row>
                 </v-form>
               </template>
-            </FyFilterData>
+            </fy-filter-data>
           </v-col>
           </v-row>
         <v-row>
