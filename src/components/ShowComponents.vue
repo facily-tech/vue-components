@@ -152,7 +152,6 @@
             </fy-info-card>
           </v-row>
         </v-col>
-
         <v-row>
           <v-col class="mb-5" cols="12">
             <div class="d-flex justify-center">
@@ -195,14 +194,13 @@
             >
               <template v-slot:content>
                 <v-form
-                  v-model="valid"
                   ref="form"
                 >
                   <v-row>
                     <v-col cols="12" md="3" xl="2">
                       <fy-input-default
                        label="Filtro 01"
-                       v-model="filter1"
+                       v-model="filters.filter1"
                        outlined
                       ref="filter1"
                        @input="getFilter1"
@@ -211,30 +209,25 @@
                     <v-col cols="12" md="3" xl="2">
                       <fy-input-cpf
                         label="CPF"
-                        v-model="filterCpf"
+                        v-model="filters.filterCpf"
                         outlined
                         ref="filterCpf"
                         @input="getFilterCpf"
                       ></fy-input-cpf>
                     </v-col>
                     <v-col cols="12" md="3" xl="2">
-                      <v-select
+                      <fy-input-default
+                        label="Nome"
+                        v-model="filters.nameFilter"
                         outlined
-                        :items="statusFilters"
-                        label="Status da transação"
-                        item-text="value"
-                        item-value="key"
-                        return-object
-                        class="select"
-                        ref="select"
-                        @input="inputSelect($event)"
-                      />
+                        ref="nameFiler"
+                        @input="getFilterName"
+                      ></fy-input-default>
                     </v-col>
-
                     <v-col cols="12" md="3" xl="2">
                       <fy-input-phone
                         label="Telefone"
-                        v-model="filterPhone"
+                        v-model="filters.filterPhone"
                         outlined
                         ref="filterPhone"
                         @input="getFilterPhone"
@@ -467,16 +460,8 @@ export default Vue.extend({
         filter1: '',
         filterCpf: '',
         filterPhone: '',
-        status: []
-        // dates: [],
-        // code: [],
-        // description: [],
+        nameFilter: ''
       },
-      statusFilters: [
-        { value: 'Todos', key: '' },
-        { value: 'Ativo', key: 'true' },
-        { value: 'Inativo', key: 'false' },
-      ],
       allTags: [
         {
           key: 0,
@@ -492,9 +477,9 @@ export default Vue.extend({
         },
         {
           key: 2,
-          value: 'Status',
+          value: 'Nome',
           enable: false,
-          type: 'status',
+          type: 'nameFilter',
         },
         {
           key: 3,
@@ -674,9 +659,28 @@ export default Vue.extend({
     getFilterPhone(value): void {
       console.log(value);
     },
-    inputSelect(value): void {
-      console.log(value);
-    }
+    getFilterName(value):void {
+      console.log(value)
+    },
+    controlFilters() {
+      this.enableTag();
+    },
+
+    enableTag() {
+      this.allTags.map((item) => {
+        item.enable = this.filters[item.type].length ? true : false;
+      });
+    },
+    onRemoveTag($event) {
+      this.pagination.page = 1;
+      this.allTags.map((item) => {
+        if (item.key === $event.key) {
+          item.enable = false;
+          this.filters[item.type] = '';
+        }
+      });
+      this.controlChangesTable();
+    },
   },
 });
 </script>
