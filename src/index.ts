@@ -1,5 +1,12 @@
-import { FyButtonCancel, FyButtonInfo, FyButtonWarning } from './components/Buttons';
-import { FyFilterData } from './components/Filters';
+import {
+  FyButtonCancel,
+  FyButtonDelete,
+  FyButtonInfo,
+  FyButtonWarning
+} from './components/Buttons';
+import { FyDataTable } from './components/DataTable';
+import { FyDialog, FyDialogDelete } from './components/Dialogs';
+import { FyDrawer } from './components/Drawer';
 import { FyInfoCard } from './components/InfoCard';
 import {
   FyInputCep,
@@ -13,20 +20,32 @@ import {
   FyInputTime
 } from './components/Inputs';
 import { FyNoticationBar } from './components/NotificationBar';
+import { FySnackbar } from './components/Snackbar';
+import { FyToolbar } from './components/Toolbar';
 import { FyUserLabel } from './components/UserLabel';
 
-export { FyButtonInfo, FyButtonWarning, FyButtonCancel, FyNoticationBar };
-export { FyInfoCard };
-export { FyUserLabel };
+
 export {
-  FyInputCep,
-  FyInputCnpj,
+  FyButtonInfo,
+  FyButtonWarning,
+  FyButtonCancel,
+  FyNoticationBar,
+  FyButtonDelete,
+  FyInfoCard,
+  FyUserLabel,
+  FyDataTable,
   FyInputCpf,
-  FyInputCurrency,
-  FyInputDate,
-  FyInputDateTime,
-  FyInputDefault,
+  FyInputCnpj,
   FyInputPhone,
+  FyInputCep,
+  FyInputDefault,
+  FyInputDate,
   FyInputTime,
+  FyInputDateTime,
+  FyInputCurrency,
+  FyDialog,
+  FyDialogDelete,
+  FyDrawer,
+  FySnackbar,
+  FyToolbar,
 };
-export { FyFilterData };
