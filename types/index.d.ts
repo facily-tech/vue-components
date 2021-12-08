@@ -1,1 +1,23 @@
-declare module 'vue-components';
+import { VueConstructor } from 'vue';
+
+export const FyButtonInfo: VueConstructor;
+export const FyButtonWarning: VueConstructor;
+export const FyButtonCancel: VueConstructor;
+export const FyNoticationBar: VueConstructor;
+export const FyInfoCard: VueConstructor;
+export const FyUserLabel: VueConstructor;
+export const FyDataTable: VueConstructor;
+export const FyInputCpf: VueConstructor;
+export const FyInputCnpj: VueConstructor;
+export const FyInputPhone: VueConstructor;
+export const FyInputCep: VueConstructor;
+export const FyInputDefault: VueConstructor;
+export const FyInputDate: VueConstructor;
+export const FyInputTime: VueConstructor;
+export const FyInputDateTime: VueConstructor;
+export const FyInputCurrency: VueConstructor;
+export const FyDialog: VueConstructor;
+export const FyDialogDelete: VueConstructor;
+export const FyDrawer: VueConstructor;
+export const FySnackbar: VueConstructor;
+export const FyToolbar: VueConstructor;
