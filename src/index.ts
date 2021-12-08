@@ -7,6 +7,7 @@ import {
 import { FyDataTable } from './components/DataTable';
 import { FyDialog, FyDialogDelete } from './components/Dialogs';
 import { FyDrawer } from './components/Drawer';
+import { FyFilterData } from './components/Filters';
 import { FyInfoCard } from './components/InfoCard';
 import {
   FyInputCep,
@@ -48,4 +49,5 @@ export {
   FyDrawer,
   FySnackbar,
   FyToolbar,
+  FyFilterData,
 };
