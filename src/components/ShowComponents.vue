@@ -152,7 +152,6 @@
             </fy-info-card>
           </v-row>
         </v-col>
-
         <v-row>
           <v-col class="mb-5" cols="12">
             <div class="d-flex justify-center">
@@ -186,6 +185,62 @@
         </v-row>
         <v-row>
           <v-col class="mb-5" cols="12">
+            <fy-filter-data
+              :validForm="true"
+              :allTags="allTags"
+              @clear-tags="onClearTags()"
+              @remove-tag="onRemoveTag($event)"
+              @click-filter="controlFilters()"
+            >
+              <template v-slot:content>
+                <v-form
+                  ref="form"
+                >
+                  <v-row>
+                    <v-col cols="12" md="3" xl="2">
+                      <fy-input-default
+                       label="Filtro 01"
+                       v-model="filters.filter1"
+                       outlined
+                      ref="filter1"
+                       @input="getFilter1"
+                      ></fy-input-default>
+                    </v-col>
+                    <v-col cols="12" md="3" xl="2">
+                      <fy-input-cpf
+                        label="CPF"
+                        v-model="filters.filterCpf"
+                        outlined
+                        ref="filterCpf"
+                        @input="getFilterCpf"
+                      ></fy-input-cpf>
+                    </v-col>
+                    <v-col cols="12" md="3" xl="2">
+                      <fy-input-default
+                        label="Nome"
+                        v-model="filters.nameFilter"
+                        outlined
+                        ref="nameFiler"
+                        @input="getFilterName"
+                      ></fy-input-default>
+                    </v-col>
+                    <v-col cols="12" md="3" xl="2">
+                      <fy-input-phone
+                        label="Telefone"
+                        v-model="filters.filterPhone"
+                        outlined
+                        ref="filterPhone"
+                        @input="getFilterPhone"
+                      ></fy-input-phone>
+                    </v-col>
+                  </v-row>
+                </v-form>
+              </template>
+            </fy-filter-data>
+          </v-col>
+          </v-row>
+        <v-row>
+          <v-col class="mb-5" cols="12">
             <FyDataTable
               :items="tableItems"
               :headers="table.headers"
@@ -199,9 +254,44 @@
             />
           </v-col>
         </v-row>
-      </v-container>
-    </v-main>
-  </v-app>
+			<v-row>
+				<v-col class="mb-5" cols="12">
+					<div class="d-flex justify-center">
+						<h2 class="headline font-weight-bold mb-3">Dialog</h2>
+					</div>
+
+					<div class="d-flex justify-center">
+						<v-btn color="primary" class="mr-5" @click="dialog = true"> Dialog Template </v-btn>
+
+						<v-btn color="primary" @click="deleteModel = true"> Dialog Delete </v-btn>
+
+						<fy-dialog :dialog="dialog">
+							<template v-slot:content>
+								<v-card tile>
+									<v-toolbar flat light color="primary">
+										<v-toolbar-title style="color: white"> Title </v-toolbar-title>
+										<v-spacer></v-spacer>
+										<v-btn icon @click="dialog = false">
+											<v-icon color="#ffffff"> mdi-close </v-icon>
+										</v-btn>
+									</v-toolbar>
+									<v-card-text class="pa-10"> </v-card-text>
+								</v-card>
+							</template>
+						</fy-dialog>
+
+						<fy-dialog-delete
+							:deleteModel="deleteModel"
+							:item="item"
+							@close-dialog="deleteModel = false"
+							@confirm-dialog="deleteModel = false"
+						></fy-dialog-delete>
+					</div>
+				</v-col>
+			</v-row>
+		</v-container>
+	</v-main>
+	</v-app>
 </template>
 
 <script lang="ts">
@@ -214,6 +304,7 @@ import { FyDialog, FyDialogDelete } from './Dialogs';
 import { FyDrawer } from './Drawer';
 import { FySnackbar } from './Snackbar';
 import { FyToolbar } from './Toolbar';
+import { FyFilterData } from './Filters'
 // import brand from '../assets/icon-logo-white.png';
 import { FyDataTable } from './DataTable';
 
@@ -269,6 +360,7 @@ export default Vue.extend({
     FyDrawer,
     FySnackbar,
     FyToolbar,
+    FyFilterData,
     FyDataTable,
   },
   computed: {
@@ -285,6 +377,7 @@ export default Vue.extend({
   data() {
     return {
       // brand,
+      count: 0,
       toolbar: {
         title: 'Design System',
         icon: 'mdi-credit-card-search-outline',
@@ -361,6 +454,38 @@ export default Vue.extend({
           icon: 'mdi-flag',
           iconBg: 'red',
           isRead: true,
+        },
+      ],
+      filters: {
+        filter1: '',
+        filterCpf: '',
+        filterPhone: '',
+        nameFilter: ''
+      },
+      allTags: [
+        {
+          key: 0,
+          value: 'Filtro1',
+          enable: false,
+          type: 'filter1',
+        },
+        {
+          key: 1,
+          value: 'CPF',
+          enable: false,
+          type: 'filterCpf',
+        },
+        {
+          key: 2,
+          value: 'Nome',
+          enable: false,
+          type: 'nameFilter',
+        },
+        {
+          key: 3,
+          value: 'Telefone',
+          enable: false,
+          type: 'filterPhone',
         },
       ],
       table: {
@@ -524,6 +649,37 @@ export default Vue.extend({
     },
     controlChangesTable(): void {
       console.log('Change Table');
+    },
+    getFilter1(value): void {
+      console.log(value);
+    },
+    getFilterCpf(value): void {
+      console.log(value);
+    },
+    getFilterPhone(value): void {
+      console.log(value);
+    },
+    getFilterName(value):void {
+      console.log(value)
+    },
+    controlFilters() {
+      this.enableTag();
+    },
+
+    enableTag() {
+      this.allTags.map((item) => {
+        item.enable = this.filters[item.type].length ? true : false;
+      });
+    },
+    onRemoveTag($event) {
+      this.pagination.page = 1;
+      this.allTags.map((item) => {
+        if (item.key === $event.key) {
+          item.enable = false;
+          this.filters[item.type] = '';
+        }
+      });
+      this.controlChangesTable();
     },
   },
 });
