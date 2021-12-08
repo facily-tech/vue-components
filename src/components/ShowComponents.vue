@@ -265,7 +265,7 @@
 
 						<v-btn color="primary" @click="deleteModel = true"> Dialog Delete </v-btn>
 
-						<FyDialog :dialog="dialog">
+						<fy-dialog :dialog="dialog">
 							<template v-slot:content>
 								<v-card tile>
 									<v-toolbar flat light color="primary">
@@ -278,14 +278,14 @@
 									<v-card-text class="pa-10"> </v-card-text>
 								</v-card>
 							</template>
-						</FyDialog>
+						</fy-dialog>
 
-						<FyDialogDelete
+						<fy-dialog-delete
 							:deleteModel="deleteModel"
 							:item="item"
 							@close-dialog="deleteModel = false"
 							@confirm-dialog="deleteModel = false"
-						></FyDialogDelete>
+						></fy-dialog-delete>
 					</div>
 				</v-col>
 			</v-row>
