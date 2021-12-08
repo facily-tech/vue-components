@@ -1,4 +1,5 @@
 import { FyButtonCancel, FyButtonInfo, FyButtonWarning } from './components/Buttons';
+import { FyFilterData } from './components/Filters';
 import { FyInfoCard } from './components/InfoCard';
 import {
   FyInputCep,
@@ -28,4 +29,4 @@ export {
   FyInputPhone,
   FyInputTime,
 };
-
+export { FyFilterData };

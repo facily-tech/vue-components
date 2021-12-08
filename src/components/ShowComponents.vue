@@ -209,6 +209,97 @@
 					</div>
 				</v-col>
 			</v-row>
+      <v-row>
+        <v-col class="mb-5" cols="12">
+          <FyFilterData
+            :validForm="true"
+            :allTags="allTags"
+            @clear-tags="onClearTags()"
+            @remove-tag="onRemoveTag($event)"
+            @click-filter="controlFilters()"
+          >
+            <template v-slot:content>
+              <v-form
+                v-model="valid"
+                ref="form"
+              >
+                <v-row>
+                  <v-col cols="12" md="3" xl="2">
+                    <v-text-field
+                      outlined
+                      label="Descrição"
+                      v-model="filters.description"
+                    ></v-text-field>
+                  </v-col>
+
+                  <v-col cols="12" md="3" xl="2">
+                    <v-text-field
+                      outlined
+                      label="Código"
+                      v-model="filters.code"
+                    ></v-text-field>
+                  </v-col>
+
+                  <v-col cols="12" md="3" xl="2">
+                    <v-select
+                      outlined
+                      :items="statusFilters"
+                      label="Status da transação"
+                      item-text="value"
+                      item-value="key"
+                      return-object
+                      class="select"
+                      ref="select"
+                      @input="inputSelect($event)"
+                    />
+                  </v-col>
+
+                  <v-col cols="12" md="3" xl="2">
+                    <v-dialog
+                      ref="dialog"
+                      v-model="modal"
+                      :return-value.sync="filters.dates"
+                      persistent
+                      width="290px"
+                    >
+                      <template v-slot:activator="{ on, attrs }">
+                        <v-text-field
+                          outlined
+                          v-model="dateRangeText"
+                          label="Selecione o intervalo de datas"
+                          prepend-inner-icon="mdi-calendar"
+                          readonly
+                          color="primary"
+                          v-bind="attrs"
+                          v-on="on"
+                        ></v-text-field>
+                      </template>
+
+                      <v-date-picker
+                        v-model="filters.dates"
+                        range
+                        scrollable
+                        :first-day-of-week="0"
+                        no-title
+                        locale="pt-br"
+                      >
+                        <v-spacer></v-spacer>
+                        <v-btn
+                          color="primary"
+                          :disabled="filters.dates.length < 2"
+                          @click="$refs.dialog.save(filters.dates)"
+                        >
+                          OK
+                        </v-btn>
+                      </v-date-picker>
+                    </v-dialog>
+                  </v-col>
+                </v-row>
+              </v-form>
+            </template>
+          </FyFilterData>
+        </v-col>
+      </v-row>
 		</v-container>
 	</v-main>
 	</v-app>
@@ -224,6 +315,7 @@ import { FyDialog, FyDialogDelete } from './Dialogs';
 import { FyDrawer } from './Drawer';
 import { FySnackbar } from './Snackbar';
 import { FyToolbar } from './Toolbar';
+import { FyFilterData } from './Filters'
 // import brand from '../assets/icon-logo-white.png';
 
 import {
@@ -262,6 +354,7 @@ export default Vue.extend({
     FyDrawer,
     FySnackbar,
     FyToolbar,
+    FyFilterData,
   },
 
   data() {
@@ -343,6 +436,43 @@ export default Vue.extend({
           icon: 'mdi-flag',
           iconBg: 'red',
           isRead: true,
+        },
+      ],
+      filters: {
+        dates: [],
+        code: [],
+        description: [],
+        status: [],
+      },
+      statusFilters: [
+        { value: 'Todos', key: '' },
+        { value: 'Ativo', key: 'true' },
+        { value: 'Inativo', key: 'false' },
+      ],
+      allTags: [
+        {
+          key: 0,
+          value: 'Descrição',
+          enable: false,
+          type: 'description',
+        },
+        {
+          key: 1,
+          value: 'Data',
+          enable: false,
+          type: 'dates',
+        },
+        {
+          key: 3,
+          value: 'Código',
+          enable: false,
+          type: 'code',
+        },
+        {
+          key: 4,
+          value: 'Status',
+          enable: false,
+          type: 'status',
         },
       ],
     };
