@@ -12,7 +12,7 @@
       mobile-breakpoint="0"
     >
       <template v-for="(k, key) in headers" v-slot:[mountString(k)]="{ item }">
-        <div class="d-flex" :key="key" v-if="k.value === 'actions'">
+        <div class="d-flex justify-center" :key="key" v-if="k.value === 'actions'">
           <div v-for="(x, key) in item.actions" :key="key">
             <p
               v-if="x.type === 'link'"
