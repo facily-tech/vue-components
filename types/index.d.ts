@@ -22,3 +22,4 @@ export const FyDrawer: VueConstructor;
 export const FySnackbar: VueConstructor;
 export const FyToolbar: VueConstructor;
 export const FyFilterData: VueConstructor;
+export const FyGaugeChart: VueConstructor;

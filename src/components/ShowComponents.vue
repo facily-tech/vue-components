@@ -137,7 +137,7 @@
               <v-icon dark>mdi-account-circle</v-icon>
             </fy-user-label>
             <fy-user-label color="red" label="Imagem" caption="Imagem">
-              <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John">
+              <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John" />
             </fy-user-label>
           </v-row>
         </v-col>
@@ -193,17 +193,15 @@
               @click-filter="controlFilters()"
             >
               <template v-slot:content>
-                <v-form
-                  ref="form"
-                >
+                <v-form ref="form">
                   <v-row>
                     <v-col cols="12" md="3" xl="2">
                       <fy-input-default
-                       label="Filtro 01"
-                       v-model="filters.filter1"
-                       outlined
-                      ref="filter1"
-                       @input="getFilter1"
+                        label="Filtro 01"
+                        v-model="filters.filter1"
+                        outlined
+                        ref="filter1"
+                        @input="getFilter1"
                       ></fy-input-default>
                     </v-col>
                     <v-col cols="12" md="3" xl="2">
@@ -238,7 +236,7 @@
               </template>
             </fy-filter-data>
           </v-col>
-          </v-row>
+        </v-row>
         <v-row>
           <v-col class="mb-5" cols="12">
             <FyDataTable
@@ -254,61 +252,66 @@
             />
           </v-col>
         </v-row>
-			<v-row>
-				<v-col class="mb-5" cols="12">
-					<div class="d-flex justify-center">
-						<h2 class="headline font-weight-bold mb-3">Dialog</h2>
-					</div>
+        <v-row>
+          <v-col class="mb-5" cols="12">
+            <div class="d-flex justify-center">
+              <h2 class="headline font-weight-bold mb-3">Dialog</h2>
+            </div>
 
-					<div class="d-flex justify-center">
-						<v-btn color="primary" class="mr-5" @click="dialog = true"> Dialog Template </v-btn>
+            <div class="d-flex justify-center">
+              <v-btn color="primary" class="mr-5" @click="dialog = true"> Dialog Template </v-btn>
 
-						<v-btn color="primary" @click="deleteModel = true"> Dialog Delete </v-btn>
+              <v-btn color="primary" @click="deleteModel = true"> Dialog Delete </v-btn>
 
-						<fy-dialog :dialog="dialog">
-							<template v-slot:content>
-								<v-card tile>
-									<v-toolbar flat light color="primary">
-										<v-toolbar-title style="color: white"> Title </v-toolbar-title>
-										<v-spacer></v-spacer>
-										<v-btn icon @click="dialog = false">
-											<v-icon color="#ffffff"> mdi-close </v-icon>
-										</v-btn>
-									</v-toolbar>
-									<v-card-text class="pa-10"> </v-card-text>
-								</v-card>
-							</template>
-						</fy-dialog>
+              <fy-dialog :dialog="dialog">
+                <template v-slot:content>
+                  <v-card tile>
+                    <v-toolbar flat light color="primary">
+                      <v-toolbar-title style="color: white"> Title </v-toolbar-title>
+                      <v-spacer></v-spacer>
+                      <v-btn icon @click="dialog = false">
+                        <v-icon color="#ffffff"> mdi-close </v-icon>
+                      </v-btn>
+                    </v-toolbar>
+                    <v-card-text class="pa-10"> </v-card-text>
+                  </v-card>
+                </template>
+              </fy-dialog>
 
-						<fy-dialog-delete
-							:deleteModel="deleteModel"
-							:item="item"
-							@close-dialog="deleteModel = false"
-							@confirm-dialog="deleteModel = false"
-						></fy-dialog-delete>
-					</div>
-				</v-col>
-			</v-row>
-		</v-container>
-	</v-main>
-	</v-app>
+              <fy-dialog-delete
+                :deleteModel="deleteModel"
+                :item="item"
+                @close-dialog="deleteModel = false"
+                @confirm-dialog="deleteModel = false"
+              ></fy-dialog-delete>
+            </div>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col class="mb-5" cols="12">
+            <div class="d-flex justify-center">
+              <h2 class="headline font-weight-bold mb-3">Charts</h2>
+            </div>
+            <div class="d-flex justify-center">
+              <fy-gauge-chart :percent="33" />
+            </div>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import { FyButtonInfo, FyButtonWarning, FyButtonDelete } from './Buttons';
-import { FyNoticationBar } from './NotificationBar';
-import { FyUserLabel } from './UserLabel';
-import { FyInfoCard } from './InfoCard';
-import { FyDialog, FyDialogDelete } from './Dialogs';
-import { FyDrawer } from './Drawer';
-import { FySnackbar } from './Snackbar';
-import { FyToolbar } from './Toolbar';
-import { FyFilterData } from './Filters'
-// import brand from '../assets/icon-logo-white.png';
-import { FyDataTable } from './DataTable';
 
 import {
+  FyButtonInfo,
+  FyButtonWarning,
+  FyButtonDelete,
+  FyNoticationBar,
+  FyUserLabel,
+  FyInfoCard,
   FyInputCpf,
   FyInputCnpj,
   FyInputPhone,
@@ -318,7 +321,15 @@ import {
   FyInputTime,
   FyInputDateTime,
   FyInputCurrency,
-} from './Inputs';
+  FyDialog,
+  FyDialogDelete,
+  FyDrawer,
+  FySnackbar,
+  FyToolbar,
+  FyFilterData,
+  FyDataTable,
+  FyGaugeChart,
+} from './index';
 
 interface Users {
   name: string;
@@ -362,6 +373,7 @@ export default Vue.extend({
     FyToolbar,
     FyFilterData,
     FyDataTable,
+    FyGaugeChart,
   },
   computed: {
     tableItems(): Users[] {
@@ -460,7 +472,7 @@ export default Vue.extend({
         filter1: '',
         filterCpf: '',
         filterPhone: '',
-        nameFilter: ''
+        nameFilter: '',
       },
       allTags: [
         {
@@ -659,8 +671,8 @@ export default Vue.extend({
     getFilterPhone(value): void {
       console.log(value);
     },
-    getFilterName(value):void {
-      console.log(value)
+    getFilterName(value): void {
+      console.log(value);
     },
     controlFilters() {
       this.enableTag();
