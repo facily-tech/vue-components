@@ -49,6 +49,9 @@
         <div :key="key" v-else-if="k.value === 'phone'">
           {{ formatCellPhone(item[k.value]) }}
         </div>
+        <div :key="key" v-else-if="k.value === 'cpf'">
+          {{ formatCpf(item[k.value]) }}
+        </div>
         <div :key="key" v-else-if="k.value === 'radioOption'">
           <v-radio-group v-model="radioSelect">
             <v-radio :label="item[k.value]" :value="item[k.value]" color="primary"></v-radio>
@@ -122,7 +125,7 @@
 </template>
 
 <script>
-import { FormatCurrency, formatZipCode, formatCellPhone, formatDate } from '@/utils/format.utils';
+import { FormatCurrency, formatZipCode, formatCellPhone, formatDate, formatCpf } from '@/utils/format.utils';
 
 export default {
   name: 'FyDataTable',
@@ -134,6 +137,7 @@ export default {
       formatZipCode,
       formatCellPhone,
       formatDate,
+      formatCpf,
       radioSelect: null,
       page: this.pagination ? this.pagination.page : 1,
     };

@@ -1,7 +1,8 @@
 <template>
   <div>
     <v-text-field
-      v-model="text"
+      :value="value"
+      @input="update"
       v-bind.sync="$props"
   />
   </div>
@@ -22,9 +23,9 @@ export default {
       text: this.value ? this.value : '',
     };
   },
-  watch: {
-    text() {
-      this.$emit('input', this.text);
+  methods: {
+    update(value) {
+      this.$emit('input', value);
     },
   },
 };

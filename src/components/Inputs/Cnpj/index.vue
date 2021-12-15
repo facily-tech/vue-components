@@ -1,7 +1,8 @@
 <template>
   <div>
     <v-text-field
-      v-model="cnpj"
+      :value="value"
+      @input="update"
       v-mask="'##.###.###/####-##'"
       :rules="cnpjRules"
       v-bind.sync="$props"
@@ -27,9 +28,9 @@ export default {
       ],
     };
   },
-  watch: {
-    cnpj() {
-      this.$emit('input', this.cnpj);
+  methods: {
+    update(value) {
+      this.$emit('input', value);
     },
   },
 };

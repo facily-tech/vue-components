@@ -1,9 +1,10 @@
 <template>
   <div>
     <v-text-field
-      v-model="cpf"
+      :value="value"
+      @input="update"
       v-mask="'###.###.###-##'"
-      :rules="cpfRules"
+      :rules="rulesCpf"
       v-bind.sync="$props"
     />
   </div>
@@ -21,15 +22,12 @@ export default {
   },
   data() {
     return {
-      cpf: this.value ? this.value : '',
-      cpfRules: [
-        (value) => value.length === 14 || 'O campo Cpf deve conter 11 números',
-      ],
+      rulesCpf: [(value) => value.length === 14 || 'O campo Cpf deve conter 11 números'],
     };
   },
-  watch: {
-    cpf() {
-      this.$emit('input', this.cpf);
+  methods: {
+    update(value) {
+      this.$emit('input', value);
     },
   },
 };
