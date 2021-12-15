@@ -88,8 +88,8 @@
           => {{ name }}
         </v-row>
         <v-row>
-          <fy-input-cpf label="CPF" v-model="teste"></fy-input-cpf>
-          => {{ teste }}
+          <fy-input-cpf label="CPF" v-model="cpf"></fy-input-cpf>
+          => {{ cpf }}
         </v-row>
         <v-row>
           <fy-input-cnpj label="CNPJ" v-model="cnpj" @input="getCnpj"></fy-input-cnpj>
@@ -411,7 +411,7 @@ export default Vue.extend({
       name: 'Fred',
       cep: '05050-112',
       phone: '11955002211',
-      teste: '294.573.708-64',
+      cpf: '294.573.708-64',
       cnpj: '22.045.555/0001-65',
       data: new Date().toISOString(),
       time: '16:54',
