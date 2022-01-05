@@ -4,6 +4,7 @@
     :mini-variant.sync="mini"
     permanent
     app
+    expand-on-hover
     color="primary"
     class="menu"
   >
@@ -24,15 +25,15 @@
     <v-divider></v-divider>
     <template v-slot:activator>
       <v-list-item-content>
-        <v-list-item-title>{{ item.title }}</v-list-item-title>
+        <v-list-item-title>{{ title }}</v-list-item-title>
       </v-list-item-content>
     </template>
 
     <div v-for="(item, key) in items" :key="key">
-      <v-list-item @click="navigate(item)" v-if="item.enable">
+      <v-list-item @click="navigateItem(item)" v-if="item.enable">
         <template v-if="!item.subItems">
           <div class="custom">
-            <v-list-item-icon class="mr-3" color="white">
+            <v-list-item-icon class="mr-3" color="white" :title="item.title">
               <v-icon v-text="item.icon" color="#ffffff" class="mr-0" />
             </v-list-item-icon>
 
@@ -51,7 +52,7 @@
             <v-list-item
               v-for="(subItem, key) in item.subItems"
               :key="key"
-              @click="navigate(subItem)"
+              @click="navigateSubitem(subItem)"
             >
               <template>
                 <v-list-item-content>
@@ -68,53 +69,57 @@
   </v-navigation-drawer>
 </template>
 
-<script>
-export default {
-  name: 'FyDrawer',
+<script lang="ts">
+import Vue from 'vue';
+import { Component, Prop } from 'vue-property-decorator';
 
-  data() {
-    return {
-      drawer: true,
-      mini: true,
-    };
-  },
+interface ISubItems {
+  link: string;
+  title: string;
+}
 
-  props: {
-    items: {
-      default: () => [],
-      type: Array,
-      require: true,
-    },
+export interface IItems {
+  title: string;
+  icon: string;
+  enable: boolean;
+  id: string;
+  subItems: ISubItems[];
+  link?: string;
+}
 
-    brand: {
-      default: () => '',
-      type: String,
-      require: true,
-    },
+@Component
+export default class FyDrawer extends Vue {
+  @Prop({ type: Array as () => IItems[], default: [] as IItems[] }) items!: IItems[];
 
-    title: {
-      default: () => '',
-      type: String,
-      require: true,
-    },
-  },
+  @Prop({ type: String, default: '', required: true }) brand!: string;
 
-  methods: {
-    navigate(item) {
-      if (item.title === 'Sair') {
-        this.$emit('logoff');
-      } else if (this.$router.currentRoute.path !== item.link) {
-        this.$router.push(item.link);
-      }
-    },
-  },
+  @Prop({ type: String, default: '', required: true }) title!: string;
 
-  watch: {
-    $route() {
-      this.mini = true;
-    },
-  },
-};
+  @Prop({ type: Boolean, default: false }) componentNavigation!: boolean;
+
+  drawer = true;
+  mini = true;
+
+  navigate(link: string): void {
+    if (this.componentNavigation) {
+      this.$emit('changeComponent', link);
+    } else {
+      this.$router.currentRoute.path !== link && this.$router.push(link);
+    }
+  }
+
+  navigateItem(item: IItems): void {
+    if (item.title === 'Sair') {
+      this.$emit('logoff');
+    } else {
+      item.link && this.navigate(item.link);
+    }
+  }
+
+  navigateSubitem(subItem: ISubItems): void {
+    subItem.link && this.navigate(subItem.link);
+  }
+}
 </script>
 
 <style lang="scss" scoped>

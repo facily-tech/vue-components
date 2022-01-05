@@ -1,4 +1,4 @@
-import { FyButtonInfo, FyButtonWarning, FyButtonDelete } from './Buttons';
+import { FyButtonInfo, FyButtonWarning, FyButtonDelete, FyButtonCancel } from './Buttons';
 import { FyNoticationBar } from './NotificationBar';
 import { FyUserLabel } from './UserLabel';
 import { FyInfoCard } from './InfoCard';
@@ -26,6 +26,7 @@ export {
   FyButtonInfo,
   FyButtonWarning,
   FyButtonDelete,
+  FyButtonCancel,
   FyNoticationBar,
   FyUserLabel,
   FyInfoCard,

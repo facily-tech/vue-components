@@ -12,7 +12,7 @@
         <slot name="btn"></slot>
       </div>
 
-      <v-btn v-if="backButtom" @click="back" class="pa-3" elevation="0" outlined>
+      <v-btn v-if="backButton" @click="back" class="pa-3" elevation="0" outlined>
         <v-icon> mdi-arrow-left </v-icon>
         Voltar
       </v-btn>
@@ -24,9 +24,9 @@
           </v-btn>
         </template>
         <v-list>
-          <v-list-item v-for="(item, index) in items.options" :key="index">
+          <v-list-item v-for="(option, index) in items.options" :key="index">
             <v-list-item-title>
-              {{ item.label }}
+              {{ option.label }}
             </v-list-item-title>
           </v-list-item>
         </v-list>
@@ -35,49 +35,45 @@
   </v-app-bar>
 </template>
 
-<script>
-export default {
-  name: 'FyToolbar',
+<script lang="ts">
+import Vue from 'vue';
+import { Component, Prop } from 'vue-property-decorator';
 
-  data() {
-    return {
-      screenWidth: null,
-    };
-  },
+export interface IItemsToolbar {
+  icon?: string;
+  title?: string;
+  options?: {
+    label: string;
+  }[];
+}
 
-  props: {
-    items: {
-      type: Object,
-      require: true,
-			default: () => {
-        const obj = {};
-        return obj;
-      },
-    },
+@Component
+export default class FyToolbar extends Vue {
+  screenWidth = 0;
 
-    backButtom: {
-      type: Boolean,
-      require: true,
-      default: false,
-    },
-  },
+  @Prop({
+    type: Object as () => IItemsToolbar,
+    default: {} as IItemsToolbar,
+    required: true,
+  })
+  items!: IItemsToolbar;
 
-  created() {
+  @Prop({ type: Boolean, default: false }) backButton!: boolean;
+
+  created(): void {
     this.changeScreen();
     window.addEventListener('resize', () => {
       this.changeScreen();
     });
-  },
-  
-	methods: {
-		back() {
-			this.$emit('back-event');
-		},
-		changeScreen() {
-			this.screenWidth = window.screen.width;
-		},
-	},
-};
+  }
+
+  back(): void {
+    this.$emit('back-event');
+  }
+  changeScreen(): void {
+    this.screenWidth = window.screen.width;
+  }
+}
 </script>
 
 <style lang="scss" scoped>
