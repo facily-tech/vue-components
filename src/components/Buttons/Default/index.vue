@@ -6,15 +6,13 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { Component, Prop } from 'vue-property-decorator';
+import { Component } from 'vue-property-decorator';
 import { VBtn } from 'vuetify/lib';
 
 const BaseVBtn = Vue.extend(VBtn);
 
 @Component
-export default class FyButtonInfo extends BaseVBtn {
-  @Prop({ type: String, default: 'info' }) color!: string;
-}
+export default class FyButton extends BaseVBtn {}
 </script>
 
 <style></style>

@@ -30,7 +30,7 @@
               <fy-button-info>info</fy-button-info>
               <fy-button-warning class="mx-3">warning</fy-button-warning>
               <fy-button-delete>Delete</fy-button-delete>
-              <fy-button-cancel>Cancelar</fy-button-cancel>
+              <fy-button>Default</fy-button>
             </v-row>
           </v-col>
         </v-row>
@@ -310,7 +310,7 @@ import {
   FyButtonInfo,
   FyButtonWarning,
   FyButtonDelete,
-  FyButtonCancel,
+  FyButton,
   FyNoticationBar,
   FyUserLabel,
   FyInfoCard,
@@ -356,7 +356,7 @@ export default Vue.extend({
     FyButtonInfo,
     FyButtonWarning,
     FyButtonDelete,
-    FyButtonCancel,
+    FyButton,
     FyNoticationBar,
     FyUserLabel,
     FyInfoCard,

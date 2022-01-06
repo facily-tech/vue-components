@@ -39,13 +39,7 @@
 import Vue from 'vue';
 import { Component, Prop } from 'vue-property-decorator';
 
-export interface IItemsToolbar {
-  icon?: string;
-  title?: string;
-  options?: {
-    label: string;
-  }[];
-}
+import { IItemsToolbar } from './types';
 
 @Component
 export default class FyToolbar extends Vue {

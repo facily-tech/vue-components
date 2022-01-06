@@ -12,8 +12,8 @@ import { VBtn } from 'vuetify/lib';
 const BaseVBtn = Vue.extend(VBtn);
 
 @Component
-export default class FyButtonInfo extends BaseVBtn {
-  @Prop({ type: String, default: 'info' }) color!: string;
+export default class FyButtonSuccess extends BaseVBtn {
+  @Prop({ type: String, default: 'success' }) color!: string;
 }
 </script>
 

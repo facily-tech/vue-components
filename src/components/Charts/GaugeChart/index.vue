@@ -35,58 +35,46 @@
 <script lang="ts">
 import Vue from 'vue';
 
-export default Vue.extend({
-  name: 'FyGaugeChart',
+import { Component, Prop } from 'vue-property-decorator';
 
-  props: {
-    radius: {
-      type: Number,
-      default: 100,
-    },
-    percent: {
-      type: Number,
-      default: 0,
-    },
-    baseColor: {
-      type: String,
-      default: 'rgb(229, 229, 229)',
-    },
-    percentColor: {
-      type: String,
-      default: '#2047f4',
-    },
-  },
+@Component
+export default class FyGaugeChart extends Vue {
+  @Prop({ type: Number, default: 100 }) radius!: number;
 
-  methods: {
-    strokeWidth() {
-      return this.radius * 0.2;
-    },
-    innerRadius() {
-      return this.radius - this.strokeWidth() / 2;
-    },
-    circumference() {
-      return this.innerRadius() * 2 * Math.PI;
-    },
-    arc() {
-      return this.circumference() * (180 / 360);
-    },
-    dashArray() {
-      return `${this.arc()} ${this.circumference()}`;
-    },
-    transform() {
-      return `rotate(180, ${this.radius}, ${this.radius})`;
-    },
-    percentNormalized() {
-      return Math.min(Math.max(this.percent, 0), 100);
-    },
-    offset() {
-      return this.arc() - (this.percentNormalized() / 100) * this.arc();
-    },
-    fontScale() {
-      return `font-size: ${this.radius / 50} + rem !important`;
-    },
-  },
-});
+  @Prop({ type: Number, default: 0 }) percent!: number;
+
+  @Prop({ type: String, default: 'rgb(229, 229, 229)' }) baseColor!: string;
+
+  @Prop({ type: String, default: '#2047f4' }) percentColor!: string;
+
+  strokeWidth(): number {
+    return this.radius * 0.2;
+  }
+  innerRadius(): number {
+    return this.radius - this.strokeWidth() / 2;
+  }
+  circumference(): number {
+    return this.innerRadius() * 2 * Math.PI;
+  }
+  arc(): number {
+    return this.circumference() * (180 / 360);
+  }
+  dashArray(): string {
+    return `${this.arc()} ${this.circumference()}`;
+  }
+  transform(): string {
+    return `rotate(180, ${this.radius}, ${this.radius})`;
+  }
+  percentNormalized(): number {
+    return Math.min(Math.max(this.percent, 0), 100);
+  }
+  offset(): number {
+    return this.arc() - (this.percentNormalized() / 100) * this.arc();
+  }
+  fontScale(): string {
+    return `font-size: ${this.radius / 50} + rem !important`;
+  }
+}
 </script>
 
 <style lang="scss">

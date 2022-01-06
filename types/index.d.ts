@@ -1,8 +1,10 @@
 import { VueConstructor } from 'vue';
 
+export const FyButton: VueConstructor;
 export const FyButtonInfo: VueConstructor;
+export const FyButtonSuccess: VueConstructor;
 export const FyButtonWarning: VueConstructor;
-export const FyButtonCancel: VueConstructor;
+export const FyButtonDelete: VueConstructor;
 export const FyNoticationBar: VueConstructor;
 export const FyInfoCard: VueConstructor;
 export const FyUserLabel: VueConstructor;

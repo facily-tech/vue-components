@@ -30,6 +30,8 @@
     </template>
 
     <div v-for="(item, key) in items" :key="key">
+      <v-divider v-show="item.divider" />
+
       <v-list-item @click="navigateItem(item)" v-if="item.enable">
         <template v-if="!item.subItems">
           <div class="custom">
@@ -73,23 +75,12 @@
 import Vue from 'vue';
 import { Component, Prop } from 'vue-property-decorator';
 
-interface ISubItems {
-  link: string;
-  title: string;
-}
-
-export interface IItems {
-  title: string;
-  icon: string;
-  enable: boolean;
-  id: string;
-  subItems: ISubItems[];
-  link?: string;
-}
+import { IItemsDrawer, ISubItemsDrawer } from './types';
 
 @Component
 export default class FyDrawer extends Vue {
-  @Prop({ type: Array as () => IItems[], default: [] as IItems[] }) items!: IItems[];
+  @Prop({ type: Array as () => IItemsDrawer[], default: [] as IItemsDrawer[] })
+  items!: IItemsDrawer[];
 
   @Prop({ type: String, default: '', required: true }) brand!: string;
 
@@ -108,7 +99,7 @@ export default class FyDrawer extends Vue {
     }
   }
 
-  navigateItem(item: IItems): void {
+  navigateItem(item: IItemsDrawer): void {
     if (item.title === 'Sair') {
       this.$emit('logoff');
     } else {
@@ -116,7 +107,7 @@ export default class FyDrawer extends Vue {
     }
   }
 
-  navigateSubitem(subItem: ISubItems): void {
+  navigateSubitem(subItem: ISubItemsDrawer): void {
     subItem.link && this.navigate(subItem.link);
   }
 }
@@ -137,6 +128,9 @@ export default class FyDrawer extends Vue {
     text-align: left;
     padding: 0;
     min-height: 20px;
+  }
+  ::v-deep.v-navigation-drawer__content > div:nth-last-child(-n + 2) .v-list-item {
+    height: 38px;
   }
 
   ::v-deep.v-icon {

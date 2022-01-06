@@ -1,5 +1,5 @@
 <template>
-  <FyDialog
+  <fy-dialog
     :dialog="deleteModel"
     :config="{
       fullscreen: false,
@@ -47,57 +47,45 @@
         </div>
       </v-card>
     </template>
-  </FyDialog>
+  </fy-dialog>
 </template>
 
-<script lang="js">
+<script lang="ts">
+import Vue from 'vue';
+import { Component, Prop } from 'vue-property-decorator';
+
 import { FyDialog } from '../index';
 
-export default {
-  name: 'FyDialogDelete',
+import { IDialogDeleteItem } from '../types';
 
-  data() {
-    return {
-      loading: false,
-    };
-  },
-
+@Component({
   components: {
     FyDialog,
   },
+})
+export default class FyDialogDelete extends Vue {
+  loading = false;
 
-  props: {
-    item: {
-      type: Object,
-      default: () => {
-        console.log('');
-      },
-      require: true,
-    },
+  @Prop({
+    type: Object as () => IDialogDeleteItem,
+    default: {} as IDialogDeleteItem,
+    required: true,
+  })
+  item!: IDialogDeleteItem;
 
-    deleteModel: {
-      type: Boolean,
-      default: false,
-      require: true,
-    },
+  @Prop({ type: Boolean, default: false, required: true }) deleteModel!: boolean;
 
-    title: {
-      type: String,
-      default: 'Excluir',
-    },
-  },
+  @Prop({ type: String, default: 'Excluir' }) title!: string;
 
-  methods: {
-    close() {
-      this.$emit('close-dialog');
-    },
+  close(): void {
+    this.$emit('close-dialog');
+  }
 
-    async submit() {
-      this.$emit('close-dialog');
-      this.$emit('confirm-dialog');
-    },
-  },
-};
+  async submit(): Promise<void> {
+    this.$emit('close-dialog');
+    this.$emit('confirm-dialog');
+  }
+}
 </script>
 
 <style lang="scss"></style>
