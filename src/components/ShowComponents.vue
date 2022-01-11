@@ -26,6 +26,9 @@ import PageInputs from '@/pages/Inputs/index.vue';
 import PageCharts from '@/pages/Charts/index.vue';
 import PageDataTable from '@/pages/DataTable/index.vue';
 import PageDialogs from '@/pages/Dialogs/index.vue';
+import PageDrawer from '@/pages/Drawer/index.vue';
+import PageFilters from '@/pages/Filters/index.vue';
+import PageInfoCard from '@/pages/InfoCard/index.vue';
 
 import { IItemsDrawer } from './Drawer/types';
 import { IItemsToolbar } from './Toolbar/types';
@@ -42,6 +45,9 @@ export default Vue.extend({
     PageCharts,
     PageDataTable,
     PageDialogs,
+    PageDrawer,
+    PageFilters,
+    PageInfoCard,
     PageInputs,
   },
   data() {
@@ -82,6 +88,27 @@ export default Vue.extend({
           enable: true,
           id: 'PageDialogs',
           link: 'page-dialogs',
+        },
+        {
+          title: 'Drawer',
+          icon: 'mdi-menu',
+          enable: true,
+          id: 'PageDrawer',
+          link: 'page-drawer',
+        },
+        {
+          title: 'Filters',
+          icon: 'mdi-filter-outline',
+          enable: true,
+          id: 'PageFilters',
+          link: 'page-filters',
+        },
+        {
+          title: 'InfoCard',
+          icon: 'mdi-card-bulleted-outline',
+          enable: true,
+          id: 'PageInfoCard',
+          link: 'page-info-card',
         },
         {
           title: 'Inputs',

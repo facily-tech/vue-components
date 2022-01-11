@@ -1,31 +1,31 @@
 <template>
   <div>
     <v-text-field
-      v-model="text"
+      :value="text"
+      @input="update"
       v-bind.sync="$props"
-  />
+      v-bind="$attrs"
+      v-on="$listeners"
+    />
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue';
+import { Component, Prop } from 'vue-property-decorator';
+
 import { VTextField } from 'vuetify/lib';
 
-export default {
-  extends: VTextField,
-  name: 'FyInputDefault',
-  props: {
-    ...VTextField.props,
-    value: String,
-  },
-  data() {
-    return {
-      text: this.value ? this.value : '',
-    };
-  },
-  watch: {
-    text() {
-      this.$emit('input', this.text);
-    },
-  },
-};
+const BaseVTextField = Vue.extend(VTextField);
+
+@Component
+export default class FyInputDefault extends BaseVTextField {
+  @Prop({ type: String }) value!: string;
+
+  text = this.value ? this.value : '';
+
+  update(value: string): void {
+    this.$emit('input', value);
+  }
+}
 </script>

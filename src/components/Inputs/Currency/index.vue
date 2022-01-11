@@ -1,60 +1,51 @@
 <template>
   <div>
     <v-text-field
-      v-model.lazy="currency"
+      :value="text"
+      @input="update"
       v-money="money"
       v-bind.sync="$props"
-  />
+      v-bind="$attrs"
+      v-on="$listeners"
+    />
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue';
+import { Component, Prop } from 'vue-property-decorator';
+
 import { VTextField } from 'vuetify/lib';
 import { VMoney } from 'v-money';
 
-export default {
-  extends: VTextField,
-  name: 'FyInputCurrency',
-  props: {
-    ...VTextField.props,
-    value: {
-      type: String,
-      default: '0',
-    },
-    type: {
-      type: String,
-      default: 'R$ ',
-    },
-    decimal: {
-      type: String,
-      default: ',',
-    },
-    thousands: {
-      type: String,
-      default: '.',
-    },
-    precision: {
-      type: Number,
-      default: 2,
-    },
-  },
-  data() {
-    return {
-      currency: this.value ? this.value : '0',
-      money: {
-        decimal: ',',
-        thousands: '.',
-        prefix: this.type,
-        precision: 2,
-        masked: false, /* doesn't work with directive */
-      },
-    };
-  },
+const BaseVTextField = Vue.extend(VTextField);
+
+@Component({
   directives: { money: VMoney },
-  watch: {
-    currency() {
-      this.$emit('input', this.currency);
-    },
-  },
-};
+})
+export default class FyInputCurrency extends BaseVTextField {
+  @Prop({ type: String, default: '0' }) value!: string;
+
+  @Prop({ type: String, default: 'R$ ' }) type!: string;
+
+  @Prop({ type: String, default: ',' }) decimal!: string;
+
+  @Prop({ type: String, default: '.' }) thousands!: string;
+
+  @Prop({ type: Number, default: 2 }) precision!: number;
+
+  text = this.value ? this.value : '0';
+
+  money = {
+    decimal: ',',
+    thousands: '.',
+    prefix: this.type,
+    precision: 2,
+    masked: false /* doesn't work with directive */,
+  };
+
+  update(value: string): void {
+    this.$emit('input', value);
+  }
+}
 </script>

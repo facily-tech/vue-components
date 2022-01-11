@@ -129,9 +129,9 @@ export default class FyDrawer extends Vue {
     padding: 0;
     min-height: 20px;
   }
-  ::v-deep.v-navigation-drawer__content > div:nth-last-child(-n + 2) .v-list-item {
+  /* ::v-deep.v-navigation-drawer__content > div:nth-last-child(-n + 2) .v-list-item {
     height: 38px;
-  }
+  } */
 
   ::v-deep.v-icon {
     color: #fff;

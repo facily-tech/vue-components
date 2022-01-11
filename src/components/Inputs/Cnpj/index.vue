@@ -1,36 +1,42 @@
 <template>
   <div>
     <v-text-field
-      v-model="cnpj"
+      :value="text"
+      @input="update"
       v-mask="'##.###.###/####-##'"
-      :rules="cnpjRules"
+      :rules="rules"
       v-bind.sync="$props"
+      v-bind="$attrs"
+      v-on="$listeners"
     />
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue';
+import { Component, Prop } from 'vue-property-decorator';
+
 import { VTextField } from 'vuetify/lib';
 
-export default {
-  extends: VTextField,
-  name: 'FyInputCnpj',
-  props: {
-    ...VTextField.props,
-    value: String,
-  },
-  data() {
-    return {
-      cnpj: this.value ? this.value : '',
-      cnpjRules: [
-        (value) => value.length === 18 || 'O campo Cnpj deve conter 14 números',
-      ],
-    };
-  },
-  watch: {
-    cnpj() {
-      this.$emit('input', this.cnpj);
-    },
-  },
-};
+const BaseVTextField = Vue.extend(VTextField);
+
+@Component
+export default class FyInputCnpj extends BaseVTextField {
+  @Prop({ type: String }) value!: string;
+
+  @Prop({
+    type: Array,
+    default: () => [
+      (value: string): boolean | string =>
+        value.length === 18 || 'O campo Cnpj deve conter 14 números',
+    ],
+  })
+  rules!: [];
+
+  text = this.value ? this.value : '';
+
+  update(value: string): void {
+    this.$emit('input', value);
+  }
+}
 </script>

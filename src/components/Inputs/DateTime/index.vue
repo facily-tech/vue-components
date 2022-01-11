@@ -1,45 +1,49 @@
 <template>
   <div>
     <v-text-field
-      v-model="date"
+      :value="text"
+      @input="update"
       v-mask="'##/##/#### ##:##'"
       v-bind.sync="$props"
+      v-bind="$attrs"
+      v-on="$listeners"
     />
   </div>
 </template>
-<script>
-import moment from 'moment';
-import { VTextField } from 'vuetify/lib';
+<script lang="ts">
+import Vue from 'vue';
+import { Component, Prop } from 'vue-property-decorator';
 
-export default {
-  extends: VTextField,
-  name: 'FyInputDateTime',
-  props: {
-    ...VTextField.props,
-    value: String,
-  },
-  data() {
-    return {
-      date: this.getDateToString(this.value),
-    };
-  },
-  watch: {
-    date() {
-      const formatDate = this.getStringToDate(this.date);
-      this.$emit('input', formatDate);
-    },
-  },
-  methods: {
-    getStringToDate(str) {
-      if (!str) return '';
-      const dateTime = moment(str, 'DD/MM/YYYY HH:mm');
-      return dateTime.format();
-    },
-    getDateToString(date) {
-      if (!date) return '';
-      const nDate = moment(date);
-      return nDate.format('DD/MM/YYYY HH:mm');
-    },
-  },
-};
+import { VTextField } from 'vuetify/lib';
+import moment from 'moment';
+
+const BaseVTextField = Vue.extend(VTextField);
+
+@Component
+export default class FyInputDateTime extends BaseVTextField {
+  @Prop({ type: String }) value!: string;
+
+  text = this.getDateToString(this.value);
+
+  getStringToDate(str: string): string {
+    if (!str) return '';
+
+    const dateTime = moment(str, 'DD/MM/YYYY HH:mm');
+
+    return dateTime.format();
+  }
+
+  getDateToString(date: string): string {
+    if (!date) return '';
+
+    const nDate = moment(date);
+
+    return nDate.format('DD/MM/YYYY HH:mm');
+  }
+
+  update(value: string): void {
+    const formatDate = this.getStringToDate(value);
+    this.$emit('input', formatDate);
+  }
+}
 </script>

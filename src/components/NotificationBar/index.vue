@@ -44,20 +44,20 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'FyNoticationBar',
-  props: {
-    numUnread: {
-      type: String,
-      default: '',
-    },
-    list: {
-      type: Array,
-      default: null,
-    },
-  },
-};
+<script lang="ts">
+import Vue from 'vue';
+import { Component, Prop } from 'vue-property-decorator';
+
+import { INotificationBarProps } from './types';
+
+@Component
+export default class FyNoticationBar extends Vue {
+  @Prop({ type: String, default: '' }) numUnread!: string;
+
+  @Prop({ type: Array as () => INotificationBarProps[] | null, default: null }) list!:
+    | INotificationBarProps[]
+    | null;
+}
 </script>
 
 <style scoped>

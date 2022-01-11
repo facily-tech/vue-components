@@ -17,27 +17,23 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'FySnackbar',
+<script lang="ts">
+import Vue from 'vue';
+import { Component, Prop } from 'vue-property-decorator';
 
-  props: {
-    snackbar: {
-      require: true,
-      type: Object,
-      default: () => {
-        const obj = {};
-        return obj;
-      },
-    },
-  },
+import { VSnackbar } from 'vuetify/lib';
 
-  methods: {
-    snackbarClose() {
-      this.$emit('snackbar-close');
-    },
-  },
-};
+import { ISnackbarProps } from './types';
+
+const BaseVSnackbar = Vue.extend(VSnackbar);
+
+@Component
+export default class FySnackbar extends BaseVSnackbar {
+  @Prop({ type: Object as () => ISnackbarProps, default: {} as ISnackbarProps })
+  snackbar!: ISnackbarProps;
+
+  snackbarClose(): void {
+    this.$emit('snackbar-close');
+  }
+}
 </script>
-
-<style lang="scss"></style>

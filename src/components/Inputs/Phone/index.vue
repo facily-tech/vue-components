@@ -1,32 +1,32 @@
 <template>
   <div>
     <v-text-field
-      v-model="phone"
+      :value="text"
+      @input="update"
       v-mask="'(##)#####-####'"
       v-bind.sync="$props"
+      v-bind="$attrs"
+      v-on="$listeners"
     />
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue';
+import { Component, Prop } from 'vue-property-decorator';
+
 import { VTextField } from 'vuetify/lib';
 
-export default {
-  extends: VTextField,
-  name: 'FyInputPhone',
-  props: {
-    ...VTextField.props,
-    value: String,
-  },
-  data() {
-    return {
-      phone: this.value ? this.value : '',
-    };
-  },
-  watch: {
-    phone() {
-      this.$emit('input', this.phone);
-    },
-  },
-};
+const BaseVTextField = Vue.extend(VTextField);
+
+@Component
+export default class FyInputPhone extends BaseVTextField {
+  @Prop({ type: String }) value!: string;
+
+  text = this.value ? this.value : '';
+
+  update(value: string): void {
+    this.$emit('input', value);
+  }
+}
 </script>

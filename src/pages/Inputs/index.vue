@@ -37,7 +37,8 @@
                 <v-list-item-title>Example</v-list-item-title>
                 <v-list-item-subtitle class="py-8">
                   <v-row align="center" justify="space-around">
-                    <fy-input-cpf placeholder="000.000.000-00" />
+                    <fy-input-cpf v-model="cpf" placeholder="000.000.000-00" />
+                    <fy-input-currency v-model.lazy="currency" />
                   </v-row>
                 </v-list-item-subtitle>
               </v-list-item-content>
@@ -52,11 +53,17 @@
 <script>
 import Vue from 'vue';
 
-import { FyInputDefault, FyInputCpf } from '@/components/Inputs';
+import { FyInputDefault, FyInputCpf, FyInputCurrency } from '@/components/Inputs';
 
 export default Vue.extend({
   name: 'PageButtons',
-  components: { FyInputDefault, FyInputCpf },
+  components: { FyInputDefault, FyInputCpf, FyInputCurrency },
+  data() {
+    return {
+      cpf: '',
+      currency: '0',
+    };
+  },
 });
 </script>
 
