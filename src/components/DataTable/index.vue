@@ -11,88 +11,15 @@
       loading-text="Carregando..."
       mobile-breakpoint="0"
     >
-      <template v-for="(k, key) in headers" v-slot:[mountString(k)]="{ item }">
-        <div class="d-flex justify-center" :key="key" v-if="k.value === 'actions'">
-          <div v-for="(x, key) in item.actions" :key="key">
-            <p
-              v-if="x.type === 'link'"
-              class="mb-1 link"
-              :style="[`color: ${x.color}`, x.havehover.key ? `hover: ${x.havehover.color}` : '']"
-              @click="$emit(x.actionKey, item)"
-            >
-              {{ x.label }}
+      <template v-for="(header, headerKey) in headers" v-slot:[mountString(header)]="{ item }">
+        <div class="d-flex justify-center" :key="headerKey" v-if="header.value === 'actions'">
+          <div v-for="(action, actionKey) in item.actions" :key="actionKey">
+            <p>
+              {{ action.actionKey }}
             </p>
-            <v-tooltip bottom v-else-if="x.type === 'icon-btn'">
-              <template v-slot:activator="{ on, attrs }">
-                <v-btn
-                  class="mr-2"
-                  text
-                  icon
-                  v-bind="attrs"
-                  v-on="on"
-                  :color="x.color"
-                  @click="$emit(x.actionKey, item)"
-                >
-                  <v-icon>{{ x.icon }}</v-icon>
-                </v-btn>
-              </template>
-              <span color="secundary"> {{ x.label }}</span>
-            </v-tooltip>
           </div>
         </div>
-        <div :key="key" v-else-if="k.value === 'price' || k.value === 'total'">
-          {{ formatCurrency(item[k.value]) }}
-        </div>
-        <div :key="key" v-else-if="k.value === 'zipCode'">
-          {{ formatZipCode(item[k.value]) }}
-        </div>
-        <div :key="key" v-else-if="k.value === 'phone'">
-          {{ formatCellPhone(item[k.value]) }}
-        </div>
-        <div :key="key" v-else-if="k.value === 'radioOption'">
-          <v-radio-group v-model="radioSelect">
-            <v-radio :label="item[k.value]" :value="item[k.value]" color="primary"></v-radio>
-          </v-radio-group>
-        </div>
-        <div :key="key" v-else-if="k.value === 'active'" style="cursor: pointer">
-          <v-icon
-            color="green"
-            v-if="item[k.value]"
-            @click="
-              $emit('active-control', {
-                key: 'inactitve',
-                value: item,
-              })
-            "
-          >
-            mdi-eye-outline
-          </v-icon>
-          <v-icon
-            color="red"
-            v-if="!item[k.value]"
-            @click="
-              $emit('active-control', {
-                key: 'actitve',
-                value: item,
-              })
-            "
-          >
-            mdi-eye-off
-          </v-icon>
-        </div>
-        <div
-          :key="key"
-          v-else-if="k.value === 'data' || k.value === 'valid_from' || k.value === 'valid_until'"
-        >
-          <p class="mb-0">
-            {{ formatDate(item[k.value]) }}
-          </p>
-        </div>
-        <div :key="key" v-else>
-          <template slot:item[k.value]="{ item }">
-            {{ item[k.value] }}
-          </template>
-        </div>
+        <div v-else :key="headerKey">{{ item[header.value] }}</div>
       </template>
       <template v-slot:no-data>
         <div class="pa-3 d-flex justify-center">
@@ -121,62 +48,58 @@
   </div>
 </template>
 
-<script>
-import { FormatCurrency, formatZipCode, formatCellPhone, formatDate } from '@/utils/format.utils';
+<script lang="ts">
+import Vue from 'vue';
+import { Component, Prop, Watch } from 'vue-property-decorator';
+import { VDataTable } from 'vuetify/lib';
 
-export default {
-  name: 'FyDataTable',
+import { formatCurrency, formatZipCode, formatCellPhone, formatDate } from '@/utils/format.utils';
+import { IDataTableHeaders, IDataTableRows, IDataTablePagination } from './types';
 
-  data() {
-    return {
-      selectItems: [5, 10, 25, 50, 100],
-      FormatCurrency,
-      formatZipCode,
-      formatCellPhone,
-      formatDate,
-      radioSelect: null,
-      page: this.pagination ? this.pagination.page : 1,
-    };
-  },
-  props: {
-    headers: {
-      type: Array,
-      require: true,
-      default: () => [],
-    },
-    items: {
-      type: Array,
-      require: true,
-      default: () => [],
-    },
-    pagination: {
-      type: Object,
-      require: true,
-      default: null,
-    },
-    loading: {
-      type: Boolean,
-      require: true,
-      default: false,
-    },
-  },
-  methods: {
-    mountString(k) {
-      return `item.${k.value}`;
-    },
-  },
-  watch: {
-    pagination: {
-      handler(value) {
-        this.$emit('change-table', value);
-      },
-      deep: true,
-    },
-    radioSelect() {
-      this.$emit('radio-select', this.radioSelect);
-    },
-  },
-};
+const BaseDataTable = Vue.extend(VDataTable);
+
+@Component
+export default class FyDataTable extends BaseDataTable {
+  @Prop({
+    type: Array as () => IDataTableHeaders[],
+    default: [] as IDataTableHeaders[],
+    required: true,
+  })
+  headers!: IDataTableHeaders[];
+
+  @Prop({ type: Array as () => IDataTableRows[], default: [] as IDataTableRows[], required: true })
+  items!: IDataTableRows[];
+
+  @Prop({ type: Object as () => IDataTablePagination | null, default: null, required: true })
+  pagination!: IDataTablePagination | null;
+
+  @Prop({ type: Boolean, default: false, required: true }) loading!: boolean;
+
+  selectItems = [5, 10, 25, 50, 100];
+  radioSelect: string | boolean | number | null = null;
+
+  page = this.pagination ? this.pagination.page : 1;
+
+  formatCurrency = formatCurrency;
+  formatZipCode = formatZipCode;
+  formatCellPhone = formatCellPhone;
+  formatDate = formatDate;
+
+  @Watch('pagination', { deep: true })
+  onChangePagination(value: IDataTablePagination | null): void {
+    this.$emit('change-table', value);
+  }
+
+  @Watch('radioSelect')
+  onChangeRadioSelect(): void {
+    this.$emit('radio-select', this.radioSelect);
+  }
+
+  mountString(header: IDataTableHeaders): string {
+    console.log('mount string ', header);
+    return `item.${header.value}`;
+  }
+}
 </script>
 <style lang="scss">
 .custom-datatable {
@@ -188,10 +111,9 @@ export default {
   .v-data-table-header {
     th {
       span {
-        color: #000v-data-table-header;
+        color: #000;
         font-weight: 700;
         font-size: 16px;
-        spacing: normal;
         line-height: 18px;
       }
     }

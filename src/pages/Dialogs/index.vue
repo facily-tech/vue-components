@@ -171,7 +171,7 @@ export default Vue.extend({
       deleteModel: false,
       item: {
         description: 'Produto',
-        id: 1,
+        id: '1',
       } as IDialogDeleteItem,
     };
   },

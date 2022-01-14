@@ -5,6 +5,6 @@ export interface IDialog {
 }
 
 export interface IDialogDeleteItem {
-  id: number;
+  id: string;
   description: string;
 }
