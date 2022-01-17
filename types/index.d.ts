@@ -1,5 +1,6 @@
 import { VueConstructor } from 'vue';
 
+export const FyAutocomplete: VueConstructor;
 export const FyButton: VueConstructor;
 export const FyButtonInfo: VueConstructor;
 export const FyButtonSuccess: VueConstructor;

@@ -1,3 +1,5 @@
+import { FyAutocomplete } from './Autocomplete';
+
 import {
   FyButtonInfo,
   FyButtonSuccess,
@@ -5,14 +7,23 @@ import {
   FyButtonDelete,
   FyButton,
 } from './Buttons';
+
 import { FyNoticationBar } from './NotificationBar';
+
 import { FyUserLabel } from './UserLabel';
+
 import { FyInfoCard } from './InfoCard';
+
 import { FyDialog, FyDialogDelete } from './Dialogs';
+
 import { FyDrawer } from './Drawer';
+
 import { FySnackbar } from './Snackbar';
+
 import { FyToolbar } from './Toolbar';
+
 import { FyFilterData } from './Filters';
+
 import { FyDataTable } from './DataTable';
 
 import {
@@ -29,11 +40,12 @@ import {
 import { FyGaugeChart } from './Charts';
 
 export {
+  FyAutocomplete,
+  FyButton,
   FyButtonInfo,
   FyButtonSuccess,
   FyButtonWarning,
   FyButtonDelete,
-  FyButton,
   FyNoticationBar,
   FyUserLabel,
   FyInfoCard,

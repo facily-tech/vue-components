@@ -1,4 +1,3 @@
 export interface IAutocompleteItems {
-  label: string;
-  option: string;
+  [index: string]: string;
 }

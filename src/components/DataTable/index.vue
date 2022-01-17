@@ -14,12 +14,86 @@
       <template v-for="(header, headerKey) in headers" v-slot:[mountString(header)]="{ item }">
         <div class="d-flex justify-center" :key="headerKey" v-if="header.value === 'actions'">
           <div v-for="(action, actionKey) in item.actions" :key="actionKey">
-            <p>
-              {{ action.actionKey }}
+            <p
+              v-if="action.type === 'link'"
+              class="mb-1 link"
+              :style="[
+                `color: ${action.color}`,
+                action.havehover.key ? `hover: ${action.havehover.color}` : '',
+              ]"
+              @click="$emit(action.actionKey, item.cols)"
+            >
+              {{ action.label }}
             </p>
+            <v-tooltip bottom v-else-if="action.type === 'icon-btn'">
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn
+                  class="mr-2"
+                  text
+                  icon
+                  v-bind="attrs"
+                  v-on="on"
+                  :color="action.color"
+                  @click="$emit(action.actionKey, item)"
+                >
+                  <v-icon>{{ action.icon }}</v-icon>
+                </v-btn>
+              </template>
+              <span color="secundary"> {{ action.label }}</span>
+            </v-tooltip>
           </div>
         </div>
-        <div v-else :key="headerKey">{{ item[header.value] }}</div>
+        <div :key="headerKey" v-else-if="header.value === 'price' || header.value === 'total'">
+          {{ formatCurrency(item.cols[header.value]) }}
+        </div>
+        <div :key="headerKey" v-else-if="header.value === 'zipCode'">
+          {{ formatZipCode(item.cols[header.value]) }}
+        </div>
+        <div :key="headerKey" v-else-if="header.value === 'phone'">
+          {{ formatCellPhone(item.cols[header.value]) }}
+        </div>
+        <div :key="headerKey" v-else-if="header.value === 'radioOption'">
+          <v-radio-group v-model="radioSelect">
+            <v-radio
+              :label="item.cols[header.value]"
+              :value="item.cols[header.value]"
+              color="primary"
+            ></v-radio>
+          </v-radio-group>
+        </div>
+        <div :key="headerKey" v-else-if="header.value === 'active'" style="cursor: pointer">
+          <v-icon
+            color="green"
+            v-if="item.cols[header.value]"
+            @click="$emit('active-control', { key: 'inactitve', value: item })"
+          >
+            mdi-eye-outline
+          </v-icon>
+          <v-icon
+            color="red"
+            v-if="!item.cols[header.value]"
+            @click="$emit('active-control', { key: 'actitve', value: item })"
+          >
+            mdi-eye-off
+          </v-icon>
+        </div>
+        <div
+          :key="headerKey"
+          v-else-if="
+            header.value === 'data' ||
+            header.value === 'valid_from' ||
+            header.value === 'valid_until'
+          "
+        >
+          <p class="mb-0">
+            {{ formatDate(item.cols[header.value]) }}
+          </p>
+        </div>
+        <div :key="headerKey" v-else>
+          <template slot:item.cols[header.value]="{ item }">
+            {{ item.cols[header.value] }}
+          </template>
+        </div>
       </template>
       <template v-slot:no-data>
         <div class="pa-3 d-flex justify-center">
@@ -98,6 +172,10 @@ export default class FyDataTable extends BaseDataTable {
   mountString(header: IDataTableHeaders): string {
     console.log('mount string ', header);
     return `item.${header.value}`;
+  }
+
+  created(): void {
+    console.log('items ', this.items[0].cols[`cpf`]);
   }
 }
 </script>

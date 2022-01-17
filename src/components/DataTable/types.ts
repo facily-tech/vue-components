@@ -18,11 +18,6 @@ interface IDataTableColumns {
   [index: string]: string | IDataTableColumnsObject | IDataTableColumnsCheckbox;
 }
 
-interface IDataTableStatus {
-  text: string;
-  color: string;
-}
-
 interface IDataTableActions {
   type: 'active' | 'icon-btn' | 'link';
   color: string;
@@ -32,11 +27,7 @@ interface IDataTableActions {
 }
 
 export interface IDataTableRows {
-  id: string;
-  showId: boolean;
-  clickable: boolean;
   cols: IDataTableColumns;
-  status?: IDataTableStatus;
   actions?: IDataTableActions[];
 }
 

@@ -2,14 +2,14 @@
   <v-container class="py-8 px-10" fluid>
     <v-row>
       <v-col cols="12">
-        <h2>Charts</h2>
+        <h2>Data Tables</h2>
       </v-col>
     </v-row>
 
     <v-row>
       <v-col cols="12">
         <v-card>
-          <v-card-title>GroupChart</v-card-title>
+          <v-card-title>Default</v-card-title>
 
           <v-list two-line>
             <v-list-item>
@@ -39,11 +39,24 @@
               <v-list-item-content>
                 <v-list-item-title>Usage</v-list-item-title>
                 <v-list-item-subtitle class="pb-4 pt-2">
-                  <v-row>
-                    <pre>
-                      {{ contentUsageDataTable }}
-                    </pre>
-                  </v-row>
+                  <v-tabs v-model="tab">
+                    <v-tab href="#template">Template</v-tab>
+                    <v-tab href="#script">Script</v-tab>
+                  </v-tabs>
+
+                  <v-tabs-items v-model="tab">
+                    <v-tab-item value="template">
+                      <pre>
+                        {{ contentUsageDataTable }}
+                      </pre>
+                    </v-tab-item>
+
+                    <v-tab-item value="script">
+                      <pre>
+                        {{ contentUsageDataTableScript }}
+                      </pre>
+                    </v-tab-item>
+                  </v-tabs-items>
                 </v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
@@ -77,25 +90,118 @@
 import Vue from 'vue';
 
 import { FyDataTable } from '@/components/DataTable';
-
-interface Users {
-  name: string;
-  phone: string;
-  mail: string;
-  cpf: string;
-  role: string;
-  actions: Array<Actions>;
-}
-interface Actions {
-  type: string;
-  color: string;
-  actionKey: string;
-  icon: string;
-  label: string;
-}
+import { IDataTableRows } from '@/components/DataTable/types';
 
 const contentUsageDataTable = `
-  <fy-gauge-chart :percent="33" />
+  <fy-data-table
+    :items="tableItems"
+    :headers="table.headers"
+    :pagination="pagination"
+    :loading="false"
+    @details="checkDetails($event)"
+    @edit="checkEdit($event)"
+    @change-table="controlChangesTable"
+    @delete="deleteModel = true"
+    @active-control="onActiveControl($event)"
+  />
+`;
+
+const contentUsageDataTableScript = `
+  export default Vue.extend({
+    name: 'DataTable',
+    data() {
+      return {
+        table: {
+          actions: [
+            {
+              type: 'icon-btn',
+              color: 'purple lighten-2',
+              actionKey: 'details',
+              icon: 'mdi-eye',
+              label: 'Detalhes',
+            },
+            {
+              type: 'icon-btn',
+              color: 'orange lighten-2',
+              actionKey: 'edit',
+              icon: 'mdi-pencil',
+              label: 'Editar',
+            },
+            {
+              type: 'icon-btn',
+              color: 'red lighten-2',
+              actionKey: 'delete',
+              icon: 'mdi-delete-forever',
+              label: 'Excluir',
+            },
+          ],
+          headers: [
+            {
+              text: 'Nome',
+              align: 'start',
+              value: 'name',
+            },
+            {
+              text: 'Telefone',
+              align: 'start',
+              value: 'phone',
+              sortable: false,
+            },
+            {
+              text: 'E-mail',
+              align: 'start',
+              value: 'mail',
+            },
+            {
+              text: 'CPF',
+              align: 'start',
+              value: 'cpf',
+              sortable: false,
+            },
+            {
+              text: 'Role',
+              align: 'start',
+              value: 'role',
+              sortable: false,
+            },
+            {
+              text: 'Ações',
+              align: 'center',
+              value: 'actions',
+              sortable: false,
+            },
+          ],
+          items: [
+            {
+              name: 'Alberto da Silva',
+              phone: '11962224724',
+              mail: 'silva@uol.com.br',
+              cpf: '11525541262',
+              role: 'XX',
+            },
+            ...
+          ],
+        },
+        pagination: {
+          page: 1,
+          itemsPerPage: 50,
+          totalItems: 10,
+          totalPages: 0,
+        },
+      };
+    },
+    computed: {
+      tableItems(): IDataTableRows[] {
+        const nItems = [...this.table.items];
+        return nItems.map((item) => {
+          return {
+            cols: item,
+            actions: this.table.actions,
+          } as IDataTableRows;
+        });
+      },
+    },
+  });
 `;
 
 export default Vue.extend({
@@ -104,7 +210,9 @@ export default Vue.extend({
   data() {
     return {
       contentUsageDataTable,
+      contentUsageDataTableScript,
       deleteModel: false,
+      tab: '0',
       table: {
         actions: [
           {
@@ -219,27 +327,27 @@ export default Vue.extend({
     };
   },
   computed: {
-    tableItems(): Users[] {
+    tableItems(): IDataTableRows[] {
       const nItems = [...this.table.items];
       return nItems.map((item) => {
         return {
-          ...item,
+          cols: item,
           actions: this.table.actions,
-        };
+        } as IDataTableRows;
       });
     },
   },
   methods: {
-    checkEdit(event: any): void {
+    checkEdit(event: Event): void {
       console.log('Check Edit > ', event);
     },
-    checkDetails(event: any): void {
+    checkDetails(event: Event): void {
       console.log('CheckDetails > ', event);
     },
     controlChangesTable(): void {
       console.log('Change Table');
     },
-    onActiveControl(event: any): void {
+    onActiveControl(event: Event): void {
       console.log('Active Control > ', event);
     },
   },

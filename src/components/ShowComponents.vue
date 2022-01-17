@@ -21,6 +21,7 @@ import { FyDrawer, FyToolbar } from '@/components';
 
 import PageHome from '@/pages/Home/index.vue';
 import PageHowToCreate from '@/pages/HowToCreate/index.vue';
+import PageAutocomplete from '@/pages/Autocomplete/index.vue';
 import PageButtons from '@/pages/Buttons/index.vue';
 import PageInputs from '@/pages/Inputs/index.vue';
 import PageCharts from '@/pages/Charts/index.vue';
@@ -41,6 +42,7 @@ export default Vue.extend({
     FyToolbar,
     PageHome,
     PageHowToCreate,
+    PageAutocomplete,
     PageButtons,
     PageCharts,
     PageDataTable,
@@ -60,6 +62,13 @@ export default Vue.extend({
           enable: true,
           id: 'PageHome',
           link: 'page-home',
+        },
+        {
+          title: 'Autocomplete',
+          icon: 'mdi-card-search-outline',
+          enable: true,
+          id: 'PageAutocomplete',
+          link: 'page-autocomplete',
         },
         {
           title: 'Buttons',
