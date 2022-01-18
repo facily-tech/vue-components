@@ -1,7 +1,8 @@
 <template>
   <div>
     <v-text-field
-      v-model.lazy="currency"
+      :value="value"
+      @input="update"
       v-money="money"
       v-bind.sync="$props"
   />
@@ -51,9 +52,9 @@ export default {
     };
   },
   directives: { money: VMoney },
-  watch: {
-    currency() {
-      this.$emit('input', this.currency);
+  methods: {
+    update(value) {
+      this.$emit('input', value);
     },
   },
 };

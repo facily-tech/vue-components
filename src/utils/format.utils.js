@@ -17,6 +17,12 @@ const formatCellPhone = (value) => {
   return val;
 };
 
+const formatCpf = (value) => {
+  const x = value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,3})(\d{0,2})/);
+  const val = `${x[1]}.${x[2]}.${x[3]}-${x[4]}`;
+  return val;
+};
+
 const formatDate = (date) => moment.utc(date).format('DD/MM/YYYY');
 
 const parserDateOrder = (init, end, format) => {
@@ -59,4 +65,5 @@ export {
   formatZipCode,
   formatDate,
   parserDateOrder,
+  formatCpf,
 };

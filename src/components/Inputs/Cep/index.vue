@@ -1,7 +1,8 @@
 <template>
   <div>
     <v-text-field
-      v-model="cep"
+      :value="value"
+      @input="update"
       v-mask="'#####-###'"
       :rules="cepRules"
       v-bind.sync="$props"
@@ -27,9 +28,9 @@ export default {
       ],
     };
   },
-  watch: {
-    cep() {
-      this.$emit('input', this.cep);
+  methods: {
+    update(value) {
+      this.$emit('input', value);
     },
   },
 };

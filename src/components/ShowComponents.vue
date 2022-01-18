@@ -88,7 +88,7 @@
           => {{ name }}
         </v-row>
         <v-row>
-          <fy-input-cpf label="CPF" v-model="cpf" @input="getCpf"></fy-input-cpf>
+          <fy-input-cpf label="CPF" v-model="cpf"></fy-input-cpf>
           => {{ cpf }}
         </v-row>
         <v-row>
@@ -625,9 +625,6 @@ export default Vue.extend({
     },
     getPhone(value): void {
       this.phone = value;
-    },
-    getCpf(value): void {
-      this.cpf = value;
     },
     getCnpj(value): void {
       this.cnpj = value;
