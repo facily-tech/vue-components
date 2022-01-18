@@ -17,7 +17,7 @@
 <script lang="ts">
 import Vue from 'vue';
 
-import { FyDrawer, FyToolbar } from '@/components';
+import { FyDrawer, FyToolbar } from '@/index';
 
 import PageHome from '@/pages/Home/index.vue';
 import PageHowToCreate from '@/pages/HowToCreate/index.vue';

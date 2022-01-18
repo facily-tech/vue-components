@@ -1,4 +1,4 @@
-import { FyAutocomplete } from './Autocomplete';
+import { FyAutocomplete } from './components/Autocomplete';
 
 import {
   FyButtonInfo,
@@ -6,25 +6,25 @@ import {
   FyButtonWarning,
   FyButtonDelete,
   FyButton,
-} from './Buttons';
+} from './components/Buttons';
 
-import { FyNoticationBar } from './NotificationBar';
+import { FyNoticationBar } from './components/NotificationBar';
 
-import { FyUserLabel } from './UserLabel';
+import { FyUserLabel } from './components/UserLabel';
 
-import { FyInfoCard } from './InfoCard';
+import { FyInfoCard } from './components/InfoCard';
 
-import { FyDialog, FyDialogDelete } from './Dialogs';
+import { FyDialog, FyDialogDelete } from './components/Dialogs';
 
-import { FyDrawer } from './Drawer';
+import { FyDrawer } from './components/Drawer';
 
-import { FySnackbar } from './Snackbar';
+import { FySnackbar } from './components/Snackbar';
 
-import { FyToolbar } from './Toolbar';
+import { FyToolbar } from './components/Toolbar';
 
-import { FyFilterData } from './Filters';
+import { FyFilterData } from './components/Filters';
 
-import { FyDataTable } from './DataTable';
+import { FyDataTable } from './components/DataTable';
 
 import {
   FyInputCpf,
@@ -36,8 +36,8 @@ import {
   FyInputTime,
   FyInputDateTime,
   FyInputCurrency,
-} from './Inputs';
-import { FyGaugeChart } from './Charts';
+} from './components/Inputs';
+import { FyGaugeChart } from './components/Charts';
 
 export {
   FyAutocomplete,
