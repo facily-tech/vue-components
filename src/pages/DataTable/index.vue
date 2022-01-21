@@ -176,7 +176,7 @@ const contentUsageDataTableScript = `
               name: 'Alberto da Silva',
               phone: '11962224724',
               mail: 'silva@uol.com.br',
-              cpf: '11525541262',
+              tax_id: '11525541262',
               role: 'XX',
             },
             ...
@@ -257,7 +257,7 @@ export default Vue.extend({
           {
             text: 'CPF',
             align: 'start',
-            value: 'cpf',
+            value: 'tax_id',
             sortable: false,
           },
           {
@@ -275,45 +275,48 @@ export default Vue.extend({
         ],
         items: [
           {
-            name: 'Alberto da Silva',
+            name: {
+              title: 'Alberto da Silva',
+              subtitle: 'Subtitle of name Alberto da Silva text extra large ',
+            },
             phone: '11962224724',
             mail: 'silva@uol.com.br',
-            cpf: '11525541262',
+            tax_id: '00000000000100',
             role: 'XX',
           },
           {
             name: 'Maria do Socorro',
             phone: '11955887885',
             mail: 'maria.socorro@gmail.com',
-            cpf: '52155521266',
+            tax_id: '52155521266',
             role: 'XX',
           },
           {
             name: 'Julia Teresa Cristina',
             phone: '21922951844',
             mail: 'jcristina@ig.com.br',
-            cpf: '42212847802',
+            tax_id: '42212847802',
             role: 'XX',
           },
           {
             name: 'Rogerio Madureira',
             phone: '67954221789',
             mail: 'rmadureira@kfllx.com',
-            cpf: '29522511445',
+            tax_id: '29522511445',
             role: 'XX',
           },
           {
             name: 'Bruna de Carvalho',
             phone: '33952115577',
             mail: 'bcarvalho@gmail.com',
-            cpf: '35105856278',
+            tax_id: '35105856278',
             role: 'XX',
           },
           {
             name: 'Joana Dark',
             phone: '11922775877',
             mail: 'jdark@outlook.com',
-            cpf: '63189711244',
+            tax_id: '63189711244',
             role: 'XX',
           },
         ],

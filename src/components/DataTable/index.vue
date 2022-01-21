@@ -10,6 +10,7 @@
       hide-default-footer
       loading-text="Carregando..."
       mobile-breakpoint="0"
+      expanded
     >
       <template v-for="(header, headerKey) in headers" v-slot:[mountString(header)]="{ item }">
         <div class="d-flex justify-center" :key="headerKey" v-if="header.value === 'actions'">
@@ -42,6 +43,9 @@
               <span color="secundary"> {{ action.label }}</span>
             </v-tooltip>
           </div>
+        </div>
+        <div :key="headerKey" v-else-if="header.value === 'tax_id'">
+          {{ formatTaxId(item.cols[header.value]) }}
         </div>
         <div :key="headerKey" v-else-if="header.value === 'price' || header.value === 'total'">
           {{ formatCurrency(item.cols[header.value]) }}
@@ -89,6 +93,14 @@
             {{ formatDate(item.cols[header.value]) }}
           </p>
         </div>
+        <div :key="headerKey" v-else-if="typeof item.cols[header.value] === 'object'">
+          <template slot:item.cols[header.value]="{ item }">
+            {{ item.cols[header.value].title }}
+            <span class="d-block text-caption truncate">{{
+              item.cols[header.value].subtitle
+            }}</span>
+          </template>
+        </div>
         <div :key="headerKey" v-else>
           <template slot:item.cols[header.value]="{ item }">
             {{ item.cols[header.value] }}
@@ -127,7 +139,13 @@ import Vue from 'vue';
 import { Component, Prop, Watch } from 'vue-property-decorator';
 import { VDataTable } from 'vuetify/lib';
 
-import { formatCurrency, formatZipCode, formatCellPhone, formatDate } from '@/utils/format.utils';
+import {
+  formatTaxId,
+  formatCurrency,
+  formatZipCode,
+  formatCellPhone,
+  formatDate,
+} from '@/utils/format.utils';
 import { IDataTableHeaders, IDataTableRows, IDataTablePagination } from './types';
 
 const BaseDataTable = Vue.extend(VDataTable);
@@ -154,6 +172,7 @@ export default class FyDataTable extends BaseDataTable {
 
   page = this.pagination ? this.pagination.page : 1;
 
+  formatTaxId = formatTaxId;
   formatCurrency = formatCurrency;
   formatZipCode = formatZipCode;
   formatCellPhone = formatCellPhone;
@@ -219,6 +238,13 @@ export default class FyDataTable extends BaseDataTable {
     cursor: pointer;
     font-weight: bold;
     text-decoration: underline;
+  }
+
+  .truncate {
+    max-width: 97%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 </style>
