@@ -10,7 +10,6 @@
       hide-default-footer
       loading-text="Carregando..."
       mobile-breakpoint="0"
-      expanded
     >
       <template v-for="(header, headerKey) in headers" v-slot:[mountString(header)]="{ item }">
         <div class="d-flex justify-center" :key="headerKey" v-if="header.value === 'actions'">

@@ -2,7 +2,7 @@
   <v-container class="py-8 px-10" fluid>
     <v-row>
       <v-col cols="12">
-        <h2>Autocomplet</h2>
+        <h2>Autocomplete</h2>
       </v-col>
     </v-row>
 
