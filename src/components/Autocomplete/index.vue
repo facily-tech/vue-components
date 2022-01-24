@@ -2,7 +2,7 @@
   <v-autocomplete
     :value="select"
     @input="update"
-    :loading="loading"
+    :loading="loadingData"
     :items="itemsData"
     :item-text="itemText"
     :item-value="itemValue"
@@ -10,11 +10,12 @@
     :return-object="returnObject"
     :filter="(f) => f"
     :search-input.sync="search"
-    :append-icon="appendIcon"
+    :prepend-icon="prependIcon"
     v-bind.sync="$props"
     v-bind="$attrs"
     v-on="$listeners"
     :data-test="dataTest"
+    :no-data-text="noDataTextData"
   />
 </template>
 
@@ -23,7 +24,7 @@ import Vue from 'vue';
 import { Component, Prop, Watch } from 'vue-property-decorator';
 import { VAutocomplete } from 'vuetify/lib';
 
-import _ from 'lodash';
+import { debounce } from 'lodash';
 
 import VSelect, {
   defaultMenuProps as VSelectMenuProps,
@@ -59,7 +60,13 @@ export default class FyAutocomplete extends BaseAutocomplete {
 
   @Prop({ type: String, default: '' }) dataTest!: string;
 
-  @Prop({ type: String, default: 'search' }) appendIcon!: string;
+  @Prop({ type: String, default: '' }) prependIcon!: string;
+
+  @Prop({ type: String, default: 'Dados não encontrado' }) noDataText!: string;
+
+  @Prop({ type: Number, default: 3 }) ruleSearch!: number;
+
+  @Prop({ type: String, default: 'Mínimo de 3 caractéres' }) ruleSearchText!: string;
 
   private select: string | IAutocompleteItems = '';
 
@@ -67,25 +74,36 @@ export default class FyAutocomplete extends BaseAutocomplete {
 
   private itemsData = [] as IAutocompleteItems[];
 
+  private loadingData = this.loading;
+
+  private noDataTextData = this.ruleSearchText;
+
   @Watch('search')
-  querySearch(query: string | null): void {
+  changeSearch(query: string | null): void {
     if (
       query &&
       (!this.select || this.select['text'] !== query || this.select['label'] !== query)
     ) {
-      _.debounce(() => {
-        this.loading = true;
-        this.itemsData = this.items.filter((item) => {
-          return (
-            (item['text'] || item['label'] || '')
-              .toLowerCase()
-              .indexOf((query || '').toLowerCase()) > -1
-          );
-        });
-        this.loading = false;
-      }, 500);
+      if (query.length >= this.ruleSearch) this.querySearch(query, this);
     }
   }
+
+  querySearch = debounce((query: string, $self: this) => {
+    $self.loadingData = true;
+
+    const queryResult = $self.items.filter((item) => {
+      return (
+        (item[$self.itemText] || item[$self.itemValue] || '')
+          .toLowerCase()
+          .indexOf((query || '').toLowerCase()) > -1
+      );
+    }) as IAutocompleteItems[];
+
+    if (!queryResult.length) $self.noDataTextData = $self.noDataText;
+
+    $self.itemsData = [...queryResult];
+    $self.loadingData = false;
+  }, 500);
 
   update(value: string): void {
     this.$emit('input', value);
