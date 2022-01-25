@@ -188,12 +188,7 @@ export default class FyDataTable extends BaseDataTable {
   }
 
   mountString(header: IDataTableHeaders): string {
-    console.log('mount string ', header);
     return `item.${header.value}`;
-  }
-
-  created(): void {
-    console.log('items ', this.items[0].cols[`cpf`]);
   }
 }
 </script>
