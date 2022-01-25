@@ -1,23 +1,20 @@
 <template>
-  <v-btn v-bind.sync="$props">
+  <v-btn v-bind.sync="$props" v-on="$listeners">
     <slot />
   </v-btn>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue';
+import { Component, Prop } from 'vue-property-decorator';
 import { VBtn } from 'vuetify/lib';
 
-export default {
-  extends: VBtn,
-  name: 'FyButtonDelete',
-  props: {
-    ...VBtn.props,
-    color: {
-      type: String,
-      default: 'error',
-    },
-  },
-};
+const BaseVBtn = Vue.extend(VBtn);
+
+@Component
+export default class FyButtonDelete extends BaseVBtn {
+  @Prop({ type: String, default: 'error' }) color!: string;
+}
 </script>
 
 <style></style>

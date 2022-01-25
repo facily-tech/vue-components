@@ -11,26 +11,23 @@
 </template>
 
 <script lang="ts">
-export default {
-  name: 'FyDialog',
+import Vue from 'vue';
+import { Component, Prop } from 'vue-property-decorator';
 
-  props: {
-    config: {
-      type: Object,
-      default: () => {
-        const item = {
-          fullscreen: false,
-          hideOverlay: false,
-          scrollable: false,
-        };
-        return item;
-      },
-    },
+import { VDialog } from 'vuetify/lib';
 
-    dialog: {
-      type: Boolean,
-      default: false,
-    },
-  },
-};
+import { IDialog } from '../types';
+
+const BaseVDialog = Vue.extend(VDialog);
+
+@Component
+export default class FyDialog extends BaseVDialog {
+  @Prop({
+    type: Object as () => IDialog,
+    default: () => ({ fullscreen: false, hideOverlay: false, scrollable: false } as IDialog),
+  })
+  config!: IDialog;
+
+  @Prop({ type: Boolean, default: false }) dialog!: boolean;
+}
 </script>

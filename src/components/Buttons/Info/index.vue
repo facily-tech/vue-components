@@ -4,20 +4,17 @@
   </v-btn>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue';
+import { Component, Prop } from 'vue-property-decorator';
 import { VBtn } from 'vuetify/lib';
 
-export default {
-  extends: VBtn,
-  name: 'FyButtonInfo',
-  props: {
-    ...VBtn.props,
-    color: {
-      type: String,
-      default: 'info',
-    },
-  },
-};
+const BaseVBtn = Vue.extend(VBtn);
+
+@Component
+export default class FyButtonInfo extends BaseVBtn {
+  @Prop({ type: String, default: 'info' }) color!: string;
+}
 </script>
 
 <style></style>

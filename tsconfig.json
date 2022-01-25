@@ -9,9 +9,10 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
     "sourceMap": true,
     "baseUrl": ".",
-    "types": ["webpack-env"],
+    "types": ["webpack-env", "vuetify"],
     "noImplicitAny": false,
     "paths": {
       "@/*": ["src/*"]
@@ -19,6 +20,6 @@
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "tests/**/*.ts", "tests/**/*.tsx"],
-  "typeRoots": ["./types", "./node_modules/@types/"],
+  "typeRoots": ["./types", "./node_modules/@types/", "./node_modules/vuetify/types"],
   "exclude": ["node_modules"]
 }

@@ -1,37 +1,37 @@
 <template>
   <div>
     <v-text-field
-      :value="value"
+      :value="text"
       @input="update"
       v-mask="'#####-###'"
-      :rules="cepRules"
+      :rules="rules"
       v-bind.sync="$props"
+      v-bind="$attrs"
+      v-on="$listeners"
     />
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue';
+import { Component, Prop } from 'vue-property-decorator';
+
 import { VTextField } from 'vuetify/lib';
 
-export default {
-  extends: VTextField,
-  name: 'FyInputCep',
-  props: {
-    ...VTextField.props,
-    value: String,
-  },
-  data() {
-    return {
-      cep: this.value ? this.value : '',
-      cepRules: [
-        (value) => value.length === 9 || 'O campo Cep deve conter 8 números',
-      ],
-    };
-  },
-  methods: {
-    update(value) {
-      this.$emit('input', value);
-    },
-  },
-};
+const BaseVTextField = Vue.extend(VTextField);
+
+@Component
+export default class FyInputCep extends BaseVTextField {
+  @Prop({ type: String }) value!: string;
+
+  text = this.value ? this.value : '';
+
+  rules = [
+    (value: string): boolean | string => value.length === 9 || 'O campo Cep deve conter 8 números',
+  ];
+
+  update(value: string): void {
+    this.$emit('input', value);
+  }
+}
 </script>

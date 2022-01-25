@@ -11,24 +11,20 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue';
+import { Component, Prop } from 'vue-property-decorator';
+
 import { VAvatar } from 'vuetify/lib';
 
-export default {
-  extends: VAvatar,
-  name: 'FyUserLabel',
-  props: {
-    ...VAvatar.props,
-    label: {
-      type: String,
-      default: '',
-    },
-    caption: {
-      type: String,
-      default: '',
-    },
-  },
-};
+const BaseVAvatar = Vue.extend(VAvatar);
+
+@Component
+export default class FyUserLabel extends BaseVAvatar {
+  @Prop({ type: String, default: '' }) label!: string;
+
+  @Prop({ type: String, default: '' }) caption!: string;
+}
 </script>
 
 <style></style>
