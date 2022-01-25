@@ -92,7 +92,11 @@
             {{ formatDate(item.cols[header.value]) }}
           </p>
         </div>
-        <div :key="headerKey" v-else-if="typeof item.cols[header.value] === 'object'">
+        <div
+          class="container-truncate"
+          :key="headerKey"
+          v-else-if="typeof item.cols[header.value] === 'object'"
+        >
           <template slot:item.cols[header.value]="{ item }">
             {{ item.cols[header.value].title }}
             <span class="d-block text-caption truncate">{{
@@ -225,6 +229,18 @@ export default class FyDataTable extends BaseDataTable {
       font-weight: 500;
       font-size: 16px;
       line-height: 18px;
+      & .container-truncate {
+        width: 90%;
+        display: grid;
+        & .truncate {
+          font-size: 0.8rem;
+          color: #999;
+          display: block;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+      }
     }
   }
 
@@ -232,13 +248,6 @@ export default class FyDataTable extends BaseDataTable {
     cursor: pointer;
     font-weight: bold;
     text-decoration: underline;
-  }
-
-  .truncate {
-    max-width: 97%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 }
 </style>
