@@ -254,6 +254,11 @@ export default Vue.extend({
             align: 'start',
             value: 'mail',
           },
+					{
+            text: 'Prioridade',
+            align: 'start',
+            value: 'priority',
+          },
           {
             text: 'CPF',
             align: 'start',
@@ -283,6 +288,7 @@ export default Vue.extend({
             mail: 'silva@uol.com.br',
             tax_id: '00000000000100',
             role: 'XX',
+						priority: 'Alta',
           },
           {
             name: 'Maria do Socorro',
@@ -290,6 +296,7 @@ export default Vue.extend({
             mail: 'maria.socorro@gmail.com',
             tax_id: '52155521266',
             role: 'XX',
+						priority: 'Média',
           },
           {
             name: 'Julia Teresa Cristina',
@@ -297,6 +304,7 @@ export default Vue.extend({
             mail: 'jcristina@ig.com.br',
             tax_id: '42212847802',
             role: 'XX',
+						priority: 'Baixa',
           },
           {
             name: 'Rogerio Madureira',

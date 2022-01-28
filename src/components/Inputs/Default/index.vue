@@ -2,6 +2,7 @@
   <div>
     <v-text-field
       :value="text"
+			:label="label"
       @input="update"
       v-bind.sync="$props"
       v-bind="$attrs"
@@ -21,6 +22,8 @@ const BaseVTextField = Vue.extend(VTextField);
 @Component
 export default class FyInputDefault extends BaseVTextField {
   @Prop({ type: String }) value!: string;
+
+	@Prop({ type: String }) label!: string;
 
   text = this.value ? this.value : '';
 

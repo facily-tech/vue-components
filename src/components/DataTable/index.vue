@@ -104,6 +104,11 @@
             }}</span>
           </template>
         </div>
+				<div :key="headerKey" v-else-if="header.value === 'priority'">
+					<div class="priority" :style="checkColor(item.cols[header.value])">
+						<p class="mb-0 ml-7">{{ item.cols[header.value] ? item.cols[header.value] : 'Indefinida' }} </p>
+					</div>
+				</div>	
         <div :key="headerKey" v-else>
           <template slot:item.cols[header.value]="{ item }">
             {{ item.cols[header.value] }}
@@ -194,6 +199,20 @@ export default class FyDataTable extends BaseDataTable {
   mountString(header: IDataTableHeaders): string {
     return `item.${header.value}`;
   }
+
+	checkColor($event:string): string  {
+		const expr = $event;
+		switch (expr) {
+			case 'Alta':
+				return `background-color: red;`;
+			case 'Média':
+				return `background-color: yellow;`;
+			case 'Baixa':
+				return `background-color: green;`;
+			default:
+				return `background-color: gray;`
+		}
+	}
 }
 </script>
 <style lang="scss">
@@ -249,5 +268,12 @@ export default class FyDataTable extends BaseDataTable {
     font-weight: bold;
     text-decoration: underline;
   }
+
+	.priority {
+		width: 15px;
+		height: 15px;
+		border-radius: 50%;
+		margin: 0;
+	}
 }
 </style>
