@@ -1,89 +1,101 @@
 {
-	"name": "@facily-tech/vue-components",
-	"version": "0.1.18",
-	"main": "./dist/vueComponents.common.js",
-	"module": "/dist/vueComponents.umd.js",
-	"repository": {
-		"url": "git://github.com/facily-tech/vue-components.git"
-	},
-	"scripts": {
-		"serve": "vue-cli-service serve",
-		"build": "vue-cli-service build",
-		"build:npm": "vue-cli-service build --target lib --name vueComponents src/index.ts",
-		"lint": "vue-cli-service lint",
-		"release": "standard-version",
-		"prepare": "husky install",
-		"commit": "git-cz",
-		"preinstall": "npx force-resolutions"
-	},
-	"resolutions": {
-		"glob-parent": "^6.0.1",
-		"yargs-parser": ">=13.1.2",
-		"node-notifier": ">=8.0.1",
-		"nth-check": ">=2.0.1"
-	},
-	"peerDependencies": {
-		"moment": "^2.29.1",
-		"v-mask": "^2.3.0",
-		"v-money": "^0.8.1",
-		"vue": "^2.6.11",
-		"vuetify": "^2.4.0"
-	},
-	"dependencies": {
-		"core-js": "^3.6.5",
-		"lodash": "^4.17.21",
-		"marked": "^4.0.10",
-		"moment": "^2.29.1",
-		"v-mask": "^2.3.0",
-		"v-money": "^0.8.1",
-		"vue": "^2.6.11",
-		"vue-class-component": "^7.2.3",
-		"vue-property-decorator": "^9.1.2",
-		"vue-router": "^3.5.3",
-		"vuetify": "^2.4.0",
-		"vuex": "^3.6.2"
-	},
-	"devDependencies": {
-		"@commitlint/cli": "^15.0.0",
-		"@commitlint/config-conventional": "^15.0.0",
-		"@types/lodash": "^4.14.178",
-		"@types/marked": "^4.0.1",
-		"@typescript-eslint/eslint-plugin": "^4.18.0",
-		"@typescript-eslint/parser": "^4.18.0",
-		"@vue/cli-plugin-babel": "~4.5.0",
-		"@vue/cli-plugin-eslint": "~4.5.0",
-		"@vue/cli-plugin-typescript": "~4.5.0",
-		"@vue/cli-service": "~4.5.0",
-		"@vue/eslint-config-prettier": "^6.0.0",
-		"@vue/eslint-config-typescript": "^7.0.0",
-		"cz-conventional-changelog": "^3.3.0",
-		"eslint": "^6.7.2",
-		"eslint-plugin-import": "^2.20.2",
-		"eslint-plugin-prettier": "^3.3.1",
-		"eslint-plugin-vue": "^6.2.2",
-		"husky": "^7.0.4",
-		"node-sass": "^4.12.0",
-		"raw-loader": "^4.0.2",
-		"sass": "~1.32.0",
-		"sass-loader": "^10.0.0",
-		"standard-version": "^9.3.2",
-		"typescript": "~4.1.5",
-		"vue-cli-plugin-vuetify": "~2.4.4",
-		"vue-template-compiler": "^2.6.11",
-		"vuetify-loader": "^1.7.0"
-	},
-	"bugs": {
-		"url": "https://github.com/facily-tech/vue-components/issues"
-	},
-	"homepage": "https://github.com/facily-tech/vue-components#readme",
-	"files": [
-		"dist/*",
-		"types/*"
-	],
-	"types": "./types/index.d.ts",
-	"config": {
-		"commitizen": {
-			"path": "cz-conventional-changelog"
-		}
-	}
+  "name": "@facily-tech/vue-components",
+  "version": "0.1.18",
+  "main": "./dist/vueComponents.common.js",
+  "module": "/dist/vueComponents.umd.js",
+  "repository": {
+    "url": "git://github.com/facily-tech/vue-components.git"
+  },
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "build:npm": "vue-cli-service build --target lib --name vueComponents src/index.ts",
+    "lint": "vue-cli-service lint",
+    "release": "standard-version",
+    "prepare": "husky install",
+    "commit": "git-cz",
+    "preinstall": "npx force-resolutions",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "resolutions": {
+    "glob-parent": "^6.0.1",
+    "yargs-parser": ">=13.1.2",
+    "node-notifier": ">=8.0.1",
+    "nth-check": ">=2.0.1"
+  },
+  "peerDependencies": {
+    "moment": "^2.29.1",
+    "v-mask": "^2.3.0",
+    "v-money": "^0.8.1",
+    "vue": "^2.6.11",
+    "vuetify": "^2.4.0"
+  },
+  "dependencies": {
+    "@socheatsok78/storybook-addon-vuetify": "^0.1.9",
+    "core-js": "^3.6.5",
+    "lodash": "^4.17.21",
+    "marked": "^4.0.10",
+    "moment": "^2.29.1",
+    "v-mask": "^2.3.0",
+    "v-money": "^0.8.1",
+    "vue": "^2.6.11",
+    "vue-class-component": "^7.2.3",
+    "vue-property-decorator": "^9.1.2",
+    "vue-router": "^3.5.3",
+    "vuetify": "^2.4.0",
+    "vuex": "^3.6.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.12",
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "@storybook/addon-actions": "^6.4.17",
+    "@storybook/addon-essentials": "^6.4.17",
+    "@storybook/addon-links": "^6.4.17",
+    "@storybook/addons": "^6.4.18",
+    "@storybook/theming": "^6.4.18",
+    "@storybook/vue": "^6.4.17",
+    "@types/lodash": "^4.14.178",
+    "@types/marked": "^4.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "@typescript-eslint/parser": "^4.18.0",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-typescript": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/eslint-config-typescript": "^7.0.0",
+    "babel-loader": "^8.2.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-storybook": "^0.5.6",
+    "eslint-plugin-vue": "^6.2.2",
+    "husky": "^7.0.4",
+    "node-sass": "^4.12.0",
+    "raw-loader": "^4.0.2",
+    "sass": "~1.32.0",
+    "sass-loader": "^10.0.0",
+    "standard-version": "^9.3.2",
+    "typescript": "~4.1.5",
+    "vue-cli-plugin-vuetify": "~2.4.4",
+    "vue-template-compiler": "^2.6.11",
+    "vuetify-loader": "^1.7.0"
+  },
+  "bugs": {
+    "url": "https://github.com/facily-tech/vue-components/issues"
+  },
+  "homepage": "https://github.com/facily-tech/vue-components#readme",
+  "files": [
+    "dist/*",
+    "types/*"
+  ],
+  "types": "./types/index.d.ts",
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
 }
