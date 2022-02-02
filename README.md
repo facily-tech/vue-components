@@ -20,6 +20,12 @@ npm run build
 npm run lint
 ```
 
+### Storybook (documentation)
+```
+npm run storybook
+```
+
+
 
 ### Commits and Changelog
 
