@@ -82,8 +82,9 @@ export default class FyDialogDelete extends Vue {
   }
 
   async submit(): Promise<void> {
+		console.log(this.item);
     this.$emit('close-dialog');
-    this.$emit('confirm-dialog');
+    this.$emit('confirm-dialog', this.item);
   }
 }
 </script>
