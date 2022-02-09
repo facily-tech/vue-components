@@ -1,12 +1,8 @@
+import { VueConstructor } from 'vue';
+
 import { FyAutocomplete } from './components/Autocomplete';
 
-import {
-  FyButtonInfo,
-  FyButtonSuccess,
-  FyButtonWarning,
-  FyButtonDelete,
-  FyButton,
-} from './components/Buttons';
+import FyButton from './components/FyButton';
 
 import { FyNoticationBar } from './components/NotificationBar';
 
@@ -37,15 +33,21 @@ import {
   FyInputDateTime,
   FyInputCurrency,
 } from './components/Inputs';
+
 import { FyGaugeChart } from './components/Charts';
+
+const VueComponents = {
+  install(Vue: VueConstructor, options?: any): void {
+    Vue.component('fy-autocomplete', FyAutocomplete);
+    Vue.component('fy-button', FyButton);
+    Vue.component('fy-autocomplete', FyAutocomplete);
+    Vue.component('fy-autocomplete', FyAutocomplete);
+  },
+};
 
 export {
   FyAutocomplete,
   FyButton,
-  FyButtonInfo,
-  FyButtonSuccess,
-  FyButtonWarning,
-  FyButtonDelete,
   FyNoticationBar,
   FyUserLabel,
   FyInfoCard,
@@ -67,3 +69,9 @@ export {
   FyDataTable,
   FyGaugeChart,
 };
+
+export default VueComponents;
+
+if (typeof window !== 'undefined' && window.Vue) {
+  window.Vue.use(VueComponents);
+}
