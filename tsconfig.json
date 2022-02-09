@@ -12,15 +12,38 @@
     "experimentalDecorators": true,
     "sourceMap": true,
     "baseUrl": ".",
-    "types": ["webpack-env", "vuetify"],
+    "types": [
+      "webpack-env",
+      "vuetify",
+      "jest"
+    ],
     "noImplicitAny": false,
     "strictNullChecks": false,
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": [
+        "src/*"
+      ]
     },
-    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "tests/**/*.ts", "tests/**/*.tsx"],
-  "typeRoots": ["./types", "./node_modules/@types/", "./node_modules/vuetify/types"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
+  ],
+  "typeRoots": [
+    "./types",
+    "./node_modules/@types/",
+    "./node_modules/vuetify/types"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

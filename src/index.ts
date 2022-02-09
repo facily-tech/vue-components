@@ -1,6 +1,6 @@
 import { VueConstructor } from 'vue';
 
-import { FyAutocomplete } from './components/Autocomplete';
+import FyAutocomplete from './components/FyAutocomplete';
 
 import FyButton from './components/FyButton';
 
@@ -40,8 +40,7 @@ const VueComponents = {
   install(Vue: VueConstructor, options?: any): void {
     Vue.component('fy-autocomplete', FyAutocomplete);
     Vue.component('fy-button', FyButton);
-    Vue.component('fy-autocomplete', FyAutocomplete);
-    Vue.component('fy-autocomplete', FyAutocomplete);
+    Vue.component('fy-input', FyInput);
   },
 };
 

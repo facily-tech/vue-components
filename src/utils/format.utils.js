@@ -48,22 +48,9 @@ const parserDateOrder = (init, end, format) => {
   dateEnd = dateEnd.replace('Z', '');
   dateEnd = dateEnd.replace('00:00:00', '23:59:59');
   if (format) {
-    return [
-      moment(a).format('DD/MM/YYYY'),
-      moment(b).format('DD/MM/YYYY'),
-    ];
+    return [moment(a).format('DD/MM/YYYY'), moment(b).format('DD/MM/YYYY')];
   }
-  return [
-    dateInit,
-    dateEnd,
-  ];
+  return [dateInit, dateEnd];
 };
 
-export {
-  formatCurrency,
-  formatCellPhone,
-  formatZipCode,
-  formatDate,
-  parserDateOrder,
-  formatCpf,
-};
+export { formatCurrency, formatCellPhone, formatZipCode, formatDate, parserDateOrder, formatCpf };

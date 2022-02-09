@@ -1,19 +1,19 @@
 /// <reference path="../../../node_modules/vuetify/src/globals.d.ts" />
 import Vue from 'vue';
 
-import { VBtn } from 'vuetify/lib';
+import { VAutocomplete } from 'vuetify/lib';
 
-const base = Vue.extend({ mixins: [VBtn] });
+const base = Vue.extend({ mixins: [VAutocomplete] });
 
 type options = InstanceType<typeof base>;
 
 export default base.extend<options>().extend({
-  name: 'fy-button',
+  name: 'fy-autocomplete',
   computed: {
     class(): Record<string, unknown> {
       return {
-        ...VBtn.options.computed.classes.call(this),
-        'fy-button': true,
+        ...VAutocomplete.options.computed.classes.call(this),
+        'fy-autocomplete': true,
       };
     },
   },
