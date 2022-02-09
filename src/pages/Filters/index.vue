@@ -28,13 +28,13 @@
                         <v-form ref="form">
                           <v-row>
                             <v-col cols="12" md="3" xl="2">
-                              <fy-input-default
+                              <fy-input
                                 label="Filtro 01"
                                 v-model="filters.filter1"
                                 outlined
                                 ref="filter1"
                                 @input="getFilter1"
-                              ></fy-input-default>
+                              ></fy-input>
                             </v-col>
                             <v-col cols="12" md="3" xl="2">
                               <fy-input-cpf
@@ -46,13 +46,13 @@
                               ></fy-input-cpf>
                             </v-col>
                             <v-col cols="12" md="3" xl="2">
-                              <fy-input-default
+                              <fy-input
                                 label="Nome"
                                 v-model="filters.nameFilter"
                                 outlined
                                 ref="nameFiler"
                                 @input="getFilterName"
-                              ></fy-input-default>
+                              ></fy-input>
                             </v-col>
                             <v-col cols="12" md="3" xl="2">
                               <fy-input-phone
@@ -116,7 +116,7 @@
 import Vue from 'vue';
 
 import { FyFilterData } from '@/components/Filters';
-import { FyInputDefault, FyInputCpf, FyInputPhone } from '@/components/Inputs';
+import { FyInput, FyInputCpf, FyInputPhone } from '@/components/Inputs';
 
 const contentUsageFilters = `
   <fy-filter-data
@@ -130,13 +130,13 @@ const contentUsageFilters = `
       <v-form ref="form">
         <v-row>
           <v-col cols="12" md="3" xl="2">
-            <fy-input-default
+            <fy-input
               label="Filtro 01"
               v-model="filters.filter1"
               outlined
               ref="filter1"
               @input="getFilter1"
-            ></fy-input-default>
+            ></fy-input>
           </v-col>
           <v-col cols="12" md="3" xl="2">
             <fy-input-cpf
@@ -148,13 +148,13 @@ const contentUsageFilters = `
             ></fy-input-cpf>
           </v-col>
           <v-col cols="12" md="3" xl="2">
-            <fy-input-default
+            <fy-input
               label="Nome"
               v-model="filters.nameFilter"
               outlined
               ref="nameFiler"
               @input="getFilterName"
-            ></fy-input-default>
+            ></fy-input>
           </v-col>
           <v-col cols="12" md="3" xl="2">
             <fy-input-phone
@@ -173,7 +173,7 @@ const contentUsageFilters = `
 
 export default Vue.extend({
   name: 'PageFilters',
-  components: { FyFilterData, FyInputDefault, FyInputCpf, FyInputPhone },
+  components: { FyFilterData, FyInput, FyInputCpf, FyInputPhone },
   data() {
     return {
       contentUsageFilters,

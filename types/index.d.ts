@@ -14,7 +14,7 @@ export const FyInputCpf: VueConstructor;
 export const FyInputCnpj: VueConstructor;
 export const FyInputPhone: VueConstructor;
 export const FyInputCep: VueConstructor;
-export const FyInputDefault: VueConstructor;
+export const FyInput: VueConstructor;
 export const FyInputDate: VueConstructor;
 export const FyInputTime: VueConstructor;
 export const FyInputDateTime: VueConstructor;
