@@ -27,11 +27,11 @@ import { FyFilterData } from './components/Filters';
 import { FyDataTable } from './components/DataTable';
 
 import {
+  FyInput,
   FyInputCpf,
   FyInputCnpj,
   FyInputPhone,
   FyInputCep,
-  FyInputDefault,
   FyInputDate,
   FyInputTime,
   FyInputDateTime,
@@ -49,11 +49,11 @@ export {
   FyNoticationBar,
   FyUserLabel,
   FyInfoCard,
+  FyInput,
   FyInputCpf,
   FyInputCnpj,
   FyInputPhone,
   FyInputCep,
-  FyInputDefault,
   FyInputDate,
   FyInputTime,
   FyInputDateTime,

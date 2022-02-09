@@ -16,7 +16,9 @@
                 <v-list-item-title>Example</v-list-item-title>
                 <v-list-item-subtitle class="py-8">
                   <v-row align="center" justify="space-around">
-                    <fy-input-default placeholder="Input default" />
+                    <div>
+                      <fy-input placeholder="Fy Input" :rules="rules" />
+                    </div>
                   </v-row>
                 </v-list-item-subtitle>
               </v-list-item-content>
@@ -53,15 +55,16 @@
 <script>
 import Vue from 'vue';
 
-import { FyInputDefault, FyInputCpf, FyInputCurrency } from '@/components/Inputs';
+import { FyInput, FyInputCpf, FyInputCurrency } from '@/components/Inputs';
 
 export default Vue.extend({
   name: 'PageButtons',
-  components: { FyInputDefault, FyInputCpf, FyInputCurrency },
+  components: { FyInput, FyInputCpf, FyInputCurrency },
   data() {
     return {
       cpf: '',
       currency: '0',
+      rules: [(v) => v.length <= 25 || 'Max 25 characters'],
     };
   },
 });
