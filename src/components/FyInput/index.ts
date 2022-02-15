@@ -1,0 +1,9 @@
+export { default as FyInput } from './FyInput';
+export { default as FyInputCep } from './FyInputCep.vue';
+export { default as FyInputCnpj } from './FyInputCnpj.vue';
+export { default as FyInputCpf } from './FyInputCpf.vue';
+export { default as FyInputCurrency } from './FyInputCurrency.vue';
+export { default as FyInputDate } from './FyInputDate.vue';
+export { default as FyInputDateTime } from './FyInputDateTime.vue';
+export { default as FyInputPhone } from './FyInputPhone.vue';
+export { default as FyInputTime } from './FyInputTime.vue';

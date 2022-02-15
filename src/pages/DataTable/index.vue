@@ -89,8 +89,8 @@
 <script lang="ts">
 import Vue from 'vue';
 
-import { FyDataTable } from '@/components/DataTable';
-import { IDataTableRows } from '@/components/DataTable/types';
+import { FyDataTable } from '@/index';
+import { IDataTableRows } from '@/components/FyDataTable/types';
 
 const contentUsageDataTable = `
   <fy-data-table
@@ -191,13 +191,13 @@ const contentUsageDataTableScript = `
       };
     },
     computed: {
-      tableItems(): IDataTableRows[] {
+      tableItems(): IFyDataTableRows[] {
         const nItems = [...this.table.items];
         return nItems.map((item) => {
           return {
             cols: item,
             actions: this.table.actions,
-          } as IDataTableRows;
+          } as IFyDataTableRows;
         });
       },
     },

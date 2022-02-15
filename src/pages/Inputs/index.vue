@@ -17,7 +17,30 @@
                 <v-list-item-subtitle class="py-8">
                   <v-row align="center" justify="space-around">
                     <div>
-                      <fy-input placeholder="Fy Input" :rules="rules" />
+                      <fy-input placeholder="Fy Input" />
+                    </div>
+                  </v-row>
+                </v-list-item-subtitle>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list>
+        </v-card>
+      </v-col>
+    </v-row>
+
+    <v-row>
+      <v-col cols="12">
+        <v-card>
+          <v-subheader>CEP</v-subheader>
+
+          <v-list two-line>
+            <v-list-item>
+              <v-list-item-content>
+                <v-list-item-title>Example</v-list-item-title>
+                <v-list-item-subtitle class="py-8">
+                  <v-row align="center" justify="space-around">
+                    <div>
+                      <fy-input-cep v-model="cep" />
                     </div>
                   </v-row>
                 </v-list-item-subtitle>
@@ -40,7 +63,48 @@
                 <v-list-item-subtitle class="py-8">
                   <v-row align="center" justify="space-around">
                     <fy-input-cpf v-model="cpf" placeholder="000.000.000-00" />
-                    <fy-input-currency v-model.lazy="currency" />
+                  </v-row>
+                </v-list-item-subtitle>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list>
+        </v-card>
+      </v-col>
+    </v-row>
+
+    <v-row>
+      <v-col cols="12">
+        <v-card>
+          <v-subheader>CNPJ</v-subheader>
+
+          <v-list two-line>
+            <v-list-item>
+              <v-list-item-content>
+                <v-list-item-title>Example</v-list-item-title>
+                <v-list-item-subtitle class="py-8">
+                  <v-row align="center" justify="space-around">
+                    <fy-input-cnpj v-model="cnpj" placeholder="00.000.000/0000-00" />
+                  </v-row>
+                </v-list-item-subtitle>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list>
+        </v-card>
+      </v-col>
+    </v-row>
+
+    <v-row>
+      <v-col cols="12">
+        <v-card>
+          <v-subheader>Currency</v-subheader>
+
+          <v-list two-line>
+            <v-list-item>
+              <v-list-item-content>
+                <v-list-item-title>Example</v-list-item-title>
+                <v-list-item-subtitle class="py-8">
+                  <v-row align="center" justify="space-around">
+                    <fy-input-currency v-model="currency" />
                   </v-row>
                 </v-list-item-subtitle>
               </v-list-item-content>
@@ -55,17 +119,23 @@
 <script>
 import Vue from 'vue';
 
-import { FyInput, FyInputCpf, FyInputCurrency } from '@/components/Inputs';
+import { FyInput, FyInputCep, FyInputCpf, FyInputCnpj, FyInputCurrency } from '@/index';
 
 export default Vue.extend({
   name: 'PageButtons',
-  components: { FyInput, FyInputCpf, FyInputCurrency },
+  components: { FyInput, FyInputCep, FyInputCpf, FyInputCnpj, FyInputCurrency },
   data() {
     return {
+      cep: '',
       cpf: '',
+      cnpj: '',
       currency: '0',
-      rules: [(v) => v.length <= 25 || 'Max 25 characters'],
     };
+  },
+  watch: {
+    cep: function (value) {
+      console.log('pages input ', value);
+    },
   },
 });
 </script>

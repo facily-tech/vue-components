@@ -17,7 +17,7 @@
                 <v-list-item-title>Example</v-list-item-title>
                 <v-list-item-subtitle class="py-8 px-8">
                   <v-row>
-                    <fy-filter-data
+                    <fy-filter
                       :validForm="true"
                       :allTags="allTags"
                       @clear-tags="onClearTags()"
@@ -66,7 +66,7 @@
                           </v-row>
                         </v-form>
                       </template>
-                    </fy-filter-data>
+                    </fy-filter>
                   </v-row>
                 </v-list-item-subtitle>
               </v-list-item-content>
@@ -115,11 +115,10 @@
 <script lang="ts">
 import Vue from 'vue';
 
-import { FyFilterData } from '@/components/Filters';
-import { FyInput, FyInputCpf, FyInputPhone } from '@/components/Inputs';
+import { FyFilter, FyInput, FyInputCpf, FyInputPhone } from '@/index';
 
 const contentUsageFilters = `
-  <fy-filter-data
+  <fy-filter
     :validForm="true"
     :allTags="allTags"
     @clear-tags="onClearTags()"
@@ -168,12 +167,12 @@ const contentUsageFilters = `
         </v-row>
       </v-form>
     </template>
-  </fy-filter-data>
+  </fy-filter>
 `;
 
 export default Vue.extend({
   name: 'PageFilters',
-  components: { FyFilterData, FyInput, FyInputCpf, FyInputPhone },
+  components: { FyFilter, FyInput, FyInputCpf, FyInputPhone },
   data() {
     return {
       contentUsageFilters,

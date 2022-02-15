@@ -2,25 +2,21 @@ import { VueConstructor } from 'vue';
 
 import FyAutocomplete from './components/FyAutocomplete';
 
+import FyAvatar from './components/FyAvatar';
+
 import FyButton from './components/FyButton';
 
-import { FyNoticationBar } from './components/NotificationBar';
+import { FyChartGauge } from './components/FyChart';
 
-import { FyUserLabel } from './components/UserLabel';
+import { FyDataTable, FyDataTableBase } from './components/FyDataTable';
 
-import { FyInfoCard } from './components/InfoCard';
+import { FyDialog, FyDialogBase, FyDialogDelete } from './components/FyDialog';
 
-import { FyDialog, FyDialogDelete } from './components/Dialogs';
+import { FyDrawer } from './components/FyDrawer';
 
-import { FyDrawer } from './components/Drawer';
+import { FyFilter } from './components/FyFilter';
 
-import { FySnackbar } from './components/Snackbar';
-
-import { FyToolbar } from './components/Toolbar';
-
-import { FyFilterData } from './components/Filters';
-
-import { FyDataTable } from './components/DataTable';
+import { FyInfoCard } from './components/FyInfoCard';
 
 import {
   FyInput,
@@ -32,23 +28,62 @@ import {
   FyInputTime,
   FyInputDateTime,
   FyInputCurrency,
-} from './components/Inputs';
+} from './components/FyInput';
 
-import { FyGaugeChart } from './components/Charts';
+import { FyNoticationBar } from './components/FyNotificationBar';
+
+import { FySnackbar, FySnackbarBase } from './components/FySnackbar';
+
+import { FyToolbar } from './components/FyToolbar';
+
+import { FyUserLabel } from './components/FyUserLabel';
 
 const VueComponents = {
-  install(Vue: VueConstructor, options?: any): void {
+  install(Vue: VueConstructor): void {
     Vue.component('fy-autocomplete', FyAutocomplete);
     Vue.component('fy-button', FyButton);
     Vue.component('fy-input', FyInput);
+    Vue.component('fy-avatar', FyAvatar);
+    Vue.component('fy-autocomplete', FyAutocomplete);
+    Vue.component('fy-button', FyButton);
+    Vue.component('fy-chart-gauge', FyChartGauge);
+    Vue.component('fy-data-table', FyDataTable);
+    Vue.component('fy-data-table-base', FyDataTableBase);
+    Vue.component('fy-dialog', FyDialog);
+    Vue.component('fy-dialog-base', FyDialogBase);
+    Vue.component('fy-dialog-delete', FyDialogDelete);
+    Vue.component('fy-drawer', FyDrawer);
+    Vue.component('fy-filter', FyFilter);
+    Vue.component('fy-info-card', FyInfoCard);
+    Vue.component('fy-input', FyInput);
+    Vue.component('fy-input-cep', FyInputCep);
+    Vue.component('fy-input-cnpj', FyInputCnpj);
+    Vue.component('fy-input-cpf', FyInputCpf);
+    Vue.component('fy-input-currency', FyInputCurrency);
+    Vue.component('fy-input-date', FyInputDate);
+    Vue.component('fy-input-date-time', FyInputDateTime);
+    Vue.component('fy-input-phone', FyInputPhone);
+    Vue.component('fy-input-time', FyInputTime);
+    Vue.component('fy-snackbar', FySnackbar);
+    Vue.component('fy-snackbar-base', FySnackbarBase);
+    Vue.component('fy-toolbar', FyToolbar);
+    Vue.component('fy-notication-bar', FyNoticationBar);
+    Vue.component('fy-user-label', FyUserLabel);
   },
 };
 
 export {
+  FyAvatar,
   FyAutocomplete,
   FyButton,
-  FyNoticationBar,
-  FyUserLabel,
+  FyChartGauge,
+  FyDataTable,
+  FyDataTableBase,
+  FyDialog,
+  FyDialogBase,
+  FyDialogDelete,
+  FyDrawer,
+  FyFilter,
   FyInfoCard,
   FyInput,
   FyInputCpf,
@@ -59,14 +94,11 @@ export {
   FyInputTime,
   FyInputDateTime,
   FyInputCurrency,
-  FyDialog,
-  FyDialogDelete,
-  FyDrawer,
   FySnackbar,
+  FySnackbarBase,
   FyToolbar,
-  FyFilterData,
-  FyDataTable,
-  FyGaugeChart,
+  FyNoticationBar,
+  FyUserLabel,
 };
 
 export default VueComponents;

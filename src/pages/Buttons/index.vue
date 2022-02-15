@@ -53,10 +53,10 @@
                 <v-list-item-title>Example</v-list-item-title>
                 <v-list-item-subtitle class="py-8 px-8">
                   <v-row>
-                    <fy-button-success>
+                    <fy-button color="success">
                       <v-icon class="mr-2">mdi-check-bold</v-icon>
                       Success
-                    </fy-button-success>
+                    </fy-button>
                   </v-row>
                 </v-list-item-subtitle>
               </v-list-item-content>
@@ -92,10 +92,10 @@
                 <v-list-item-title>Example</v-list-item-title>
                 <v-list-item-subtitle class="py-8 px-8">
                   <v-row>
-                    <fy-button-info>
+                    <fy-button color="info">
                       <v-icon class="mr-2">mdi-information-outline</v-icon>
                       Info
-                    </fy-button-info>
+                    </fy-button>
                   </v-row>
                 </v-list-item-subtitle>
               </v-list-item-content>
@@ -131,10 +131,10 @@
                 <v-list-item-title>Example</v-list-item-title>
                 <v-list-item-subtitle class="py-8 px-8">
                   <v-row>
-                    <fy-button-warning>
+                    <fy-button color="warning">
                       <v-icon class="mr-2">mdi-alert-outline</v-icon>
                       Warning
-                    </fy-button-warning>
+                    </fy-button>
                   </v-row>
                 </v-list-item-subtitle>
               </v-list-item-content>
@@ -170,10 +170,10 @@
                 <v-list-item-title>Example</v-list-item-title>
                 <v-list-item-subtitle class="py-8 px-8">
                   <v-row>
-                    <fy-button-delete>
+                    <fy-button color="error">
                       <v-icon class="mr-2">mdi-trash-can-outline</v-icon>
                       Delete
-                    </fy-button-delete>
+                    </fy-button>
                   </v-row>
                 </v-list-item-subtitle>
               </v-list-item-content>
@@ -224,13 +224,7 @@
 <script>
 import Vue from 'vue';
 
-import {
-  FyButton,
-  FyButtonInfo,
-  FyButtonSuccess,
-  FyButtonWarning,
-  FyButtonDelete,
-} from '@/components/Buttons';
+import FyButton from '@/components/FyButton';
 
 const contentUsageDefault = `
     <fy-button>
@@ -238,33 +232,33 @@ const contentUsageDefault = `
     </fy-button>
 `;
 const contentUsageSuccess = `
-    <fy-button-success>
+    <fy-button color="success">
       <v-icon class="mr-2">mdi-check-bold</v-icon>
       Success
-    </fy-button-success>
+    </fy-button>
 `;
 const contentUsageInfo = `
-    <fy-button-info>
+    <fy-button color="info">
       <v-icon class="mr-2">mdi-information-outline</v-icon>
       Info
-    </fy-button-info>
+    </fy-button>
 `;
 const contentUsageWarning = `
-    <fy-button-info>
+    <fy-button color="warning">
       <v-icon class="mr-2">mdi-alert-outline</v-icon>
       Info
-    </fy-button-info>
+    </fy-button>
 `;
 const contentUsageDelete = `
-    <fy-button-info>
+    <fy-button color="error">
       <v-icon class="mr-2">mdi-trash-can-outline</v-icon>
       Info
-    </fy-button-info>
+    </fy-button>
 `;
 
 export default Vue.extend({
   name: 'PageButtons',
-  components: { FyButton, FyButtonInfo, FyButtonSuccess, FyButtonWarning, FyButtonDelete },
+  components: { FyButton },
   data() {
     return {
       contentUsageDefault,

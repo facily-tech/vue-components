@@ -18,12 +18,7 @@
                 <v-list-item-subtitle class="py-8 px-8">
                   <v-row>
                     <v-card height="400" width="256">
-                      <v-navigation-drawer
-                        v-model="drawer"
-                        permanent
-                        color="primary"
-                        class="menuDrawer"
-                      >
+                      <fy-drawer v-model="drawer" permanent color="primary" class="menuDrawer">
                         <v-list-item style="height: 64px" class="px-2">
                           <v-list-item-avatar style="border-radius: 0">
                             <v-img
@@ -89,7 +84,7 @@
                             </template>
                           </v-list-item>
                         </div>
-                      </v-navigation-drawer>
+                      </fy-drawer>
                     </v-card>
                   </v-row>
                 </v-list-item-subtitle>
@@ -150,10 +145,10 @@
 </template>
 
 <script lang="ts">
-import { IItemsDrawer } from '@/components/Drawer/types';
 import Vue from 'vue';
 
-// import { FyDrawer } from '@/components/Drawer';
+import { FyDrawer } from '@/index';
+import { IDrawerItems } from '@/components/FyDrawer/types';
 
 const contentUsageDrawer = `
   <fy-drawer
@@ -204,6 +199,9 @@ const contentUsageDrawerScript = `
 
 export default Vue.extend({
   name: 'PageDrawer',
+
+  components: { FyDrawer },
+
   data() {
     return {
       contentUsageDrawer,
@@ -238,7 +236,7 @@ export default Vue.extend({
             },
           ],
         },
-      ] as IItemsDrawer[],
+      ] as IDrawerItems[],
     };
   },
 });

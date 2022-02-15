@@ -4,11 +4,11 @@
       :items="items"
       :brand="require('../assets/icon-logo-white.png')"
       :title="'Facily'"
-      componentNavigation
+      :component-navigation="true"
       v-on:logoff="logoff"
       v-on:changeComponent="changeComponent"
     />
-    <fy-toolbar :items="toolbar" />
+    <fy-toolbar :items="toolbar" :back-button="true" />
 
     <component :is="currentComponent" />
   </v-app>
@@ -31,8 +31,8 @@ import PageDrawer from '@/pages/Drawer/index.vue';
 import PageFilters from '@/pages/Filters/index.vue';
 import PageInfoCard from '@/pages/InfoCard/index.vue';
 
-import { IItemsDrawer } from './Drawer/types';
-import { IItemsToolbar } from './Toolbar/types';
+import { IDrawerItems } from './FyDrawer/types';
+import { IItemsToolbar } from './FyToolbar/types';
 
 export default Vue.extend({
   name: 'ShowComponents',
@@ -138,7 +138,7 @@ export default Vue.extend({
           icon: 'mdi-exit-to-app',
           enable: true,
         },
-      ] as IItemsDrawer[],
+      ] as IDrawerItems[],
       toolbar: {
         title: 'Welcome to Facily components gallery',
       } as IItemsToolbar,
