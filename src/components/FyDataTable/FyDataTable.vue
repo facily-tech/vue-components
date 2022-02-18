@@ -44,16 +44,16 @@
           </div>
         </div>
         <div :key="headerKey" v-else-if="header.value === 'tax_id'">
-          {{ formatTaxId(item.cols[header.value]) }}
+          {{ fyFormatMaskTaxId(item.cols[header.value]) }}
         </div>
         <div :key="headerKey" v-else-if="header.value === 'price' || header.value === 'total'">
-          {{ formatCurrency(item.cols[header.value]) }}
+          {{ fyFormatMaskCurrency(item.cols[header.value]) }}
         </div>
         <div :key="headerKey" v-else-if="header.value === 'zipCode'">
-          {{ formatZipCode(item.cols[header.value]) }}
+          fyF{ forMaskmatZipCode(item.cols[header.value]) }}
         </div>
         <div :key="headerKey" v-else-if="header.value === 'phone'">
-          {{ formatCellPhone(item.cols[header.value]) }}
+          {{ fyFormatMaskCellPhone(item.cols[header.value]) }}
         </div>
         <div :key="headerKey" v-else-if="header.value === 'radioOption'">
           <v-radio-group v-model="radioSelect">
@@ -88,9 +88,7 @@
             header.value === 'valid_until'
           "
         >
-          <p class="mb-0">
-            {{ formatDate(item.cols[header.value]) }}
-          </p>
+          <p class="mb-0">fyF{ formatDate(item.cols[header.value]) }}</p>
         </div>
         <div
           class="container-truncate"
@@ -151,12 +149,12 @@ import { VDataTable } from 'vuetify/lib';
 import { FyButton, FyDataTableBase } from '@/index';
 
 import {
-  formatTaxId,
-  formatCurrency,
-  formatZipCode,
-  formatCellPhone,
-  formatDate,
-} from '@/utils/format.utils';
+  fyFormatMaskTaxId,
+  fyFormatMaskCurrency,
+  fyFormatMaskZipCode,
+  fyFormatMaskCellPhone,
+  fyFormatDate,
+} from '@/utils';
 import { IDataTableHeaders, IDataTableRows, IDataTablePagination } from './types';
 
 interface BaseDataTableOptions extends InstanceType<typeof BaseDataTable> {
@@ -199,11 +197,11 @@ export default BaseDataTable.extend<BaseDataTableOptions>().extend({
 
       page: this.pagination ? this.pagination.page : 1,
 
-      formatTaxId,
-      formatCurrency,
-      formatZipCode,
-      formatCellPhone,
-      formatDate,
+      fyFormatMaskTaxId,
+      fyFormatMaskCurrency,
+      fyFormatMaskZipCode,
+      fyFormatMaskCellPhone,
+      fyFormatDate,
     };
   },
 

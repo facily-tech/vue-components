@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FyNotificationBar.ts should render component and match snapshot 1`] = `
+<div class="fy-notication-bar">
+  <v-menu offset-y="">
+    <v-card max-width="400">
+      <div>
+        <v-card-title class="primary darken-1 title-card"><span class="text-h5 white--text">Notificações</span>
+          <!---->
+        </v-card-title>
+      </div>
+      <!---->
+    </v-card>
+  </v-menu>
+</div>
+`;

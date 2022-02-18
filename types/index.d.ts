@@ -16,6 +16,21 @@ import { INotificationBarProps } from '../src/components/FyNotificationBar/types
 import { ISnackbarProps } from '../src/components/FySnackbar/types';
 import { IItemsToolbar } from '../src/components/FyToolbar/types';
 
+import {
+  fyFormatDate,
+  fyParserDateOder,
+  fyFormatMaskCellPhone,
+  fyFormatMaskCurrency,
+  fyFormatMaskTaxId,
+  fyFormatMaskZipCode,
+  fyNormalizeSpecialCharacters,
+  fyNormalizeString,
+  fyGenerateQueryParams,
+  fyGenerateSlug,
+} from '../src/utils';
+
+import { IParamsProps } from '../src/utils/types';
+
 export const FyAvatar: VueConstructor;
 export const FyAutocomplete: VueConstructor;
 export const FyButton: VueConstructor;
@@ -55,3 +70,18 @@ export type IFyFiltersAllTags = IFiltersAllTags;
 export type IFyNotificationBarProps = INotificationBarProps;
 export type IFySnackbarProps = ISnackbarProps;
 export type IFyItemsToolbar = IItemsToolbar;
+
+export type IFyParamsProps = IParamsProps;
+
+export {
+  fyFormatDate,
+  fyParserDateOder,
+  fyFormatMaskCellPhone,
+  fyFormatMaskCurrency,
+  fyFormatMaskTaxId,
+  fyFormatMaskZipCode,
+  fyNormalizeSpecialCharacters,
+  fyNormalizeString,
+  fyGenerateQueryParams,
+  fyGenerateSlug,
+};

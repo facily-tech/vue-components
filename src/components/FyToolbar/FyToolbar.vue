@@ -54,7 +54,7 @@ export default BaseToolbar.extend<options>().extend({
 
   components: { VAppBar, VToolbar },
 
-  propps: {
+  props: {
     items: {
       type: Object as () => IItemsToolbar,
       default: {} as IItemsToolbar,

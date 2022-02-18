@@ -123,7 +123,13 @@ import { FyInput, FyInputCep, FyInputCpf, FyInputCnpj, FyInputCurrency } from '@
 
 export default Vue.extend({
   name: 'PageButtons',
-  components: { FyInput, FyInputCep, FyInputCpf, FyInputCnpj, FyInputCurrency },
+  components: {
+    FyInput,
+    FyInputCep,
+    FyInputCpf,
+    FyInputCnpj,
+    FyInputCurrency,
+  },
   data() {
     return {
       cep: '',
