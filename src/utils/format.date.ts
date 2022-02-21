@@ -33,7 +33,6 @@ const parserDateOrder = (init: string, end: string, format?: string): string[] =
   }
 
   if (format) {
-    console.log('format ', [moment(dateA).format(format), moment(dateB).format(format)]);
     return [moment(dateA).format(format), moment(dateB).format(format)];
   }
 

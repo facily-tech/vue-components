@@ -86,7 +86,6 @@ export default Vue.extend({
     },
 
     async submit(): Promise<void> {
-      console.log(this.item);
       this.$emit('close-dialog');
       this.$emit('confirm-dialog', this.item);
     },
