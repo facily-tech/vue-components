@@ -127,9 +127,8 @@
 <script lang="ts">
 import Vue from 'vue';
 
-import { FyDialog, FyDialogDelete } from '@/components/Dialogs';
-
-import { IDialogDeleteItem } from '@/components/Dialogs/types';
+import { FyDialog, FyDialogDelete } from '@/index';
+import { IDialogDeleteItem } from '@/components/FyDialog/types';
 
 const contentUsageDialog = `
   <fy-dialog :dialog="dialog">

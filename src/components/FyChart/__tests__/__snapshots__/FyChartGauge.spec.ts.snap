@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FyChartGauge.ts should render component and match snapshot 1`] = `
+<div class="gauge-chart d-flex align-end justify-center"><svg height="110.00000000000001" width="200">
+    <circle cx="100" cy="100" fill="transparent" r="90" stroke="rgb(229, 229, 229)" stroke-dasharray="282.7433388230814 565.4866776461628" stroke-linecap="round" stroke-width="20" transform="rotate(180, 100, 100)" class="gauge-base"></circle>
+    <circle cx="100" cy="100" fill="transparent" r="90" stroke="#2047f4" stroke-dasharray="282.7433388230814 565.4866776461628" stroke-dashoffset="282.7433388230814" stroke-linecap="round" stroke-width="20" transform="rotate(180, 100, 100)" class="gauge-percent" style="transition: 'stroke-dashoffset 0.3s';"></circle>
+  </svg>
+  <p class="percent text-h4 font-weight-bold">0%</p>
+</div>
+`;

@@ -17,7 +17,7 @@
                 <v-list-item-title>Example</v-list-item-title>
                 <v-list-item-subtitle class="py-8 px-8">
                   <v-row>
-                    <fy-filter-data
+                    <fy-filter
                       :validForm="true"
                       :allTags="allTags"
                       @clear-tags="onClearTags()"
@@ -28,13 +28,13 @@
                         <v-form ref="form">
                           <v-row>
                             <v-col cols="12" md="3" xl="2">
-                              <fy-input-default
+                              <fy-input
                                 label="Filtro 01"
                                 v-model="filters.filter1"
                                 outlined
                                 ref="filter1"
                                 @input="getFilter1"
-                              ></fy-input-default>
+                              ></fy-input>
                             </v-col>
                             <v-col cols="12" md="3" xl="2">
                               <fy-input-cpf
@@ -46,13 +46,13 @@
                               ></fy-input-cpf>
                             </v-col>
                             <v-col cols="12" md="3" xl="2">
-                              <fy-input-default
+                              <fy-input
                                 label="Nome"
                                 v-model="filters.nameFilter"
                                 outlined
                                 ref="nameFiler"
                                 @input="getFilterName"
-                              ></fy-input-default>
+                              ></fy-input>
                             </v-col>
                             <v-col cols="12" md="3" xl="2">
                               <fy-input-phone
@@ -66,7 +66,7 @@
                           </v-row>
                         </v-form>
                       </template>
-                    </fy-filter-data>
+                    </fy-filter>
                   </v-row>
                 </v-list-item-subtitle>
               </v-list-item-content>
@@ -115,11 +115,10 @@
 <script lang="ts">
 import Vue from 'vue';
 
-import { FyFilterData } from '@/components/Filters';
-import { FyInputDefault, FyInputCpf, FyInputPhone } from '@/components/Inputs';
+import { FyFilter, FyInput, FyInputCpf, FyInputPhone } from '@/index';
 
 const contentUsageFilters = `
-  <fy-filter-data
+  <fy-filter
     :validForm="true"
     :allTags="allTags"
     @clear-tags="onClearTags()"
@@ -130,13 +129,13 @@ const contentUsageFilters = `
       <v-form ref="form">
         <v-row>
           <v-col cols="12" md="3" xl="2">
-            <fy-input-default
+            <fy-input
               label="Filtro 01"
               v-model="filters.filter1"
               outlined
               ref="filter1"
               @input="getFilter1"
-            ></fy-input-default>
+            ></fy-input>
           </v-col>
           <v-col cols="12" md="3" xl="2">
             <fy-input-cpf
@@ -148,13 +147,13 @@ const contentUsageFilters = `
             ></fy-input-cpf>
           </v-col>
           <v-col cols="12" md="3" xl="2">
-            <fy-input-default
+            <fy-input
               label="Nome"
               v-model="filters.nameFilter"
               outlined
               ref="nameFiler"
               @input="getFilterName"
-            ></fy-input-default>
+            ></fy-input>
           </v-col>
           <v-col cols="12" md="3" xl="2">
             <fy-input-phone
@@ -168,12 +167,12 @@ const contentUsageFilters = `
         </v-row>
       </v-form>
     </template>
-  </fy-filter-data>
+  </fy-filter>
 `;
 
 export default Vue.extend({
   name: 'PageFilters',
-  components: { FyFilterData, FyInputDefault, FyInputCpf, FyInputPhone },
+  components: { FyFilter, FyInput, FyInputCpf, FyInputPhone },
   data() {
     return {
       contentUsageFilters,

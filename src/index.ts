@@ -1,69 +1,108 @@
-import { FyAutocomplete } from './components/Autocomplete';
+import { VueConstructor } from 'vue';
+
+import FyAutocomplete from './components/FyAutocomplete';
+
+import FyAvatar from './components/FyAvatar';
+
+import FyButton from './components/FyButton';
+
+import { FyChartGauge } from './components/FyChart';
+
+import { FyDataTable, FyDataTableBase } from './components/FyDataTable';
+
+import { FyDialog, FyDialogBase, FyDialogDelete } from './components/FyDialog';
+
+import { FyDrawer } from './components/FyDrawer';
+
+import { FyFilter } from './components/FyFilter';
+
+import { FyInfoCard } from './components/FyInfoCard';
 
 import {
-  FyButtonInfo,
-  FyButtonSuccess,
-  FyButtonWarning,
-  FyButtonDelete,
-  FyButton,
-} from './components/Buttons';
-
-import { FyNoticationBar } from './components/NotificationBar';
-
-import { FyUserLabel } from './components/UserLabel';
-
-import { FyInfoCard } from './components/InfoCard';
-
-import { FyDialog, FyDialogDelete } from './components/Dialogs';
-
-import { FyDrawer } from './components/Drawer';
-
-import { FySnackbar } from './components/Snackbar';
-
-import { FyToolbar } from './components/Toolbar';
-
-import { FyFilterData } from './components/Filters';
-
-import { FyDataTable } from './components/DataTable';
-
-import {
+  FyInput,
   FyInputCpf,
   FyInputCnpj,
   FyInputPhone,
   FyInputCep,
-  FyInputDefault,
   FyInputDate,
   FyInputTime,
   FyInputDateTime,
   FyInputCurrency,
-} from './components/Inputs';
-import { FyGaugeChart } from './components/Charts';
+} from './components/FyInput';
+
+import { FyNoticationBar } from './components/FyNotificationBar';
+
+import { FySnackbar, FySnackbarBase } from './components/FySnackbar';
+
+import { FyToolbar } from './components/FyToolbar';
+
+import { FyUserLabel } from './components/FyUserLabel';
+
+const VueComponents = {
+  install(Vue: VueConstructor): void {
+    Vue.component('fy-autocomplete', FyAutocomplete);
+    Vue.component('fy-button', FyButton);
+    Vue.component('fy-input', FyInput);
+    Vue.component('fy-avatar', FyAvatar);
+    Vue.component('fy-autocomplete', FyAutocomplete);
+    Vue.component('fy-button', FyButton);
+    Vue.component('fy-chart-gauge', FyChartGauge);
+    Vue.component('fy-data-table', FyDataTable);
+    Vue.component('fy-data-table-base', FyDataTableBase);
+    Vue.component('fy-dialog', FyDialog);
+    Vue.component('fy-dialog-base', FyDialogBase);
+    Vue.component('fy-dialog-delete', FyDialogDelete);
+    Vue.component('fy-drawer', FyDrawer);
+    Vue.component('fy-filter', FyFilter);
+    Vue.component('fy-info-card', FyInfoCard);
+    Vue.component('fy-input', FyInput);
+    Vue.component('fy-input-cep', FyInputCep);
+    Vue.component('fy-input-cnpj', FyInputCnpj);
+    Vue.component('fy-input-cpf', FyInputCpf);
+    Vue.component('fy-input-currency', FyInputCurrency);
+    Vue.component('fy-input-date', FyInputDate);
+    Vue.component('fy-input-date-time', FyInputDateTime);
+    Vue.component('fy-input-phone', FyInputPhone);
+    Vue.component('fy-input-time', FyInputTime);
+    Vue.component('fy-snackbar', FySnackbar);
+    Vue.component('fy-snackbar-base', FySnackbarBase);
+    Vue.component('fy-toolbar', FyToolbar);
+    Vue.component('fy-notication-bar', FyNoticationBar);
+    Vue.component('fy-user-label', FyUserLabel);
+  },
+};
 
 export {
+  FyAvatar,
   FyAutocomplete,
   FyButton,
-  FyButtonInfo,
-  FyButtonSuccess,
-  FyButtonWarning,
-  FyButtonDelete,
-  FyNoticationBar,
-  FyUserLabel,
+  FyChartGauge,
+  FyDataTable,
+  FyDataTableBase,
+  FyDialog,
+  FyDialogBase,
+  FyDialogDelete,
+  FyDrawer,
+  FyFilter,
   FyInfoCard,
+  FyInput,
   FyInputCpf,
   FyInputCnpj,
   FyInputPhone,
   FyInputCep,
-  FyInputDefault,
   FyInputDate,
   FyInputTime,
   FyInputDateTime,
   FyInputCurrency,
-  FyDialog,
-  FyDialogDelete,
-  FyDrawer,
   FySnackbar,
+  FySnackbarBase,
   FyToolbar,
-  FyFilterData,
-  FyDataTable,
-  FyGaugeChart,
+  FyNoticationBar,
+  FyUserLabel,
 };
+
+export default VueComponents;
+
+if (typeof window !== 'undefined' && window.Vue) {
+  window.Vue.use(VueComponents);
+}

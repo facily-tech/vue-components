@@ -1,0 +1,60 @@
+<template>
+  <div>
+    <v-text-field
+      :value="text"
+      @input="update"
+      v-mask="'##/##/####'"
+      v-bind.sync="$props"
+      v-bind="$attrs"
+      v-on="$listeners"
+    />
+  </div>
+</template>
+<script lang="ts">
+import Vue from 'vue';
+
+import { VTextField } from 'vuetify/lib';
+
+import moment from 'moment';
+
+interface options extends InstanceType<typeof BaseVTextField> {
+  value: string;
+}
+
+const BaseVTextField = Vue.extend({ mixins: [VTextField] });
+
+export default BaseVTextField.extend<options>().extend({
+  name: 'fy-input-date',
+
+  props: {
+    value: {
+      type: String,
+    },
+  },
+
+  data() {
+    return {
+      text: this.value ? this.value : '',
+      mask: '##/##/####',
+    };
+  },
+
+  methods: {
+    getStringToDate(str: string): string {
+      const date = moment(str, 'DD/MM/YYYY');
+      return date.format();
+    },
+
+    getDateToString(date: string): string {
+      if (!date) return '';
+      const nDate = moment(date);
+      return nDate.format('DD/MM/YYYY');
+    },
+
+    update(value: string): void {
+      const formatDate = this.getStringToDate(value);
+      this.$emit('input', formatDate);
+    },
+  },
+});
+</script>

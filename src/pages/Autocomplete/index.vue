@@ -85,7 +85,7 @@
 <script lang="ts">
 import Vue from 'vue';
 
-import { FyAutocomplete } from '@/components/Autocomplete';
+import { FyAutocomplete } from '@/index';
 
 const contentUsageAutocomplete = `
   <fy-autocomplete

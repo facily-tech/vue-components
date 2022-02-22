@@ -17,7 +17,7 @@
                 <v-list-item-title>Example</v-list-item-title>
                 <v-list-item-subtitle class="py-8 px-8">
                   <v-row>
-                    <fy-gauge-chart :percent="33" />
+                    <fy-chart-gauge :percent="33" />
                   </v-row>
                 </v-list-item-subtitle>
               </v-list-item-content>
@@ -66,7 +66,7 @@
 <script>
 import Vue from 'vue';
 
-import { FyGaugeChart } from '@/components/Charts';
+import { FyChartGauge } from '@/index';
 
 const contentUsageGroupChart = `
   <fy-gauge-chart :percent="33" />
@@ -74,7 +74,7 @@ const contentUsageGroupChart = `
 
 export default Vue.extend({
   name: 'PageCharts',
-  components: { FyGaugeChart },
+  components: { FyChartGauge },
   data() {
     return {
       contentUsageGroupChart,

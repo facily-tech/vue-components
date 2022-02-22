@@ -89,8 +89,8 @@
 <script lang="ts">
 import Vue from 'vue';
 
-import { FyDataTable } from '@/components/DataTable';
-import { IDataTableRows } from '@/components/DataTable/types';
+import { FyDataTable } from '@/index';
+import { IDataTableRows } from '@/components/FyDataTable/types';
 
 const contentUsageDataTable = `
   <fy-data-table
@@ -191,13 +191,13 @@ const contentUsageDataTableScript = `
       };
     },
     computed: {
-      tableItems(): IDataTableRows[] {
+      tableItems(): IFyDataTableRows[] {
         const nItems = [...this.table.items];
         return nItems.map((item) => {
           return {
             cols: item,
             actions: this.table.actions,
-          } as IDataTableRows;
+          } as IFyDataTableRows;
         });
       },
     },
@@ -254,7 +254,7 @@ export default Vue.extend({
             align: 'start',
             value: 'mail',
           },
-					{
+          {
             text: 'Prioridade',
             align: 'start',
             value: 'priority',
@@ -288,7 +288,7 @@ export default Vue.extend({
             mail: 'silva@uol.com.br',
             tax_id: '00000000000100',
             role: 'XX',
-						priority: 'Alta',
+            priority: 'Alta',
           },
           {
             name: 'Maria do Socorro',
@@ -296,7 +296,7 @@ export default Vue.extend({
             mail: 'maria.socorro@gmail.com',
             tax_id: '52155521266',
             role: 'XX',
-						priority: 'Média',
+            priority: 'Média',
           },
           {
             name: 'Julia Teresa Cristina',
@@ -304,7 +304,7 @@ export default Vue.extend({
             mail: 'jcristina@ig.com.br',
             tax_id: '42212847802',
             role: 'XX',
-						priority: 'Baixa',
+            priority: 'Baixa',
           },
           {
             name: 'Rogerio Madureira',

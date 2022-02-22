@@ -71,7 +71,7 @@
 <script lang="ts">
 import Vue from 'vue';
 
-import { FyInfoCard } from '@/components/InfoCard';
+import { FyInfoCard } from '@/index';
 
 const contentUsageInfoCard = `
   <fy-info-card
