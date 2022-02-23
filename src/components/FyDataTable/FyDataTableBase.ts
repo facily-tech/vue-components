@@ -1,6 +1,7 @@
 /// <reference path="../../../node_modules/vuetify/src/globals.d.ts" />
 import Vue from 'vue';
 
+// @ts-ignore
 import { VDataTable } from 'vuetify/lib';
 
 const BaseDataTable = Vue.extend({ mixins: [VDataTable] });

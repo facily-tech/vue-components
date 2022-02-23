@@ -1,9 +1,11 @@
-const formatTypeInteger = (value: string | number): number => parseInt(value) || 0;
+import { IObject } from './types';
 
-const formatTypeString = (value?: unknown): string =>
+const formatTypeInteger = (value: string | number): number => parseInt(`${value}`) || 0;
+
+const formatTypeString = (value?: string | IObject | number | []): string =>
   value && typeof value !== 'object' ? value.toString() : '';
 
-const formatTypeOnlyNumbers = (value?: unknown): string =>
+const formatTypeOnlyNumbers = (value?: string | IObject | number | []): string =>
   formatTypeString(value).replace(/\D+/g, '') || '0';
 
 const formatTypeValueToFloat = (value: string | number): number => {
@@ -13,10 +15,12 @@ const formatTypeValueToFloat = (value: string | number): number => {
     newValue = formatTypeString(value).replace(/\./g, '').replace(/,/g, '.');
   }
 
-  return parseFloat(newValue);
+  return parseFloat(`${newValue}`);
 };
 
-const formatTypeStringWithoutSpacesOrNull = (value: unknown): unknown => {
+const formatTypeStringWithoutSpacesOrNull = (
+  value: string | IObject | number | [],
+): string | IObject | number | [] | null => {
   if (typeof value === 'string') {
     const newValue = value.trim();
 

@@ -1,6 +1,6 @@
 {
   "name": "@facily-tech/vue-components",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -15,8 +15,9 @@
   "main": "./dist/vueComponents.common.js",
   "module": "/dist/vueComponents.umd.js",
   "files": [
-    "dist/*",
-    "types/*"
+    "dist/",
+    "types/",
+    "src/"
   ],
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",

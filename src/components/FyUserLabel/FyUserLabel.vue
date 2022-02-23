@@ -16,8 +16,6 @@ import Vue from 'vue';
 
 import { VAvatar } from 'vuetify/lib';
 
-import { FyAvatar } from '@/index';
-
 const BaseVAvatar = Vue.extend({ mixins: [VAvatar] });
 
 interface options extends InstanceType<typeof BaseVAvatar> {
@@ -28,7 +26,7 @@ interface options extends InstanceType<typeof BaseVAvatar> {
 export default BaseVAvatar.extend<options>().extend({
   name: 'fy-user-label',
 
-  components: { FyAvatar },
+  components: { FyAvatar: () => import('@/components/FyAvatar') },
 
   props: {
     label: {

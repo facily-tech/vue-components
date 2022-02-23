@@ -15,8 +15,6 @@ import Vue from 'vue';
 
 import { VDialog } from 'vuetify/lib';
 
-import { FyDialogBase } from '@/index';
-
 import { IDialog } from './types';
 
 const BaseVDialog = Vue.extend({ mixins: [VDialog] });
@@ -28,7 +26,7 @@ interface options extends InstanceType<typeof BaseVDialog> {
 export default BaseVDialog.extend<options>().extend({
   name: 'fy-dialog',
 
-  components: { FyDialogBase },
+  components: { FyDialogBase: () => import('./FyDialogBase') },
 
   props: {
     config: {
