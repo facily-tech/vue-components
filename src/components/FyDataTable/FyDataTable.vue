@@ -3,7 +3,7 @@
     <fy-data-table-base
       :items="items"
       :headers="headers"
-      :page.sync="pageDataTable"
+      :page.sync="page"
       :items-per-page="pagination ? pagination.itemsPerPage : 9999"
       :loading="loading"
       class="elevation-1 custom-datatable"
@@ -148,11 +148,8 @@
 import Vue from 'vue';
 import { VDataTable } from 'vuetify/lib';
 
-<<<<<<< Updated upstream
-=======
 import { FyDataTableBase, FyButton } from '@/index';
 
->>>>>>> Stashed changes
 import {
   fyFormatMaskTaxId,
   fyFormatMaskCurrency,
@@ -174,10 +171,7 @@ const BaseDataTable = Vue.extend({ mixins: [VDataTable] });
 export default BaseDataTable.extend<BaseDataTableOptions>().extend({
   name: 'fy-data-table',
 
-  components: {
-    FyButton: () => import('@/components/FyButton'),
-    FyDataTableBase: () => import('./FyDataTableBase'),
-  },
+  components: { FyButton, FyDataTableBase },
 
   props: {
     headers: {
@@ -203,7 +197,7 @@ export default BaseDataTable.extend<BaseDataTableOptions>().extend({
       selectItems: [5, 10, 25, 50, 100],
       radioSelect: null as string | boolean | number | null,
 
-      pageDataTable: this.pagination ? this.pagination.page : 1,
+      page: this.pagination ? this.pagination.page : 1,
 
       fyFormatMaskTaxId,
       fyFormatMaskCurrency,
