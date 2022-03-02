@@ -93,7 +93,9 @@
         <div
           class="container-truncate"
           :key="headerKey"
-          v-else-if="typeof item.cols[header.value] === 'object'"
+          v-else-if="
+            typeof item.cols[header.value] === 'object' && !Array.isArray(item.cols[header.value])
+          "
         >
           <template slot:item.cols[header.value]="{ item }">
             {{ item.cols[header.value].title }}
@@ -146,6 +148,11 @@
 import Vue from 'vue';
 import { VDataTable } from 'vuetify/lib';
 
+<<<<<<< Updated upstream
+=======
+import { FyDataTableBase, FyButton } from '@/index';
+
+>>>>>>> Stashed changes
 import {
   fyFormatMaskTaxId,
   fyFormatMaskCurrency,
