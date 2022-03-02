@@ -94,7 +94,9 @@
           class="container-truncate"
           :key="headerKey"
           v-else-if="
-            typeof item.cols[header.value] === 'object' && !Array.isArray(item.cols[header.value])
+            item.cols[header.value] !== null &&
+            typeof item.cols[header.value] === 'object' &&
+            !Array.isArray(item.cols[header.value])
           "
         >
           <template slot:item.cols[header.value]="{ item }">
@@ -171,7 +173,7 @@ const BaseDataTable = Vue.extend({ mixins: [VDataTable] });
 export default BaseDataTable.extend<BaseDataTableOptions>().extend({
   name: 'fy-data-table',
 
-  components: { FyButton, FyDataTableBase: () =>  import('./FyDataTableBase') },
+  components: { FyButton, FyDataTableBase: () => import('./FyDataTableBase') },
 
   props: {
     headers: {
