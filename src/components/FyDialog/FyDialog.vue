@@ -5,6 +5,9 @@
     :fullscreen="config.fullscreen"
     :hide-overlay="config.hideOverlay"
     :scrollable="config.scrollable"
+    v-bind.sync="$props"
+    v-bind="$attrs"
+    v-on="$listeners"
   >
     <slot name="content" />
   </fy-dialog-base>
