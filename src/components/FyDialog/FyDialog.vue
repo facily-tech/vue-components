@@ -5,6 +5,9 @@
     :fullscreen="config.fullscreen"
     :hide-overlay="config.hideOverlay"
     :scrollable="config.scrollable"
+    v-bind.sync="$props"
+    v-bind="$attrs"
+    v-on="$listeners"
   >
     <slot name="content" />
   </fy-dialog-base>
@@ -15,20 +18,19 @@ import Vue from 'vue';
 
 import { VDialog } from 'vuetify/lib';
 
-import { FyDialogBase } from '@/index';
-
 import { IDialog } from './types';
 
-const BaseVDialog = Vue.extend({ mixins: [VDialog] });
+const BaseVDialog = Vue.extend({ extends: VDialog, mixins: [VDialog] });
 
 interface options extends InstanceType<typeof BaseVDialog> {
-  value: string;
+  config: IDialog;
+  dialog: boolean;
 }
 
 export default BaseVDialog.extend<options>().extend({
   name: 'fy-dialog',
 
-  components: { FyDialogBase },
+  components: { FyDialogBase: () => import('./FyDialogBase') },
 
   props: {
     config: {

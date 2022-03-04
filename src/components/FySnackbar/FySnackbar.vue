@@ -24,8 +24,6 @@ import { VSnackbar } from 'vuetify/lib';
 
 import { ISnackbarProps } from './types';
 
-import { FySnackbarBase } from '@/index';
-
 const BaseVSnackbar = Vue.extend({ mixins: [VSnackbar] });
 
 interface options extends InstanceType<typeof BaseVSnackbar> {
@@ -35,7 +33,7 @@ interface options extends InstanceType<typeof BaseVSnackbar> {
 export default BaseVSnackbar.extend<options>().extend({
   name: 'fy-snacbar',
 
-  components: { FySnackbarBase },
+  components: { FySnackbarBase: () => import('./FySnackbarBase') },
 
   props: {
     snackbar: {

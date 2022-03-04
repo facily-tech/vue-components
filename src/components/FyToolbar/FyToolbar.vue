@@ -72,14 +72,14 @@ export default BaseToolbar.extend<options>().extend({
     };
   },
 
-  methods: {
-    created(): void {
+  created(): void {
+    this.changeScreen();
+    window.addEventListener('resize', () => {
       this.changeScreen();
-      window.addEventListener('resize', () => {
-        this.changeScreen();
-      });
-    },
+    });
+  },
 
+  methods: {
     back(): void {
       this.$emit('back-event');
     },
