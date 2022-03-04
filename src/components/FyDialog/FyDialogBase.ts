@@ -3,7 +3,7 @@ import Vue from 'vue';
 
 import { VDialog } from 'vuetify/lib';
 
-const BaseSnackbar = Vue.extend({ mixins: [VDialog] });
+const BaseSnackbar = Vue.extend({ extends: VDialog, mixins: [VDialog] });
 
 type options = InstanceType<typeof BaseSnackbar>;
 
