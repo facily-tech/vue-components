@@ -1,14 +1,13 @@
 <template>
-  <div>
-    <fy-input
-      :value="text"
-      @input="update"
-      v-money="money"
-      v-bind.sync="$props"
-      v-bind="$attrs"
-      v-on="$listeners"
-    />
-  </div>
+  <fy-input
+    :value="text"
+    @input="update"
+    v-money="money"
+    v-bind.sync="$props"
+    v-bind="$attrs"
+    v-on="$listeners"
+    :maxlength="maxlength"
+  />
 </template>
 
 <script lang="ts">
@@ -16,6 +15,8 @@ import Vue from 'vue';
 
 import { VTextField } from 'vuetify/lib';
 import { VMoney } from 'v-money';
+import { formatCurrencyMaskToFloat } from '@/utils/format.mask';
+import { FyInput } from '@/components/FyInput';
 
 const BaseVTextField = Vue.extend({ mixins: [VTextField] });
 
@@ -27,10 +28,16 @@ interface options extends InstanceType<typeof BaseVTextField> {
   precision: number;
 }
 
+const MAXLENGTH = 24;
+
 export default BaseVTextField.extend<options>().extend({
   name: 'fy-input-currency',
 
   directives: { money: VMoney },
+
+  components: {
+    FyInput,
+  },
 
   props: {
     value: {
@@ -53,6 +60,13 @@ export default BaseVTextField.extend<options>().extend({
       type: Number,
       default: 2,
     },
+    maxlength: {
+      type: Number,
+      default: MAXLENGTH,
+      validator(value): boolean {
+        return value > 0 && value <= MAXLENGTH;
+      },
+    },
   },
   data() {
     return {
@@ -69,6 +83,7 @@ export default BaseVTextField.extend<options>().extend({
   methods: {
     update(value: string): void {
       this.$emit('input', value);
+      this.$emit('input-float', formatCurrencyMaskToFloat(value, this.money.precision));
     },
   },
 });
