@@ -20,10 +20,11 @@ import { VDialog } from 'vuetify/lib';
 
 import { IDialog } from './types';
 
-const BaseVDialog = Vue.extend({ mixins: [VDialog] });
+const BaseVDialog = Vue.extend({ extends: VDialog, mixins: [VDialog] });
 
 interface options extends InstanceType<typeof BaseVDialog> {
-  value: string;
+  config: IDialog;
+  dialog: boolean;
 }
 
 export default BaseVDialog.extend<options>().extend({
