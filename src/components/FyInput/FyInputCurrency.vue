@@ -1,15 +1,13 @@
 <template>
-  <div>
-    <fy-input
-      :value="text"
-      @input="update"
-      v-money="money"
-      v-bind.sync="$props"
-      v-bind="$attrs"
-      v-on="$listeners"
-      :maxlength="maxlength"
-    />
-  </div>
+  <fy-input
+    :value="text"
+    @input="update"
+    v-money="money"
+    v-bind.sync="$props"
+    v-bind="$attrs"
+    v-on="$listeners"
+    :maxlength="maxlength"
+  />
 </template>
 
 <script lang="ts">
@@ -18,6 +16,7 @@ import Vue from 'vue';
 import { VTextField } from 'vuetify/lib';
 import { VMoney } from 'v-money';
 import { formatCurrencyMaskToFloat } from '@/utils/format.mask';
+import { FyInput } from '@/components/FyInput';
 
 const BaseVTextField = Vue.extend({ mixins: [VTextField] });
 
@@ -35,6 +34,10 @@ export default BaseVTextField.extend<options>().extend({
   name: 'fy-input-currency',
 
   directives: { money: VMoney },
+
+  components: {
+    FyInput,
+  },
 
   props: {
     value: {
