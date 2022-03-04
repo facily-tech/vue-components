@@ -5,6 +5,7 @@
     :fullscreen="config.fullscreen"
     :hide-overlay="config.hideOverlay"
     :scrollable="config.scrollable"
+    :max-width="maxWidth"
     v-bind.sync="$props"
     v-bind="$attrs"
     v-on="$listeners"
@@ -25,6 +26,7 @@ const BaseVDialog = Vue.extend({ extends: VDialog, mixins: [VDialog] });
 interface options extends InstanceType<typeof BaseVDialog> {
   config: IDialog;
   dialog: boolean;
+  ['max-width']: string;
 }
 
 export default BaseVDialog.extend<options>().extend({
@@ -38,6 +40,10 @@ export default BaseVDialog.extend<options>().extend({
       default: () => ({ fullscreen: false, hideOverlay: false, scrollable: false } as IDialog),
     },
     dialog: { type: Boolean, default: false },
+    ['max-width']: {
+      type: String,
+      default: '400px',
+    },
   },
 });
 </script>
