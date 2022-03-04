@@ -1,3 +1,5 @@
+import { formatTypeOnlyNumbers } from '@/utils/format.type';
+
 const formatMaskTaxId = (value: string): string => {
   const taxId = value.replace(/[^\d]/g, '');
 
@@ -35,4 +37,22 @@ const formatMaskCellPhone = (value: string): string => {
   return phone;
 };
 
-export { formatMaskTaxId, formatMaskCurrency, formatMaskCellPhone, formatMaskZipCode };
+const formatCurrencyMaskToFloat = (value: string, precision: number): number => {
+  if (!value) {
+    return 0;
+  }
+
+  const onlyNumbers = formatTypeOnlyNumbers(value);
+  const sliceIndex = onlyNumbers.length - precision;
+  const formattedValue = `${onlyNumbers.slice(0, sliceIndex)}.${onlyNumbers.slice(sliceIndex)}`;
+
+  return parseFloat(formattedValue);
+};
+
+export {
+  formatMaskTaxId,
+  formatMaskCurrency,
+  formatMaskCellPhone,
+  formatMaskZipCode,
+  formatCurrencyMaskToFloat,
+};

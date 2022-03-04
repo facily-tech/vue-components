@@ -104,7 +104,20 @@
                 <v-list-item-title>Example</v-list-item-title>
                 <v-list-item-subtitle class="py-8">
                   <v-row align="center" justify="space-around">
-                    <fy-input-currency v-model="currency" />
+                    <v-col>
+                      <fy-input-currency
+                        v-model="currency"
+                        @input-float="(value) => (currencyToFloat = value)"
+                      />
+                    </v-col>
+                    <v-col>
+                      <p>
+                        Render @input: <strong>{{ currency }}</strong>
+                      </p>
+                      <p>
+                        Render @input-float: <strong>{{ currencyToFloat }}</strong>
+                      </p>
+                    </v-col>
                   </v-row>
                 </v-list-item-subtitle>
               </v-list-item-content>
@@ -136,6 +149,7 @@ export default Vue.extend({
       cpf: '',
       cnpj: '',
       currency: '0',
+      currencyToFloat: 0,
     };
   },
   watch: {
