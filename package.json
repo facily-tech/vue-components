@@ -45,7 +45,7 @@
     "lodash": "^4.17.21",
     "marked": "^4.0.10",
     "moment": "^2.29.1",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "raw-loader": "^4.0.2",
     "sass": "~1.32.0",
     "sass-loader": "^10.0.0",
