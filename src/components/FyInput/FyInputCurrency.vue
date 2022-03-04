@@ -60,7 +60,7 @@ export default BaseVTextField.extend<options>().extend({
     maxlength: {
       type: Number,
       default: MAXLENGTH,
-      validator(value) {
+      validator(value): boolean {
         return value > 0 && value <= MAXLENGTH;
       },
     },
