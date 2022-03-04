@@ -13,12 +13,12 @@
 <script lang="ts">
 import Vue from 'vue';
 
-import { VTextField } from 'vuetify/lib';
 import { VMoney } from 'v-money';
 import { formatCurrencyMaskToFloat } from '@/utils/format.mask';
-import { FyInput } from '@/components/FyInput';
 
-const BaseVTextField = Vue.extend({ mixins: [VTextField] });
+import FyInput from './FyInput';
+
+const BaseVTextField = Vue.extend({ extends: FyInput, mixins: [FyInput] });
 
 interface options extends InstanceType<typeof BaseVTextField> {
   value: string;

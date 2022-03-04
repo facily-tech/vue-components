@@ -16,6 +16,8 @@ import Vue from 'vue';
 
 import { VTextField } from 'vuetify/lib';
 
+import FyInput from './FyInput';
+
 const BaseVTextField = Vue.extend({ mixins: [VTextField] });
 
 interface options extends InstanceType<typeof BaseVTextField> {
@@ -24,6 +26,10 @@ interface options extends InstanceType<typeof BaseVTextField> {
 
 export default BaseVTextField.extend<options>().extend({
   name: 'fy-input-phone',
+
+  components: {
+    FyInput,
+  },
 
   props: {
     value: {

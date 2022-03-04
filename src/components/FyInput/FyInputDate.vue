@@ -15,6 +15,8 @@ import Vue from 'vue';
 
 import { VTextField } from 'vuetify/lib';
 
+import FyInput from './FyInput';
+
 import moment from 'moment';
 
 interface options extends InstanceType<typeof BaseVTextField> {
@@ -25,6 +27,10 @@ const BaseVTextField = Vue.extend({ mixins: [VTextField] });
 
 export default BaseVTextField.extend<options>().extend({
   name: 'fy-input-date',
+
+  components: {
+    FyInput,
+  },
 
   props: {
     value: {

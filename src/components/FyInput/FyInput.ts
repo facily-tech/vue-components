@@ -3,7 +3,7 @@ import Vue from 'vue';
 
 import { VTextField } from 'vuetify/lib';
 
-const base = Vue.extend({ mixins: [VTextField] });
+const base = Vue.extend({ extends: VTextField, mixins: [VTextField] });
 
 type options = InstanceType<typeof base>;
 
