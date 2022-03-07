@@ -1,4 +1,4 @@
-import { formatTypeOnlyNumbers } from '@/utils/format.type';
+import { formatTypeOnlyNumbers } from './format.type';
 
 const formatMaskTaxId = (value: string): string => {
   const taxId = value.replace(/[^\d]/g, '');
