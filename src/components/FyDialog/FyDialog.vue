@@ -5,9 +5,7 @@
     :fullscreen="config.fullscreen"
     :hide-overlay="config.hideOverlay"
     :scrollable="config.scrollable"
-    :max-width="maxWidth"
-    v-bind.sync="$props"
-    v-bind="$attrs"
+    v-bind="propsAndAttrs"
     v-on="$listeners"
   >
     <slot name="content" />
@@ -18,6 +16,8 @@
 import Vue from 'vue';
 
 import { VDialog } from 'vuetify/lib';
+
+import FyDialogBase from './FyDialogBase';
 
 import { IDialog } from './types';
 
@@ -32,7 +32,7 @@ interface options extends InstanceType<typeof BaseVDialog> {
 export default BaseVDialog.extend<options>().extend({
   name: 'fy-dialog',
 
-  components: { FyDialogBase: () => import('./FyDialogBase') },
+  components: { FyDialogBase },
 
   props: {
     config: {
@@ -40,9 +40,14 @@ export default BaseVDialog.extend<options>().extend({
       default: () => ({ fullscreen: false, hideOverlay: false, scrollable: false } as IDialog),
     },
     dialog: { type: Boolean, default: false },
-    ['max-width']: {
-      type: String,
-      default: '400px',
+  },
+
+  computed: {
+    propsAndAttrs(): Record<string, unknown> {
+      return {
+        ...this.$attrs,
+        ...this.$props,
+      };
     },
   },
 });

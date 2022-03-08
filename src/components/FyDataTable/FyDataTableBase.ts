@@ -10,6 +10,7 @@ type options = InstanceType<typeof BaseDataTable>;
 
 export default BaseDataTable.extend<options>().extend({
   name: 'fy-data-table-base',
+
   computed: {
     class() {
       return {

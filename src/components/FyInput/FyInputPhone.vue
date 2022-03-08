@@ -4,8 +4,7 @@
       :value="text"
       @input="update"
       v-mask="mask"
-      v-bind.sync="$props"
-      v-bind="$attrs"
+      v-bind="propsAndAttrs"
       v-on="$listeners"
     />
   </div>
@@ -15,6 +14,8 @@
 import Vue from 'vue';
 
 import { VTextField } from 'vuetify/lib';
+
+import { VueMaskDirective } from 'v-mask';
 
 import FyInput from './FyInput';
 
@@ -26,6 +27,8 @@ interface options extends InstanceType<typeof BaseVTextField> {
 
 export default BaseVTextField.extend<options>().extend({
   name: 'fy-input-phone',
+
+  directives: { mask: VueMaskDirective },
 
   components: {
     FyInput,
@@ -42,6 +45,15 @@ export default BaseVTextField.extend<options>().extend({
       text: this.value ? this.value : '',
       mask: '(##)#####-####',
     };
+  },
+
+  computed: {
+    propsAndAttrs(): Record<string, unknown> {
+      return {
+        ...this.$attrs,
+        ...this.$props,
+      };
+    },
   },
 
   methods: {
