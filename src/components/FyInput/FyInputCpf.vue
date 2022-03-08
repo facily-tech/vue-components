@@ -5,8 +5,7 @@
       @input="update"
       v-mask="mask"
       :rules="cpfRule"
-      v-bind.sync="$props"
-      v-bind="$attrs"
+      v-bind="propsAndAttrs"
       v-on="$listeners"
     />
   </div>
@@ -16,6 +15,8 @@
 import Vue from 'vue';
 
 import { VTextField } from 'vuetify/lib';
+
+import { VueMaskDirective } from 'v-mask';
 
 import FyInput from './FyInput';
 
@@ -27,6 +28,8 @@ interface options extends InstanceType<typeof BaseVTextField> {
 
 export default BaseVTextField.extend<options>().extend({
   name: 'fy-input-cpf',
+
+  directives: { mask: VueMaskDirective },
 
   components: {
     FyInput,
@@ -47,6 +50,15 @@ export default BaseVTextField.extend<options>().extend({
       ],
       mask: '###.###.###-##',
     };
+  },
+
+  computed: {
+    propsAndAttrs(): Record<string, unknown> {
+      return {
+        ...this.$attrs,
+        ...this.$props,
+      };
+    },
   },
 
   methods: {

@@ -16,7 +16,7 @@ import Vue from 'vue';
 
 import { VTextField } from 'vuetify/lib';
 
-import VueMask from 'v-mask';
+import { VueMaskDirective } from 'v-mask';
 
 import FyInput from './FyInput';
 
@@ -29,7 +29,7 @@ interface options extends InstanceType<typeof BaseVTextField> {
 export default BaseVTextField.extend<options>().extend({
   name: 'fy-input-cep',
 
-  directives: { VueMask },
+  directives: { mask: VueMaskDirective },
 
   components: {
     FyInput,

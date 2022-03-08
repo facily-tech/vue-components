@@ -30,6 +30,7 @@ import PageDialogs from '@/pages/Dialogs/index.vue';
 import PageDrawer from '@/pages/Drawer/index.vue';
 import PageFilters from '@/pages/Filters/index.vue';
 import PageInfoCard from '@/pages/InfoCard/index.vue';
+import PageSnackbar from '@/pages/Snackbar/index.vue';
 
 import { IDrawerItems } from './FyDrawer/types';
 import { IItemsToolbar } from './FyToolbar/types';
@@ -51,6 +52,7 @@ export default Vue.extend({
     PageFilters,
     PageInfoCard,
     PageInputs,
+    PageSnackbar,
   },
   data() {
     return {
@@ -125,6 +127,13 @@ export default Vue.extend({
           enable: true,
           id: 'PageInputs',
           link: 'page-inputs',
+        },
+        {
+          title: 'Snackbar',
+          icon: 'mdi-alpha-t-box-outline',
+          enable: true,
+          id: 'PageSnackbar',
+          link: 'page-snackbar',
         },
         {
           title: 'How to create',

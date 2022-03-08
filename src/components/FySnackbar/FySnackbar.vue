@@ -5,6 +5,8 @@
       v-model="snackbar.model"
       :timeout="snackbar.timeout"
       :color="snackbar.bgColor"
+      v-bind="propsAndAttrs"
+      v-on="$listeners"
     >
       <p :style="`color: ${snackbar.fontColor}`" class="mb-0">{{ snackbar.text }}</p>
 
@@ -22,6 +24,8 @@ import Vue from 'vue';
 
 import { VSnackbar } from 'vuetify/lib';
 
+import FySnackbarBase from './FySnackbarBase';
+
 import { ISnackbarProps } from './types';
 
 const BaseVSnackbar = Vue.extend({ mixins: [VSnackbar] });
@@ -33,12 +37,21 @@ interface options extends InstanceType<typeof BaseVSnackbar> {
 export default BaseVSnackbar.extend<options>().extend({
   name: 'fy-snacbar',
 
-  components: { FySnackbarBase: () => import('./FySnackbarBase') },
+  components: { FySnackbarBase },
 
   props: {
     snackbar: {
       type: Object as () => ISnackbarProps,
       default: {} as ISnackbarProps,
+    },
+  },
+
+  computed: {
+    propsAndAttrs(): Record<string, unknown> {
+      return {
+        ...this.$attrs,
+        ...this.$props,
+      };
     },
   },
 

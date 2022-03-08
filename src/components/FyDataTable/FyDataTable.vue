@@ -10,6 +10,8 @@
       hide-default-footer
       loading-text="Carregando..."
       mobile-breakpoint="0"
+      v-bind="propsAndAttrs"
+      v-on="$listeners"
     >
       <template v-for="(header, headerKey) in headers" v-slot:[mountString(header)]="{ item }">
         <div class="d-flex justify-center" :key="headerKey" v-if="header.value === 'actions'">
@@ -150,7 +152,9 @@
 import Vue from 'vue';
 import { VDataTable } from 'vuetify/lib';
 
-import { FyButton } from '@/index';
+import FyButton from '@/components/FyButton';
+
+import FyDataTableBase from './FyDataTableBase';
 
 import {
   fyFormatMaskTaxId,
@@ -173,7 +177,7 @@ const BaseDataTable = Vue.extend({ mixins: [VDataTable] });
 export default BaseDataTable.extend<BaseDataTableOptions>().extend({
   name: 'fy-data-table',
 
-  components: { FyButton, FyDataTableBase: () => import('./FyDataTableBase') },
+  components: { FyButton, FyDataTableBase },
 
   props: {
     headers: {
@@ -221,6 +225,18 @@ export default BaseDataTable.extend<BaseDataTableOptions>().extend({
       handler(): void {
         this.$emit('radio-select', this.radioSelect);
       },
+    },
+  },
+
+  computed: {
+    propsAndAttrs(): Record<string, unknown> {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { pagination, ...rest } = this.$props;
+
+      return {
+        ...this.$attrs,
+        ...rest,
+      };
     },
   },
 
