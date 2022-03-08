@@ -1,6 +1,6 @@
 {
   "name": "@facily-tech/vue-components",
-  "version": "1.0.29",
+  "version": "1.0.30",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -45,7 +45,6 @@
     "lodash": "^4.17.21",
     "marked": "^4.0.10",
     "moment": "^2.29.1",
-    "node-sass": "^4.12.0",
     "raw-loader": "^4.0.2",
     "sass": "~1.32.0",
     "sass-loader": "^10.0.0",
@@ -88,6 +87,5 @@
     "node-notifier": ">=8.0.1",
     "nth-check": ">=2.0.1"
   },
-  "types": "./types/index.d.ts",
-  "dependencies": {}
+  "types": "./types/index.d.ts"
 }
