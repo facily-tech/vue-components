@@ -1,38 +1,36 @@
 <template>
-  <v-app-bar app color="transparent" elevation="1">
-    <v-toolbar elevation="0" v-bind.sync="$props" v-bind="$attrs">
-      <v-icon class="mr-2" color="primary" v-show="items.icon">
-        {{ items.icon }}
-      </v-icon>
-      <v-toolbar-title v-if="screenWidth > 768">
-        {{ items.title }}
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <div class="mr-2">
-        <slot name="btn"></slot>
-      </div>
+  <v-toolbar v-bind.sync="$props" v-bind="$attrs">
+    <v-icon class="mr-2" color="primary" v-show="items.icon">
+      {{ items.icon }}
+    </v-icon>
+    <v-toolbar-title v-if="screenWidth > 768">
+      {{ items.title }}
+    </v-toolbar-title>
+    <v-spacer></v-spacer>
+    <div class="mr-2">
+      <slot name="btn"></slot>
+    </div>
 
-      <v-btn v-if="backButton" @click="back" class="pa-3" elevation="0" outlined>
-        <v-icon> mdi-arrow-left </v-icon>
-        Voltar
-      </v-btn>
+    <v-btn v-if="backButton" @click="back" class="pa-3" elevation="0" outlined>
+      <v-icon> mdi-arrow-left </v-icon>
+      Voltar
+    </v-btn>
 
-      <v-menu offset-y v-if="items.options">
-        <template v-slot:activator="{ on, attrs }">
-          <v-btn icon color="primary" v-bind="attrs" v-on="on">
-            <v-icon>mdi-dots-vertical</v-icon>
-          </v-btn>
-        </template>
-        <v-list>
-          <v-list-item v-for="(option, index) in items.options" :key="index">
-            <v-list-item-title>
-              {{ option.label }}
-            </v-list-item-title>
-          </v-list-item>
-        </v-list>
-      </v-menu>
-    </v-toolbar>
-  </v-app-bar>
+    <v-menu offset-y v-if="items.options">
+      <template v-slot:activator="{ on, attrs }">
+        <v-btn icon color="primary" v-bind="attrs" v-on="on">
+          <v-icon>mdi-dots-vertical</v-icon>
+        </v-btn>
+      </template>
+      <v-list>
+        <v-list-item v-for="(option, index) in items.options" :key="index">
+          <v-list-item-title>
+            {{ option.label }}
+          </v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-menu>
+  </v-toolbar>
 </template>
 
 <script lang="ts">
