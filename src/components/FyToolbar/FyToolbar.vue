@@ -7,10 +7,10 @@
       {{ items.title }}
     </v-toolbar-title>
     <v-spacer></v-spacer>
-    <v-btn v-if="backButton" @click="back" class="pa-3 primary" elevation="0" outlined>
+    <FyButton v-if="backButton" @click="back" class="pa-3" outlined color="primary">
       <v-icon> mdi-arrow-left </v-icon>
       Voltar
-    </v-btn>
+    </FyButton>
     <div class="ml-2">
       <slot name="btn"></slot>
     </div>
@@ -33,10 +33,9 @@
 
 <script lang="ts">
 import Vue from 'vue';
-
 import { VAppBar, VToolbar } from 'vuetify/lib';
-
 import { IItemsToolbar } from './types';
+import FyButton from '@/components/FyButton/FyButton';
 
 const BaseToolbar = Vue.extend({ mixins: [VToolbar] });
 
@@ -48,7 +47,7 @@ interface options extends InstanceType<typeof BaseToolbar> {
 export default BaseToolbar.extend<options>().extend({
   name: 'fy-toolbar',
 
-  components: { VAppBar, VToolbar },
+  components: { VAppBar, VToolbar, FyButton },
 
   props: {
     items: {
