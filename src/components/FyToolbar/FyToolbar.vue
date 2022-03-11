@@ -1,5 +1,5 @@
 <template>
-  <v-toolbar v-bind.sync="$props" v-bind="$attrs">
+  <v-toolbar v-bind="propsAndAttrs" :flat="flat">
     <v-icon class="mr-2" color="primary" v-show="items.icon">
       {{ items.icon }}
     </v-icon>
@@ -7,15 +7,13 @@
       {{ items.title }}
     </v-toolbar-title>
     <v-spacer></v-spacer>
-    <div class="mr-2">
-      <slot name="btn"></slot>
-    </div>
-
-    <v-btn v-if="backButton" @click="back" class="pa-3" elevation="0" outlined>
+    <v-btn v-if="backButton" @click="back" class="pa-3 primary" elevation="0" outlined>
       <v-icon> mdi-arrow-left </v-icon>
       Voltar
     </v-btn>
-
+    <div class="ml-2">
+      <slot name="btn"></slot>
+    </div>
     <v-menu offset-y v-if="items.options">
       <template v-slot:activator="{ on, attrs }">
         <v-btn icon color="primary" v-bind="attrs" v-on="on">
@@ -62,6 +60,10 @@ export default BaseToolbar.extend<options>().extend({
       type: Boolean,
       default: false,
     },
+    flat: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   data() {
@@ -77,6 +79,15 @@ export default BaseToolbar.extend<options>().extend({
     });
   },
 
+  computed: {
+    propsAndAttrs(): Record<string, unknown> {
+      return {
+        ...this.$attrs,
+        ...this.$props,
+      };
+    },
+  },
+
   methods: {
     back(): void {
       this.$emit('back-event');
@@ -87,11 +98,3 @@ export default BaseToolbar.extend<options>().extend({
   },
 });
 </script>
-
-<style lang="scss" scoped>
-.toolbar {
-  ::v-deep.v-toolbar__title {
-    color: #282b4a;
-  }
-}
-</style>
