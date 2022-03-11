@@ -32,9 +32,9 @@
 
                           <v-list-item-title> Facily </v-list-item-title>
 
-                          <v-btn icon>
+                          <fy-button icon>
                             <v-icon color="#ffffff"> mdi-chevron-left-circle </v-icon>
-                          </v-btn>
+                          </fy-button>
                         </v-list-item>
 
                         <v-divider></v-divider>
@@ -147,7 +147,7 @@
 <script lang="ts">
 import Vue from 'vue';
 
-import { FyDrawer } from '@/index';
+import { FyButton, FyDrawer } from '@/index';
 import { IDrawerItems } from '@/components/FyDrawer/types';
 
 const contentUsageDrawer = `
@@ -200,7 +200,7 @@ const contentUsageDrawerScript = `
 export default Vue.extend({
   name: 'PageDrawer',
 
-  components: { FyDrawer },
+  components: { FyButton, FyDrawer },
 
   data() {
     return {

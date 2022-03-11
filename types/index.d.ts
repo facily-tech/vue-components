@@ -52,6 +52,7 @@ export const FyInputDate: VueConstructor;
 export const FyInputTime: VueConstructor;
 export const FyInputDateTime: VueConstructor;
 export const FyInputCurrency: VueConstructor;
+export const FyPage: VueConstructor;
 export const FySnackbar: VueConstructor;
 export const FySnackbarBase: VueConstructor;
 export const FyToolbar: VueConstructor;

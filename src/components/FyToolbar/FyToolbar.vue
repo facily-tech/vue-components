@@ -7,18 +7,18 @@
       {{ items.title }}
     </v-toolbar-title>
     <v-spacer></v-spacer>
-    <FyButton v-if="backButton" @click="back" class="pa-3" outlined color="primary">
+    <fy-button v-if="backButton" @click="back" class="pa-3" outlined color="primary">
       <v-icon> mdi-arrow-left </v-icon>
       Voltar
-    </FyButton>
+    </fy-button>
     <div class="ml-2">
       <slot name="btn"></slot>
     </div>
     <v-menu offset-y v-if="items.options">
       <template v-slot:activator="{ on, attrs }">
-        <v-btn icon color="primary" v-bind="attrs" v-on="on">
+        <fy-button icon color="primary" v-bind="attrs" v-on="on">
           <v-icon>mdi-dots-vertical</v-icon>
-        </v-btn>
+        </fy-button>
       </template>
       <v-list>
         <v-list-item v-for="(option, index) in items.options" :key="index">

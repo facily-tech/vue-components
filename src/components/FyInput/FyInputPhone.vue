@@ -13,13 +13,11 @@
 <script lang="ts">
 import Vue from 'vue';
 
-import { VTextField } from 'vuetify/lib';
-
 import { VueMaskDirective } from 'v-mask';
 
 import FyInput from './FyInput';
 
-const BaseVTextField = Vue.extend({ mixins: [VTextField] });
+const BaseVTextField = Vue.extend({ mixins: [FyInput] });
 
 interface options extends InstanceType<typeof BaseVTextField> {
   value: string;

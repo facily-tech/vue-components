@@ -12,8 +12,6 @@
 <script lang="ts">
 import Vue from 'vue';
 
-import { VTextField } from 'vuetify/lib';
-
 import { VueMaskDirective } from 'v-mask';
 
 import FyInput from './FyInput';
@@ -24,7 +22,7 @@ interface options extends InstanceType<typeof BaseVTextField> {
   value: string;
 }
 
-const BaseVTextField = Vue.extend({ mixins: [VTextField] });
+const BaseVTextField = Vue.extend({ mixins: [FyInput] });
 
 export default BaseVTextField.extend<options>().extend({
   name: 'fy-input-date',

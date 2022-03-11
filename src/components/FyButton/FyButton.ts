@@ -9,8 +9,9 @@ type options = InstanceType<typeof base>;
 
 export default base.extend<options>().extend({
   name: 'fy-button',
+
   computed: {
-    class(): Record<string, unknown> {
+    classes(): Record<string, unknown> {
       return {
         ...VBtn.options.computed.classes.call(this),
         'fy-button': true,

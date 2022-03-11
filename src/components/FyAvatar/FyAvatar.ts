@@ -9,8 +9,9 @@ type options = InstanceType<typeof BaseVAvatar>;
 
 export default BaseVAvatar.extend<options>().extend({
   name: 'fy-avatar',
+
   computed: {
-    class() {
+    classes() {
       return {
         ...VAvatar.options.computed.classes.call(this),
         'fy-avatar': true,

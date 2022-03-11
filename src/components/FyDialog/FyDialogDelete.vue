@@ -17,9 +17,9 @@
                 {{ title }}
               </v-toolbar-title>
               <v-spacer></v-spacer>
-              <v-btn icon @click="close()">
+              <fy-button icon @click="close()">
                 <v-icon color="#ffffff"> mdi-close </v-icon>
-              </v-btn>
+              </fy-button>
             </v-toolbar>
             <v-card-text class="pa-10">
               <div class="delete-ilustra d-flex justify-center pt-5">
@@ -38,9 +38,9 @@
               </div>
 
               <div class="justify-center d-flex mt-10">
-                <v-btn color="primary" :loading="loading" x-large @click="submit()">
+                <fy-button color="primary" :loading="loading" x-large @click="submit()">
                   Excluir
-                </v-btn>
+                </fy-button>
               </div>
             </v-card-text>
           </v-card>
@@ -55,12 +55,14 @@ import Vue from 'vue';
 
 import { FyDialog } from './index';
 
+import FyButton from '@/components/FyButton';
+
 import { IDialogDeleteItem } from './types';
 
 export default Vue.extend({
   name: 'fy-dialog-delete',
 
-  components: { FyDialog },
+  components: { FyButton, FyDialog },
 
   props: {
     item: {

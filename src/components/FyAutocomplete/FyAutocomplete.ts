@@ -9,8 +9,20 @@ type options = InstanceType<typeof base>;
 
 export default base.extend<options>().extend({
   name: 'fy-autocomplete',
+
+  props: {
+    dense: {
+      type: Boolean,
+      default: true,
+    },
+    outlined: {
+      type: Boolean,
+      default: true,
+    },
+  },
+
   computed: {
-    class(): Record<string, unknown> {
+    classes(): Record<string, unknown> {
       return {
         ...VAutocomplete.options.computed.classes.call(this),
         'fy-autocomplete': true,

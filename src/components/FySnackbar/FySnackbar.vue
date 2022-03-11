@@ -11,9 +11,9 @@
       <p :style="`color: ${snackbar.fontColor}`" class="mb-0">{{ snackbar.text }}</p>
 
       <template v-slot:action="{ attrs }">
-        <v-btn color="#ffffff" text v-bind="attrs" @click="snackbarClose" icon>
+        <fy-button color="#ffffff" text v-bind="attrs" @click="snackbarClose" icon>
           <v-icon> mdi-close </v-icon>
-        </v-btn>
+        </fy-button>
       </template>
     </fy-snackbar-base>
   </div>
@@ -26,6 +26,8 @@ import { VSnackbar } from 'vuetify/lib';
 
 import FySnackbarBase from './FySnackbarBase';
 
+import FyButton from '@/components/FyButton';
+
 import { ISnackbarProps } from './types';
 
 const BaseVSnackbar = Vue.extend({ mixins: [VSnackbar] });
@@ -37,7 +39,7 @@ interface options extends InstanceType<typeof BaseVSnackbar> {
 export default BaseVSnackbar.extend<options>().extend({
   name: 'fy-snacbar',
 
-  components: { FySnackbarBase },
+  components: { FyButton, FySnackbarBase },
 
   props: {
     snackbar: {

@@ -17,18 +17,18 @@
                 <v-list-item-title>Example</v-list-item-title>
                 <v-list-item-subtitle class="py-8 px-8">
                   <v-row>
-                    <v-btn color="info" class="mr-5" @click="dialog = true">
+                    <fy-button color="info" class="mr-5" @click="dialog = true">
                       Dialog Template
-                    </v-btn>
+                    </fy-button>
                     <fy-dialog :dialog="dialog">
                       <template v-slot:content>
                         <v-card tile>
                           <v-toolbar flat light color="primary">
                             <v-toolbar-title style="color: white"> Title </v-toolbar-title>
                             <v-spacer></v-spacer>
-                            <v-btn icon @click="dialog = false">
+                            <fy-button icon @click="dialog = false">
                               <v-icon color="#ffffff"> mdi-close </v-icon>
-                            </v-btn>
+                            </fy-button>
                           </v-toolbar>
                           <v-card-text class="pa-10">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis iusto
@@ -72,7 +72,7 @@
                 <v-list-item-title>Example</v-list-item-title>
                 <v-list-item-subtitle class="py-8 px-8">
                   <v-row>
-                    <v-btn color="info" @click="deleteModel = true"> Dialog Delete </v-btn>
+                    <fy-button color="info" @click="deleteModel = true"> Dialog Delete </fy-button>
                     <fy-dialog-delete
                       :deleteModel="deleteModel"
                       :item="item"
@@ -127,7 +127,7 @@
 <script lang="ts">
 import Vue from 'vue';
 
-import { FyDialog, FyDialogDelete } from '@/index';
+import { FyButton, FyDialog, FyDialogDelete } from '@/index';
 import { IDialogDeleteItem } from '@/components/FyDialog/types';
 
 const contentUsageDialog = `
@@ -137,9 +137,9 @@ const contentUsageDialog = `
         <v-toolbar flat light color="primary">
           <v-toolbar-title style="color: white"> Title </v-toolbar-title>
           <v-spacer></v-spacer>
-          <v-btn icon @click="dialog = false">
+          <fy-button icon @click="dialog = false">
             <v-icon color="#ffffff"> mdi-close </v-icon>
-          </v-btn>
+          </fy-button>
         </v-toolbar>
         <v-card-text class="pa-10">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis iusto
@@ -161,7 +161,7 @@ const contentUsageDialogDelete = `
 
 export default Vue.extend({
   name: 'PageDialogs',
-  components: { FyDialog, FyDialogDelete },
+  components: { FyButton, FyDialog, FyDialogDelete },
   data() {
     return {
       contentUsageDialog,
