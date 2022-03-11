@@ -13,6 +13,5 @@ Vue.use(VueComponents);
 
 new Vue({
   vuetify,
-  // store,
   render: (h) => h(App),
 }).$mount('#app');

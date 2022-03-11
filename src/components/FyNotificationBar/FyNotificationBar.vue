@@ -2,10 +2,10 @@
   <div class="fy-notication-bar">
     <v-menu offset-y>
       <template v-slot:activator="{ on }">
-        <v-btn icon primary v-on="on">
+        <fy-button icon primary v-on="on">
           <v-icon v-if="numUnread">mdi-bell-badge</v-icon>
           <v-icon v-else>mdi-bell</v-icon>
-        </v-btn>
+        </fy-button>
       </template>
       <v-card max-width="400">
         <div>
@@ -47,10 +47,14 @@
 <script lang="ts">
 import Vue from 'vue';
 
+import FyButton from '@/components/FyButton';
+
 import { INotificationBarProps } from './types';
 
 export default Vue.extend({
   name: 'fy-notification-bar',
+
+  components: { FyButton },
 
   props: {
     numUnread: {

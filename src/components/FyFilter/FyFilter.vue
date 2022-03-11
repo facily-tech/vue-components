@@ -1,7 +1,7 @@
 <template>
   <v-card class="mb-5 filter-wrapper">
     <v-container fluid color="primary">
-      <v-row class="mt-0">
+      <v-row dense>
         <v-col cols="12" md="8" class="d-flex justify-flex-start">
           <h2>Filtros ativos ({{ count }})</h2>
         </v-col>
@@ -12,6 +12,7 @@
             color="primary"
             dark
             @click="$emit('clear-tags')"
+            data-test="btn-clear-filter"
           >
             <v-icon> mdi-delete </v-icon>
             <span style="text-transform: capitalize"> Limpar</span>
@@ -21,13 +22,14 @@
             class="ml-5"
             :disabled="!validForm"
             @click="$emit('click-filter')"
+            data-test="btn-filter"
           >
             <v-icon>mdi-filter-variant</v-icon>
             <span style="text-transform: capitalize"> Filtrar </span>
           </fy-button>
         </v-col>
       </v-row>
-      <v-row class="mt-0">
+      <v-row dense>
         <v-col cols="12">
           <ul class="d-flex no-wrap pa-0" style="list-style: none">
             <li v-for="(item, key) in allTags" :key="key">

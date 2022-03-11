@@ -9,8 +9,20 @@ type options = InstanceType<typeof base>;
 
 export default base.extend<options>().extend({
   name: 'fy-input',
+
+  props: {
+    dense: {
+      type: Boolean,
+      default: true,
+    },
+    outlined: {
+      type: Boolean,
+      default: true,
+    },
+  },
+
   computed: {
-    class() {
+    classes(): Record<string, unknown> {
       return {
         ...VTextField.options.computed.classes.call(this),
         'fy-input': true,
