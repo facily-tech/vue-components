@@ -38,6 +38,8 @@ import { FyToolbar } from './components/FyToolbar';
 
 import { FyUserLabel } from './components/FyUserLabel';
 
+import { FyPage } from './components/FyPage';
+
 const VueComponents = {
   install(Vue: VueConstructor): void {
     Vue.component('fy-autocomplete', FyAutocomplete);
@@ -69,6 +71,7 @@ const VueComponents = {
     Vue.component('fy-toolbar', FyToolbar);
     Vue.component('fy-notication-bar', FyNoticationBar);
     Vue.component('fy-user-label', FyUserLabel);
+    Vue.component('fy-page', FyPage);
   },
 };
 
@@ -99,6 +102,7 @@ export {
   FyToolbar,
   FyNoticationBar,
   FyUserLabel,
+  FyPage,
 };
 
 export default VueComponents;
