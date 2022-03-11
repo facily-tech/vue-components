@@ -115,6 +115,13 @@
             </p>
           </div>
         </div>
+        <div :key="headerKey" v-else-if="!!$slots[header.value] || !!$scopedSlots[header.value]">
+          <slot :name="header.value" v-bind="item.cols">
+            <template slot:item.cols[header.value]="{ item }">
+              {{ item.cols[header.value] }}
+            </template>
+          </slot>
+        </div>
         <div :key="headerKey" v-else>
           <template slot:item.cols[header.value]="{ item }">
             {{ item.cols[header.value] }}
@@ -271,7 +278,6 @@ export default BaseDataTable.extend<BaseDataTableOptions>().extend({
   .v-data-table-header {
     th {
       span {
-        color: #000;
         font-weight: 700;
         font-size: 16px;
         line-height: 18px;
@@ -280,17 +286,7 @@ export default BaseDataTable.extend<BaseDataTableOptions>().extend({
   }
 
   tbody tr {
-    &:hover {
-      background: #2047e0 !important;
-      border-radius: 0 !important;
-
-      td {
-        color: white !important;
-      }
-    }
-
     td {
-      color: rgba(0, 0, 0, 0.87);
       font-weight: 500;
       font-size: 16px;
       line-height: 18px;
@@ -299,7 +295,6 @@ export default BaseDataTable.extend<BaseDataTableOptions>().extend({
         display: grid;
         & .truncate {
           font-size: 0.8rem;
-          color: #999;
           display: block;
           text-overflow: ellipsis;
           overflow: hidden;
