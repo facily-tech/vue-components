@@ -1,6 +1,6 @@
 {
   "name": "@facily-tech/vue-components",
-  "version": "1.0.59",
+  "version": "1.0.62",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -79,6 +79,7 @@
   },
   "homepage": "https://github.com/facily-tech/vue-components#readme",
   "repository": {
+    "type": "git",
     "url": "git://github.com/facily-tech/vue-components.git"
   },
   "resolutions": {
