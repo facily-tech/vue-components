@@ -1,9 +1,9 @@
 <template>
   <v-toolbar v-bind="propsAndAttrs" :flat="flat">
-    <v-icon class="mr-2" color="primary" v-show="items.icon">
+    <v-icon class="mr-2" v-show="items.icon">
       {{ items.icon }}
     </v-icon>
-    <v-toolbar-title v-if="screenWidth > 768">
+    <v-toolbar-title class="headline font-weight-medium" v-if="screenWidth > 768">
       {{ items.title }}
     </v-toolbar-title>
     <v-spacer></v-spacer>
