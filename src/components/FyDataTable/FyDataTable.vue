@@ -110,9 +110,9 @@
         </div>
         <div :key="headerKey" v-else-if="header.value === 'priority'">
           <div class="priority" :style="checkColor(item.cols[header.value])">
-            <p class="mb-0 ml-7">
+            <div class="mb-0 ml-7 priority-value">
               {{ item.cols[header.value] ? item.cols[header.value] : 'Indefinida' }}
-            </p>
+            </div>
           </div>
         </div>
         <div :key="headerKey" v-else-if="!!$slots[header.value] || !!$scopedSlots[header.value]">
@@ -315,6 +315,10 @@ export default BaseDataTable.extend<BaseDataTableOptions>().extend({
     height: 15px;
     border-radius: 50%;
     margin: 0;
+
+    & .priority-value {
+      width: max-content;
+    }
   }
 }
 </style>
