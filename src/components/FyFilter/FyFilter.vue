@@ -1,34 +1,6 @@
 <template>
-  <v-card class="mb-5 filter-wrapper">
-    <v-container fluid color="primary">
-      <v-row dense>
-        <v-col cols="12" md="8" class="d-flex justify-flex-start">
-          <h2>Filtros ativos ({{ count }})</h2>
-        </v-col>
-        <v-col cols="12" md="4" class="d-flex justify-end">
-          <fy-button
-            v-if="checkAllTags()"
-            outlined
-            color="primary"
-            dark
-            @click="$emit('clear-tags')"
-            data-test="btn-clear-filter"
-          >
-            <v-icon> mdi-delete </v-icon>
-            <span style="text-transform: capitalize"> Limpar</span>
-          </fy-button>
-          <fy-button
-            color="primary"
-            class="ml-5"
-            :disabled="!validForm"
-            @click="$emit('click-filter')"
-            data-test="btn-filter"
-          >
-            <v-icon>mdi-filter-variant</v-icon>
-            <span style="text-transform: capitalize"> Filtrar </span>
-          </fy-button>
-        </v-col>
-      </v-row>
+  <v-card class="filter-wrapper" elevation="0">
+    <v-card-text v-if="checkAllTags()">
       <v-row dense>
         <v-col cols="12">
           <ul class="d-flex no-wrap pa-0" style="list-style: none">
@@ -47,12 +19,37 @@
           </ul>
         </v-col>
       </v-row>
-    </v-container>
-    <v-divider></v-divider>
+    </v-card-text>
     <v-card-text>
-      <div class="text-left pa-2">
-        <slot name="content"></slot>
-      </div>
+      <v-row dense>
+        <v-col md="9" class="text-left">
+          <slot name="content"></slot>
+        </v-col>
+        <v-col md="3" class="text-right">
+          <fy-button
+            v-if="checkAllTags()"
+            outlined
+            color="primary"
+            dark
+            @click="$emit('clear-tags')"
+            data-test="btn-clear-filter"
+          >
+            <v-icon> mdi-filter-off </v-icon>
+            <span style="text-transform: capitalize"> Limpar</span>
+          </fy-button>
+          <fy-button
+            color="primary"
+            outlined
+            class="ml-5"
+            :disabled="!validForm"
+            @click="$emit('click-filter')"
+            data-test="btn-filter"
+          >
+            <v-icon>mdi-filter</v-icon>
+            <span style="text-transform: capitalize"> Filtrar </span>
+          </fy-button>
+        </v-col>
+      </v-row>
     </v-card-text>
   </v-card>
 </template>

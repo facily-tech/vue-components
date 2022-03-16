@@ -1,12 +1,12 @@
 <template>
-  <div class="custom-data-tables-wrapper">
+  <div class="custom-data-tables-wrapper mx-1">
     <fy-data-table-base
       :items="items"
       :headers="headers"
       :page.sync="pageTable"
       :items-per-page="pagination ? pagination.itemsPerPage : 9999"
       :loading="loading"
-      class="elevation-1 custom-datatable"
+      class="custom-datatable"
       hide-default-footer
       loading-text="Carregando..."
       mobile-breakpoint="0"
@@ -136,7 +136,7 @@
         </div>
       </template>
     </fy-data-table-base>
-    <div v-if="pagination" class="text-center mt-8 d-md-flex justify-space-between align-md-center">
+    <div v-if="pagination" class="text-center mt-5 d-md-flex justify-space-between align-md-center">
       <v-select
         outlined
         v-model="pagination.itemsPerPage"
@@ -270,21 +270,14 @@ export default BaseDataTable.extend<BaseDataTableOptions>().extend({
 </script>
 <style lang="scss">
 .custom-datatable {
-  .v-data-table__wrapper {
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-  }
-
   .v-data-table-header {
     th {
       span {
-        font-weight: 700;
         font-size: 16px;
         line-height: 18px;
       }
     }
   }
-
   tbody tr {
     td {
       font-weight: 500;

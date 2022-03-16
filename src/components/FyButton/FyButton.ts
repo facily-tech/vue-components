@@ -10,6 +10,13 @@ type options = InstanceType<typeof base>;
 export default base.extend<options>().extend({
   name: 'fy-button',
 
+  props: {
+    elevation: {
+      type: Number,
+      default: 0,
+    },
+  },
+
   computed: {
     classes(): Record<string, unknown> {
       return {
