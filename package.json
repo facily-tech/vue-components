@@ -7,6 +7,7 @@
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "build:npm": "vue-cli-service build --target lib --name vueComponents src/index.ts",
+    "build:development": "vue-cli-service build --target lib --name vueComponents src/index.ts --watch",
     "commit": "git-cz",
     "preinstall": "npx force-resolutions",
     "prepare": "husky install",
