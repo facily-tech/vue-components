@@ -11,7 +11,9 @@
     "commit": "git-cz",
     "preinstall": "npx force-resolutions",
     "prepare": "husky install",
-    "release": "standard-version"
+    "release": "standard-version",
+    "watch-dist": "nodemon -x 'yalc push'",
+    "watch": "concurrently -kill-others \"npm run watch-dist\" \"npm run build:development\""
   },
   "main": "./dist/vueComponents.common.js",
   "module": "/dist/vueComponents.umd.js",
@@ -36,6 +38,7 @@
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/eslint-config-typescript": "^7.0.0",
     "@vue/test-utils": "^1.3.0",
+    "concurrently": "^7.0.0",
     "core-js": "^3.6.5",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^6.7.2",
@@ -46,6 +49,7 @@
     "lodash": "^4.17.21",
     "marked": "^4.0.10",
     "moment": "^2.29.1",
+    "nodemon": "^2.0.15",
     "raw-loader": "^4.0.2",
     "sass": "~1.32.0",
     "sass-loader": "^10.0.0",
