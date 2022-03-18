@@ -69,7 +69,7 @@ This will watch all changes made in the components while publishing them to all 
 $ npm run watch
 ```
 
-### Remove the local link from your application after commiting your changes
+### Remove the local link from your application before commiting your changes
 
 ```sh
 $ yalc remove @facily-tech/vue-components
