@@ -22,12 +22,12 @@ This will push this line above into your **.bashrc** file exporting the token to
 
 > For Windows users, just add the COMPONENTS_TOKEN in your variables and it will work fine with the chosen terminal. You can read more abould Windows Enviroment variables [here](https://docs.microsoft.com/en-us/windows/win32/shell/user-environment-variables?redirectedfrom=MSDN).
 
-
-### Simply install Vue-components in your app 
+### Simply install Vue-components in your app
 
 ```sh
 $ npm install --save @facily-tech/vue-components
 ```
+
 ---
 
 ## Development mode
@@ -38,29 +38,44 @@ First of all, you need to clone the repository and install all packages dependen
 $ git clone git@github.com:facily-tech/vue-components.git
 $ npm install
 ```
+
 ### Yalc for local publishin
+
 This will install yalc globally to link and auto update the Vue Components into your application.
+
 ```sh
 npm install -g yalc
 ```
 
 ### Link the local repository with Yalc
+
+Locally puclish the package to Yalc symbolic link
+
+```sh
+$ yalc publish
+```
+
 In the root of your application using Vue Components change the link of the package:
 
 ```sh
 $ yalc add @facily-tech/vue-components
 ```
-Locally puclish the package to Yalc symbolic link 
-```sh
-$ yalc push
-```
+
 ### Running and hot reloading for development
+
 This will watch all changes made in the components while publishing them to all linked repositories. Run in the root folder of Vue Components.
+
 ```sh
 $ npm run watch
 ```
----
 
+### Remove the local link from your application after commiting your changes
+
+```sh
+$ yalc remove @facily-tech/vue-components
+```
+
+---
 
 ## Auto generate release and Changelog
 
@@ -69,6 +84,7 @@ When run, this command line interface automatically generates a new GitHub Relea
 ```sh
 npm run release
 ```
+
 ---
 
 ## Commit with pattern
@@ -89,5 +105,6 @@ git cz
 
 ---
 
-## Publish to Git Hub packages 
+## Publish to Git Hub packages
+
 After the commit you can build the package with all changes [here](https://github.com/facily-tech/vue-components/actions)
