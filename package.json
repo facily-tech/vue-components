@@ -1,6 +1,6 @@
 {
   "name": "@facily-tech/vue-components",
-  "version": "1.0.88",
+  "version": "1.0.89",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
