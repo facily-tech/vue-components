@@ -6,11 +6,11 @@
       hideOverlay: false,
       scrollable: true,
     }"
-    :size="'580px'"
+    :max-width="'580px'"
   >
     <template v-slot:content>
       <v-card>
-        <div class="delete-wrapper">
+        <div class="delete-wrapper" data-test="dialog-delete">
           <v-card tile>
             <v-toolbar flat light color="primary">
               <v-toolbar-title style="color: white">
@@ -22,24 +22,27 @@
               </fy-button>
             </v-toolbar>
             <v-card-text class="pa-10">
-              <div class="delete-ilustra d-flex justify-center pt-5">
-                <v-img
-                  lazy-src="@/assets/delete.svg"
-                  max-height="212"
-                  max-width="212"
-                  src="@/assets/delete.svg"
-                ></v-img>
-              </div>
-
-              <div class="dtext-center pt-10">
-                <h2 class="headline">
-                  Tem certeza que deseja excluir <strong>"{{ item.description }}"</strong>?
-                </h2>
+              <div class="dtext-center pt-5">
+                <slot name="content">
+                  <h2 class="headline">
+                    Tem certeza que deseja excluir <strong>"{{ item.description }}"</strong>?
+                  </h2>
+                </slot>
               </div>
 
               <div class="justify-center d-flex mt-10">
-                <fy-button color="primary" :loading="loading" x-large @click="submit()">
+                <fy-button
+                  color="primary"
+                  :loading="loading"
+                  large
+                  @click="submit()"
+                  data-test="btn-submit"
+                  class="ml-3"
+                >
                   Excluir
+                </fy-button>
+                <fy-button large @click="close()" data-test="btn-close" class="ml-3">
+                  Cancelar
                 </fy-button>
               </div>
             </v-card-text>
