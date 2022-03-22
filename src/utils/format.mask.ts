@@ -37,9 +37,9 @@ const formatMaskCellPhone = (value: string): string => {
   return phone;
 };
 
-const formatCurrencyMaskToFloat = (value: string, precision: number): number => {
+const formatCurrencyMaskToFloat = (value: string, precision: number): number | null => {
   if (!value) {
-    return 0;
+    return null;
   }
 
   const onlyNumbers = formatTypeOnlyNumbers(value);

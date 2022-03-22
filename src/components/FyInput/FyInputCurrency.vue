@@ -41,8 +41,7 @@ export default BaseVTextField.extend<options>().extend({
 
   props: {
     value: {
-      tyupe: String,
-      default: '0',
+      type: [String, Number],
     },
     type: {
       type: String,
@@ -80,7 +79,7 @@ export default BaseVTextField.extend<options>().extend({
 
   data() {
     return {
-      text: this.value ? this.value : '0',
+      text: this.value,
       money: {
         decimal: ',',
         thousands: '.',
