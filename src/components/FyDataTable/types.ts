@@ -25,6 +25,7 @@ interface IDataTableActions {
   actionKey: string;
   icon: string;
   label: string;
+  loading?: boolean;
 }
 
 export interface IDataTableRows<T = IDataTableColumns> {
