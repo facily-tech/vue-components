@@ -38,7 +38,15 @@
                   :color="action.color"
                   @click="$emit(action.actionKey, item)"
                 >
-                  <v-icon>{{ action.icon }}</v-icon>
+                  <v-icon v-if="!action.loading">{{ action.icon }}</v-icon>
+                  <v-progress-circular
+                    v-else
+                    indeterminate
+                    :size="20"
+                    :width="3"
+                    disabled
+                    @click.stop
+                  />
                 </fy-button>
               </template>
               <span color="secundary"> {{ action.label }}</span>
