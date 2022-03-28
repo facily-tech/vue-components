@@ -1,45 +1,31 @@
 <template>
-  <div>
-    <fy-snackbar-base
-      v-if="snackbar"
-      v-model="snackbar.model"
-      :timeout="snackbar.timeout"
-      :color="snackbar.bgColor"
-      v-bind="propsAndAttrs"
-      v-on="$listeners"
-    >
-      <p :style="`color: ${snackbar.fontColor}`" class="mb-0">{{ snackbar.text }}</p>
+  <v-snackbar
+    v-if="snackbar"
+    v-model="snackbar.model"
+    :timeout="snackbar.timeout"
+    :color="snackbar.bgColor"
+    v-bind="propsAndAttrs"
+    v-on="$listeners"
+  >
+    <p :style="`color: ${snackbar.fontColor}`" class="mb-0">{{ snackbar.text }}</p>
 
-      <template v-slot:action="{ attrs }">
-        <fy-button color="#ffffff" text v-bind="attrs" @click="snackbarClose" icon>
-          <v-icon> mdi-close </v-icon>
-        </fy-button>
-      </template>
-    </fy-snackbar-base>
-  </div>
+    <template v-slot:action="{ attrs }">
+      <fy-button color="#ffffff" text v-bind="attrs" @click="snackbarClose" icon>
+        <v-icon> mdi-close </v-icon>
+      </fy-button>
+    </template>
+  </v-snackbar>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-
-import { VSnackbar } from 'vuetify/lib';
-
-import FySnackbarBase from './FySnackbarBase';
-
 import FyButton from '@/components/FyButton';
-
 import { ISnackbarProps } from './types';
 
-const BaseVSnackbar = Vue.extend({ mixins: [VSnackbar] });
-
-interface options extends InstanceType<typeof BaseVSnackbar> {
-  snackbar: ISnackbarProps;
-}
-
-export default BaseVSnackbar.extend<options>().extend({
+export default Vue.extend({
   name: 'fy-snacbar',
 
-  components: { FyButton, FySnackbarBase },
+  components: { FyButton },
 
   props: {
     snackbar: {

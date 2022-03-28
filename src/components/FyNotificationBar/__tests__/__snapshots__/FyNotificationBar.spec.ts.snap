@@ -2,15 +2,8 @@
 
 exports[`FyNotificationBar.ts should render component and match snapshot 1`] = `
 <div class="fy-notication-bar">
-  <v-menu offset-y="">
-    <v-card max-width="400">
-      <div>
-        <v-card-title class="primary darken-1 title-card"><span class="text-h5 white--text">Notificações</span>
-          <!---->
-        </v-card-title>
-      </div>
-      <!---->
-    </v-card>
-  </v-menu>
+  <div class="v-menu"><button type="button" class="v-btn v-btn--icon v-btn--round theme--light elevation-0 v-size--default" primary="" icon=""><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-bell theme--light"></i></span></button>
+    <!---->
+  </div>
 </div>
 `;

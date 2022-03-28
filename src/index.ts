@@ -8,7 +8,7 @@ import FyButton from './components/FyButton';
 
 import { FyChartGauge } from './components/FyChart';
 
-import { FyDataTable, FyDataTableBase } from './components/FyDataTable';
+import { FyDataTable } from './components/FyDataTable';
 
 import { FyDialog, FyDialogBase, FyDialogDelete } from './components/FyDialog';
 
@@ -32,7 +32,7 @@ import {
 
 import { FyNoticationBar } from './components/FyNotificationBar';
 
-import { FySnackbar, FySnackbarBase } from './components/FySnackbar';
+import { FySnackbar } from './components/FySnackbar';
 
 import { FyToolbar } from './components/FyToolbar';
 
@@ -50,7 +50,6 @@ const VueComponents = {
     Vue.component('fy-button', FyButton);
     Vue.component('fy-chart-gauge', FyChartGauge);
     Vue.component('fy-data-table', FyDataTable);
-    Vue.component('fy-data-table-base', FyDataTableBase);
     Vue.component('fy-dialog', FyDialog);
     Vue.component('fy-dialog-base', FyDialogBase);
     Vue.component('fy-dialog-delete', FyDialogDelete);
@@ -67,7 +66,6 @@ const VueComponents = {
     Vue.component('fy-input-phone', FyInputPhone);
     Vue.component('fy-input-time', FyInputTime);
     Vue.component('fy-snackbar', FySnackbar);
-    Vue.component('fy-snackbar-base', FySnackbarBase);
     Vue.component('fy-toolbar', FyToolbar);
     Vue.component('fy-notication-bar', FyNoticationBar);
     Vue.component('fy-user-label', FyUserLabel);
@@ -81,7 +79,6 @@ export {
   FyButton,
   FyChartGauge,
   FyDataTable,
-  FyDataTableBase,
   FyDialog,
   FyDialogBase,
   FyDialogDelete,
@@ -98,7 +95,6 @@ export {
   FyInputDateTime,
   FyInputCurrency,
   FySnackbar,
-  FySnackbarBase,
   FyToolbar,
   FyNoticationBar,
   FyUserLabel,

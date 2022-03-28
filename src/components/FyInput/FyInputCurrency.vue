@@ -11,24 +11,13 @@
 
 <script lang="ts">
 import Vue from 'vue';
-
 import { VMoney } from 'v-money';
 import { formatCurrencyMaskToFloat } from '@/utils/format.mask';
-import FyInput from '@/components/FyInput/FyInput';
-
-const BaseVTextField = Vue.extend({ mixins: [FyInput] });
-
-interface options extends InstanceType<typeof BaseVTextField> {
-  value: string;
-  type: string;
-  decimal: string;
-  thousands: string;
-  precision: number;
-}
+import FyInput from '@/components/FyInput/FyInput.vue';
 
 const MAXLENGTH = 24;
 
-export default BaseVTextField.extend<options>().extend({
+export default Vue.extend({
   name: 'fy-input-currency',
 
   directives: { money: VMoney },

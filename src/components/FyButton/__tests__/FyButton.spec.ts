@@ -1,12 +1,12 @@
 import Vue from 'vue';
-
 import Router from 'vue-router';
-
-import FyButton from '../FyButton';
-
+import FyButton from '../FyButton.vue';
 import { createLocalVue, mount, Wrapper } from '@vue/test-utils';
+import Vuetify from 'vuetify';
 
-describe('FyButton.ts', () => {
+Vue.use(Vuetify);
+
+describe('FyButton', () => {
   let mountFunction: (options?: Record<string, unknown>) => Wrapper<Vue>;
   let router: Router;
   let localVue: typeof Vue;
@@ -19,6 +19,7 @@ describe('FyButton.ts', () => {
     mountFunction = (options = {}) => {
       return mount(FyButton, {
         localVue,
+        vuetify: new Vuetify(),
         router,
         ...options,
       });

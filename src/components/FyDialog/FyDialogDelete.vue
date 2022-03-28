@@ -54,7 +54,7 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import Vue, { PropType } from 'vue';
 
 import { FyDialog } from './index';
 
@@ -69,7 +69,7 @@ export default Vue.extend({
 
   props: {
     item: {
-      type: Object as () => IDialogDeleteItem,
+      type: Object as PropType<IDialogDeleteItem>,
       default: {} as IDialogDeleteItem,
       required: true,
     },

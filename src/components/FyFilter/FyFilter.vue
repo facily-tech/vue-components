@@ -92,7 +92,7 @@ export default Vue.extend({
 
   methods: {
     checkAllTags(): boolean {
-      return this.allTags.some((item) => item.enable);
+      return this.allTags?.some((item) => item.enable);
     },
 
     checkFilters(): void {

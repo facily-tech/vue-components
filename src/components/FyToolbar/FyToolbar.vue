@@ -33,21 +33,13 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { VAppBar, VToolbar } from 'vuetify/lib';
 import { IItemsToolbar } from './types';
-import FyButton from '@/components/FyButton/FyButton';
+import FyButton from '@/components/FyButton/FyButton.vue';
 
-const BaseToolbar = Vue.extend({ mixins: [VToolbar] });
-
-interface options extends InstanceType<typeof BaseToolbar> {
-  items: IItemsToolbar;
-  backButton: boolean;
-}
-
-export default BaseToolbar.extend<options>().extend({
+export default Vue.extend({
   name: 'fy-toolbar',
 
-  components: { VAppBar, VToolbar, FyButton },
+  components: { FyButton },
 
   props: {
     items: {

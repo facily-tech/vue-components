@@ -1,4 +1,4 @@
-import FyButton from './FyButton';
+import FyButton from './FyButton.vue';
 
 export { FyButton };
 export default FyButton;

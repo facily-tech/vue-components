@@ -1,5 +1,9 @@
+import Vue from 'vue';
+import Vuetify from 'vuetify';
 import FyDialogDelete from '../FyDialogDelete.vue';
 import { mount, MountOptions, Wrapper } from '@vue/test-utils';
+
+Vue.use(Vuetify);
 
 describe('FyDialogDelete.ts', () => {
   // eslint-disable-line max-statements
@@ -7,20 +11,17 @@ describe('FyDialogDelete.ts', () => {
   let mountFunction: (options?: MountOptions<Instance>) => Wrapper<Instance>;
   beforeEach(() => {
     mountFunction = (options?: MountOptions<Instance>) => {
-      return mount(FyDialogDelete, {
-        mocks: {
-          $vuetify: {
-            icons: {},
-            rtl: false,
-          },
-        },
+      return mount<Instance>(FyDialogDelete, {
+        vuetify: new Vuetify(),
         ...options,
       });
     };
   });
 
   it('should render component and match snapshot', () => {
-    const wrapper = mountFunction();
+    const wrapper = mountFunction({
+      props: {},
+    });
 
     expect(wrapper.html()).toMatchSnapshot();
   });

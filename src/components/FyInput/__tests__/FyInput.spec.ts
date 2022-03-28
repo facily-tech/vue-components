@@ -1,5 +1,9 @@
-import FyInput from '../FyInput';
+import Vue from 'vue';
+import Vuetify from 'vuetify';
+import FyInput from '../FyInput.vue';
 import { mount, MountOptions, Wrapper } from '@vue/test-utils';
+
+Vue.use(Vuetify);
 
 describe('FyInput.ts', () => {
   // eslint-disable-line max-statements
@@ -8,12 +12,7 @@ describe('FyInput.ts', () => {
   beforeEach(() => {
     mountFunction = (options?: MountOptions<Instance>) => {
       return mount(FyInput, {
-        mocks: {
-          $vuetify: {
-            icons: {},
-            rtl: false,
-          },
-        },
+        vuetify: new Vuetify(),
         ...options,
       });
     };
