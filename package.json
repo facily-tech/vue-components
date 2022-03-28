@@ -1,6 +1,6 @@
 {
   "name": "@facily-tech/vue-components",
-  "version": "1.0.91",
+  "version": "1.2.0",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -26,8 +26,8 @@
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
     "@types/jest": "^24.0.19",
-    "@types/lodash": "^4.14.178",
-    "@types/marked": "^4.0.1",
+    "@types/lodash": "^4.14.180",
+    "@types/marked": "^4.0.3",
     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "@typescript-eslint/parser": "^4.18.0",
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -54,25 +54,24 @@
     "sass": "~1.32.0",
     "sass-loader": "^10.0.0",
     "standard-version": "^9.3.2",
-    "typescript": "~4.1.5",
+    "typescript": "^4.6.3",
     "v-mask": "^2.3.0",
     "v-money": "^0.8.1",
-    "vue": "^2.6.11",
+    "vue": "^2.6.14",
     "vue-class-component": "^7.2.3",
-    "vue-cli-plugin-vuetify": "~2.4.4",
+    "vue-cli-plugin-vuetify": "^2.4.8",
     "vue-property-decorator": "^9.1.2",
     "vue-router": "^3.5.3",
     "vue-template-compiler": "^2.6.11",
-    "vuetify": "^2.4.0",
-    "vuetify-loader": "^1.7.0",
-    "vuex": "^3.6.2"
+    "vuetify": "^2.6.4",
+    "vuetify-loader": "^1.7.0"
   },
   "peerDependencies": {
     "moment": "^2.29.1",
     "v-mask": "^2.3.0",
     "v-money": "^0.8.1",
-    "vue": "^2.6.11",
-    "vuetify": "^2.4.0"
+    "vue": "^2.6.14",
+    "vuetify": "^2.6.4"
   },
   "bugs": {
     "url": "https://github.com/facily-tech/vue-components/issues"
