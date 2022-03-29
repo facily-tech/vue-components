@@ -1,5 +1,9 @@
+import Vue from 'vue';
+import Vuetify from 'vuetify';
 import FyNotificationBar from '../FyNotificationBar.vue';
 import { mount, MountOptions, Wrapper } from '@vue/test-utils';
+
+Vue.use(Vuetify);
 
 describe('FyNotificationBar.ts', () => {
   // eslint-disable-line max-statements
@@ -8,12 +12,7 @@ describe('FyNotificationBar.ts', () => {
   beforeEach(() => {
     mountFunction = (options?: MountOptions<Instance>) => {
       return mount(FyNotificationBar, {
-        mocks: {
-          $vuetify: {
-            icons: {},
-            rtl: false,
-          },
-        },
+        vuetify: new Vuetify(),
         ...options,
       });
     };

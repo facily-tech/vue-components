@@ -1,30 +1,19 @@
 <template>
-  <div>
-    <v-text-field
-      :value="text"
-      @input="update"
-      v-mask="'##/##/####'"
-      v-bind="propsAndAttrs"
-      v-on="$listeners"
-    />
-  </div>
+  <fy-input
+    :value="text"
+    @input="update"
+    v-mask="'##/##/####'"
+    v-bind="propsAndAttrs"
+    v-on="$listeners"
+  />
 </template>
 <script lang="ts">
 import Vue from 'vue';
-
 import { VueMaskDirective } from 'v-mask';
-
-import FyInput from './FyInput';
-
+import FyInput from './FyInput.vue';
 import moment from 'moment';
 
-interface options extends InstanceType<typeof BaseVTextField> {
-  value: string;
-}
-
-const BaseVTextField = Vue.extend({ mixins: [FyInput] });
-
-export default BaseVTextField.extend<options>().extend({
+export default Vue.extend({
   name: 'fy-input-date',
 
   directives: { mask: VueMaskDirective },

@@ -1,8 +1,11 @@
-import FyAutocomplete from '../FyAutocomplete';
-
+import Vue from 'vue';
+import Vuetify from 'vuetify';
+import FyAutocomplete from '../FyAutocomplete.vue';
 import { mount, Wrapper } from '@vue/test-utils';
 
-describe('FyAutocomplete.ts', () => {
+Vue.use(Vuetify);
+
+describe('FyAutocomplete', () => {
   type Instance = InstanceType<typeof FyAutocomplete>;
   let mountFunction: (options?: Record<string, unknown>) => Wrapper<Instance>;
 
@@ -12,16 +15,7 @@ describe('FyAutocomplete.ts', () => {
     mountFunction = (options = {}) => {
       return mount(FyAutocomplete, {
         ...options,
-        mocks: {
-          $vuetify: {
-            lang: {
-              t: (val: string) => val,
-            },
-            theme: {
-              dark: false,
-            },
-          },
-        },
+        vuetify: new Vuetify(),
       });
     };
   });

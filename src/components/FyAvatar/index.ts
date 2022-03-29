@@ -1,4 +1,4 @@
-import FyAvatar from './FyAvatar';
+import FyAvatar from './FyAvatar.vue';
 
 export { FyAvatar };
 

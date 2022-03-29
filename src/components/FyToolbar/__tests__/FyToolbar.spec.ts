@@ -1,5 +1,9 @@
+import Vue from 'vue';
+import Vuetify from 'vuetify';
 import FyToolbar from '../FyToolbar.vue';
 import { mount, MountOptions, Wrapper } from '@vue/test-utils';
+
+Vue.use(Vuetify);
 
 describe('FyToolbar.ts', () => {
   // eslint-disable-line max-statements
@@ -8,12 +12,7 @@ describe('FyToolbar.ts', () => {
   beforeEach(() => {
     mountFunction = (options?: MountOptions<Instance>) => {
       return mount(FyToolbar, {
-        mocks: {
-          $vuetify: {
-            icons: {},
-            rtl: false,
-          },
-        },
+        vuetify: new Vuetify(),
         ...options,
       });
     };

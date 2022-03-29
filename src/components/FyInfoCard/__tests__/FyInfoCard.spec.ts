@@ -1,19 +1,18 @@
+import Vue from 'vue';
+import Vuetify from 'vuetify';
 import FyInfoCard from '../FyInfoCard.vue';
 import { mount, MountOptions, Wrapper } from '@vue/test-utils';
 
-describe('FyInfoCard.ts', () => {
+Vue.use(Vuetify);
+
+describe('FyInfoCard', () => {
   // eslint-disable-line max-statements
   type Instance = InstanceType<typeof FyInfoCard>;
   let mountFunction: (options?: MountOptions<Instance>) => Wrapper<Instance>;
   beforeEach(() => {
     mountFunction = (options?: MountOptions<Instance>) => {
       return mount(FyInfoCard, {
-        mocks: {
-          $vuetify: {
-            icons: {},
-            rtl: false,
-          },
-        },
+        vuetify: new Vuetify(),
         ...options,
       });
     };

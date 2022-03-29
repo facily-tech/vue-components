@@ -1,6 +1,6 @@
 <template>
   <div class="custom-data-tables-wrapper mx-1">
-    <fy-data-table-base
+    <v-data-table
       :items="items"
       :headers="headers"
       :page.sync="pageTable"
@@ -143,7 +143,7 @@
           </v-alert>
         </div>
       </template>
-    </fy-data-table-base>
+    </v-data-table>
     <div v-if="pagination" class="text-center mt-5 d-md-flex justify-space-between align-md-center">
       <v-select
         outlined
@@ -165,11 +165,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { VDataTable } from 'vuetify/lib';
-
 import FyButton from '@/components/FyButton';
-
-import FyDataTableBase from './FyDataTableBase';
 
 import {
   fyFormatMaskTaxId,
@@ -180,19 +176,10 @@ import {
 } from '@/utils';
 import { IDataTableHeaders, IDataTableRows, IDataTablePagination } from './types';
 
-interface BaseDataTableOptions extends InstanceType<typeof BaseDataTable> {
-  headers: IDataTableHeaders[];
-  items: IDataTableRows[];
-  pagination: IDataTablePagination | null;
-  loading: boolean;
-}
-
-const BaseDataTable = Vue.extend({ mixins: [VDataTable] });
-
-export default BaseDataTable.extend<BaseDataTableOptions>().extend({
+export default Vue.extend({
   name: 'fy-data-table',
 
-  components: { FyButton, FyDataTableBase },
+  components: { FyButton },
 
   props: {
     headers: {

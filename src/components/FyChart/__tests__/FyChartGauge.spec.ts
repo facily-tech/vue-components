@@ -1,5 +1,9 @@
+import Vue from 'vue';
+import Vuetify from 'vuetify';
 import FyChartGauge from '../FyChartGauge.vue';
 import { mount, MountOptions, Wrapper } from '@vue/test-utils';
+
+Vue.use(Vuetify);
 
 describe('FyChartGauge.ts', () => {
   // eslint-disable-line max-statements
@@ -8,12 +12,7 @@ describe('FyChartGauge.ts', () => {
   beforeEach(() => {
     mountFunction = (options?: MountOptions<Instance>) => {
       return mount(FyChartGauge, {
-        mocks: {
-          $vuetify: {
-            icons: {},
-            rtl: false,
-          },
-        },
+        vuetify: new Vuetify(),
         ...options,
       });
     };

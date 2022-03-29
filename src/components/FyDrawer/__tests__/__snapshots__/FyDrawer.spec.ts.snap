@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FyDrawer.ts should render component and match snapshot 1`] = `
+<nav class="menu v-navigation-drawer v-navigation-drawer--fixed v-navigation-drawer--mini-variant v-navigation-drawer--open v-navigation-drawer--open-on-hover theme--light primary" style="height: 100vh; top: 0px; max-height: calc(100% - 0px); transform: translateX(0%); width: 56px;">
+  <div class="v-navigation-drawer__content">
+    <div tabindex="-1" class="px-2 v-list-item theme--light" style="height: 64px;">
+      <div class="v-avatar v-list-item__avatar" style="height: 40px; min-width: 40px; width: 40px; border-radius: 0;">
+        <div class="v-image v-responsive theme--light" style="height: auto; width: 15px; cursor: pointer;">
+          <div class="v-responsive__content"></div>
+        </div>
+      </div>
+      <div class="v-list-item__title">
+
+      </div> <button type="button" class="v-btn v-btn--icon v-btn--round theme--light elevation-0 v-size--default" icon=""><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-chevron-left-circle theme--light" style="color: rgb(255, 255, 255); caret-color: #ffffff;"></i></span></button>
+    </div>
+    <hr role="separator" aria-orientation="horizontal" class="v-divider theme--light">
+  </div>
+  <div class="v-navigation-drawer__border"></div>
+</nav>
+`;

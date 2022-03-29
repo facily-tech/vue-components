@@ -73,23 +73,10 @@
 
 <script lang="ts">
 import Vue from 'vue';
-
-import { VNavigationDrawer } from 'vuetify/lib';
-
 import { FyButton } from '@/index';
-
 import { IDrawerItems, IDrawerSubItems } from './types';
 
-const BaseDrawer = Vue.extend({ mixins: [VNavigationDrawer] });
-
-interface BaseDrawerOptions extends InstanceType<typeof BaseDrawer> {
-  items: IDrawerItems[];
-  brand: string;
-  title: string;
-  componentNavigation: boolean;
-}
-
-export default BaseDrawer.extend<BaseDrawerOptions>().extend({
+export default Vue.extend({
   name: 'fy-drawer',
 
   components: { FyButton },

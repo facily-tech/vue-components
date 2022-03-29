@@ -9,7 +9,13 @@ jobs:
       contents: read
       packages: write
     steps:
+      - name: Run linters
+        env:
+          COMPONENTS_TOKEN: ${{ secrets.TOKEN_ACCESS }}
+        run: npm run lint
+
       - uses: actions/checkout@v2
+
       # Setup .npmrc file to publish to GitHub Packages
       - uses: actions/setup-node@v2
         with:
@@ -17,6 +23,7 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           # Defaults to the user or organization that owns the workflow file
           scope: '@octocat'
+          
       - run: npm ci
       - run: npm run build:npm
       - run: npm publish

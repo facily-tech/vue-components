@@ -1,5 +1,9 @@
+import Vue from 'vue';
+import Vuetify from 'vuetify';
 import FyDialog from '../FyDialog.vue';
 import { mount, MountOptions, Wrapper } from '@vue/test-utils';
+
+Vue.use(Vuetify);
 
 describe('FyDialog.ts', () => {
   // eslint-disable-line max-statements
@@ -8,12 +12,7 @@ describe('FyDialog.ts', () => {
   beforeEach(() => {
     mountFunction = (options?: MountOptions<Instance>) => {
       return mount(FyDialog, {
-        mocks: {
-          $vuetify: {
-            icons: {},
-            rtl: false,
-          },
-        },
+        vuetify: new Vuetify(),
         ...options,
       });
     };

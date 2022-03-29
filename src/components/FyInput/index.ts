@@ -1,4 +1,4 @@
-export { default as FyInput } from './FyInput';
+export { default as FyInput } from './FyInput.vue';
 export { default as FyInputCep } from './FyInputCep.vue';
 export { default as FyInputCnpj } from './FyInputCnpj.vue';
 export { default as FyInputCpf } from './FyInputCpf.vue';

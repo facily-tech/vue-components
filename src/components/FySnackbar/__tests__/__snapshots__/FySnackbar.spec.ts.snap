@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FySnackbar.ts should render component and match snapshot 1`] = `
+<div class="v-snack v-snack--bottom v-snack--has-background" snackbar="[object Object]">
+  <transition-stub name="v-snack-transition">
+    <div class="v-snack__wrapper v-sheet theme--dark" style="display: none;">
+      <div role="status" aria-live="polite" class="v-snack__content">
+        <p class="mb-0"></p>
+      </div>
+      <div class="v-snack__action "><button type="button" class="v-btn v-btn--icon v-btn--round v-btn--text theme--dark elevation-0 v-size--default v-snack__btn" style="color: rgb(255, 255, 255); caret-color: #ffffff;" color="#ffffff" text="" icon=""><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-close theme--dark"></i></span></button></div>
+    </div>
+  </transition-stub>
+</div>
+`;

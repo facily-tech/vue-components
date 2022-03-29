@@ -1,30 +1,20 @@
 <template>
-  <div>
-    <fy-input
-      :value="text"
-      @input="update"
-      v-mask="mask"
-      :rules="cpfRule"
-      v-bind="propsAndAttrs"
-      v-on="$listeners"
-    />
-  </div>
+  <fy-input
+    :value="text"
+    @input="update"
+    v-mask="mask"
+    :rules="cpfRule"
+    v-bind="propsAndAttrs"
+    v-on="$listeners"
+  />
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-
 import { VueMaskDirective } from 'v-mask';
+import FyInput from './FyInput.vue';
 
-import FyInput from './FyInput';
-
-const BaseVTextField = Vue.extend({ mixins: [FyInput] });
-
-interface options extends InstanceType<typeof BaseVTextField> {
-  value: string;
-}
-
-export default BaseVTextField.extend<options>().extend({
+export default Vue.extend({
   name: 'fy-input-cpf',
 
   directives: { mask: VueMaskDirective },

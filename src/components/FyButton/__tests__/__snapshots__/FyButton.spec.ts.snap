@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FyButton should render component and match snapshot 1`] = `<button type="button" class="v-btn v-btn--has-bg theme--light elevation-0 v-size--default"><span class="v-btn__content"></span></button>`;

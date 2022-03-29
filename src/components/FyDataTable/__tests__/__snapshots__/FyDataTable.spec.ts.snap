@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FyDataTable.ts should render component and match snapshot 1`] = `
+<div class="custom-data-tables-wrapper mx-1">
+  <div class="v-data-table custom-datatable theme--light">
+    <div class="v-data-table__wrapper">
+      <table>
+        <colgroup></colgroup>
+        <thead class="v-data-table-header">
+          <tr></tr>
+        </thead>
+        <tbody>
+          <tr class="v-data-table__empty-wrapper">
+            <td colspan="0">
+              <div class="pa-3 d-flex justify-center">
+                <div role="alert" class="v-alert v-sheet theme--dark primary" style="max-width: 320px;">
+                  <div class="v-alert__wrapper"><i aria-hidden="true" class="v-icon notranslate v-alert__icon mdi mdi-alert theme--dark"></i>
+                    <div class="v-alert__content">
+                      Não foram encontrados resultados
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!---->
+</div>
+`;

@@ -1,19 +1,18 @@
+import Vue from 'vue';
+import Vuetify from 'vuetify';
 import FyAvatar from '../FyAvatar.vue';
 import { mount, MountOptions, Wrapper } from '@vue/test-utils';
 
-describe('FyAvatar.ts', () => {
+Vue.use(Vuetify);
+
+describe('FyAvatar', () => {
   // eslint-disable-line max-statements
   type Instance = InstanceType<typeof FyAvatar>;
   let mountFunction: (options?: MountOptions<Instance>) => Wrapper<Instance>;
   beforeEach(() => {
     mountFunction = (options?: MountOptions<Instance>) => {
       return mount(FyAvatar, {
-        mocks: {
-          $vuetify: {
-            icons: {},
-            rtl: false,
-          },
-        },
+        vuetify: new Vuetify(),
         ...options,
       });
     };

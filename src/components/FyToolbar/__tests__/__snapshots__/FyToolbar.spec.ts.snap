@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FyToolbar.ts should render component and match snapshot 1`] = `
+<header class="v-sheet theme--light v-toolbar v-toolbar--flat" style="height: 64px;" items="[object Object]">
+  <div class="v-toolbar__content" style="height: 64px;"><i aria-hidden="true" class="v-icon notranslate mr-2 material-icons theme--light" style="display: none;"></i>
+    <!---->
+    <div class="spacer"></div>
+    <!---->
+    <div class="ml-2"></div>
+    <!---->
+  </div>
+</header>
+`;
