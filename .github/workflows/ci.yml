@@ -24,6 +24,11 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: Set Timezone
+        uses: szenius/set-timezone@v1.0
+        with:
+          timezoneLinux: "America/Sao_Paulo"
+
       - name: Install dependencies
         env:
           COMPONENTS_TOKEN: ${{ secrets.COMPONENTS_TOKEN }}
