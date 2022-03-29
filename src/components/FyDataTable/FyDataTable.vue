@@ -176,15 +176,6 @@ import {
 } from '@/utils';
 import { IDataTableHeaders, IDataTableRows, IDataTablePagination } from './types';
 
-/**
-interface BaseDataTableOptions extends InstanceType<typeof BaseDataTable> {
-  headers: IDataTableHeaders[];
-  items: IDataTableRows[];
-  pagination: IDataTablePagination | null;
-  loading: boolean;
-}
-*/
-
 export default Vue.extend({
   name: 'fy-data-table',
 

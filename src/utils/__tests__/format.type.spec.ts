@@ -9,7 +9,7 @@ import {
 
 describe('Test formaters', () => {
   it('fyFormatTypeInteger', function () {
-    expect(fyFormatTypeInteger(9999)).toBe(9);
+    expect(fyFormatTypeInteger(9)).toBe(9);
     expect(fyFormatTypeInteger('9')).toBe(9);
     expect(fyFormatTypeInteger('9.99')).toBe(9);
 
