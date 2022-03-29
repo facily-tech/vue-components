@@ -3,12 +3,14 @@ module.exports = {
   env: {
     node: true,
   },
+  plugins: ['sonarjs'],
   extends: [
     'plugin:vue/essential',
     'eslint:recommended',
     '@vue/typescript/recommended',
     '@vue/prettier',
     '@vue/prettier/@typescript-eslint',
+    'plugin:sonarjs/recommended',
   ],
   parserOptions: {
     ecmaVersion: 2020,

@@ -2,6 +2,10 @@
 node_modules
 /dist
 
+# Coverage directory used by tools like istanbul
+coverage/
+
+test-report.xml
 
 # local env files
 .env.local

@@ -1,0 +1,61 @@
+name: Vue Components CI
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Set Timezone
+        uses: szenius/set-timezone@v1.0
+        with:
+          timezoneLinux: "America/Sao_Paulo"
+
+      - name: Install dependencies
+        env:
+          COMPONENTS_TOKEN: ${{ secrets.COMPONENTS_TOKEN }}
+        run: npm install
+
+      - name: Run linters
+        env:
+          COMPONENTS_TOKEN: ${{ secrets.COMPONENTS_TOKEN }}
+        run: npm run lint
+
+      - name: Run tests
+        env:
+          COMPONENTS_TOKEN: ${{ secrets.COMPONENTS_TOKEN }}
+        run: npm run test:unit -- -u
+
+      - name: Coverage paths
+        working-directory: ./coverage
+        run: sed -i 's@'$GITHUB_WORKSPACE'@/github/workspace/@g' lcov.info
+
+      - name: SonarQube Scan
+        uses: sonarsource/sonarqube-scan-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+
+      # - name: SonarQube Quality Gate check
+      #   uses: sonarsource/sonarqube-quality-gate-action@master
+      #   timeout-minutes: 5
+      #   env:
+      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

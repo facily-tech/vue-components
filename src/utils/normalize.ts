@@ -6,7 +6,7 @@ const normalizeString = (value: string | null | undefined): string => {
 const normalizeSpecialCharacters = (name: string): string => {
   const normalizeName = normalizeString(name);
 
-  const noramlize = normalizeName
+  return normalizeName
     .toLowerCase()
     .replace(/[àÀáÁâÂãäÄÅåª]+/g, 'a')
     .replace(/[èÈéÉêÊëË]+/g, 'e')
@@ -20,8 +20,6 @@ const normalizeSpecialCharacters = (name: string): string => {
     .replace(/[Ææ]+/g, 'ae')
     .replace(/[Øøœ]+/g, 'oe')
     .replace(/[%]+/g, 'pct');
-
-  return noramlize;
 };
 
 export { normalizeString, normalizeSpecialCharacters };
