@@ -1,5 +1,5 @@
 <template>
-  <v-btn :elevation="0" v-bind="$attrs" v-on="$listeners">
+  <v-btn :elevation="0" v-bind="$attrs" v-on="$listeners" :data-test="dataTest">
     <slot v-for="(_, name) in $slots" :name="name" :slot="name" />
   </v-btn>
 </template>
@@ -9,5 +9,11 @@ import Vue from 'vue';
 
 export default Vue.extend({
   name: 'FyButton',
+  props: {
+    dataTest: {
+      type: String,
+      default: 'btn',
+    },
+  },
 });
 </script>
