@@ -7,7 +7,7 @@ exports[`FyInput.ts should render component and match snapshot 1`] = `
       <fieldset aria-hidden="true">
         <legend style="width: 0px;"><span class="notranslate">​</span></legend>
       </fieldset>
-      <div class="v-text-field__slot"><input id="input-2" type="text"></div>
+      <div class="v-text-field__slot"><input data-test="input" id="input-2" type="text"></div>
     </div>
     <div class="v-text-field__details">
       <div class="v-messages theme--light">
