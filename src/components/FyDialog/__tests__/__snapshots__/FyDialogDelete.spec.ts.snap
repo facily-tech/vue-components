@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`FyDialogDelete.ts should render component and match snapshot 1`] = `
-<div class="v-dialog__container" config="[object Object]" max-width="580px">
-  <!---->
-</div>
-`;

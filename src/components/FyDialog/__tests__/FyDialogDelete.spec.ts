@@ -1,28 +1,39 @@
 import Vue from 'vue';
 import Vuetify from 'vuetify';
 import FyDialogDelete from '../FyDialogDelete.vue';
-import { mount, MountOptions, Wrapper } from '@vue/test-utils';
+import { shallowMount, Wrapper } from '@vue/test-utils';
+import { IDialogDeleteItem } from '../types';
 
 Vue.use(Vuetify);
 
 describe('FyDialogDelete.ts', () => {
-  // eslint-disable-line max-statements
-  type Instance = InstanceType<typeof FyDialogDelete>;
-  let mountFunction: (options?: MountOptions<Instance>) => Wrapper<Instance>;
-  beforeEach(() => {
-    mountFunction = (options?: MountOptions<Instance>) => {
-      return mount<Instance>(FyDialogDelete, {
-        vuetify: new Vuetify(),
-        ...options,
-      });
-    };
-  });
+	let WRAPPER: Wrapper<any>;
+	beforeEach(() => {
+		WRAPPER = shallowMount(FyDialogDelete, {
+			vuetify: new Vuetify(),
+			propsData: {
+				item: {} as IDialogDeleteItem,
+				deleteModel: true,
+				title: '',
+				loading: false,
+			},
+		});
+	});
 
-  it('should render component and match snapshot', () => {
-    const wrapper = mountFunction({
-      props: {},
-    });
+	test('Component exists', () => {
+		expect(WRAPPER.exists()).toBeTruthy();
+	});
 
-    expect(wrapper.html()).toMatchSnapshot();
-  });
+	test('Test close', async () => {
+		WRAPPER.vm.close();
+		await WRAPPER.vm.$nextTick();
+		expect(WRAPPER.emitted()['close-dialog']).toBeTruthy();
+	});
+
+	test('Test submit', async () => {
+		WRAPPER.vm.submit();
+		await WRAPPER.vm.$nextTick();
+		expect(WRAPPER.emitted()['close-dialog']).toBeTruthy();
+		expect(WRAPPER.emitted()['confirm-dialog']).toBeTruthy();
+	});
 });
