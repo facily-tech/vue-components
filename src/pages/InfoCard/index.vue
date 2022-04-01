@@ -129,22 +129,22 @@ export default Vue.extend({
   },
   methods: {
     controlChangesTable(): void {
-      console.log('Change Table');
+      // console.log('Change Table');
     },
     onClearTags(): void {
-      console.log('on Clear Tags ');
+      // console.log('on Clear Tags ');
     },
     getFilter1(value): void {
-      console.log(value);
+      // console.log(value);
     },
     getFilterCpf(value): void {
-      console.log(value);
+      // console.log(value);
     },
     getFilterPhone(value): void {
-      console.log(value);
+      // console.log(value);
     },
     getFilterName(value): void {
-      console.log(value);
+      // console.log(value);
     },
     controlFilters() {
       this.enableTag();

@@ -58,7 +58,7 @@ describe('FyDataTable.ts', () => {
             sortable: false,
           },
         ] as IDataTableHeaders[],
-        items: [] as any[],
+        items: [],
         loading: true,
         fyFormatMaskTaxId: jest.fn(),
         fyFormatMaskCurrency: jest.fn(),
