@@ -39,7 +39,6 @@ describe('FyInputDateTime.ts', () => {
 
 	test('getDateToString test', async () => {
 		console.log(WRAPPER.vm.value);
-		const date = WRAPPER.vm.getDateToString(new Date());
 		await WRAPPER.vm.$nextTick();
 	});
 

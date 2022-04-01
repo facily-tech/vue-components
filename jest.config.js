@@ -1,3 +1,5 @@
+const importFile = '<rootDir>/src/index.ts';
+
 module.exports = {
   preset: '@vue/cli-plugin-unit-jest/presets/typescript-and-babel',
   testMatch: [
@@ -5,18 +7,18 @@ module.exports = {
     '<rootDir>/src/**/?(*.)(spec|test).{js,jsx,ts,tsx}',
 	],
 	modulePathIgnorePatterns: [
-		'<rootDir>/src/index.ts',
+		importFile,
 	],
 	watchPathIgnorePatterns: [
-		'<rootDir>/src/index.ts',
+		importFile,
 	],
 	testPathIgnorePatterns: [
-		'<rootDir>/src/index.ts',
+		importFile,
+		'<rootDir>/node_modules/',
 	],
 	coveragePathIgnorePatterns: [
-		'<rootDir>/src/index.ts',
+		importFile,
 	],
-  testPathIgnorePatterns: ['<rootDir>/node_modules/'],
   collectCoverage: true,
   testResultsProcessor: 'jest-sonar-reporter',
 };
