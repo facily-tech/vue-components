@@ -6,6 +6,7 @@ import { shallowMount, Wrapper } from '@vue/test-utils';
 Vue.use(Vuetify);
 
 describe('FyFilter.ts', () => {
+	// eslint-disable-next-line
 	let WRAPPER: Wrapper<any>;
 	beforeEach(() => {
 		WRAPPER = shallowMount(FyFilter, {

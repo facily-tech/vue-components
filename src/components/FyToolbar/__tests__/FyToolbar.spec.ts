@@ -6,7 +6,8 @@ import { shallowMount, Wrapper } from '@vue/test-utils';
 Vue.use(Vuetify);
 
 describe('FyToolbar.ts', () => {
-	let WRAPPER: Wrapper<Vue>;
+	// eslint-disable-next-line
+	let WRAPPER: Wrapper<any>;
 	beforeEach(() => {
 		WRAPPER = shallowMount(FyToolbar, {
 			vuetify: new Vuetify(),

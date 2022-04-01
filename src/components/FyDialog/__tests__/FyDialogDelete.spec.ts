@@ -7,7 +7,8 @@ import { IDialogDeleteItem } from '../types';
 Vue.use(Vuetify);
 
 describe('FyDialogDelete.ts', () => {
-	let WRAPPER: Wrapper<Vue>;
+	// eslint-disable-next-line
+	let WRAPPER: Wrapper<any>;
 	beforeEach(() => {
 		WRAPPER = shallowMount(FyDialogDelete, {
 			vuetify: new Vuetify(),

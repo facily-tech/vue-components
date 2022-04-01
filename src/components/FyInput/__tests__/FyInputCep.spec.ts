@@ -6,7 +6,8 @@ import { mount, Wrapper } from '@vue/test-utils';
 Vue.use(Vuetify);
 
 describe('FyInputCep.ts', () => {
-	let WRAPPER: Wrapper<Vue>;
+	// eslint-disable-next-line
+	let WRAPPER: Wrapper<any>;
 	beforeEach(() => {
 		WRAPPER = mount(FyInputCep, {
 			vuetify: new Vuetify(),
