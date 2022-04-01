@@ -158,7 +158,7 @@ export default Vue.extend({
       this.currentComponent = value;
     },
     logoff() {
-      // console.log('logoff');
+      console.log('logoff');
     },
   },
 });

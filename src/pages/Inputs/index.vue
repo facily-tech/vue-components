@@ -154,7 +154,7 @@ export default Vue.extend({
   },
   watch: {
     cep: function (value) {
-      // console.log('pages input ', value);
+      console.log('pages input ', value);
     },
   },
 });

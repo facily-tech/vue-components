@@ -350,16 +350,16 @@ export default Vue.extend({
   },
   methods: {
     checkEdit(event: Event): void {
-      // console.log('Check Edit > ', event);
+      console.log('Check Edit > ', event);
     },
     checkDetails(event: Event): void {
-      // console.log('CheckDetails > ', event);
+      console.log('CheckDetails > ', event);
     },
     controlChangesTable(): void {
-      // console.log('Change Table');
+      console.log('Change Table');
     },
     onActiveControl(event: Event): void {
-      // console.log('Active Control > ', event);
+      console.log('Active Control > ', event);
     },
   },
 });
