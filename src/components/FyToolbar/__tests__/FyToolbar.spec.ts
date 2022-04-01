@@ -1,26 +1,29 @@
 import Vue from 'vue';
 import Vuetify from 'vuetify';
 import FyToolbar from '../FyToolbar.vue';
-import { mount, MountOptions, Wrapper } from '@vue/test-utils';
+import { shallowMount, Wrapper } from '@vue/test-utils';
 
 Vue.use(Vuetify);
 
 describe('FyToolbar.ts', () => {
-  // eslint-disable-line max-statements
-  type Instance = InstanceType<typeof FyToolbar>;
-  let mountFunction: (options?: MountOptions<Instance>) => Wrapper<Instance>;
-  beforeEach(() => {
-    mountFunction = (options?: MountOptions<Instance>) => {
-      return mount(FyToolbar, {
-        vuetify: new Vuetify(),
-        ...options,
-      });
-    };
-  });
+	// eslint-disable-next-line
+	let WRAPPER: Wrapper<any>;
+	beforeEach(() => {
+		WRAPPER = shallowMount(FyToolbar, {
+			vuetify: new Vuetify(),
+			propsData: {
+				screenWidth: 0,
+			},
+		});
+	});
 
-  it('should render component and match snapshot', () => {
-    const wrapper = mountFunction();
+	test('Component exists', () => {
+		expect(WRAPPER.exists()).toBeTruthy();
+	});
 
-    expect(wrapper.html()).toMatchSnapshot();
-  });
+	test('Back test', async () => {
+		WRAPPER.vm.back();
+		await WRAPPER.vm.$nextTick();
+		expect(WRAPPER.emitted()['back-event']).toBeTruthy();
+	});
 });
