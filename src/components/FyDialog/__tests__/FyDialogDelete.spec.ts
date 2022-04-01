@@ -7,7 +7,7 @@ import { IDialogDeleteItem } from '../types';
 Vue.use(Vuetify);
 
 describe('FyDialogDelete.ts', () => {
-	let WRAPPER: Wrapper<any>;
+	let WRAPPER: Wrapper<Vue>;
 	beforeEach(() => {
 		WRAPPER = shallowMount(FyDialogDelete, {
 			vuetify: new Vuetify(),

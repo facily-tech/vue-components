@@ -6,7 +6,7 @@ import { shallowMount, Wrapper } from '@vue/test-utils';
 Vue.use(Vuetify);
 
 describe('FyDrawer.ts', () => {
-	let WRAPPER: Wrapper<any>;
+	let WRAPPER: Wrapper<Vue>;
 	const $router = {
 		push: jest.fn(),
 		currentRoute: {

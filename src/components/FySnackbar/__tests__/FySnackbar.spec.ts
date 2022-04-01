@@ -7,7 +7,7 @@ import { shallowMount, Wrapper } from '@vue/test-utils';
 Vue.use(Vuetify);
 
 describe('FySnackbar.ts', () => {
-	let WRAPPER: Wrapper<any>;
+	let WRAPPER: Wrapper<Vue>;
 	beforeEach(() => {
 		WRAPPER = shallowMount(FySnackbar, {
 			vuetify: new Vuetify(),

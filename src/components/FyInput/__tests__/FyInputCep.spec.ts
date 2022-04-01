@@ -6,7 +6,7 @@ import { mount, Wrapper } from '@vue/test-utils';
 Vue.use(Vuetify);
 
 describe('FyInputCep.ts', () => {
-	let WRAPPER: Wrapper<any>;
+	let WRAPPER: Wrapper<Vue>;
 	beforeEach(() => {
 		WRAPPER = mount(FyInputCep, {
 			vuetify: new Vuetify(),

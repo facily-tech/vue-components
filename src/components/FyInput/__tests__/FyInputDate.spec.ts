@@ -6,7 +6,7 @@ import { mount, Wrapper } from '@vue/test-utils';
 Vue.use(Vuetify);
 
 describe('FyInputDate.ts', () => {
-	let WRAPPER: Wrapper<any>;
+	let WRAPPER: Wrapper<Vue>;
 	beforeEach(() => {
 		WRAPPER = mount(FyInputDate, {
 			vuetify: new Vuetify(),

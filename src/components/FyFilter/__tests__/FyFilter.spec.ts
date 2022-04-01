@@ -6,7 +6,7 @@ import { shallowMount, Wrapper } from '@vue/test-utils';
 Vue.use(Vuetify);
 
 describe('FyFilter.ts', () => {
-	let WRAPPER: Wrapper<any>;
+	let WRAPPER: Wrapper<Vue>;
 	beforeEach(() => {
 		WRAPPER = shallowMount(FyFilter, {
 			vuetify: new Vuetify(),

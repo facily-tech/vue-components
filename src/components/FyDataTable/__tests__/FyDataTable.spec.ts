@@ -7,7 +7,7 @@ import { shallowMount, Wrapper } from '@vue/test-utils';
 Vue.use(Vuetify);
 
 describe('FyDataTable.ts', () => {
-  let WRAPPER: Wrapper<any>;
+  let WRAPPER: Wrapper<Vue>;
   beforeEach(() => {
     WRAPPER = shallowMount(FyDataTable, {
       vuetify: new Vuetify(),

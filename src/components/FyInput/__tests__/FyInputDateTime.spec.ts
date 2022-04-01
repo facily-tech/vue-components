@@ -7,7 +7,7 @@ import moment from 'moment';
 Vue.use(Vuetify);
 
 describe('FyInputDateTime.ts', () => {
-	let WRAPPER: Wrapper<any>;
+	let WRAPPER: Wrapper<Vue>;
 	beforeEach(() => {
 		WRAPPER = mount(FyInputDateTime, {
 			vuetify: new Vuetify(),
