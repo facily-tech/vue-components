@@ -50,7 +50,7 @@
     "jest-sonar-reporter": "^2.0.0",
     "lodash": "^4.17.21",
     "marked": "^4.0.10",
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "nodemon": "^2.0.15",
     "raw-loader": "^4.0.2",
     "sass": "~1.32.0",
@@ -69,7 +69,7 @@
     "vuetify-loader": "^1.7.0"
   },
   "peerDependencies": {
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "v-mask": "^2.3.0",
     "v-money": "^0.8.1",
     "vue": "^2.6.14",
