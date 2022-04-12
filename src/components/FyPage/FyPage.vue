@@ -1,11 +1,11 @@
 <template>
   <v-container fluid>
-    <FyToolbar :items="toolbar" :backButton="toolbar.backButton">
+    <fy-toolbar :items="toolbar" :backButton="toolbar.backButton">
       <template v-slot:btn>
         <slot name="toolbar-actions"></slot>
       </template>
-    </FyToolbar>
-    <div class="mx-1">
+    </fy-toolbar>
+    <div class="mx-4">
       <slot></slot>
     </div>
   </v-container>
