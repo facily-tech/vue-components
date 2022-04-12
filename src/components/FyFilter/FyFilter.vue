@@ -22,10 +22,10 @@
     </v-card-text>
     <v-card-text>
       <v-row dense>
-        <v-col md="9" class="text-left">
+        <v-col>
           <slot name="content"></slot>
         </v-col>
-        <v-col md="3" class="text-right">
+        <v-col class="col-auto">
           <fy-button
             v-if="checkAllTags()"
             outlined
@@ -34,7 +34,7 @@
             @click="$emit('clear-tags')"
             data-test="btn-clear-filter"
           >
-            <v-icon> mdi-filter-off </v-icon>
+            <v-icon> mdi-close </v-icon>
             <span style="text-transform: capitalize"> Limpar</span>
           </fy-button>
           <fy-button
@@ -45,8 +45,8 @@
             @click="$emit('click-filter')"
             data-test="btn-filter"
           >
-            <v-icon>mdi-filter</v-icon>
-            <span style="text-transform: capitalize"> Filtrar </span>
+            <v-icon>mdi-magnify</v-icon>
+            <span style="text-transform: capitalize"> Buscar </span>
           </fy-button>
         </v-col>
       </v-row>

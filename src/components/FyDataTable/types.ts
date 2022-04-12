@@ -37,4 +37,5 @@ export interface IDataTablePagination {
   itemsPerPage: number;
   page: number;
   totalPages: number;
+  totalItems?: number;
 }
