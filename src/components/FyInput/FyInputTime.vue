@@ -6,7 +6,9 @@
     :rules="timeRule"
     v-bind="propsAndAttrs"
     v-on="$listeners"
-  />
+  >
+    <slot v-for="(_, name) in $slots" :name="name" :slot="name" />
+  </fy-input>
 </template>
 
 <script lang="ts">

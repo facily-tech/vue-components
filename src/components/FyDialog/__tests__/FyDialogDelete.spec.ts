@@ -7,34 +7,34 @@ import { IDialogDeleteItem } from '../types';
 Vue.use(Vuetify);
 
 describe('FyDialogDelete.ts', () => {
-	// eslint-disable-next-line
+  // eslint-disable-next-line
 	let WRAPPER: Wrapper<any>;
-	beforeEach(() => {
-		WRAPPER = shallowMount(FyDialogDelete, {
-			vuetify: new Vuetify(),
-			propsData: {
-				item: {} as IDialogDeleteItem,
-				deleteModel: true,
-				title: '',
-				loading: false,
-			},
-		});
-	});
+  beforeEach(() => {
+    WRAPPER = shallowMount(FyDialogDelete, {
+      vuetify: new Vuetify(),
+      propsData: {
+        item: {} as IDialogDeleteItem,
+        deleteModel: true,
+        title: '',
+        loading: false,
+      },
+    });
+  });
 
-	test('Component exists', () => {
-		expect(WRAPPER.exists()).toBeTruthy();
-	});
+  test('Component exists', () => {
+    expect(WRAPPER.exists()).toBeTruthy();
+  });
 
-	test('Test close', async () => {
-		WRAPPER.vm.close();
-		await WRAPPER.vm.$nextTick();
-		expect(WRAPPER.emitted()['close-dialog']).toBeTruthy();
-	});
+  test('Test close', async () => {
+    WRAPPER.vm.close();
+    await WRAPPER.vm.$nextTick();
+    expect(WRAPPER.emitted()['close-dialog']).toBeTruthy();
+  });
 
-	test('Test submit', async () => {
-		WRAPPER.vm.submit();
-		await WRAPPER.vm.$nextTick();
-		expect(WRAPPER.emitted()['close-dialog']).toBeTruthy();
-		expect(WRAPPER.emitted()['confirm-dialog']).toBeTruthy();
-	});
+  test('Test submit', async () => {
+    WRAPPER.vm.submit();
+    await WRAPPER.vm.$nextTick();
+    expect(WRAPPER.emitted()['close-dialog']).toBeTruthy();
+    expect(WRAPPER.emitted()['confirm-dialog']).toBeTruthy();
+  });
 });

@@ -5,7 +5,8 @@
     v-mask="mask"
     :rules="cpfRule"
     v-bind="propsAndAttrs"
-    v-on="$listeners">
+    v-on="$listeners"
+  >
     <slot v-for="(_, name) in $slots" :name="name" :slot="name" />
   </fy-input>
 </template>

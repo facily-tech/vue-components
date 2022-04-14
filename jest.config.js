@@ -5,20 +5,11 @@ module.exports = {
   testMatch: [
     '<rootDir>/src/**/*.(spec|test).{js,jsx,ts,tsx}',
     '<rootDir>/src/**/?(*.)(spec|test).{js,jsx,ts,tsx}',
-	],
-	modulePathIgnorePatterns: [
-		importFile,
-	],
-	watchPathIgnorePatterns: [
-		importFile,
-	],
-	testPathIgnorePatterns: [
-		importFile,
-		'<rootDir>/node_modules/',
-	],
-	coveragePathIgnorePatterns: [
-		importFile,
-	],
+  ],
+  modulePathIgnorePatterns: [importFile],
+  watchPathIgnorePatterns: [importFile],
+  testPathIgnorePatterns: [importFile, '<rootDir>/node_modules/'],
+  coveragePathIgnorePatterns: [importFile],
   collectCoverage: true,
   testResultsProcessor: 'jest-sonar-reporter',
 };
