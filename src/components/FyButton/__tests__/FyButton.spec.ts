@@ -7,7 +7,7 @@ import Vuetify from 'vuetify';
 Vue.use(Vuetify);
 
 describe('FyButton', () => {
-	// eslint-disable-next-line
+  // eslint-disable-next-line
   let mountFunction: (options?: Record<string, unknown>) => Wrapper<any>;
   let router: Router;
   let localVue: typeof Vue;

@@ -6,7 +6,9 @@
     v-bind="propsAndAttrs"
     v-on="$listeners"
     :maxlength="maxlength"
-  />
+  >
+    <slot v-for="(_, name) in $slots" :name="name" :slot="name" />
+  </fy-input>
 </template>
 
 <script lang="ts">

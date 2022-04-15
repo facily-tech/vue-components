@@ -7,7 +7,7 @@ import { shallowMount, Wrapper } from '@vue/test-utils';
 Vue.use(Vuetify);
 
 describe('FyDataTable.ts', () => {
-	// eslint-disable-next-line
+  // eslint-disable-next-line
   let WRAPPER: Wrapper<any>;
   beforeEach(() => {
     WRAPPER = shallowMount(FyDataTable, {
