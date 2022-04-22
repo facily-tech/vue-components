@@ -1,6 +1,6 @@
 <template>
   <div class="custom-data-tables-wrapper">
-    <v-card outlined class="pa-2">
+    <v-card elevation="0" class="pa-2">
       <slot name="top"></slot>
       <v-data-table
         :items="items"
