@@ -1,128 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
   <file path="/home/felipe/Projetos/vue-components/src/components/FyCard/__tests__/FyCard.spec.ts">
-    <testCase name="FyCard should render component and match snapshot" duration="173"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInputTime.spec.ts">
-    <testCase name="FyInputTime.ts should render component and match snapshot" duration="139"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInputCnpj.spec.ts">
-    <testCase name="FyInputCnpj.ts should render component and match snapshot" duration="144"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyNotificationBar/__tests__/FyNotificationBar.spec.ts">
-    <testCase name="FyNotificationBar.ts should render component and match snapshot" duration="204"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyInfoCard/__tests__/FyInfoCard.spec.ts">
-    <testCase name="FyInfoCard should render component and match snapshot" duration="185"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyButton/__tests__/FyButtonSearch.spec.ts">
-    <testCase name="FyButtonSearch should render component and match snapshot" duration="201"/>
-    <testCase name="FyButtonSearch when hideName should apply class" duration="46"/>
-    <testCase name="FyButtonSearch when button is clicked" duration="50"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyDrawer/__tests__/FyDrawer.spec.ts">
-    <testCase name="FyDrawer.ts Component exists" duration="126"/>
-    <testCase name="FyDrawer.ts Test navigate" duration="50"/>
-    <testCase name="FyDrawer.ts Test navigate else block" duration="36"/>
-    <testCase name="FyDrawer.ts Test navigateItem" duration="50"/>
-    <testCase name="FyDrawer.ts Test navigateItem else block" duration="23"/>
-    <testCase name="FyDrawer.ts Test navigateSubitem" duration="23"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInputCpf.spec.ts">
-    <testCase name="FyInputCpf.ts should render component and match snapshot" duration="107"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FySnackbar/__tests__/FySnackbar.spec.ts">
-    <testCase name="FySnackbar.ts Component exists" duration="81"/>
-    <testCase name="FySnackbar.ts Test snackbarClose" duration="51"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInput.spec.ts">
-    <testCase name="FyInput.ts should render component and match snapshot" duration="87"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyFilter/__tests__/FyFilter.spec.ts">
-    <testCase name="FyFilter.ts Component exists" duration="102"/>
-    <testCase name="FyFilter.ts checkAllTags test" duration="61"/>
-    <testCase name="FyFilter.ts checkFilters test" duration="41"/>
-    <testCase name="FyFilter.ts checkFilters test else block" duration="53"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInputDateTime.spec.ts">
-    <testCase name="FyInputDateTime.ts Component exists" duration="120"/>
-    <testCase name="FyInputDateTime.ts getStringToDate test" duration="63"/>
-    <testCase name="FyInputDateTime.ts getStringToDate test else block" duration="38"/>
-    <testCase name="FyInputDateTime.ts getDateToString test" duration="46"/>
-    <testCase name="FyInputDateTime.ts getDateToString test else block" duration="35"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInputDate.spec.ts">
-    <testCase name="FyInputDate.ts Component exists" duration="95"/>
-    <testCase name="FyInputDate.ts getDateToString test" duration="50"/>
-    <testCase name="FyInputDate.ts getDateToString test else block" duration="37"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyDataTable/__tests__/FyDataTable.spec.ts">
-    <testCase name="FyDataTable.ts Component exists" duration="108"/>
-    <testCase name="FyDataTable.ts Test Pagination set" duration="63"/>
-    <testCase name="FyDataTable.ts Test radioSelect set" duration="32"/>
-    <testCase name="FyDataTable.ts Check Color Case Alta" duration="29"/>
-    <testCase name="FyDataTable.ts Check Color Case Média" duration="29"/>
-    <testCase name="FyDataTable.ts Check Color Case Baixa" duration="31"/>
-    <testCase name="FyDataTable.ts Check Color Case Null" duration="29"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyDialog/__tests__/FyDialogDelete.spec.ts">
-    <testCase name="FyDialogDelete.ts Component exists" duration="51"/>
-    <testCase name="FyDialogDelete.ts Test close" duration="46"/>
-    <testCase name="FyDialogDelete.ts Test submit" duration="31"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyToolbar/__tests__/FyToolbar.spec.ts">
-    <testCase name="FyToolbar.ts Component exists" duration="82"/>
-    <testCase name="FyToolbar.ts Back test" duration="24"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInputPhone.spec.ts">
-    <testCase name="FyInputPhone.ts should render component and match snapshot" duration="64"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInputCep.spec.ts">
-    <testCase name="FyInputCep.ts Component exists" duration="56"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyAvatar/__tests__/FyAvatar.spec.ts">
-    <testCase name="FyAvatar should render component and match snapshot" duration="52"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInputCurrency.spec.ts">
-    <testCase name="FyInputCurrency.ts should render component and match snapshot" duration="105"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyButton/__tests__/FyButton.spec.ts">
-    <testCase name="FyButton should render component and match snapshot" duration="85"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyChart/__tests__/FyChartGauge.spec.ts">
-    <testCase name="FyChartGauge.ts should render component and match snapshot" duration="48"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyDialog/__tests__/FyDialog.spec.ts">
-    <testCase name="FyDialog.ts should render component and match snapshot" duration="50"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/utils/__tests__/format.type.spec.ts">
-    <testCase name="Test formaters fyFormatTypeInteger" duration="3"/>
-    <testCase name="Test formaters fyFormatTypeString" duration="22"/>
-    <testCase name="Test formaters fyFormatTypeOnlyNumbers" duration="2"/>
-    <testCase name="Test formaters fyFormatTypeValueToFloat" duration="2"/>
-    <testCase name="Test formaters fyFormatTypeStringWithoutSpacesOrNull" duration="2"/>
-    <testCase name="Test formaters fyFormatTypeJsonToObject" duration="2"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/utils/__tests__/format.date.spec.ts">
-    <testCase name="Test formaters fyFormatDate" duration="19"/>
-    <testCase name="Test formaters fyParserDateOder" duration="2"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyAutocomplete/__tests__/FyAutocomplete.spec.ts">
-    <testCase name="FyAutocomplete should render component and match snapshot" duration="94"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyDialog/__tests__/FyDialogBase.spec.ts">
-    <testCase name="FyDialogBase.ts should render component and match snapshot" duration="63"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyUserLabel/__tests__/FyUserLabel.spec.ts">
-    <testCase name="FyUserLabel.ts should render component and match snapshot" duration="57"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/utils/__tests__/format.mask.spec.ts">
-    <testCase name="format.mask formatCurrencyMaskToFloat" duration="3"/>
+    <testCase name="FyCard should render component and match snapshot" duration="196"/>
   </file>
   <file path="/home/felipe/Projetos/vue-components/src/components/FyCard/__tests__/FyCardForm.spec.ts">
-    <testCase name="FyCardForm should render component and match snapshot" duration="53"/>
+    <testCase name="FyCardForm should render component and match snapshot" duration="184"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyStatus/__test__/FyStatus.spec.ts">
+    <testCase name="FyStatus should render component and match snapshot" duration="265"/>
+    <testCase name="FyStatus when switch is clicked" duration="97"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyButton/__tests__/FyButtonSearch.spec.ts">
+    <testCase name="FyButtonSearch should render component and match snapshot" duration="214"/>
+    <testCase name="FyButtonSearch when hideName should apply class" duration="61"/>
+    <testCase name="FyButtonSearch when button is clicked" duration="55"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyNotificationBar/__tests__/FyNotificationBar.spec.ts">
+    <testCase name="FyNotificationBar.ts should render component and match snapshot" duration="151"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyAutocomplete/__tests__/FyAutocomplete.spec.ts">
+    <testCase name="FyAutocomplete should render component and match snapshot" duration="127"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyInfoCard/__tests__/FyInfoCard.spec.ts">
+    <testCase name="FyInfoCard should render component and match snapshot" duration="200"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInputDateTime.spec.ts">
+    <testCase name="FyInputDateTime.ts Component exists" duration="106"/>
+    <testCase name="FyInputDateTime.ts getStringToDate test" duration="70"/>
+    <testCase name="FyInputDateTime.ts getStringToDate test else block" duration="38"/>
+    <testCase name="FyInputDateTime.ts getDateToString test" duration="44"/>
+    <testCase name="FyInputDateTime.ts getDateToString test else block" duration="39"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyFilter/__tests__/FyFilter.spec.ts">
+    <testCase name="FyFilter.ts Component exists" duration="151"/>
+    <testCase name="FyFilter.ts checkAllTags test" duration="45"/>
+    <testCase name="FyFilter.ts checkFilters test" duration="43"/>
+    <testCase name="FyFilter.ts checkFilters test else block" duration="37"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyDrawer/__tests__/FyDrawer.spec.ts">
+    <testCase name="FyDrawer.ts Component exists" duration="140"/>
+    <testCase name="FyDrawer.ts Test navigate" duration="63"/>
+    <testCase name="FyDrawer.ts Test navigate else block" duration="47"/>
+    <testCase name="FyDrawer.ts Test navigateItem" duration="43"/>
+    <testCase name="FyDrawer.ts Test navigateItem else block" duration="25"/>
+    <testCase name="FyDrawer.ts Test navigateSubitem" duration="28"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyDataTable/__tests__/FyDataTable.spec.ts">
+    <testCase name="FyDataTable.ts Component exists" duration="94"/>
+    <testCase name="FyDataTable.ts Test Pagination set" duration="55"/>
+    <testCase name="FyDataTable.ts Test radioSelect set" duration="47"/>
+    <testCase name="FyDataTable.ts Check Color Case Alta" duration="26"/>
+    <testCase name="FyDataTable.ts Check Color Case Média" duration="29"/>
+    <testCase name="FyDataTable.ts Check Color Case Baixa" duration="35"/>
+    <testCase name="FyDataTable.ts Check Color Case Null" duration="28"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInputCurrency.spec.ts">
+    <testCase name="FyInputCurrency.ts should render component and match snapshot" duration="104"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInputDate.spec.ts">
+    <testCase name="FyInputDate.ts Component exists" duration="62"/>
+    <testCase name="FyInputDate.ts getDateToString test" duration="45"/>
+    <testCase name="FyInputDate.ts getDateToString test else block" duration="38"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FySnackbar/__tests__/FySnackbar.spec.ts">
+    <testCase name="FySnackbar.ts Component exists" duration="92"/>
+    <testCase name="FySnackbar.ts Test snackbarClose" duration="58"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInputCpf.spec.ts">
+    <testCase name="FyInputCpf.ts should render component and match snapshot" duration="96"/>
   </file>
   <file path="/home/felipe/Projetos/vue-components/src/components/FyCard/__tests__/FyCardFilter.spec.ts">
-    <testCase name="FyCardFilter should render component and match snapshot" duration="68"/>
+    <testCase name="FyCardFilter should render component and match snapshot" duration="126"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyDialog/__tests__/FyDialogDelete.spec.ts">
+    <testCase name="FyDialogDelete.ts Component exists" duration="52"/>
+    <testCase name="FyDialogDelete.ts Test close" duration="36"/>
+    <testCase name="FyDialogDelete.ts Test submit" duration="36"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInputCep.spec.ts">
+    <testCase name="FyInputCep.ts Component exists" duration="71"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInputTime.spec.ts">
+    <testCase name="FyInputTime.ts should render component and match snapshot" duration="74"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyButton/__tests__/FyButton.spec.ts">
+    <testCase name="FyButton should render component and match snapshot" duration="137"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInput.spec.ts">
+    <testCase name="FyInput.ts should render component and match snapshot" duration="128"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyDialog/__tests__/FyDialog.spec.ts">
+    <testCase name="FyDialog.ts should render component and match snapshot" duration="110"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyDialog/__tests__/FyDialogBase.spec.ts">
+    <testCase name="FyDialogBase.ts should render component and match snapshot" duration="76"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyToolbar/__tests__/FyToolbar.spec.ts">
+    <testCase name="FyToolbar.ts Component exists" duration="93"/>
+    <testCase name="FyToolbar.ts Back test" duration="25"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInputCnpj.spec.ts">
+    <testCase name="FyInputCnpj.ts should render component and match snapshot" duration="125"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/utils/__tests__/format.mask.spec.ts">
+    <testCase name="format.mask formatCurrencyMaskToFloat" duration="4"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/utils/__tests__/format.type.spec.ts">
+    <testCase name="Test formaters fyFormatTypeInteger" duration="2"/>
+    <testCase name="Test formaters fyFormatTypeString" duration="1"/>
+    <testCase name="Test formaters fyFormatTypeOnlyNumbers" duration="2"/>
+    <testCase name="Test formaters fyFormatTypeValueToFloat" duration="1"/>
+    <testCase name="Test formaters fyFormatTypeStringWithoutSpacesOrNull" duration="2"/>
+    <testCase name="Test formaters fyFormatTypeJsonToObject" duration="3"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyUserLabel/__tests__/FyUserLabel.spec.ts">
+    <testCase name="FyUserLabel.ts should render component and match snapshot" duration="59"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/utils/__tests__/format.date.spec.ts">
+    <testCase name="Test formaters fyFormatDate" duration="7"/>
+    <testCase name="Test formaters fyParserDateOder" duration="3"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyChart/__tests__/FyChartGauge.spec.ts">
+    <testCase name="FyChartGauge.ts should render component and match snapshot" duration="39"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInputPhone.spec.ts">
+    <testCase name="FyInputPhone.ts should render component and match snapshot" duration="51"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyAvatar/__tests__/FyAvatar.spec.ts">
+    <testCase name="FyAvatar should render component and match snapshot" duration="27"/>
   </file>
 </testExecutions>

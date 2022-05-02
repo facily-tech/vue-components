@@ -1,5 +1,5 @@
 <template>
-  <fy-card elevation="0" class="fy-card-form pa-0 pa-md-4" v-bind="propsAndAttrs" v-on="$listeners">
+  <fy-card class="fy-card-form pa-0 pa-md-4" v-bind="propsAndAttrs" v-on="$listeners">
     <v-card-title
       v-if="$slots['title']"
       class="fy-card-title text-h6 font-weight-medium justify-space-between"

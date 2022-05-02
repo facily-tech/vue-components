@@ -42,6 +42,8 @@ import { FyUserLabel } from './components/FyUserLabel';
 
 import { FyPage } from './components/FyPage';
 
+import { FyStatus } from './components/FyStatus';
+
 const VueComponents = {
   install(Vue: VueConstructor): void {
     Vue.component('fy-autocomplete', FyAutocomplete);
@@ -76,6 +78,7 @@ const VueComponents = {
     Vue.component('fy-card', FyCard);
     Vue.component('fy-card-filter', FyCardFilter);
     Vue.component('fy-card-form', FyCardForm);
+    Vue.component('fy-status', FyStatus);
   },
 };
 
@@ -109,6 +112,7 @@ export {
   FyCard,
   FyCardFilter,
   FyCardForm,
+  FyStatus,
 };
 
 export default VueComponents;

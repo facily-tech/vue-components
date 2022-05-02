@@ -34,6 +34,7 @@ import { IParamsProps } from '../src/utils/types';
 export const FyAvatar: VueConstructor;
 export const FyAutocomplete: VueConstructor;
 export const FyButton: VueConstructor;
+export const FyButtonSearch: VueConstructor;
 export const FyChartGauge: VueConstructor;
 export const FyDataTable: VueConstructor;
 export const FyDialog: VueConstructor;
@@ -56,6 +57,10 @@ export const FySnackbar: VueConstructor;
 export const FyToolbar: VueConstructor;
 export const FyNoticationBar: VueConstructor;
 export const FyUserLabel: VueConstructor;
+export const FyCard: VueConstructor;
+export const FyCardFilter: VueConstructor;
+export const FyCardForm: VueConstructor;
+export const FyStatus: VueConstructor;
 
 export type IFyDataTableHeaders = IDataTableHeaders;
 export type IFyDataTablePagination = IDataTablePagination;

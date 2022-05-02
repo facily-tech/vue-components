@@ -1,5 +1,5 @@
 <template>
-  <v-autocomplete dense outlined v-bind="$attrs" v-on="$listeners">
+  <v-autocomplete dense outlined :no-data-text="noData" v-bind="$attrs" v-on="$listeners">
     <slot v-for="(_, name) in $slots" :name="name" :slot="name" />
   </v-autocomplete>
 </template>
@@ -8,5 +8,12 @@
 import Vue from 'vue';
 export default Vue.extend({
   name: 'FyAutocomplete',
+
+  props: {
+    noData: {
+      type: String,
+      default: 'Nenhum item encontrado',
+    },
+  },
 });
 </script>
