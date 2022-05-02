@@ -4,7 +4,7 @@ import FyAutocomplete from './components/FyAutocomplete';
 
 import FyAvatar from './components/FyAvatar';
 
-import FyButton from './components/FyButton';
+import { FyButton, FyButtonSearch } from './components/FyButton';
 
 import { FyChartGauge } from './components/FyChart';
 
@@ -15,6 +15,8 @@ import { FyDialog, FyDialogBase, FyDialogDelete } from './components/FyDialog';
 import { FyDrawer } from './components/FyDrawer';
 
 import { FyFilter } from './components/FyFilter';
+
+import { FyCard, FyCardFilter, FyCardForm } from './components/FyCard';
 
 import { FyInfoCard } from './components/FyInfoCard';
 
@@ -44,6 +46,7 @@ const VueComponents = {
   install(Vue: VueConstructor): void {
     Vue.component('fy-autocomplete', FyAutocomplete);
     Vue.component('fy-button', FyButton);
+    Vue.component('fy-button-search', FyButtonSearch);
     Vue.component('fy-input', FyInput);
     Vue.component('fy-avatar', FyAvatar);
     Vue.component('fy-autocomplete', FyAutocomplete);
@@ -70,6 +73,9 @@ const VueComponents = {
     Vue.component('fy-notication-bar', FyNoticationBar);
     Vue.component('fy-user-label', FyUserLabel);
     Vue.component('fy-page', FyPage);
+    Vue.component('fy-card', FyCard);
+    Vue.component('fy-card-filter', FyCardFilter);
+    Vue.component('fy-card-form', FyCardForm);
   },
 };
 
@@ -77,6 +83,7 @@ export {
   FyAvatar,
   FyAutocomplete,
   FyButton,
+  FyButtonSearch,
   FyChartGauge,
   FyDataTable,
   FyDialog,
@@ -99,6 +106,9 @@ export {
   FyNoticationBar,
   FyUserLabel,
   FyPage,
+  FyCard,
+  FyCardFilter,
+  FyCardForm,
 };
 
 export default VueComponents;
