@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FyCard should render component and match snapshot 1`] = `
+<div class="fy-card-form pa-0 pa-md-4 fy-status v-card v-sheet theme--light elevation-0">
+  <div class="v-card__title fy-card-title text-h6 font-weight-medium justify-space-between">
+    Status
+  </div>
+  <!---->
+  <div class="v-card__text">
+    <div class="row">
+      <div class="col-md-10 col-12">
+        <div class="subtitle-1 font-weight-black">
+          Inativo
+        </div>
+        <!---->
+      </div>
+      <div class="d-flex justify-end col-md-2 col-12">
+        <div class="v-input theme--light v-input--selection-controls v-input--switch v-input--switch--inset">
+          <div class="v-input__control">
+            <div class="v-input__slot">
+              <div class="v-input--selection-controls__input"><input aria-checked="false" id="input-5" role="switch" type="checkbox" aria-disabled="false" data-test="select-status" value="">
+                <div class="v-input--selection-controls__ripple"></div>
+                <div class="v-input--switch__track theme--light"></div>
+                <div class="v-input--switch__thumb theme--light">
+                  <transition-stub name="fab-transition" mode="out-in"></transition-stub>
+                </div>
+              </div>
+            </div>
+            <div class="v-messages theme--light">
+              <transition-group-stub tag="div" name="message-transition" class="v-messages__wrapper"></transition-group-stub>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
