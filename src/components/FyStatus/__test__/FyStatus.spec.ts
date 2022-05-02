@@ -6,9 +6,8 @@ import Vuetify from 'vuetify';
 
 Vue.use(Vuetify);
 
-describe('FyCard', () => {
+describe('FyStatus', () => {
   // eslint-disable-next-line
-  let mountFunction: (options?: Record<string, unknown>) => Wrapper<any>;
   let router: Router;
   let localVue: typeof Vue;
 
@@ -16,18 +15,29 @@ describe('FyCard', () => {
     router = new Router();
     localVue = createLocalVue();
     localVue.use(Router);
-
-    mountFunction = (options = {}) => {
-      return mount(FyStatus, {
-        localVue,
-        vuetify: new Vuetify(),
-        router,
-        ...options,
-      });
-    };
   });
 
   it('should render component and match snapshot', () => {
-    expect(mountFunction().html()).toMatchSnapshot();
+    const wrapper = mount(FyStatus, {
+      localVue,
+      vuetify: new Vuetify(),
+      router,
+    });
+
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  it('when switch is clicked', () => {
+    const wrapper: Wrapper<any> = mount(FyStatus, {
+      localVue,
+      vuetify: new Vuetify(),
+      router,
+    });
+
+    expect(wrapper.emitted('input')).toBeFalsy();
+
+    wrapper.find('[data-test="select-status"]').trigger('click');
+
+    expect(wrapper.emitted('input')).toBeTruthy();
   });
 });
