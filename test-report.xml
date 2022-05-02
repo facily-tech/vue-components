@@ -1,504 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInputCpf.spec.ts">
-    <testCase name="FyInputCpf.ts should render component and match snapshot" duration="251">
-      <failure message="Error: expect(received).toMatchSnapshot()"><![CDATA[Error: expect(received).toMatchSnapshot()
-
-Snapshot name: `FyInputCpf.ts should render component and match snapshot 1`
-
-- Snapshot
-+ Received
-
-@@ -1,14 +1,14 @@
-  <div class="v-input v-input--dense theme--light v-text-field v-text-field--enclosed v-text-field--outlined" value="" rules="(value) => {
-            /* istanbul ignore next */
--           cov_2lglr6icja.f[2]++;
-+           cov_18niw2qlbh.f[2]++;
--           cov_2lglr6icja.s[9]++;
-+           cov_18niw2qlbh.s[9]++;
-            return (
-              /* istanbul ignore next */
--             (cov_2lglr6icja.b[1][0]++, value.length === 14) ||
-+             (cov_18niw2qlbh.b[1][0]++, value.length === 14) ||
-              /* istanbul ignore next */
--             (cov_2lglr6icja.b[1][1]++, 'O campo Cpf deve conter 11 números')
-+             (cov_18niw2qlbh.b[1][1]++, 'O campo Cpf deve conter 11 números')
-            );
-          }">
-    <div class="v-input__control">
-      <div class="v-input__slot">
-        <fieldset aria-hidden="true">
-    at Object.<anonymous> (/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInputCpf.spec.ts:24:28)
-    at Object.asyncJestTest (/home/felipe/Projetos/vue-components/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:102:37)
-    at /home/felipe/Projetos/vue-components/node_modules/jest-jasmine2/build/queueRunner.js:43:12
-    at new Promise (<anonymous>)
-    at mapper (/home/felipe/Projetos/vue-components/node_modules/jest-jasmine2/build/queueRunner.js:26:19)
-    at /home/felipe/Projetos/vue-components/node_modules/jest-jasmine2/build/queueRunner.js:73:41
-    at processTicksAndRejections (node:internal/process/task_queues:96:5)]]></failure>
-    </testCase>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInputCnpj.spec.ts">
-    <testCase name="FyInputCnpj.ts should render component and match snapshot" duration="211">
-      <failure message="Error: expect(received).toMatchSnapshot()"><![CDATA[Error: expect(received).toMatchSnapshot()
-
-Snapshot name: `FyInputCnpj.ts should render component and match snapshot 1`
-
-- Snapshot
-+ Received
-
-@@ -1,31 +1,31 @@
-  <div class="v-input v-input--dense theme--light v-text-field v-text-field--enclosed v-text-field--outlined" value="" rules="(value) => {
-            /* istanbul ignore next */
--           cov_1s79bhf6yn.f[2]++;
-+           cov_22qvzt4d0l.f[2]++;
--           cov_1s79bhf6yn.s[9]++;
-+           cov_22qvzt4d0l.s[9]++;
-
-            if (
-            /* istanbul ignore next */
--           (cov_1s79bhf6yn.b[2][0]++, value) &amp;&amp;
-+           (cov_22qvzt4d0l.b[2][0]++, value) &amp;&amp;
-            /* istanbul ignore next */
--           (cov_1s79bhf6yn.b[2][1]++, value !== '')) {
-+           (cov_22qvzt4d0l.b[2][1]++, value !== '')) {
-              /* istanbul ignore next */
--             cov_1s79bhf6yn.b[1][0]++;
-+             cov_22qvzt4d0l.b[1][0]++;
--             cov_1s79bhf6yn.s[10]++;
-+             cov_22qvzt4d0l.s[10]++;
-              return (
-                /* istanbul ignore next */
--               (cov_1s79bhf6yn.b[3][0]++, value.length === 18) ||
-+               (cov_22qvzt4d0l.b[3][0]++, value.length === 18) ||
-                /* istanbul ignore next */
--               (cov_1s79bhf6yn.b[3][1]++, 'O campo Cnpj deve conter 14 números')
-+               (cov_22qvzt4d0l.b[3][1]++, 'O campo Cnpj deve conter 14 números')
-              );
-            } else
-            /* istanbul ignore next */
-            {
--             cov_1s79bhf6yn.b[1][1]++;
-+             cov_22qvzt4d0l.b[1][1]++;
-            }
-
--           cov_1s79bhf6yn.s[11]++;
-+           cov_22qvzt4d0l.s[11]++;
-            return false;
-          }">
-    <div class="v-input__control">
-      <div class="v-input__slot">
-        <fieldset aria-hidden="true">
-    at Object.<anonymous> (/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInputCnpj.spec.ts:24:28)
-    at Object.asyncJestTest (/home/felipe/Projetos/vue-components/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:102:37)
-    at /home/felipe/Projetos/vue-components/node_modules/jest-jasmine2/build/queueRunner.js:43:12
-    at new Promise (<anonymous>)
-    at mapper (/home/felipe/Projetos/vue-components/node_modules/jest-jasmine2/build/queueRunner.js:26:19)
-    at /home/felipe/Projetos/vue-components/node_modules/jest-jasmine2/build/queueRunner.js:73:41
-    at processTicksAndRejections (node:internal/process/task_queues:96:5)]]></failure>
-    </testCase>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyCard/__tests__/FyCard.spec.ts">
+    <testCase name="FyCard should render component and match snapshot" duration="173"/>
   </file>
   <file path="/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInputTime.spec.ts">
-    <testCase name="FyInputTime.ts should render component and match snapshot" duration="285">
-      <failure message="Error: expect(received).toMatchSnapshot()"><![CDATA[Error: expect(received).toMatchSnapshot()
-
-Snapshot name: `FyInputTime.ts should render component and match snapshot 1`
-
-- Snapshot
-+ Received
-
-@@ -1,217 +1,217 @@
-  <div class="v-input v-input--dense theme--light v-text-field v-text-field--enclosed v-text-field--outlined" value="" rules="(value) => {
-              /* istanbul ignore next */
--             cov_zxxgm18y8.f[2]++;
-+             cov_224kb84xnf.f[2]++;
-              const nValue =
-              /* istanbul ignore next */
--             (cov_zxxgm18y8.s[9]++, value.split(':'));
-+             (cov_224kb84xnf.s[9]++, value.split(':'));
-              let msg =
-              /* istanbul ignore next */
--             (cov_zxxgm18y8.s[10]++, '');
-+             (cov_224kb84xnf.s[10]++, '');
-
-              /* istanbul ignore next */
--             cov_zxxgm18y8.s[11]++;
-+             cov_224kb84xnf.s[11]++;
-
-              if (Number(nValue[0]) > 23) {
-                /* istanbul ignore next */
--               cov_zxxgm18y8.b[0][0]++;
-+               cov_224kb84xnf.b[0][0]++;
--               cov_zxxgm18y8.s[12]++;
-+               cov_224kb84xnf.s[12]++;
-                msg = 'Hora inválida';
-              } else
-              /* istanbul ignore next */
-              {
--               cov_zxxgm18y8.b[0][1]++;
-+               cov_224kb84xnf.b[0][1]++;
-              }
-
--             cov_zxxgm18y8.s[13]++;
-+             cov_224kb84xnf.s[13]++;
-
-              if (Number(nValue[1]) > 59) {
-                /* istanbul ignore next */
--               cov_zxxgm18y8.b[1][0]++;
-+               cov_224kb84xnf.b[1][0]++;
--               cov_zxxgm18y8.s[14]++;
-+               cov_224kb84xnf.s[14]++;
-                msg = 'Minutos inválidos';
-              } else
-              /* istanbul ignore next */
-              {
--               cov_zxxgm18y8.b[1][1]++;
-+               cov_224kb84xnf.b[1][1]++;
-              }
-
--             cov_zxxgm18y8.s[15]++;
-+             cov_224kb84xnf.s[15]++;
-
-              if (
-              /* istanbul ignore next */
--             (cov_zxxgm18y8.b[3][0]++, Number(nValue[0]) > 31) &amp;&amp;
-+             (cov_224kb84xnf.b[3][0]++, Number(nValue[0]) > 31) &amp;&amp;
-              /* istanbul ignore next */
--             (cov_zxxgm18y8.b[3][1]++, Number(nValue[1]) > 12)) {
-+             (cov_224kb84xnf.b[3][1]++, Number(nValue[1]) > 12)) {
-                /* istanbul ignore next */
--               cov_zxxgm18y8.b[2][0]++;
-+               cov_224kb84xnf.b[2][0]++;
--               cov_zxxgm18y8.s[16]++;
-+               cov_224kb84xnf.s[16]++;
-                msg = 'Hora e minitos inválidos';
-              } else
-              /* istanbul ignore next */
-              {
--               cov_zxxgm18y8.b[2][1]++;
-+               cov_224kb84xnf.b[2][1]++;
-              }
-
--             cov_zxxgm18y8.s[17]++;
-+             cov_224kb84xnf.s[17]++;
-
-              if (!msg) {
-                /* istanbul ignore next */
--               cov_zxxgm18y8.b[4][0]++;
-+               cov_224kb84xnf.b[4][0]++;
--               cov_zxxgm18y8.s[18]++;
-+               cov_224kb84xnf.s[18]++;
-                return true;
-              } else
-              /* istanbul ignore next */
-              {
--               cov_zxxgm18y8.b[4][1]++;
-+               cov_224kb84xnf.b[4][1]++;
-              }
-
--             cov_zxxgm18y8.s[19]++;
-+             cov_224kb84xnf.s[19]++;
-              return msg;
-            }" timerule="(value) => {
-              /* istanbul ignore next */
--             cov_zxxgm18y8.f[2]++;
-+             cov_224kb84xnf.f[2]++;
-              const nValue =
-              /* istanbul ignore next */
--             (cov_zxxgm18y8.s[9]++, value.split(':'));
-+             (cov_224kb84xnf.s[9]++, value.split(':'));
-              let msg =
-              /* istanbul ignore next */
--             (cov_zxxgm18y8.s[10]++, '');
-+             (cov_224kb84xnf.s[10]++, '');
-
-              /* istanbul ignore next */
--             cov_zxxgm18y8.s[11]++;
-+             cov_224kb84xnf.s[11]++;
-
-              if (Number(nValue[0]) > 23) {
-                /* istanbul ignore next */
--               cov_zxxgm18y8.b[0][0]++;
-+               cov_224kb84xnf.b[0][0]++;
--               cov_zxxgm18y8.s[12]++;
-+               cov_224kb84xnf.s[12]++;
-                msg = 'Hora inválida';
-              } else
-              /* istanbul ignore next */
-              {
--               cov_zxxgm18y8.b[0][1]++;
-+               cov_224kb84xnf.b[0][1]++;
-              }
-
--             cov_zxxgm18y8.s[13]++;
-+             cov_224kb84xnf.s[13]++;
-
-              if (Number(nValue[1]) > 59) {
-                /* istanbul ignore next */
--               cov_zxxgm18y8.b[1][0]++;
-+               cov_224kb84xnf.b[1][0]++;
--               cov_zxxgm18y8.s[14]++;
-+               cov_224kb84xnf.s[14]++;
-                msg = 'Minutos inválidos';
-              } else
-              /* istanbul ignore next */
-              {
--               cov_zxxgm18y8.b[1][1]++;
-+               cov_224kb84xnf.b[1][1]++;
-              }
-
--             cov_zxxgm18y8.s[15]++;
-+             cov_224kb84xnf.s[15]++;
-
-              if (
-              /* istanbul ignore next */
--             (cov_zxxgm18y8.b[3][0]++, Number(nValue[0]) > 31) &amp;&amp;
-+             (cov_224kb84xnf.b[3][0]++, Number(nValue[0]) > 31) &amp;&amp;
-              /* istanbul ignore next */
--             (cov_zxxgm18y8.b[3][1]++, Number(nValue[1]) > 12)) {
-+             (cov_224kb84xnf.b[3][1]++, Number(nValue[1]) > 12)) {
-                /* istanbul ignore next */
--               cov_zxxgm18y8.b[2][0]++;
-+               cov_224kb84xnf.b[2][0]++;
--               cov_zxxgm18y8.s[16]++;
-+               cov_224kb84xnf.s[16]++;
-                msg = 'Hora e minitos inválidos';
-              } else
-              /* istanbul ignore next */
-              {
--               cov_zxxgm18y8.b[2][1]++;
-+               cov_224kb84xnf.b[2][1]++;
-              }
-
--             cov_zxxgm18y8.s[17]++;
-+             cov_224kb84xnf.s[17]++;
-
-              if (!msg) {
-                /* istanbul ignore next */
--               cov_zxxgm18y8.b[4][0]++;
-+               cov_224kb84xnf.b[4][0]++;
--               cov_zxxgm18y8.s[18]++;
-+               cov_224kb84xnf.s[18]++;
-                return true;
-              } else
-              /* istanbul ignore next */
-              {
--               cov_zxxgm18y8.b[4][1]++;
-+               cov_224kb84xnf.b[4][1]++;
-              }
-
--             cov_zxxgm18y8.s[19]++;
-+             cov_224kb84xnf.s[19]++;
-              return msg;
-            }">
-    <div class="v-input__control">
-      <div class="v-input__slot">
-        <fieldset aria-hidden="true">
-          <legend style="width: 0px;"><span class="notranslate">​</span></legend>
-        </fieldset>
-        <div class="v-text-field__slot"><input data-test="input" timerule="(value) => {
-              /* istanbul ignore next */
--             cov_zxxgm18y8.f[2]++;
-+             cov_224kb84xnf.f[2]++;
-              const nValue =
-              /* istanbul ignore next */
--             (cov_zxxgm18y8.s[9]++, value.split(':'));
-+             (cov_224kb84xnf.s[9]++, value.split(':'));
-              let msg =
-              /* istanbul ignore next */
--             (cov_zxxgm18y8.s[10]++, '');
-+             (cov_224kb84xnf.s[10]++, '');
-
-              /* istanbul ignore next */
--             cov_zxxgm18y8.s[11]++;
-+             cov_224kb84xnf.s[11]++;
-
-              if (Number(nValue[0]) > 23) {
-                /* istanbul ignore next */
--               cov_zxxgm18y8.b[0][0]++;
-+               cov_224kb84xnf.b[0][0]++;
--               cov_zxxgm18y8.s[12]++;
-+               cov_224kb84xnf.s[12]++;
-                msg = 'Hora inválida';
-              } else
-              /* istanbul ignore next */
-              {
--               cov_zxxgm18y8.b[0][1]++;
-+               cov_224kb84xnf.b[0][1]++;
-              }
-
--             cov_zxxgm18y8.s[13]++;
-+             cov_224kb84xnf.s[13]++;
-
-              if (Number(nValue[1]) > 59) {
-                /* istanbul ignore next */
--               cov_zxxgm18y8.b[1][0]++;
-+               cov_224kb84xnf.b[1][0]++;
--               cov_zxxgm18y8.s[14]++;
-+               cov_224kb84xnf.s[14]++;
-                msg = 'Minutos inválidos';
-              } else
-              /* istanbul ignore next */
-              {
--               cov_zxxgm18y8.b[1][1]++;
-+               cov_224kb84xnf.b[1][1]++;
-              }
-
--             cov_zxxgm18y8.s[15]++;
-+             cov_224kb84xnf.s[15]++;
-
-              if (
-              /* istanbul ignore next */
--             (cov_zxxgm18y8.b[3][0]++, Number(nValue[0]) > 31) &amp;&amp;
-+             (cov_224kb84xnf.b[3][0]++, Number(nValue[0]) > 31) &amp;&amp;
-              /* istanbul ignore next */
--             (cov_zxxgm18y8.b[3][1]++, Number(nValue[1]) > 12)) {
-+             (cov_224kb84xnf.b[3][1]++, Number(nValue[1]) > 12)) {
-                /* istanbul ignore next */
--               cov_zxxgm18y8.b[2][0]++;
-+               cov_224kb84xnf.b[2][0]++;
--               cov_zxxgm18y8.s[16]++;
-+               cov_224kb84xnf.s[16]++;
-                msg = 'Hora e minitos inválidos';
-              } else
-              /* istanbul ignore next */
-              {
--               cov_zxxgm18y8.b[2][1]++;
-+               cov_224kb84xnf.b[2][1]++;
-              }
-
--             cov_zxxgm18y8.s[17]++;
-+             cov_224kb84xnf.s[17]++;
-
-              if (!msg) {
-                /* istanbul ignore next */
--               cov_zxxgm18y8.b[4][0]++;
-+               cov_224kb84xnf.b[4][0]++;
--               cov_zxxgm18y8.s[18]++;
-+               cov_224kb84xnf.s[18]++;
-                return true;
-              } else
-              /* istanbul ignore next */
-              {
--               cov_zxxgm18y8.b[4][1]++;
-+               cov_224kb84xnf.b[4][1]++;
-              }
-
--             cov_zxxgm18y8.s[19]++;
-+             cov_224kb84xnf.s[19]++;
-              return msg;
-            }" id="input-3" type="text"></div>
-      </div>
-      <div class="v-text-field__details">
-        <div class="v-messages theme--light">
-    at Object.<anonymous> (/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInputTime.spec.ts:24:28)
-    at Object.asyncJestTest (/home/felipe/Projetos/vue-components/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:102:37)
-    at /home/felipe/Projetos/vue-components/node_modules/jest-jasmine2/build/queueRunner.js:43:12
-    at new Promise (<anonymous>)
-    at mapper (/home/felipe/Projetos/vue-components/node_modules/jest-jasmine2/build/queueRunner.js:26:19)
-    at /home/felipe/Projetos/vue-components/node_modules/jest-jasmine2/build/queueRunner.js:73:41
-    at processTicksAndRejections (node:internal/process/task_queues:96:5)]]></failure>
-    </testCase>
+    <testCase name="FyInputTime.ts should render component and match snapshot" duration="139"/>
   </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyAutocomplete/__tests__/FyAutocomplete.spec.ts">
-    <testCase name="FyAutocomplete should render component and match snapshot" duration="142"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyInfoCard/__tests__/FyInfoCard.spec.ts">
-    <testCase name="FyInfoCard should render component and match snapshot" duration="142"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyFilter/__tests__/FyFilter.spec.ts">
-    <testCase name="FyFilter.ts Component exists" duration="164"/>
-    <testCase name="FyFilter.ts checkAllTags test" duration="48"/>
-    <testCase name="FyFilter.ts checkFilters test" duration="78"/>
-    <testCase name="FyFilter.ts checkFilters test else block" duration="66"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInputDateTime.spec.ts">
-    <testCase name="FyInputDateTime.ts Component exists" duration="169"/>
-    <testCase name="FyInputDateTime.ts getStringToDate test" duration="95"/>
-    <testCase name="FyInputDateTime.ts getStringToDate test else block" duration="67"/>
-    <testCase name="FyInputDateTime.ts getDateToString test" duration="49"/>
-    <testCase name="FyInputDateTime.ts getDateToString test else block" duration="53"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyDrawer/__tests__/FyDrawer.spec.ts">
-    <testCase name="FyDrawer.ts Component exists" duration="188"/>
-    <testCase name="FyDrawer.ts Test navigate" duration="88"/>
-    <testCase name="FyDrawer.ts Test navigate else block" duration="40"/>
-    <testCase name="FyDrawer.ts Test navigateItem" duration="74"/>
-    <testCase name="FyDrawer.ts Test navigateItem else block" duration="58"/>
-    <testCase name="FyDrawer.ts Test navigateSubitem" duration="40"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyDataTable/__tests__/FyDataTable.spec.ts">
-    <testCase name="FyDataTable.ts Component exists" duration="255"/>
-    <testCase name="FyDataTable.ts Test Pagination set" duration="84"/>
-    <testCase name="FyDataTable.ts Test radioSelect set" duration="50"/>
-    <testCase name="FyDataTable.ts Check Color Case Alta" duration="49"/>
-    <testCase name="FyDataTable.ts Check Color Case Média" duration="65"/>
-    <testCase name="FyDataTable.ts Check Color Case Baixa" duration="30"/>
-    <testCase name="FyDataTable.ts Check Color Case Null" duration="34"/>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInputCnpj.spec.ts">
+    <testCase name="FyInputCnpj.ts should render component and match snapshot" duration="144"/>
   </file>
   <file path="/home/felipe/Projetos/vue-components/src/components/FyNotificationBar/__tests__/FyNotificationBar.spec.ts">
-    <testCase name="FyNotificationBar.ts should render component and match snapshot" duration="150"/>
+    <testCase name="FyNotificationBar.ts should render component and match snapshot" duration="204"/>
   </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInputDate.spec.ts">
-    <testCase name="FyInputDate.ts Component exists" duration="205"/>
-    <testCase name="FyInputDate.ts getDateToString test" duration="57"/>
-    <testCase name="FyInputDate.ts getDateToString test else block" duration="69"/>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyInfoCard/__tests__/FyInfoCard.spec.ts">
+    <testCase name="FyInfoCard should render component and match snapshot" duration="185"/>
   </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyButton/__tests__/FyButton.spec.ts">
-    <testCase name="FyButton should render component and match snapshot" duration="134"/>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyButton/__tests__/FyButtonSearch.spec.ts">
+    <testCase name="FyButtonSearch should render component and match snapshot" duration="201"/>
+    <testCase name="FyButtonSearch when hideName should apply class" duration="46"/>
+    <testCase name="FyButtonSearch when button is clicked" duration="50"/>
   </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInputCurrency.spec.ts">
-    <testCase name="FyInputCurrency.ts should render component and match snapshot" duration="108"/>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyDrawer/__tests__/FyDrawer.spec.ts">
+    <testCase name="FyDrawer.ts Component exists" duration="126"/>
+    <testCase name="FyDrawer.ts Test navigate" duration="50"/>
+    <testCase name="FyDrawer.ts Test navigate else block" duration="36"/>
+    <testCase name="FyDrawer.ts Test navigateItem" duration="50"/>
+    <testCase name="FyDrawer.ts Test navigateItem else block" duration="23"/>
+    <testCase name="FyDrawer.ts Test navigateSubitem" duration="23"/>
   </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyAvatar/__tests__/FyAvatar.spec.ts">
-    <testCase name="FyAvatar should render component and match snapshot" duration="246"/>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInputCpf.spec.ts">
+    <testCase name="FyInputCpf.ts should render component and match snapshot" duration="107"/>
   </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInputCep.spec.ts">
-    <testCase name="FyInputCep.ts Component exists" duration="197"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyChart/__tests__/FyChartGauge.spec.ts">
-    <testCase name="FyChartGauge.ts should render component and match snapshot" duration="73"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyDialog/__tests__/FyDialogDelete.spec.ts">
-    <testCase name="FyDialogDelete.ts Component exists" duration="105"/>
-    <testCase name="FyDialogDelete.ts Test close" duration="77"/>
-    <testCase name="FyDialogDelete.ts Test submit" duration="35"/>
-  </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInputPhone.spec.ts">
-    <testCase name="FyInputPhone.ts should render component and match snapshot" duration="80"/>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FySnackbar/__tests__/FySnackbar.spec.ts">
+    <testCase name="FySnackbar.ts Component exists" duration="81"/>
+    <testCase name="FySnackbar.ts Test snackbarClose" duration="51"/>
   </file>
   <file path="/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInput.spec.ts">
     <testCase name="FyInput.ts should render component and match snapshot" duration="87"/>
   </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FyUserLabel/__tests__/FyUserLabel.spec.ts">
-    <testCase name="FyUserLabel.ts should render component and match snapshot" duration="88"/>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyFilter/__tests__/FyFilter.spec.ts">
+    <testCase name="FyFilter.ts Component exists" duration="102"/>
+    <testCase name="FyFilter.ts checkAllTags test" duration="61"/>
+    <testCase name="FyFilter.ts checkFilters test" duration="41"/>
+    <testCase name="FyFilter.ts checkFilters test else block" duration="53"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInputDateTime.spec.ts">
+    <testCase name="FyInputDateTime.ts Component exists" duration="120"/>
+    <testCase name="FyInputDateTime.ts getStringToDate test" duration="63"/>
+    <testCase name="FyInputDateTime.ts getStringToDate test else block" duration="38"/>
+    <testCase name="FyInputDateTime.ts getDateToString test" duration="46"/>
+    <testCase name="FyInputDateTime.ts getDateToString test else block" duration="35"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInputDate.spec.ts">
+    <testCase name="FyInputDate.ts Component exists" duration="95"/>
+    <testCase name="FyInputDate.ts getDateToString test" duration="50"/>
+    <testCase name="FyInputDate.ts getDateToString test else block" duration="37"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyDataTable/__tests__/FyDataTable.spec.ts">
+    <testCase name="FyDataTable.ts Component exists" duration="108"/>
+    <testCase name="FyDataTable.ts Test Pagination set" duration="63"/>
+    <testCase name="FyDataTable.ts Test radioSelect set" duration="32"/>
+    <testCase name="FyDataTable.ts Check Color Case Alta" duration="29"/>
+    <testCase name="FyDataTable.ts Check Color Case Média" duration="29"/>
+    <testCase name="FyDataTable.ts Check Color Case Baixa" duration="31"/>
+    <testCase name="FyDataTable.ts Check Color Case Null" duration="29"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyDialog/__tests__/FyDialogDelete.spec.ts">
+    <testCase name="FyDialogDelete.ts Component exists" duration="51"/>
+    <testCase name="FyDialogDelete.ts Test close" duration="46"/>
+    <testCase name="FyDialogDelete.ts Test submit" duration="31"/>
   </file>
   <file path="/home/felipe/Projetos/vue-components/src/components/FyToolbar/__tests__/FyToolbar.spec.ts">
-    <testCase name="FyToolbar.ts Component exists" duration="56"/>
-    <testCase name="FyToolbar.ts Back test" duration="51"/>
+    <testCase name="FyToolbar.ts Component exists" duration="82"/>
+    <testCase name="FyToolbar.ts Back test" duration="24"/>
   </file>
-  <file path="/home/felipe/Projetos/vue-components/src/components/FySnackbar/__tests__/FySnackbar.spec.ts">
-    <testCase name="FySnackbar.ts Component exists" duration="65"/>
-    <testCase name="FySnackbar.ts Test snackbarClose" duration="20"/>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInputPhone.spec.ts">
+    <testCase name="FyInputPhone.ts should render component and match snapshot" duration="64"/>
   </file>
-  <file path="/home/felipe/Projetos/vue-components/src/utils/__tests__/format.date.spec.ts">
-    <testCase name="Test formaters fyFormatDate" duration="4"/>
-    <testCase name="Test formaters fyParserDateOder" duration="3"/>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInputCep.spec.ts">
+    <testCase name="FyInputCep.ts Component exists" duration="56"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyAvatar/__tests__/FyAvatar.spec.ts">
+    <testCase name="FyAvatar should render component and match snapshot" duration="52"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyInput/__tests__/FyInputCurrency.spec.ts">
+    <testCase name="FyInputCurrency.ts should render component and match snapshot" duration="105"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyButton/__tests__/FyButton.spec.ts">
+    <testCase name="FyButton should render component and match snapshot" duration="85"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyChart/__tests__/FyChartGauge.spec.ts">
+    <testCase name="FyChartGauge.ts should render component and match snapshot" duration="48"/>
   </file>
   <file path="/home/felipe/Projetos/vue-components/src/components/FyDialog/__tests__/FyDialog.spec.ts">
-    <testCase name="FyDialog.ts should render component and match snapshot" duration="53"/>
+    <testCase name="FyDialog.ts should render component and match snapshot" duration="50"/>
   </file>
   <file path="/home/felipe/Projetos/vue-components/src/utils/__tests__/format.type.spec.ts">
-    <testCase name="Test formaters fyFormatTypeInteger" duration="7"/>
-    <testCase name="Test formaters fyFormatTypeString" duration="1"/>
+    <testCase name="Test formaters fyFormatTypeInteger" duration="3"/>
+    <testCase name="Test formaters fyFormatTypeString" duration="22"/>
     <testCase name="Test formaters fyFormatTypeOnlyNumbers" duration="2"/>
     <testCase name="Test formaters fyFormatTypeValueToFloat" duration="2"/>
-    <testCase name="Test formaters fyFormatTypeStringWithoutSpacesOrNull" duration="1"/>
+    <testCase name="Test formaters fyFormatTypeStringWithoutSpacesOrNull" duration="2"/>
     <testCase name="Test formaters fyFormatTypeJsonToObject" duration="2"/>
   </file>
-  <file path="/home/felipe/Projetos/vue-components/src/utils/__tests__/format.mask.spec.ts">
-    <testCase name="format.mask formatCurrencyMaskToFloat" duration="2"/>
+  <file path="/home/felipe/Projetos/vue-components/src/utils/__tests__/format.date.spec.ts">
+    <testCase name="Test formaters fyFormatDate" duration="19"/>
+    <testCase name="Test formaters fyParserDateOder" duration="2"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyAutocomplete/__tests__/FyAutocomplete.spec.ts">
+    <testCase name="FyAutocomplete should render component and match snapshot" duration="94"/>
   </file>
   <file path="/home/felipe/Projetos/vue-components/src/components/FyDialog/__tests__/FyDialogBase.spec.ts">
-    <testCase name="FyDialogBase.ts should render component and match snapshot" duration="34"/>
+    <testCase name="FyDialogBase.ts should render component and match snapshot" duration="63"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyUserLabel/__tests__/FyUserLabel.spec.ts">
+    <testCase name="FyUserLabel.ts should render component and match snapshot" duration="57"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/utils/__tests__/format.mask.spec.ts">
+    <testCase name="format.mask formatCurrencyMaskToFloat" duration="3"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyCard/__tests__/FyCardForm.spec.ts">
+    <testCase name="FyCardForm should render component and match snapshot" duration="53"/>
+  </file>
+  <file path="/home/felipe/Projetos/vue-components/src/components/FyCard/__tests__/FyCardFilter.spec.ts">
+    <testCase name="FyCardFilter should render component and match snapshot" duration="68"/>
   </file>
 </testExecutions>

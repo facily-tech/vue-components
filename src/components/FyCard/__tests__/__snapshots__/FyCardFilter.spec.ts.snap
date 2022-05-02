@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FyCardFilter should render component and match snapshot 1`] = `
+<div class="fy-card-filter pa-2 pa-md-4 pb-md-0 v-card v-sheet theme--light elevation-0">
+  <form novalidate="novalidate" class="v-form"></form>
+</div>
+`;
