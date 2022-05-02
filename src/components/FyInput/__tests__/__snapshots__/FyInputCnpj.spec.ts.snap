@@ -3,30 +3,30 @@
 exports[`FyInputCnpj.ts should render component and match snapshot 1`] = `
 <div class="v-input v-input--dense theme--light v-text-field v-text-field--enclosed v-text-field--outlined" value="" rules="(value) => {
           /* istanbul ignore next */
-          cov_1s79bhf6yn.f[2]++;
-          cov_1s79bhf6yn.s[9]++;
+          cov_22qvzt4d0l.f[2]++;
+          cov_22qvzt4d0l.s[9]++;
 
           if (
           /* istanbul ignore next */
-          (cov_1s79bhf6yn.b[2][0]++, value) &amp;&amp;
+          (cov_22qvzt4d0l.b[2][0]++, value) &amp;&amp;
           /* istanbul ignore next */
-          (cov_1s79bhf6yn.b[2][1]++, value !== '')) {
+          (cov_22qvzt4d0l.b[2][1]++, value !== '')) {
             /* istanbul ignore next */
-            cov_1s79bhf6yn.b[1][0]++;
-            cov_1s79bhf6yn.s[10]++;
+            cov_22qvzt4d0l.b[1][0]++;
+            cov_22qvzt4d0l.s[10]++;
             return (
               /* istanbul ignore next */
-              (cov_1s79bhf6yn.b[3][0]++, value.length === 18) ||
+              (cov_22qvzt4d0l.b[3][0]++, value.length === 18) ||
               /* istanbul ignore next */
-              (cov_1s79bhf6yn.b[3][1]++, 'O campo Cnpj deve conter 14 números')
+              (cov_22qvzt4d0l.b[3][1]++, 'O campo Cnpj deve conter 14 números')
             );
           } else
           /* istanbul ignore next */
           {
-            cov_1s79bhf6yn.b[1][1]++;
+            cov_22qvzt4d0l.b[1][1]++;
           }
 
-          cov_1s79bhf6yn.s[11]++;
+          cov_22qvzt4d0l.s[11]++;
           return false;
         }">
   <div class="v-input__control">

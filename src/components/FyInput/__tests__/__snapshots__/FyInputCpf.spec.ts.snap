@@ -3,13 +3,13 @@
 exports[`FyInputCpf.ts should render component and match snapshot 1`] = `
 <div class="v-input v-input--dense theme--light v-text-field v-text-field--enclosed v-text-field--outlined" value="" rules="(value) => {
           /* istanbul ignore next */
-          cov_2lglr6icja.f[2]++;
-          cov_2lglr6icja.s[9]++;
+          cov_18niw2qlbh.f[2]++;
+          cov_18niw2qlbh.s[9]++;
           return (
             /* istanbul ignore next */
-            (cov_2lglr6icja.b[1][0]++, value.length === 14) ||
+            (cov_18niw2qlbh.b[1][0]++, value.length === 14) ||
             /* istanbul ignore next */
-            (cov_2lglr6icja.b[1][1]++, 'O campo Cpf deve conter 11 números')
+            (cov_18niw2qlbh.b[1][1]++, 'O campo Cpf deve conter 11 números')
           );
         }">
   <div class="v-input__control">

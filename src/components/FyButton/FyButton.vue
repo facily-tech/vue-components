@@ -1,5 +1,11 @@
 <template>
-  <v-btn :elevation="0" v-bind="$attrs" v-on="$listeners" :data-test="dataTest">
+  <v-btn
+    :elevation="0"
+    :data-test="dataTest"
+    v-on="$listeners"
+    v-bind="$attrs"
+    style="min-height: 40px"
+  >
     <slot v-for="(_, name) in $slots" :name="name" :slot="name" />
   </v-btn>
 </template>
