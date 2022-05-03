@@ -4,7 +4,7 @@ import FyAutocomplete from './components/FyAutocomplete';
 
 import FyAvatar from './components/FyAvatar';
 
-import { FyButton, FyButtonSearch } from './components/FyButton';
+import { FyButton, FyButtonSearch, FyButtonStatus } from './components/FyButton';
 
 import { FyChartGauge } from './components/FyChart';
 
@@ -49,6 +49,7 @@ const VueComponents = {
     Vue.component('fy-autocomplete', FyAutocomplete);
     Vue.component('fy-button', FyButton);
     Vue.component('fy-button-search', FyButtonSearch);
+    Vue.component('fy-button-status', FyButtonStatus);
     Vue.component('fy-input', FyInput);
     Vue.component('fy-avatar', FyAvatar);
     Vue.component('fy-autocomplete', FyAutocomplete);
@@ -87,6 +88,7 @@ export {
   FyAutocomplete,
   FyButton,
   FyButtonSearch,
+  FyButtonStatus,
   FyChartGauge,
   FyDataTable,
   FyDialog,

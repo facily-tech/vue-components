@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FyButtonSearch should render component and match snapshot 1`] = `<button type="button" class="v-btn v-btn--text theme--light elevation-0 v-size--x-small success--text" style="min-height: 40px;" data-test="btn-status" status="true" color="success" x-small="" text=""><span class="v-btn__content"><span class="text-uppercase">Ativo</span> <i aria-hidden="true" class="v-icon notranslate pl-1 mdi mdi-circle theme--light" style="font-size: 16px;"></i></span></button>`;

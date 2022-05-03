@@ -76,21 +76,12 @@
               ></v-radio>
             </v-radio-group>
           </div>
-          <div :key="headerKey" v-else-if="header.value === 'active'" style="cursor: pointer">
-            <v-icon
-              color="green"
-              v-if="item.cols[header.value]"
-              @click="$emit('active-control', { key: 'inactitve', value: item })"
-            >
-              mdi-eye-outline
-            </v-icon>
-            <v-icon
-              color="red"
-              v-if="!item.cols[header.value]"
-              @click="$emit('active-control', { key: 'actitve', value: item })"
-            >
-              mdi-eye-off
-            </v-icon>
+          <div :key="headerKey" v-else-if="header.value === 'active'">
+            <fy-button-status
+              :item="item"
+              :status="item.cols[header.value]"
+              @active-control="$emit('active-control', $event)"
+            />
           </div>
           <div
             :key="headerKey"
@@ -173,7 +164,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import FyButton from '@/components/FyButton';
+import { FyButton, FyButtonStatus } from '@/components/FyButton';
 
 import {
   fyFormatMaskTaxId,
@@ -187,7 +178,7 @@ import { IDataTableHeaders, IDataTableRows, IDataTablePagination } from './types
 export default Vue.extend({
   name: 'fy-data-table',
 
-  components: { FyButton },
+  components: { FyButton, FyButtonStatus },
 
   props: {
     headers: {
