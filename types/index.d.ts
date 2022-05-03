@@ -35,6 +35,7 @@ export const FyAvatar: VueConstructor;
 export const FyAutocomplete: VueConstructor;
 export const FyButton: VueConstructor;
 export const FyButtonSearch: VueConstructor;
+export const FyButtonStatus: VueConstructor;
 export const FyChartGauge: VueConstructor;
 export const FyDataTable: VueConstructor;
 export const FyDialog: VueConstructor;
