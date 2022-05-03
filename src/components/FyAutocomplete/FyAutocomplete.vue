@@ -1,6 +1,9 @@
 <template>
   <v-autocomplete dense outlined :no-data-text="noData" v-bind="$attrs" v-on="$listeners">
     <slot v-for="(_, name) in $slots" :name="name" :slot="name" />
+    <template #item="{ item }">
+      <slot name="item-data" v-bind="item" />
+    </template>
   </v-autocomplete>
 </template>
 
