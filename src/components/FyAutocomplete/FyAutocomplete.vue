@@ -1,18 +1,24 @@
 <template>
-  <v-autocomplete dense outlined :no-data-text="noData" v-bind="$attrs" v-on="$listeners">
+  <v-autocomplete
+    class="fy-autocomplete"
+    dense
+    outlined
+    :no-data-text="noData"
+    v-bind="$attrs"
+    v-on="$listeners"
+  >
     <slot v-for="(_, name) in $slots" :name="name" :slot="name" />
-    <template #item="{ item }">
-      <slot
-        name="item-data"
-        v-if="!!$slots['item-data'] || !!$scopedSlots['item-data']"
-        v-bind="item"
-      />
-      <v-list-item-content v-else-if="!!$attrs['item-text']">
-        {{ item[$attrs['item-text']] }}
-      </v-list-item-content>
-      <v-list-item-content v-else>
-        {{ item }}
-      </v-list-item-content>
+    <template #item="{ item, parent }">
+      <v-list-tile-content>
+        <v-list-tile-title v-if="!!$slots['item-data'] || !!$scopedSlots['item-data']">
+          <slot name="item-data" v-bind="{ item, parent }" />
+        </v-list-tile-title>
+        <v-list-tile-title
+          v-else-if="!!$attrs['item-text']"
+          v-html="parent.genFilteredText(item[$attrs['item-text']])"
+        ></v-list-tile-title>
+        <v-list-tile-title v-else v-html="parent.genFilteredText(item)"></v-list-tile-title>
+      </v-list-tile-content>
     </template>
   </v-autocomplete>
 </template>
