@@ -9,16 +9,16 @@
   >
     <slot v-for="(_, name) in $slots" :name="name" :slot="name" />
     <template #item="{ item, parent }">
-      <v-list-tile-content>
-        <v-list-tile-title v-if="!!$slots['item-data'] || !!$scopedSlots['item-data']">
+      <v-list-item-content>
+        <v-list-item-title v-if="!!$slots['item-data'] || !!$scopedSlots['item-data']">
           <slot name="item-data" v-bind="{ item, parent }" />
-        </v-list-tile-title>
-        <v-list-tile-title
+        </v-list-item-title>
+        <v-list-item-title
           v-else-if="!!$attrs['item-text']"
           v-html="parent.genFilteredText(item[$attrs['item-text']])"
-        ></v-list-tile-title>
-        <v-list-tile-title v-else v-html="parent.genFilteredText(item)"></v-list-tile-title>
-      </v-list-tile-content>
+        ></v-list-item-title>
+        <v-list-item-title v-else v-html="parent.genFilteredText(item)"></v-list-item-title>
+      </v-list-item-content>
     </template>
   </v-autocomplete>
 </template>
