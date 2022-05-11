@@ -11,7 +11,7 @@
         class="custom-datatable"
         hide-default-footer
         loading-text="Carregando..."
-        mobile-breakpoint="0"
+        mobile-breakpoint="768"
         v-bind="propsAndAttrs"
         v-on="$listeners"
       >
@@ -136,29 +136,32 @@
         </template>
       </v-data-table>
     </v-card>
-    <div v-if="pagination" class="text-center pt-5 d-flex justify-space-between align-start">
-      <div class="fy-pagination-per-page">
-        <span class="subtitle-2 mr-1">Exibindo</span>
-        <v-select
-          outlined
-          v-model="pagination.itemsPerPage"
-          :items="selectItems"
-          type="number"
-          dense
-          style="max-width: 100px"
-        />
-        <div class="subtitle-2 ml-4" v-if="pagination.totalItems">
-          Exibindo {{ pagination.itemsPerPage }} de {{ pagination.totalItems }} items
+    <v-row v-if="pagination" class="mt-2">
+      <v-col cols="12" md="6">
+        <div class="d-flex justify-md-start justify-center align-baseline">
+          <span class="subtitle-2 mr-1">Exibindo</span>
+          <v-select
+            outlined
+            v-model="pagination.itemsPerPage"
+            :items="selectItems"
+            type="number"
+            dense
+            style="max-width: 100px"
+          />
+          <div class="subtitle-2 ml-4" v-if="pagination.totalItems">
+            Exibindo {{ pagination.itemsPerPage }} de {{ pagination.totalItems }} items
+          </div>
         </div>
-      </div>
-      <v-spacer />
-      <v-pagination
-        v-model="pagination.page"
-        :length="pagination.totalPages || 0"
-        :total-visible="10"
-        class="fy-pagination"
-      />
-    </div>
+      </v-col>
+      <v-col cols="12" md="6" class="d-flex justify-md-end justify-center">
+        <v-pagination
+          v-model="pagination.page"
+          :length="pagination.totalPages || 0"
+          :total-visible="10"
+          class="fy-pagination"
+        />
+      </v-col>
+    </v-row>
   </div>
 </template>
 
