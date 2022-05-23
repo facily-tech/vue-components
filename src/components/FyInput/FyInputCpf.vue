@@ -15,6 +15,7 @@
 import Vue from 'vue';
 import { VueMaskDirective } from 'v-mask';
 import FyInput from './FyInput.vue';
+import { isValidCPF } from '@/utils/validate';
 
 export default Vue.extend({
   name: 'fy-input-cpf',
@@ -34,10 +35,7 @@ export default Vue.extend({
   data() {
     return {
       text: this.value ? this.value : '',
-      cpfRule: [
-        (value: string): boolean | string =>
-          value.length === 14 || 'O campo Cpf deve conter 11 números',
-      ],
+      cpfRule: [(value: string): boolean | string => isValidCPF(value) || 'O CPF deve ser válido'],
       mask: '###.###.###-##',
     };
   },
