@@ -5,7 +5,8 @@
         <slot name="toolbar-actions"></slot>
       </template>
     </fy-toolbar>
-    <div class="mx-4">
+    <div class="mx-md-4">
+      <v-progress-linear v-if="loading" indeterminate />
       <slot></slot>
     </div>
   </v-container>
@@ -30,6 +31,11 @@ export default Vue.extend({
         backButton: false,
       } as TToolbar,
       required: true,
+    },
+
+    loading: {
+      type: Boolean,
+      default: false,
     },
   },
 

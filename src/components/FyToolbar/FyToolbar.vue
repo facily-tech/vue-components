@@ -1,6 +1,12 @@
 <template>
-  <v-toolbar color="transparent" v-bind="propsAndAttrs" :flat="flat" class="mb-4">
-    <v-toolbar-title class="headline font-weight-medium" v-if="screenWidth > 768">
+  <v-toolbar
+    class="fy-toolbar mb-2 mb-md-4"
+    color="transparent"
+    v-bind="propsAndAttrs"
+    dense
+    :flat="flat"
+  >
+    <v-toolbar-title class="headline font-weight-medium">
       {{ items.title }}
     </v-toolbar-title>
     <v-spacer></v-spacer>
@@ -86,3 +92,11 @@ export default Vue.extend({
   },
 });
 </script>
+
+<style scoped lang="scss">
+@media (max-width: 959px) {
+  .fy-toolbar ::v-deep.v-toolbar__content {
+    padding: 0px;
+  }
+}
+</style>
