@@ -14,7 +14,7 @@
           </div>
         </v-col>
         <v-col md="2" cols="12" class="d-flex justify-end">
-          <v-switch v-model="model" inset data-test="select-status" />
+          <v-switch v-model="model" inset data-test="select-status" :disabled="disabled" />
         </v-col>
       </v-row>
     </v-card-text>
@@ -52,6 +52,11 @@ export default Vue.extend({
     inactive: {
       type: String,
       default: 'Inativo',
+    },
+
+    disabled: {
+      type: Boolean,
+      default: false,
     },
   },
 
