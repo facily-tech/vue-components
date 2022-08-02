@@ -48,7 +48,7 @@ describe('FyButtonSearch', () => {
     });
 
     it('color', () => {
-      expect(wrapper.vm.color).toBe('success');
+      expect(wrapper.vm.color).toBe('green lighten-1');
     });
 
     it('event', () => {
@@ -92,7 +92,7 @@ describe('FyButtonSearch', () => {
     });
 
     it('color', () => {
-      expect(wrapper.vm.color).toBe('warning');
+      expect(wrapper.vm.color).toBe('red lighten-1');
     });
 
     it('event', () => {
