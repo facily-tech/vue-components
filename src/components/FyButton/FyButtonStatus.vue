@@ -7,6 +7,7 @@
     text
     v-bind="propsAndAttrs"
     v-on="$listeners"
+    class="fy-button-status"
   >
     <span class="text-uppercase">{{ name }}</span>
     <v-icon small class="pl-1">{{ status ? 'mdi-check-circle' : 'mdi-close-circle' }}</v-icon>
@@ -57,3 +58,11 @@ export default Vue.extend({
   },
 });
 </script>
+
+<style scoped>
+.fy-button-status {
+  display: flex;
+  justify-content: end;
+  min-width: 90px !important;
+}
+</style>
