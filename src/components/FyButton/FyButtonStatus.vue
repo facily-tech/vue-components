@@ -9,7 +9,7 @@
     v-on="$listeners"
   >
     <span class="text-uppercase">{{ name }}</span>
-    <v-icon small class="pl-1">mdi-circle</v-icon>
+    <v-icon small class="pl-1">{{ status ? 'mdi-check-circle' : 'mdi-close-circle' }}</v-icon>
   </fy-button>
 </template>
 
@@ -48,7 +48,7 @@ export default Vue.extend({
     },
 
     color() {
-      return this.status ? 'success' : 'warning';
+      return this.status ? 'green lighten-1' : 'red lighten-1';
     },
 
     event() {
