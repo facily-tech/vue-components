@@ -19,6 +19,12 @@
 import Vue from 'vue';
 import FyButton from './FyButton.vue';
 
+type IVuetify = {
+  theme: {
+    dark: boolean;
+  };
+};
+
 export default Vue.extend({
   name: 'FyButtonSearch',
 
@@ -56,7 +62,8 @@ export default Vue.extend({
     },
 
     color(): string {
-      return this.$vuetify?.theme?.dark ? 'grey' : 'primary';
+      const vuetify = this.$vuetify as IVuetify;
+      return vuetify?.theme?.dark ? 'grey' : 'primary';
     }
   },
 });
