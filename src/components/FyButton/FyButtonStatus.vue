@@ -34,6 +34,16 @@ export default Vue.extend({
       type: Boolean,
       default: true,
     },
+
+    labelActive: {
+      type: String,
+      default: 'Ativo',
+    },
+
+    labelInactive: {
+      type: String,
+      default: 'Inativo',
+    },
   },
 
   computed: {
@@ -45,11 +55,11 @@ export default Vue.extend({
     },
 
     name() {
-      return this.status ? 'Ativo' : 'Inativo';
+      return this.status ? this.labelActive : this.labelInactive;
     },
 
     color() {
-      return this.status ? 'green lighten-1' : 'red lighten-1';
+      return this.status ? 'success lighten-1' : 'error lighten-1';
     },
 
     event() {

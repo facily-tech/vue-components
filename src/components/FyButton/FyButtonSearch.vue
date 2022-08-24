@@ -1,7 +1,7 @@
 <template>
   <fy-button
     outlined
-    color="primary"
+    :color="color"
     class="fy-button-search"
     :data-test="dataTest"
     @click="$emit('click-filter')"
@@ -54,6 +54,10 @@ export default Vue.extend({
     isHideName() {
       return this.hideName ? 'd-none d-sm-flex' : '';
     },
+
+    color(): string {
+      return this.$vuetify?.theme?.dark ? 'grey' : 'primary';
+    }
   },
 });
 </script>
